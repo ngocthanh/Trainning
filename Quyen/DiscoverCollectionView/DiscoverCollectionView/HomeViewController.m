@@ -29,7 +29,7 @@
     self.navigationController.navigationBar.barTintColor = [UIColor colorWithRed:0.0 green:0.65 blue:0.35 alpha:1];
     _nameSection = [NSArray arrayWithObjects:@"Trang Chủ",@"Số Hoá",@"Thể Thao",@"Giáo Dục",@"Xe", nil];
     [[self navigationItem] setTitle:@"VN Express"];
-    _name = [NSArray arrayWithObjects:@"CocaCola",@"CocaCola",@"CocaCola",@"CocaCola",@"CocaCola",@"CocaCola", nil];
+//    _name = [NSArray arrayWithObjects:@"CocaCola",@"CocaCola",@"CocaCola",@"CocaCola",@"CocaCola",@"CocaCola", nil];
     _imageName = [NSArray arrayWithObjects:@"batman-silhouette-variant",@"circular-arrow",@"japanese-dragon",@"iris",@"cat",@"eye", nil];
     [_discoverCollectionView registerNib:[UINib nibWithNibName:@"DiscoverCollectionViewCell" bundle:[NSBundle mainBundle]] forCellWithReuseIdentifier:@"homecell"];
     [_discoverCollectionView registerNib:[UINib nibWithNibName:@"CollectionReusableView" bundle:[NSBundle mainBundle]] forSupplementaryViewOfKind:UICollectionElementKindSectionHeader withReuseIdentifier:@"supplementHome"];
@@ -40,17 +40,15 @@
     [_discoverCollectionView setDataSource:self];
     
     
-}
--(NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section{
-    return 5;
-}
--(NSInteger)numberOfSectionsInCollectionView:(UICollectionView *)collectionView{
-    return _nameSection.count;
+    
 }
 
+
 -(UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath{
+//    _name = [[[_model.arrayData objectAtIndex:indexPath.row] valueForKey:@"title"] stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceAndNewlineCharacterSet]];
+    
     _cell = [_discoverCollectionView dequeueReusableCellWithReuseIdentifier:@"homecell" forIndexPath: indexPath];
-    [_cell getDataForImageAndLabel:_imageName[indexPath.row] Title:_name[indexPath.row] Time:_name[indexPath.row] Description:_name[indexPath.row]];
+    [_cell getDataForImageAndLabel:_imageName[indexPath.row] Title:[[[_model.arrayData objectAtIndex:indexPath.row] valueForKey:@"title"] stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceAndNewlineCharacterSet]] Time:[[[_model.arrayData objectAtIndex:indexPath.row] valueForKey:@"pubDate"] stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceAndNewlineCharacterSet]] Description:[[[_model.arrayData objectAtIndex:indexPath.row] valueForKey:@"description"] stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceAndNewlineCharacterSet]]];
     
     return _cell;
 }
@@ -73,6 +71,13 @@
 -(UIEdgeInsets)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout *)collectionViewLayout insetForSectionAtIndex:(NSInteger)section{
     return UIEdgeInsetsMake(10, 10, 10, 10);
     
+}
+-(NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section{
+    NSLog(@"%ld view",(long)[_model numberData]);
+    return [_model.arrayData count];
+}
+-(NSInteger)numberOfSectionsInCollectionView:(UICollectionView *)collectionView{
+    return 5;
 }
 
 

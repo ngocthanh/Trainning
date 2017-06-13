@@ -16,25 +16,49 @@
 -(void)getConnection:(NSString*) nameRSS{
     NSString *baseURL = @"http://vnexpress.net/rss/";
     _url = [NSString stringWithFormat:@"%@%@",baseURL,nameRSS];
-    [[[NSURLSession sharedSession] dataTaskWithURL:[NSURL URLWithString:_url] completionHandler:^(NSData * _Nullable data, NSURLResponse * _Nullable response, NSError * _Nullable error) {
-        _parser = [[NSXMLParser alloc] initWithData:data];
 
-    }]resume];
+            NSXMLParser *parser = [[NSXMLParser alloc] initWithContentsOfURL:[[NSURL alloc] initWithString:_url]];
+            [parser setDelegate:self];
+            [parser parse];
+    NSLog(@"%@",_arrayData);
+    
+    //    [[[NSURLSession sharedSession] dataTaskWithURL:[NSURL URLWithString:_url] completionHandler:^(NSData * _Nullable data, NSURLResponse * _Nullable response, NSError * _Nullable error) {
+    //        if (data!= nil) {[
+//        }
+//        
+//    }]resume];
     
 }
 -(void)parser:(NSXMLParser *)parser didStartElement:(NSString *)elementName namespaceURI:(NSString *)namespaceURI qualifiedName:(NSString *)qName attributes:(NSDictionary<NSString *,NSString *> *)attributeDict{
-//    if ([elementName isEqualToString:@"rss"]) {
-//        marrXMLData = [[NSMutableArray alloc] init];
-//    }
-//    if ([elementName isEqualToString:@"item"]) {
-//        mdictXMLPart = [[NSMutableDictionary alloc] init];
-//    }
+    if ([elementName isEqualToString:@"rss"]) {
+        _arrayData = [[NSMutableArray alloc] init];
+    }
+    if ([elementName isEqualToString:@"item"]) {
+        _dictPart = [[NSMutableDictionary alloc] init];
+    }
     
 }
 -(void)parser:(NSXMLParser *)parser foundCharacters:(NSString *)string{
+    if (!_arrayString) {
+        _arrayString = [[NSMutableString alloc] initWithString:string];
+    }else {
+        [_arrayString appendString:string];
+    }
     
 }
 -(void)parser:(NSXMLParser *)parser didEndElement:(NSString *)elementName namespaceURI:(NSString *)namespaceURI qualifiedName:(NSString *)qName{
+    	if ([elementName isEqualToString:@"title"] || [elementName isEqualToString:@"pubDate" ]|| [elementName isEqualToString:@"description"] ) {
+            [_dictPart setObject:_arrayString forKey:elementName];
+        }
+        if ([elementName isEqualToString:@"item"]) {
+            [_arrayData addObject:_dictPart];
+            
+        }
+    _arrayString = nil;
     
 }
+//-(void)setData{
+//    [[[_arrayData objectAtIndex:] valueForKey:@"title"] stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceAndNewlineCharacterSet]]
+//}
+
 @end

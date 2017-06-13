@@ -20,7 +20,7 @@
     _img.layer.cornerRadius = 5;
     [_lblTitle setFont:[UIFont boldSystemFontOfSize:17]];
     self.layer.borderWidth = 1;
-    self.backgroundColor =[UIColor colorWithRed:0 green:0.65 blue:0.35 alpha:1];
+//    self.backgroundColor =[UIColor colorWithRed:0 green:0.65 blue:0.35 alpha:1];
     self.layer.borderColor = [UIColor colorWithRed:0.0 green:0.65 blue:0.35 alpha:1].CGColor;
 }
 -(void)getDataForImageAndLabel:(NSString*) image Title:(NSString*) title Time:(NSString*) time Description:(NSString*) description {

@@ -9,13 +9,17 @@
 #import <Foundation/Foundation.h>
 
 @interface ModelRequest : NSObject <NSXMLParserDelegate>
-@property (strong, nonatomic) NSMutableArray *arrayTitle;
-@property (strong, nonatomic) NSMutableArray *arrayImage;
+-(void)getConnection:(NSString*) nameRSS;
+@property (strong, nonatomic) NSMutableDictionary *dictPart;
+@property (strong, nonatomic) NSMutableArray *arrayData;
+@property (strong, nonatomic) NSMutableString *arrayString;
+@property (strong, nonatomic) NSData *nsdata;
 @property (strong, nonatomic) NSMutableArray *arrayTime;
 @property (strong, nonatomic) NSMutableArray *arrayDescription;
+@property (strong, nonatomic) NSMutableArray *arrayTitle;
+@property (strong, nonatomic) NSMutableArray *arrayLink;
 @property (strong, nonatomic) NSString *url;
+@property (nonatomic) NSInteger numberData;
 @property (strong, nonatomic) NSXMLParser *parser;
-
--(void)getConnection:(NSString*) nameRSS;
 
 @end
