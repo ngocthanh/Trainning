@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="12120" systemVersion="16F73" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12088"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="209" id="ndz-XJ-wgZ" customClass="CustomTableViewCell">
+            <rect key="frame" x="0.0" y="0.0" width="200" height="209"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="ndz-XJ-wgZ" id="9TD-i1-74g">
+                <rect key="frame" x="0.0" y="0.0" width="200" height="209"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Mushroom - 1UP.ico" translatesAutoresizingMaskIntoConstraints="NO" id="Kb4-bW-8Tz">
+                        <rect key="frame" x="16" y="16" width="130" height="100"/>
+                        <constraints>
+                            <constraint firstAttribute="width" constant="130" id="G8K-xQ-zoe"/>
+                            <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="130" id="LPu-Fm-E7X"/>
+                            <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="100" id="PcK-9i-rBc"/>
+                            <constraint firstAttribute="height" constant="100" id="rPW-8t-tnA"/>
+                        </constraints>
+                    </imageView>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="lblTitle" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="LXg-49-wVs">
+                        <rect key="frame" x="16" y="124" width="220" height="21"/>
+                        <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
+                        <nil key="textColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="lblDecription" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kGY-rs-lLs">
+                        <rect key="frame" x="16" y="153" width="220" height="20.5"/>
+                        <fontDescription key="fontDescription" name=".AppleSystemUIFont" family=".AppleSystemUIFont" pointSize="17"/>
+                        <nil key="textColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="lblDate" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qjF-zn-eUs">
+                        <rect key="frame" x="16" y="179" width="130" height="18"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                        <nil key="textColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                </subviews>
+                <constraints>
+                    <constraint firstItem="Kb4-bW-8Tz" firstAttribute="top" secondItem="9TD-i1-74g" secondAttribute="topMargin" constant="8" id="6xA-Mb-APl"/>
+                    <constraint firstItem="qjF-zn-eUs" firstAttribute="top" secondItem="kGY-rs-lLs" secondAttribute="bottom" constant="5" id="9f4-ZN-h2I"/>
+                    <constraint firstItem="qjF-zn-eUs" firstAttribute="width" secondItem="Kb4-bW-8Tz" secondAttribute="width" id="GCD-jg-LrF"/>
+                    <constraint firstAttribute="leadingMargin" secondItem="Kb4-bW-8Tz" secondAttribute="leading" id="Mdx-N2-cPO"/>
+                    <constraint firstItem="kGY-rs-lLs" firstAttribute="leading" secondItem="9TD-i1-74g" secondAttribute="leadingMargin" constant="8" id="PtS-m5-8k9"/>
+                    <constraint firstItem="LXg-49-wVs" firstAttribute="top" secondItem="Kb4-bW-8Tz" secondAttribute="bottom" constant="8" id="S8h-g7-eXW"/>
+                    <constraint firstItem="LXg-49-wVs" firstAttribute="leading" secondItem="9TD-i1-74g" secondAttribute="leadingMargin" constant="8" id="cj0-Fs-Qbp"/>
+                    <constraint firstItem="kGY-rs-lLs" firstAttribute="width" secondItem="LXg-49-wVs" secondAttribute="width" id="dIU-6Y-oHq"/>
+                    <constraint firstItem="kGY-rs-lLs" firstAttribute="top" secondItem="LXg-49-wVs" secondAttribute="bottom" constant="8" id="lsm-7c-oGq"/>
+                    <constraint firstItem="LXg-49-wVs" firstAttribute="width" secondItem="Kb4-bW-8Tz" secondAttribute="width" constant="90" id="lyf-mU-E3a"/>
+                    <constraint firstItem="Kb4-bW-8Tz" firstAttribute="leading" secondItem="9TD-i1-74g" secondAttribute="leadingMargin" constant="8" id="v6p-Vt-rXx"/>
+                </constraints>
+            </tableViewCellContentView>
+            <connections>
+                <outlet property="dateCell" destination="qjF-zn-eUs" id="WHN-Ly-d3e"/>
+                <outlet property="decriptionCell" destination="kGY-rs-lLs" id="zLY-c6-31B"/>
+                <outlet property="imageCell" destination="Kb4-bW-8Tz" id="6A6-W6-gWK"/>
+                <outlet property="titleCell" destination="LXg-49-wVs" id="9FP-HR-snr"/>
+            </connections>
+            <point key="canvasLocation" x="-26" y="104.5"/>
+        </tableViewCell>
+    </objects>
+    <resources>
+        <image name="Mushroom - 1UP.ico" width="256" height="256"/>
+    </resources>
+</document>
