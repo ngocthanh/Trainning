@@ -13,7 +13,6 @@
     NSXMLParser *xmlparser = [[NSXMLParser alloc] initWithContentsOfURL:[NSURL URLWithString:urlLink]];
     [xmlparser setDelegate:self];
     [xmlparser parse];
-    
 }
 - (void)parser:(NSXMLParser *)parser didStartElement:(NSString *)elementName namespaceURI:(NSString *)namespaceURI qualifiedName:(NSString *)qName attributes:(NSDictionary *)attributeDict;
 {
@@ -38,6 +37,6 @@
     if([elementName isEqualToString:@"item"]){
         [_arrayXMLData addObject:_mdictXMLPart];
     }
-    _mstrXMLString= nil;
+    _mstrXMLString = nil;
 }
 @end

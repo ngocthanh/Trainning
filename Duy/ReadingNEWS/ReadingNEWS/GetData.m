@@ -14,15 +14,13 @@
 -(void)connectWithLink :(NSString *)urlLink {
     [[[NSURLSession sharedSession] dataTaskWithURL:[NSURL URLWithString:urlLink] completionHandler:^(NSData *data, NSURLResponse *response, NSError *error) {
         
-        NSString *dataAsString = [[NSString alloc] initWithData:data encoding:NSUTF8StringEncoding];
-        NSLog(@"%@",dataAsString);
-        
-//        NSMutableDictionary *dictionaryOfContentWeb=[NSJSONSerialization JSONObjectWithData:data options:NSJSONReadingMutableLeaves error:nil];
-//        NSLog(@"%@",dictionaryOfContentWeb);
-
-//        NSLog(@"response %@",response);
-//        NSLog(@"data %@",data);
+        //NSString *dataAsString = [[NSString alloc] initWithData:data encoding:NSUTF8StringEncoding];
     }]resume];
+}
+-(id)dataImageFromUrl : (NSString *)Url{
+    NSURL *url = [NSURL URLWithString:Url];
+    NSData *data = [NSData dataWithContentsOfURL:url];
+    return data;
 }
 
 @end

@@ -48,12 +48,33 @@
     return numberAsMonth;
 }
 -(id)getImageLinkInString:(NSString *)descriptionString{
-    NSString *imageLink;
-//    NSRegularExpression *regex = [NSRegularExpression regularExpressionWithPattern:@"&*;" options:NSRegularExpressionCaseInsensitive error:nil];
+    NSString *imageLink=@"";
     
-    
+    NSError *error = nil;
+    NSString *pattern = @"src=\"([^\"]+)";
+    NSRange range = NSMakeRange(0, descriptionString.length);
+    NSRegularExpression *regex = [NSRegularExpression regularExpressionWithPattern:pattern options:0 error:&error];
+    NSArray *matches = [regex matchesInString:descriptionString options:0 range:range];
+    for (NSTextCheckingResult* match in matches) {
+        NSRange group1 = [match rangeAtIndex:1];
+        imageLink=[NSString stringWithFormat:@"%@", [descriptionString substringWithRange:group1]];
+    }
     return imageLink;
-   
+    
 }
+-(id)getDescriptionInString: (NSString*)descriptionString{
+    NSString *description=@"";
+    NSError *error = nil;
+    NSString *pattern = @"</br>([^.]+)";
+    NSRange range = NSMakeRange(0, descriptionString.length);
+    NSRegularExpression *regex = [NSRegularExpression regularExpressionWithPattern:pattern options:0 error:&error];
+    NSArray *matches = [regex matchesInString:descriptionString options:0 range:range];
+    for (NSTextCheckingResult* match in matches) {
+        NSRange group1 = [match rangeAtIndex:1];
+        description=[NSString stringWithFormat:@"%@", [descriptionString substringWithRange:group1]];
+    }
+    return description;
+}
+
 
 @end

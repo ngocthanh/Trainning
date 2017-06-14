@@ -18,6 +18,7 @@
 @property (strong, nonatomic) parserData *parse;
 @property (strong,nonatomic) GetData *getdata;
 @property (strong,nonatomic) CustomString *custom;
+
 @end
 
 @implementation CustomCellTableViewController
@@ -25,14 +26,18 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     self.title=@"VN Express";
+    
+    //Create customTableViewCell
     _cell = [CustomTableViewCell alloc];
     [self.tableViewNews registerNib:[UINib nibWithNibName:@"CustomTableViewCell" bundle:nil] forCellReuseIdentifier:@"cellhome"];
-    _parse =[parserData alloc];
-    [_parse startParsing:@"http://vnexpress.net/rss/tin-moi-nhat.rss"];
     
+    //create ơarserData by Link;
+    _parse =[parserData alloc];
+    
+    //[_parse startParsing:@"http://vnexpress.net/rss/tin-moi-nhat.rss"];
+
     _custom=[CustomString alloc];
-//    _getdata =[GetData alloc];
-//    [_getdata connectWithLink:@"http://vnexpress.net/rss/thoi-su.rss"];
+    _getdata =[GetData alloc];
     
 }
 
@@ -45,11 +50,32 @@
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
 
-    return 1;
+    return 5;
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-
+    NSString *url;
+    switch (section) {
+        case 0:
+            url=@"http://vnexpress.net/rss/tin-moi-nhat.rss";
+            break;
+        case 1:
+            url=@"http://vnexpress.net/rss/thoi-su.rss";
+            break;
+        case 2:
+            url=@"http://vnexpress.net/rss/the-gioi.rss";
+            break;
+        case 3:
+            url=@"http://vnexpress.net/rss/kinh-doanh.rss";
+            break;
+        case 4:
+            url=@"http://vnexpress.net/rss/giai-tri.rss";
+            break;
+        default:
+            //[_parse startParsing:@"http://vnexpress.net/rss/tin-moi-nhat.rss"];
+            break;
+    }
+    [_parse startParsing:url];
     return [_parse.arrayXMLData count];
 }
 
@@ -57,31 +83,84 @@
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     
     _cell = [tableView dequeueReusableCellWithIdentifier:@"cellhome" forIndexPath:indexPath];
+    //Load information to Cell
+    NSString *url;
+    switch (indexPath.section) {
+        case 0:
+            url=@"http://vnexpress.net/rss/tin-moi-nhat.rss";
+            break;
+        case 1:
+            url=@"http://vnexpress.net/rss/thoi-su.rss";
+            break;
+        case 2:
+            url=@"http://vnexpress.net/rss/the-gioi.rss";
+            break;
+        case 3:
+            url=@"http://vnexpress.net/rss/kinh-doanh.rss";
+            break;
+        case 4:
+            url=@"http://vnexpress.net/rss/giai-tri.rss";
+            break;
+        default:
+            break;
+    }
+    [_parse startParsing:url];
     
 
     
+    //Get data
     NSString *subdate=[NSString stringWithFormat:@"%@",[[[_parse.arrayXMLData objectAtIndex:indexPath.row] valueForKey:@"pubDate"] stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceAndNewlineCharacterSet]]];
-    subdate=[_custom customDate:subdate];
     NSString *descriptionString=[[[_parse.arrayXMLData objectAtIndex:indexPath.row] valueForKey:@"description"] stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceAndNewlineCharacterSet]];
-//    NSString *imageString=[_custom getImageLinkInString:descriptionString];
-//    NSLog(@"%@",imageString);
-    _cell.titleCell.text=[[[_parse.arrayXMLData objectAtIndex:indexPath.row] valueForKey:@"title"] stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceAndNewlineCharacterSet]];
-    _cell.dateCell.text= [NSString stringWithFormat:@"%@",subdate];
-    _cell.decriptionCell.text=descriptionString;
+    NSString *imageString=[_custom getImageLinkInString:descriptionString];
+    NSData *imageData=[_getdata dataImageFromUrl:imageString];
+    
+    subdate=[_custom customDate:subdate];
+
+    if (indexPath.row %2==1) {
+        _cell.imageCell.image=[UIImage imageWithData:imageData];
+        _cell.titleCell.text=[[[_parse.arrayXMLData objectAtIndex:indexPath.row] valueForKey:@"title"] stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceAndNewlineCharacterSet]];
+        _cell.dateCell.text= [NSString stringWithFormat:@"%@",subdate];
+        _cell.decriptionCell.text=[_custom getDescriptionInString:descriptionString];
+    }
+    else{
+        _cell.imageCell1.image=[UIImage imageWithData:imageData];
+        _cell.titleCell1.text=[[[_parse.arrayXMLData objectAtIndex:indexPath.row] valueForKey:@"title"] stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceAndNewlineCharacterSet]];
+        _cell.dateCell1.text= [NSString stringWithFormat:@"%@",subdate];
+        _cell.decriptionCell1.text=[_custom getDescriptionInString:descriptionString];
+        }
     
     return _cell;
 }
 - (NSString *)tableView:(UITableView *)tableView titleForHeaderInSection:(NSInteger)section{
-    return [NSString stringWithFormat:@"Trang chủ"];
+    switch (section) {
+        case 0:
+            return @"Trang chủ";
+            break;
+        case 1:
+            return @"Thời sự";
+            break;
+        case 2:
+            return @"Thế giới";
+            break;
+        case 3:
+            return @"Kinh doanh";
+            break;
+        case 4:
+            return @"Giải trí";
+            break;
+        default:return @"";
+            break;
+    }
     
 }
 -(CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath{
-        return 210.0f;
+        return 250;
 }
 
 -(void)viewDidAppear:(BOOL)animated{
     
 }
+
 
 /*
 // Override to support conditional editing of the table view.

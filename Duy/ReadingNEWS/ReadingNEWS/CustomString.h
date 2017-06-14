@@ -11,4 +11,5 @@
 @interface CustomString : NSObject
 -(id)customDate : (NSString *)normalDate;
 -(id)getImageLinkInString : (NSString *)descriptionString;
+-(id)getDescriptionInString: (NSString*)descriptionString;
 @end

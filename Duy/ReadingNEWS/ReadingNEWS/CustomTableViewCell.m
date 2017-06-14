@@ -32,8 +32,6 @@
     _titleCell.text= title;
     _decriptionCell.text=decription;
     _dateCell.text=date;
-    
-    
 }
 
 
