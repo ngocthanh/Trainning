@@ -13,7 +13,6 @@
 @property (strong, nonatomic) NSMutableDictionary *dictPart;
 @property (strong, nonatomic) NSMutableArray *arrayData;
 @property (strong, nonatomic) NSMutableString *arrayString;
-@property (strong, nonatomic) NSData *nsdata;
 @property (strong, nonatomic) NSMutableArray *arrayTime;
 @property (strong, nonatomic) NSMutableArray *arrayDescription;
 @property (strong, nonatomic) NSMutableArray *arrayTitle;
@@ -21,5 +20,5 @@
 @property (strong, nonatomic) NSString *url;
 @property (nonatomic) NSInteger numberData;
 @property (strong, nonatomic) NSXMLParser *parser;
-
+-(void)setArrayDataForCollectionView:(NSInteger) number;
 @end

@@ -16,5 +16,6 @@
 }
 -(void)getDataForTitleSection:(NSString*) title{
     _lblTitle.text = title;
+    _lblTitle.textColor = [UIColor whiteColor];
 }
 @end

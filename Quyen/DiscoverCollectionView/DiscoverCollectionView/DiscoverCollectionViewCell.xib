@@ -6,6 +6,7 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12089"/>
+        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
         <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -19,8 +20,11 @@
                 <rect key="frame" x="0.0" y="0.0" width="355" height="260"/>
                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                 <subviews>
-                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="htt-wi-vYO">
-                        <rect key="frame" x="5" y="5" width="345" height="130"/>
+                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="cat" translatesAutoresizingMaskIntoConstraints="NO" id="htt-wi-vYO">
+                        <rect key="frame" x="93" y="5" width="169" height="130"/>
+                        <constraints>
+                            <constraint firstAttribute="width" secondItem="htt-wi-vYO" secondAttribute="height" multiplier="1.3/1" id="JfG-jx-6j1"/>
+                        </constraints>
                     </imageView>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Description" textAlignment="natural" lineBreakMode="wordWrap" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="U0Y-tK-yTB">
                         <rect key="frame" x="18.5" y="175.5" width="319.5" height="52"/>
@@ -42,16 +46,13 @@
                     </label>
                 </subviews>
             </view>
-            <color key="backgroundColor" red="0.75873641692351135" green="0.98646111313882923" blue="1" alpha="0.45178724320000002" colorSpace="custom" customColorSpace="sRGB"/>
             <constraints>
                 <constraint firstItem="95C-0P-gyP" firstAttribute="centerX" secondItem="gTV-IL-0wX" secondAttribute="centerX" id="8XP-sc-KG6"/>
                 <constraint firstAttribute="bottom" secondItem="Kh1-f5-SIs" secondAttribute="bottom" constant="5" id="AdF-l8-Un6"/>
                 <constraint firstItem="95C-0P-gyP" firstAttribute="width" secondItem="gTV-IL-0wX" secondAttribute="width" multiplier="0.9" id="HqH-b8-4LN"/>
-                <constraint firstItem="htt-wi-vYO" firstAttribute="height" secondItem="gTV-IL-0wX" secondAttribute="height" multiplier="2.5/5" id="QPB-gp-7wj"/>
                 <constraint firstItem="htt-wi-vYO" firstAttribute="centerX" secondItem="gTV-IL-0wX" secondAttribute="centerX" id="SnJ-8T-hGZ"/>
-                <constraint firstAttribute="trailing" secondItem="htt-wi-vYO" secondAttribute="trailing" constant="5" id="a6A-to-zEU"/>
+                <constraint firstItem="htt-wi-vYO" firstAttribute="height" secondItem="gTV-IL-0wX" secondAttribute="height" multiplier="1/2" id="XOS-fH-Ap4"/>
                 <constraint firstItem="U0Y-tK-yTB" firstAttribute="centerX" secondItem="95C-0P-gyP" secondAttribute="centerX" id="edA-hD-R1j"/>
-                <constraint firstItem="htt-wi-vYO" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" constant="5" id="fKf-Qd-SCm"/>
                 <constraint firstItem="95C-0P-gyP" firstAttribute="top" secondItem="htt-wi-vYO" secondAttribute="bottom" constant="10" id="gXt-Td-ba9"/>
                 <constraint firstItem="htt-wi-vYO" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" constant="5" id="hAP-lU-eFh"/>
                 <constraint firstItem="U0Y-tK-yTB" firstAttribute="height" secondItem="gTV-IL-0wX" secondAttribute="height" multiplier="0.2" id="hhs-q6-xyF"/>
@@ -66,7 +67,10 @@
                 <outlet property="lblTime" destination="Kh1-f5-SIs" id="8Se-Tp-VPB"/>
                 <outlet property="lblTitle" destination="95C-0P-gyP" id="1A1-8x-Mf9"/>
             </connections>
-            <point key="canvasLocation" x="74" y="-451"/>
+            <point key="canvasLocation" x="-18" y="-571"/>
         </collectionViewCell>
     </objects>
+    <resources>
+        <image name="cat" width="559" height="600"/>
+    </resources>
 </document>

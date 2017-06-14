@@ -9,10 +9,7 @@
 #import "ModelRequest.h"
 
 @implementation ModelRequest 
-//http://vnexpress.net/rss/oto-xe-may.rss
-//http://vnexpress.net/rss/giao-duc.rss
-//http://vnexpress.net/rss/so-hoa.rss
-//http://vnexpress.net/rss/the-thao.rss
+
 -(void)getConnection:(NSString*) nameRSS{
     NSString *baseURL = @"http://vnexpress.net/rss/";
     _url = [NSString stringWithFormat:@"%@%@",baseURL,nameRSS];
@@ -21,7 +18,11 @@
             [parser setDelegate:self];
             [parser parse];
     NSLog(@"%@",_arrayData);
-    
+
+    _arrayTitle = [[NSMutableArray alloc] init];
+    _arrayTime = [[NSMutableArray alloc] init];
+    _arrayDescription = [[NSMutableArray alloc] init];
+    _arrayLink = [[NSMutableArray alloc] init];
     //    [[[NSURLSession sharedSession] dataTaskWithURL:[NSURL URLWithString:_url] completionHandler:^(NSData * _Nullable data, NSURLResponse * _Nullable response, NSError * _Nullable error) {
     //        if (data!= nil) {[
 //        }
@@ -57,8 +58,60 @@
     _arrayString = nil;
     
 }
-//-(void)setData{
-//    [[[_arrayData objectAtIndex:] valueForKey:@"title"] stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceAndNewlineCharacterSet]]
-//}
 
+-(void)setArrayDataForCollectionView:(NSInteger) number{
+    NSString *string;
+    NSString *result;
+    
+    
+    
+    
+    string = [[[_arrayData objectAtIndex:number] valueForKey:@"title"] stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceAndNewlineCharacterSet]] ;
+    [_arrayTitle addObject:string];
+    string = [[[_arrayData objectAtIndex:number] valueForKey:@"pubDate"] stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceAndNewlineCharacterSet]] ;
+    result = [self formatDateDDMMYYY:string];
+    if (result.length>0) {
+        [_arrayTime addObject:result];
+    }
+    
+    
+    string = [[[_arrayData objectAtIndex:number] valueForKey:@"description"] stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceAndNewlineCharacterSet]] ;
+    result = [self strimString:string Pattern:@"src=\"([^\"]+)"];
+    if (result.length>0) {
+        [_arrayLink addObject:result];
+    }
+    result = [self strimString:string Pattern:@"</br>([^.]+)"];
+    
+    
+    if (result.length>0) {
+        [_arrayDescription addObject:result];
+        
+    }
+    
+}
+-(NSString*)strimString:(NSString*) stringNeedToStrim Pattern:(NSString*) patternString {
+    NSError *error = nil;
+    NSString *pattern = patternString;
+
+    NSRange range = NSMakeRange(0, stringNeedToStrim.length);
+    NSRegularExpression *regex = [NSRegularExpression regularExpressionWithPattern:pattern options:0 error:&error];
+    NSArray *matches = [regex matchesInString:stringNeedToStrim options:0 range:range];
+    
+    for (NSTextCheckingResult* match in matches) {
+        NSRange group1 = [match rangeAtIndex:1];
+        NSLog(@"group1: %@", [stringNeedToStrim substringWithRange:group1]);
+        return [stringNeedToStrim substringWithRange:group1];
+    }
+    return nil;
+}
+-(NSString*)formatDateDDMMYYY:(NSString*) stringDate{
+    NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
+    dateFormatter.dateFormat =@"EE, d LLLL yyyy HH:mm:ss Z";
+    NSDate *date = [dateFormatter dateFromString:stringDate];
+    dateFormatter.dateFormat = @"dd/MM/yyyy HH:mm";
+    NSString *dateString = [dateFormatter stringFromDate:date];
+    return dateString;
+}
 @end
+
+
