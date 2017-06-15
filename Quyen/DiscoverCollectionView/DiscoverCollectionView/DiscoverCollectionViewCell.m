@@ -17,7 +17,7 @@
 }
 - (void)setStyle{
     
-    [_lblTitle setFont:[UIFont boldSystemFontOfSize:17]];
+    [_lblTitle setFont:[UIFont boldSystemFontOfSize:11]];
     _lblTitle.textColor = [UIColor colorWithRed:0.6 green:0.01 blue:0.3 alpha:1];
     _lblTime.textColor = [UIColor colorWithRed:0.6 green:0.01 blue:0.3 alpha:1];
     _lblDescription.textColor =[UIColor colorWithRed:0.6 green:0.01 blue:0.3 alpha:1];

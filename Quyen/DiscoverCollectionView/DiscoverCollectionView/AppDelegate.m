@@ -21,7 +21,7 @@
     // Override point for customization after application launch.
     //self.window.frame = [[UIWindow alloc] setFrame:[[UIScreen mainScreen] bounds]];
     self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
-    
+    NSLog(@"%@",[[UIScreen mainScreen] bounds]);
     [self.window makeKeyAndVisible];
     
     _homeViewController = [[HomeViewController alloc] init];

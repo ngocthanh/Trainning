@@ -11,6 +11,7 @@
 		5493EA6D1EE7D69700F703BB /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 5493EA6C1EE7D69700F703BB /* AppDelegate.m */; };
 		5493EA751EE7D69700F703BB /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5493EA741EE7D69700F703BB /* Assets.xcassets */; };
 		5493EA831EE7D69700F703BB /* DiscoverCollectionViewTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 5493EA821EE7D69700F703BB /* DiscoverCollectionViewTests.m */; };
+		549AF23C1EF221EC00802338 /* Launch Screen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 549AF23B1EF221EC00802338 /* Launch Screen.storyboard */; };
 		54B5C2EF1EEE08F3000E907E /* HomeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 54B5C2ED1EEE08F3000E907E /* HomeViewController.m */; };
 		54B5C2F01EEE08F3000E907E /* HomeViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 54B5C2EE1EEE08F3000E907E /* HomeViewController.xib */; };
 		54B5C2F41EEE325D000E907E /* CollectionReusableView.m in Sources */ = {isa = PBXBuildFile; fileRef = 54B5C2F21EEE325D000E907E /* CollectionReusableView.m */; };
@@ -41,6 +42,7 @@
 		5493EA7E1EE7D69700F703BB /* DiscoverCollectionViewTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = DiscoverCollectionViewTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		5493EA821EE7D69700F703BB /* DiscoverCollectionViewTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DiscoverCollectionViewTests.m; sourceTree = "<group>"; };
 		5493EA841EE7D69700F703BB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		549AF23B1EF221EC00802338 /* Launch Screen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = "Launch Screen.storyboard"; sourceTree = "<group>"; };
 		54B5C2EC1EEE08F3000E907E /* HomeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HomeViewController.h; sourceTree = "<group>"; };
 		54B5C2ED1EEE08F3000E907E /* HomeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HomeViewController.m; sourceTree = "<group>"; };
 		54B5C2EE1EEE08F3000E907E /* HomeViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = HomeViewController.xib; sourceTree = "<group>"; };
@@ -104,6 +106,7 @@
 				5493EA741EE7D69700F703BB /* Assets.xcassets */,
 				5493EA791EE7D69700F703BB /* Info.plist */,
 				5493EA681EE7D69700F703BB /* Supporting Files */,
+				549AF23B1EF221EC00802338 /* Launch Screen.storyboard */,
 			);
 			path = DiscoverCollectionView;
 			sourceTree = "<group>";
@@ -251,6 +254,7 @@
 				54B5C2F51EEE325D000E907E /* CollectionReusableView.xib in Resources */,
 				54CE685A1EE91CD800364D13 /* DiscoverCollectionViewCell.xib in Resources */,
 				54B5C2F01EEE08F3000E907E /* HomeViewController.xib in Resources */,
+				549AF23C1EF221EC00802338 /* Launch Screen.storyboard in Resources */,
 				5493EA751EE7D69700F703BB /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

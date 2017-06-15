@@ -18,6 +18,8 @@
 @property (strong, nonatomic) UICollectionViewFlowLayout *flow;
 @property (strong, nonatomic) NSArray *nameSection;
 @property (strong, nonatomic) ModelRequest *model;
+@property (strong, nonatomic) NSMutableArray *allArray;
+
 @end
 
 @implementation HomeViewController
@@ -34,7 +36,13 @@
     [_discoverCollectionView registerNib:[UINib nibWithNibName:@"CollectionReusableView" bundle:[NSBundle mainBundle]] forSupplementaryViewOfKind:UICollectionElementKindSectionHeader withReuseIdentifier:@"supplementHome"];
     
     _model = [ModelRequest alloc];
-    [_model getConnection:@"tin-moi-nhat.rss"];
+    _allArray = [[NSMutableArray alloc] init];
+    [_discoverCollectionView layoutIfNeeded];
+    [_allArray addObject:[_model getConnection:@"tin-moi-nhat.rss"]];
+    [_allArray addObject:[_model getConnection:@"so-hoa.rss"]];
+    [_allArray addObject:[_model getConnection:@"the-thao.rss"]];
+    [_allArray addObject:[_model getConnection:@"giao-duc.rss"]];
+    [_allArray addObject:[_model getConnection:@"oto-xe-may.rss"]];
     _cell = [DiscoverCollectionViewCell alloc];
     [_discoverCollectionView setDelegate:self];
     [_discoverCollectionView setDataSource:self];
@@ -46,36 +54,37 @@
     return [_model.arrayData count];
 }
 -(NSInteger)numberOfSectionsInCollectionView:(UICollectionView *)collectionView{
+    
+
     return [self.nameSection count];
 }
 
 -(UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath{
 
     _cell = [_discoverCollectionView dequeueReusableCellWithReuseIdentifier:@"homecell" forIndexPath: indexPath];
-    [_model setArrayDataForCollectionView:indexPath.row];
+    //[_model setArrayDataForCollectionView:indexPath.row];
+    
 
-    [_cell getDataForImageAndTitle:[_model.arrayTitle objectAtIndex:indexPath.row]
-                              Time:[_model.arrayTime objectAtIndex:indexPath.row]
-                       Description:[_model.arrayDescription objectAtIndex:indexPath.row]
-                      LinkURLImage:[_model.arrayLink objectAtIndex:indexPath.row]
+
+    ;
+    NSLog(@"%ld",(long)indexPath.row)  ;
+    [_cell getDataForImageAndTitle:[[[_allArray objectAtIndex:indexPath.section] objectAtIndex:0]objectAtIndex:indexPath.row]
+                              Time:[[[_allArray objectAtIndex:indexPath.section] objectAtIndex:1]objectAtIndex:indexPath.row]
+                       Description:[[[_allArray objectAtIndex:indexPath.section] objectAtIndex:2]objectAtIndex:indexPath.row]
+                      LinkURLImage:[[[_allArray objectAtIndex:indexPath.section] objectAtIndex:3]objectAtIndex:indexPath.row]
      ];
    
     return _cell;
 }
 
--(void)collectionView:(UICollectionView *)collectionView didEndDisplayingCell:(UICollectionViewCell *)cell forItemAtIndexPath:(NSIndexPath *)indexPath{
-    [_model setArrayDataForCollectionView:indexPath.row];
-    [_cell getDataForImageAndTitle:[_model.arrayTitle objectAtIndex:indexPath.row]
-                              Time:[_model.arrayTime objectAtIndex:indexPath.row]
-                       Description:[_model.arrayDescription objectAtIndex:indexPath.row]
-                      LinkURLImage:[_model.arrayLink objectAtIndex:indexPath.row]];
-}
 -(UICollectionReusableView *)collectionView:(UICollectionView *)collectionView viewForSupplementaryElementOfKind:(NSString *)kind atIndexPath:(NSIndexPath *)indexPath{
     UICollectionReusableView *reusableview;
     CollectionReusableView *collectionSection = [_discoverCollectionView dequeueReusableSupplementaryViewOfKind:UICollectionElementKindSectionHeader withReuseIdentifier:@"supplementHome" forIndexPath:indexPath];
     [collectionSection getDataForTitleSection:_nameSection[indexPath.section]];
+    
     reusableview = collectionSection;
-    return reusableview;
+        return reusableview;
+    
 }
 
 - (CGSize)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout *)collectionViewLayout sizeForItemAtIndexPath:(NSIndexPath *)indexPath{

@@ -9,7 +9,7 @@
 #import <Foundation/Foundation.h>
 
 @interface ModelRequest : NSObject <NSXMLParserDelegate>
--(void)getConnection:(NSString*) nameRSS;
+-(NSArray*)getConnection:(NSString*) nameRSS;
 @property (strong, nonatomic) NSMutableDictionary *dictPart;
 @property (strong, nonatomic) NSMutableArray *arrayData;
 @property (strong, nonatomic) NSMutableString *arrayString;
