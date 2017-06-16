@@ -18,7 +18,7 @@
 @property (strong, nonatomic) parserData *parse;
 @property (strong,nonatomic) GetData *getdata;
 @property (strong,nonatomic) CustomString *custom;
-
+@property (strong,nonatomic) NSMutableArray *allNewOnDisplay;
 @end
 
 @implementation CustomCellTableViewController
@@ -33,11 +33,16 @@
     
     //create ơarserData by Link;
     _parse =[parserData alloc];
-    
-    //[_parse startParsing:@"http://vnexpress.net/rss/tin-moi-nhat.rss"];
-
     _custom=[CustomString alloc];
     _getdata =[GetData alloc];
+    _allNewOnDisplay = [[NSMutableArray alloc] init];
+
+    [_allNewOnDisplay addObject:[_parse startParsing:@"http://vnexpress.net/rss/tin-moi-nhat.rss"]];
+    [_allNewOnDisplay addObject:[_parse startParsing:@"http://vnexpress.net/rss/thoi-su.rss"]];
+    [_allNewOnDisplay addObject:[_parse startParsing:@"http://vnexpress.net/rss/the-gioi.rss"]];
+    [_allNewOnDisplay addObject:[_parse startParsing:@"http://vnexpress.net/rss/kinh-doanh.rss"]];
+    [_allNewOnDisplay addObject:[_parse startParsing:@"http://vnexpress.net/rss/giai-tri.rss"]];
+    
     
 }
 
@@ -54,29 +59,16 @@
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-    NSString *url;
-    switch (section) {
-        case 0:
-            url=@"http://vnexpress.net/rss/tin-moi-nhat.rss";
-            break;
-        case 1:
-            url=@"http://vnexpress.net/rss/thoi-su.rss";
-            break;
-        case 2:
-            url=@"http://vnexpress.net/rss/the-gioi.rss";
-            break;
-        case 3:
-            url=@"http://vnexpress.net/rss/kinh-doanh.rss";
-            break;
-        case 4:
-            url=@"http://vnexpress.net/rss/giai-tri.rss";
-            break;
-        default:
-            //[_parse startParsing:@"http://vnexpress.net/rss/tin-moi-nhat.rss"];
-            break;
+    
+    NSInteger numberOfItem;
+    
+    numberOfItem=[[[_allNewOnDisplay objectAtIndex:section] objectAtIndex:0]count];
+    NSInteger numberOfCell=numberOfItem/2;
+    if (numberOfCell*2<numberOfItem) {
+        return numberOfCell+1;
     }
-    [_parse startParsing:url];
-    return [_parse.arrayXMLData count];
+    else
+        return numberOfCell;
 }
 
 
@@ -84,51 +76,38 @@
     
     _cell = [tableView dequeueReusableCellWithIdentifier:@"cellhome" forIndexPath:indexPath];
     //Load information to Cell
-    NSString *url;
-    switch (indexPath.section) {
-        case 0:
-            url=@"http://vnexpress.net/rss/tin-moi-nhat.rss";
-            break;
-        case 1:
-            url=@"http://vnexpress.net/rss/thoi-su.rss";
-            break;
-        case 2:
-            url=@"http://vnexpress.net/rss/the-gioi.rss";
-            break;
-        case 3:
-            url=@"http://vnexpress.net/rss/kinh-doanh.rss";
-            break;
-        case 4:
-            url=@"http://vnexpress.net/rss/giai-tri.rss";
-            break;
-        default:
-            break;
+    NSUInteger sophantu=[[[_allNewOnDisplay objectAtIndex:indexPath.section] objectAtIndex:0] count];
+    if((indexPath.row*2) < sophantu){
+    [_cell loadIntentForLeftCell:
+     [[[_allNewOnDisplay objectAtIndex:indexPath.section] objectAtIndex:0] objectAtIndex:indexPath.row*2]
+                     description:
+     [[[_allNewOnDisplay objectAtIndex:indexPath.section] objectAtIndex:1] objectAtIndex:indexPath.row*2]
+                            link:
+     [[[_allNewOnDisplay objectAtIndex:indexPath.section] objectAtIndex:2] objectAtIndex:indexPath.row*2]
+                            date:
+     [[[_allNewOnDisplay objectAtIndex:indexPath.section] objectAtIndex:3] objectAtIndex:indexPath.row*2]];
     }
-    [_parse startParsing:url];
     
-
     
-    //Get data
-    NSString *subdate=[NSString stringWithFormat:@"%@",[[[_parse.arrayXMLData objectAtIndex:indexPath.row] valueForKey:@"pubDate"] stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceAndNewlineCharacterSet]]];
-    NSString *descriptionString=[[[_parse.arrayXMLData objectAtIndex:indexPath.row] valueForKey:@"description"] stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceAndNewlineCharacterSet]];
-    NSString *imageString=[_custom getImageLinkInString:descriptionString];
-    NSData *imageData=[_getdata dataImageFromUrl:imageString];
-    
-    subdate=[_custom customDate:subdate];
-
-    if (indexPath.row %2==1) {
-        _cell.imageCell.image=[UIImage imageWithData:imageData];
-        _cell.titleCell.text=[[[_parse.arrayXMLData objectAtIndex:indexPath.row] valueForKey:@"title"] stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceAndNewlineCharacterSet]];
-        _cell.dateCell.text= [NSString stringWithFormat:@"%@",subdate];
-        _cell.decriptionCell.text=[_custom getDescriptionInString:descriptionString];
+    if ((indexPath.row*2+1) < sophantu) {
+            
+    [_cell loadIntentForRightCell:
+     [[[_allNewOnDisplay objectAtIndex:indexPath.section] objectAtIndex:0] objectAtIndex:indexPath.row*2+1]
+                      description:
+     [[[_allNewOnDisplay objectAtIndex:indexPath.section] objectAtIndex:1] objectAtIndex:indexPath.row*2+1]
+                             link:
+     [[[_allNewOnDisplay objectAtIndex:indexPath.section] objectAtIndex:2] objectAtIndex:indexPath.row*2+1]
+                             date:
+     [[[_allNewOnDisplay objectAtIndex:indexPath.section] objectAtIndex:3] objectAtIndex:indexPath.row*2+1]];
     }
-    else{
-        _cell.imageCell1.image=[UIImage imageWithData:imageData];
-        _cell.titleCell1.text=[[[_parse.arrayXMLData objectAtIndex:indexPath.row] valueForKey:@"title"] stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceAndNewlineCharacterSet]];
-        _cell.dateCell1.text= [NSString stringWithFormat:@"%@",subdate];
-        _cell.decriptionCell1.text=[_custom getDescriptionInString:descriptionString];
-        }
-    
+    else
+    {
+        _cell.titleCell.text=@"";
+        _cell.dateCell.text=@"";
+        _cell.decriptionCell.text=@"";
+        _cell.imageCell.image=nil;
+    }
+   
     return _cell;
 }
 - (NSString *)tableView:(UITableView *)tableView titleForHeaderInSection:(NSInteger)section{

@@ -13,4 +13,5 @@
 
 -(void)connectWithLink:(NSString *)urlLink;
 -(id)dataImageFromUrl : (NSString *)Url;
+
 @end

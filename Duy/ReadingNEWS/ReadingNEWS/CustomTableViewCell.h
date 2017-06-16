@@ -18,6 +18,6 @@
 @property (weak, nonatomic) IBOutlet UILabel *decriptionCell1;
 @property (weak, nonatomic) IBOutlet UILabel *dateCell1;
 
--(void)loadIntentForCell :(NSString *)title decription:(NSString *)decription date:(NSString *)date;
-
+-(void)loadIntentForLeftCell :(NSString *)title description:(NSString *)decription link:(NSString *)linkImage date:(NSString *)date ;
+-(void)loadIntentForRightCell :(NSString *)title description:(NSString *)decription link:(NSString *)linkImage date:(NSString *)date;
 @end

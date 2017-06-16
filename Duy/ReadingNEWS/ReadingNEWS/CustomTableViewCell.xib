@@ -24,19 +24,19 @@
                         <rect key="frame" x="385" y="-0.5" width="385" height="492.5"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="lblTitle" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="LXg-49-wVs">
-                                <rect key="frame" x="38.5" y="209.5" width="308" height="21"/>
+                                <rect key="frame" x="38.5" y="226.5" width="308" height="21"/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="lblDecription" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kGY-rs-lLs">
-                                <rect key="frame" x="38.5" y="238.5" width="308" height="163.5"/>
+                                <rect key="frame" x="38.5" y="255.5" width="308" height="163.5"/>
                                 <fontDescription key="fontDescription" name=".AppleSystemUIFont" family=".AppleSystemUIFont" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Mushroom - 1UP.ico" translatesAutoresizingMaskIntoConstraints="NO" id="Kb4-bW-8Tz">
-                                <rect key="frame" x="64.5" y="4.5" width="256" height="197"/>
+                                <rect key="frame" x="53.5" y="4.5" width="278" height="214"/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="Kb4-bW-8Tz" secondAttribute="height" multiplier="1.3:1" id="Vqr-C0-E1D"/>
                                 </constraints>
@@ -50,7 +50,7 @@
                         </subviews>
                         <color key="backgroundColor" red="0.54821439179999998" green="0.73025497689999996" blue="0.7538269353" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
-                            <constraint firstItem="Kb4-bW-8Tz" firstAttribute="height" secondItem="lFO-xt-9AV" secondAttribute="height" multiplier="1/2.5" id="0ee-yu-wST"/>
+                            <constraint firstItem="Kb4-bW-8Tz" firstAttribute="height" secondItem="lFO-xt-9AV" secondAttribute="height" multiplier="1/2.3" id="0ee-yu-wST"/>
                             <constraint firstAttribute="trailing" secondItem="qjF-zn-eUs" secondAttribute="trailing" constant="8" id="8cC-I1-Tgj"/>
                             <constraint firstItem="kGY-rs-lLs" firstAttribute="height" secondItem="lFO-xt-9AV" secondAttribute="height" multiplier="1/3" id="Ezj-X8-ydT"/>
                             <constraint firstItem="Kb4-bW-8Tz" firstAttribute="centerX" secondItem="lFO-xt-9AV" secondAttribute="centerX" id="Psa-kt-rl2"/>
@@ -68,16 +68,16 @@
                         <rect key="frame" x="0.0" y="-0.5" width="385" height="492.5"/>
                         <subviews>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Mushroom - 1UP.ico" translatesAutoresizingMaskIntoConstraints="NO" id="G2B-X8-hEt">
-                                <rect key="frame" x="64.5" y="4.5" width="256" height="197"/>
+                                <rect key="frame" x="53.5" y="4.5" width="278" height="214"/>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="lblTitle" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dUc-sw-uTX">
-                                <rect key="frame" x="39" y="209.5" width="308" height="21"/>
+                                <rect key="frame" x="39" y="226.5" width="308" height="21"/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="lblDecription" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eRz-AY-bIw">
-                                <rect key="frame" x="39" y="238.5" width="308" height="164"/>
+                                <rect key="frame" x="39" y="255.5" width="308" height="164"/>
                                 <fontDescription key="fontDescription" name=".AppleSystemUIFont" family=".AppleSystemUIFont" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
@@ -125,6 +125,8 @@
                 <outlet property="decriptionCell1" destination="eRz-AY-bIw" id="PB6-Zd-Z24"/>
                 <outlet property="imageCell" destination="Kb4-bW-8Tz" id="6A6-W6-gWK"/>
                 <outlet property="imageCell1" destination="G2B-X8-hEt" id="wMf-9L-61g"/>
+                <outlet property="leftView" destination="X68-0T-u7w" id="91F-Oi-naq"/>
+                <outlet property="rightView" destination="lFO-xt-9AV" id="zt7-hI-bkq"/>
                 <outlet property="titleCell" destination="LXg-49-wVs" id="9FP-HR-snr"/>
                 <outlet property="titleCell1" destination="dUc-sw-uTX" id="ZfS-jM-s4i"/>
             </connections>

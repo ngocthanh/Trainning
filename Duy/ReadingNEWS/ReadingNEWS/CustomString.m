@@ -65,7 +65,7 @@
 -(id)getDescriptionInString: (NSString*)descriptionString{
     NSString *description=@"";
     NSError *error = nil;
-    NSString *pattern = @"</br>([^.]+)";
+    NSString *pattern = @"</br>([^&]+)";
     NSRange range = NSMakeRange(0, descriptionString.length);
     NSRegularExpression *regex = [NSRegularExpression regularExpressionWithPattern:pattern options:0 error:&error];
     NSArray *matches = [regex matchesInString:descriptionString options:0 range:range];

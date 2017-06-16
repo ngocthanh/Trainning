@@ -9,11 +9,15 @@
 #import <Foundation/Foundation.h>
 
 @interface parserData : NSObject <NSXMLParserDelegate>
-- (void)startParsing : (NSString *)urlLink;
-@property (nonatomic, strong) NSMutableDictionary *dictionaryData;
+- (NSArray*)startParsing : (NSString *)urlLink;
+-(void) setDataForAllArray;
+@property (nonatomic,strong) NSMutableDictionary *dictionaryData;
 @property (nonatomic,strong) NSMutableArray *arrayXMLData;
 @property (nonatomic,strong) NSMutableString *mstrXMLString;
 @property (nonatomic,strong) NSMutableDictionary *mdictXMLPart;
-
+@property (nonatomic,strong) NSMutableArray *allTitle;
+@property (nonatomic,strong) NSMutableArray *allDescription;
+@property (nonatomic,strong) NSMutableArray *allImageLink;
+@property (nonatomic,strong) NSMutableArray *allDate;
 @end
 
