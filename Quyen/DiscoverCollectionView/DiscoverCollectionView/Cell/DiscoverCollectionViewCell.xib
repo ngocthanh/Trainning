@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="12121" systemVersion="16F73" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12089"/>
+        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
+        <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="homecell" id="gTV-IL-0wX" customClass="DiscoverCollectionViewCell">
+            <rect key="frame" x="0.0" y="0.0" width="355" height="260"/>
+            <autoresizingMask key="autoresizingMask"/>
+            <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                <rect key="frame" x="0.0" y="0.0" width="355" height="260"/>
+                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                <subviews>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Description" textAlignment="natural" lineBreakMode="wordWrap" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="U0Y-tK-yTB">
+                        <rect key="frame" x="18.5" y="171.5" width="319.5" height="52"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="10"/>
+                        <nil key="textColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Title" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="95C-0P-gyP">
+                        <rect key="frame" x="18.5" y="145" width="319.5" height="17"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                        <nil key="textColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Time" textAlignment="natural" lineBreakMode="wordWrap" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Kh1-f5-SIs">
+                        <rect key="frame" x="326" y="243" width="24" height="12"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="10"/>
+                        <nil key="textColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="icon" translatesAutoresizingMaskIntoConstraints="NO" id="htt-wi-vYO">
+                        <rect key="frame" x="93" y="5" width="169" height="130"/>
+                        <constraints>
+                            <constraint firstAttribute="width" secondItem="htt-wi-vYO" secondAttribute="height" multiplier="1.3/1" id="JfG-jx-6j1"/>
+                        </constraints>
+                    </imageView>
+                </subviews>
+            </view>
+            <constraints>
+                <constraint firstItem="95C-0P-gyP" firstAttribute="centerX" secondItem="gTV-IL-0wX" secondAttribute="centerX" id="8XP-sc-KG6"/>
+                <constraint firstAttribute="bottom" secondItem="Kh1-f5-SIs" secondAttribute="bottom" constant="5" id="AdF-l8-Un6"/>
+                <constraint firstItem="95C-0P-gyP" firstAttribute="width" secondItem="gTV-IL-0wX" secondAttribute="width" multiplier="0.9" id="HqH-b8-4LN"/>
+                <constraint firstItem="htt-wi-vYO" firstAttribute="centerX" secondItem="gTV-IL-0wX" secondAttribute="centerX" id="SnJ-8T-hGZ"/>
+                <constraint firstItem="htt-wi-vYO" firstAttribute="height" secondItem="gTV-IL-0wX" secondAttribute="height" multiplier="1/2" id="XOS-fH-Ap4"/>
+                <constraint firstItem="U0Y-tK-yTB" firstAttribute="centerX" secondItem="95C-0P-gyP" secondAttribute="centerX" id="edA-hD-R1j"/>
+                <constraint firstItem="95C-0P-gyP" firstAttribute="top" secondItem="htt-wi-vYO" secondAttribute="bottom" constant="10" id="gXt-Td-ba9"/>
+                <constraint firstItem="htt-wi-vYO" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" constant="5" id="hAP-lU-eFh"/>
+                <constraint firstItem="U0Y-tK-yTB" firstAttribute="height" secondItem="gTV-IL-0wX" secondAttribute="height" multiplier="0.2" id="hhs-q6-xyF"/>
+                <constraint firstItem="U0Y-tK-yTB" firstAttribute="width" secondItem="95C-0P-gyP" secondAttribute="width" id="k3O-J5-RkO"/>
+                <constraint firstAttribute="trailing" secondItem="Kh1-f5-SIs" secondAttribute="trailing" constant="5" id="mEe-hF-hzs"/>
+                <constraint firstItem="U0Y-tK-yTB" firstAttribute="top" secondItem="95C-0P-gyP" secondAttribute="bottom" constant="10" id="xOB-HT-ePz"/>
+            </constraints>
+            <size key="customSize" width="355" height="260"/>
+            <connections>
+                <outlet property="img" destination="htt-wi-vYO" id="i7r-Xc-nd1"/>
+                <outlet property="lblDescription" destination="U0Y-tK-yTB" id="w62-y0-ptd"/>
+                <outlet property="lblTime" destination="Kh1-f5-SIs" id="8Se-Tp-VPB"/>
+                <outlet property="lblTitle" destination="95C-0P-gyP" id="1A1-8x-Mf9"/>
+            </connections>
+            <point key="canvasLocation" x="-18" y="-571"/>
+        </collectionViewCell>
+    </objects>
+    <resources>
+        <image name="icon" width="175" height="175"/>
+    </resources>
+</document>

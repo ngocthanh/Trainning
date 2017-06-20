@@ -12,6 +12,13 @@
 		5493EA751EE7D69700F703BB /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5493EA741EE7D69700F703BB /* Assets.xcassets */; };
 		5493EA831EE7D69700F703BB /* DiscoverCollectionViewTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 5493EA821EE7D69700F703BB /* DiscoverCollectionViewTests.m */; };
 		549AF23C1EF221EC00802338 /* Launch Screen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 549AF23B1EF221EC00802338 /* Launch Screen.storyboard */; };
+		54ACCC561EF76BD50037AE5C /* LineFlowLayout.m in Sources */ = {isa = PBXBuildFile; fileRef = 54ACCC551EF76BD50037AE5C /* LineFlowLayout.m */; };
+		54ACCC5D1EF790EF0037AE5C /* Bolts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 54ACCC591EF790EF0037AE5C /* Bolts.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
+		54ACCC5E1EF790EF0037AE5C /* FBSDKCoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 54ACCC5A1EF790EF0037AE5C /* FBSDKCoreKit.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
+		54ACCC5F1EF790EF0037AE5C /* FBSDKLoginKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 54ACCC5B1EF790EF0037AE5C /* FBSDKLoginKit.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
+		54ACCC601EF790EF0037AE5C /* FBSDKShareKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 54ACCC5C1EF790EF0037AE5C /* FBSDKShareKit.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
+		54ACCC871EF7B2D60037AE5C /* LoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 54ACCC851EF7B2D60037AE5C /* LoginViewController.m */; };
+		54ACCC881EF7B2D60037AE5C /* LoginViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 54ACCC861EF7B2D60037AE5C /* LoginViewController.xib */; };
 		54B5C2EF1EEE08F3000E907E /* HomeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 54B5C2ED1EEE08F3000E907E /* HomeViewController.m */; };
 		54B5C2F01EEE08F3000E907E /* HomeViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 54B5C2EE1EEE08F3000E907E /* HomeViewController.xib */; };
 		54B5C2F41EEE325D000E907E /* CollectionReusableView.m in Sources */ = {isa = PBXBuildFile; fileRef = 54B5C2F21EEE325D000E907E /* CollectionReusableView.m */; };
@@ -32,6 +39,19 @@
 		};
 /* End PBXContainerItemProxy section */
 
+/* Begin PBXCopyFilesBuildPhase section */
+		54ACCC801EF792990037AE5C /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
 /* Begin PBXFileReference section */
 		5493EA651EE7D69700F703BB /* DiscoverCollectionView.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DiscoverCollectionView.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		5493EA691EE7D69700F703BB /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -43,6 +63,16 @@
 		5493EA821EE7D69700F703BB /* DiscoverCollectionViewTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DiscoverCollectionViewTests.m; sourceTree = "<group>"; };
 		5493EA841EE7D69700F703BB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		549AF23B1EF221EC00802338 /* Launch Screen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = "Launch Screen.storyboard"; sourceTree = "<group>"; };
+		54ACCC541EF76BD50037AE5C /* LineFlowLayout.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LineFlowLayout.h; sourceTree = "<group>"; };
+		54ACCC551EF76BD50037AE5C /* LineFlowLayout.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LineFlowLayout.m; sourceTree = "<group>"; };
+		54ACCC591EF790EF0037AE5C /* Bolts.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Bolts.framework; path = "../../../Downloads/FacebookSDKs-iOS-4.23.0/Bolts.framework"; sourceTree = "<group>"; };
+		54ACCC5A1EF790EF0037AE5C /* FBSDKCoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = FBSDKCoreKit.framework; path = "../../../Downloads/FacebookSDKs-iOS-4.23.0/FBSDKCoreKit.framework"; sourceTree = "<group>"; };
+		54ACCC5B1EF790EF0037AE5C /* FBSDKLoginKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = FBSDKLoginKit.framework; path = "../../../Downloads/FacebookSDKs-iOS-4.23.0/FBSDKLoginKit.framework"; sourceTree = "<group>"; };
+		54ACCC5C1EF790EF0037AE5C /* FBSDKShareKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = FBSDKShareKit.framework; path = "../../../Downloads/FacebookSDKs-iOS-4.23.0/FBSDKShareKit.framework"; sourceTree = "<group>"; };
+		54ACCC841EF7B2D60037AE5C /* LoginViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LoginViewController.h; sourceTree = "<group>"; };
+		54ACCC851EF7B2D60037AE5C /* LoginViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LoginViewController.m; sourceTree = "<group>"; };
+		54ACCC861EF7B2D60037AE5C /* LoginViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = LoginViewController.xib; sourceTree = "<group>"; };
+		54ACCC891EF7CAE50037AE5C /* DiscoverCollectionView.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = DiscoverCollectionView.entitlements; sourceTree = "<group>"; };
 		54B5C2EC1EEE08F3000E907E /* HomeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HomeViewController.h; sourceTree = "<group>"; };
 		54B5C2ED1EEE08F3000E907E /* HomeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HomeViewController.m; sourceTree = "<group>"; };
 		54B5C2EE1EEE08F3000E907E /* HomeViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = HomeViewController.xib; sourceTree = "<group>"; };
@@ -63,6 +93,10 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				54ACCC5D1EF790EF0037AE5C /* Bolts.framework in Frameworks */,
+				54ACCC5E1EF790EF0037AE5C /* FBSDKCoreKit.framework in Frameworks */,
+				54ACCC5F1EF790EF0037AE5C /* FBSDKLoginKit.framework in Frameworks */,
+				54ACCC601EF790EF0037AE5C /* FBSDKShareKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -82,6 +116,7 @@
 				5493EA671EE7D69700F703BB /* DiscoverCollectionView */,
 				5493EA811EE7D69700F703BB /* DiscoverCollectionViewTests */,
 				5493EA661EE7D69700F703BB /* Products */,
+				54ACCC581EF790EF0037AE5C /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -97,6 +132,8 @@
 		5493EA671EE7D69700F703BB /* DiscoverCollectionView */ = {
 			isa = PBXGroup;
 			children = (
+				54ACCC891EF7CAE50037AE5C /* DiscoverCollectionView.entitlements */,
+				54ACCC571EF76BF10037AE5C /* Utility */,
 				54B5C2F91EEE3350000E907E /* Controller */,
 				54B5C2F81EEE32D3000E907E /* Supplementary */,
 				54B5C2F71EEE32A3000E907E /* Cell */,
@@ -128,15 +165,35 @@
 			path = DiscoverCollectionViewTests;
 			sourceTree = "<group>";
 		};
+		54ACCC571EF76BF10037AE5C /* Utility */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Utility;
+			sourceTree = "<group>";
+		};
+		54ACCC581EF790EF0037AE5C /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				54ACCC591EF790EF0037AE5C /* Bolts.framework */,
+				54ACCC5A1EF790EF0037AE5C /* FBSDKCoreKit.framework */,
+				54ACCC5B1EF790EF0037AE5C /* FBSDKLoginKit.framework */,
+				54ACCC5C1EF790EF0037AE5C /* FBSDKShareKit.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		54B5C2F61EEE3266000E907E /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				54ACCC541EF76BD50037AE5C /* LineFlowLayout.h */,
+				54ACCC551EF76BD50037AE5C /* LineFlowLayout.m */,
 				54BCE4B41EEA3BB2003C54E0 /* RandomSize.h */,
 				54BCE4B51EEA3BB2003C54E0 /* RandomSize.m */,
-				54BCE4B71EEA98DC003C54E0 /* ModelRequest.h */,
 				54BCE4B81EEA98DC003C54E0 /* ModelRequest.m */,
+				54BCE4B71EEA98DC003C54E0 /* ModelRequest.h */,
 			);
-			name = Model;
+			path = Model;
 			sourceTree = "<group>";
 		};
 		54B5C2F71EEE32A3000E907E /* Cell */ = {
@@ -146,7 +203,7 @@
 				54CE68571EE91CD800364D13 /* DiscoverCollectionViewCell.m */,
 				54CE68581EE91CD800364D13 /* DiscoverCollectionViewCell.xib */,
 			);
-			name = Cell;
+			path = Cell;
 			sourceTree = "<group>";
 		};
 		54B5C2F81EEE32D3000E907E /* Supplementary */ = {
@@ -156,7 +213,7 @@
 				54B5C2F21EEE325D000E907E /* CollectionReusableView.m */,
 				54B5C2F31EEE325D000E907E /* CollectionReusableView.xib */,
 			);
-			name = Supplementary;
+			path = Supplementary;
 			sourceTree = "<group>";
 		};
 		54B5C2F91EEE3350000E907E /* Controller */ = {
@@ -165,8 +222,11 @@
 				54B5C2EC1EEE08F3000E907E /* HomeViewController.h */,
 				54B5C2ED1EEE08F3000E907E /* HomeViewController.m */,
 				54B5C2EE1EEE08F3000E907E /* HomeViewController.xib */,
+				54ACCC841EF7B2D60037AE5C /* LoginViewController.h */,
+				54ACCC851EF7B2D60037AE5C /* LoginViewController.m */,
+				54ACCC861EF7B2D60037AE5C /* LoginViewController.xib */,
 			);
-			name = Controller;
+			path = Controller;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -179,6 +239,7 @@
 				5493EA611EE7D69700F703BB /* Sources */,
 				5493EA621EE7D69700F703BB /* Frameworks */,
 				5493EA631EE7D69700F703BB /* Resources */,
+				54ACCC801EF792990037AE5C /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
@@ -218,7 +279,13 @@
 				TargetAttributes = {
 					5493EA641EE7D69700F703BB = {
 						CreatedOnToolsVersion = 8.3.2;
+						DevelopmentTeam = Y795KF44JK;
 						ProvisioningStyle = Automatic;
+						SystemCapabilities = {
+							com.apple.Keychain = {
+								enabled = 1;
+							};
+						};
 					};
 					5493EA7D1EE7D69700F703BB = {
 						CreatedOnToolsVersion = 8.3.2;
@@ -253,6 +320,7 @@
 			files = (
 				54B5C2F51EEE325D000E907E /* CollectionReusableView.xib in Resources */,
 				54CE685A1EE91CD800364D13 /* DiscoverCollectionViewCell.xib in Resources */,
+				54ACCC881EF7B2D60037AE5C /* LoginViewController.xib in Resources */,
 				54B5C2F01EEE08F3000E907E /* HomeViewController.xib in Resources */,
 				549AF23C1EF221EC00802338 /* Launch Screen.storyboard in Resources */,
 				5493EA751EE7D69700F703BB /* Assets.xcassets in Resources */,
@@ -274,9 +342,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				54BCE4B61EEA3BB2003C54E0 /* RandomSize.m in Sources */,
+				54ACCC561EF76BD50037AE5C /* LineFlowLayout.m in Sources */,
 				54CE68591EE91CD800364D13 /* DiscoverCollectionViewCell.m in Sources */,
 				5493EA6D1EE7D69700F703BB /* AppDelegate.m in Sources */,
 				5493EA6A1EE7D69700F703BB /* main.m in Sources */,
+				54ACCC871EF7B2D60037AE5C /* LoginViewController.m in Sources */,
 				54B5C2F41EEE325D000E907E /* CollectionReusableView.m in Sources */,
 				54B5C2EF1EEE08F3000E907E /* HomeViewController.m in Sources */,
 				54BCE4B91EEA98DC003C54E0 /* ModelRequest.m in Sources */,
@@ -398,6 +468,9 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = DiscoverCollectionView/DiscoverCollectionView.entitlements;
+				DEVELOPMENT_TEAM = Y795KF44JK;
+				"FRAMEWORK_SEARCH_PATHS[arch=*]" = "/Users/kterkc/Downloads/FacebookSDKs-iOS-4.23.0";
 				INFOPLIST_FILE = DiscoverCollectionView/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = Kter.KC.DiscoverCollectionView;
@@ -410,6 +483,9 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = DiscoverCollectionView/DiscoverCollectionView.entitlements;
+				DEVELOPMENT_TEAM = Y795KF44JK;
+				"FRAMEWORK_SEARCH_PATHS[arch=*]" = "/Users/kterkc/Downloads/FacebookSDKs-iOS-4.23.0";
 				INFOPLIST_FILE = DiscoverCollectionView/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = Kter.KC.DiscoverCollectionView;

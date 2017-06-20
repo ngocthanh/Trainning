@@ -8,6 +8,9 @@
 
 #import "AppDelegate.h"
 #import "HomeViewController.h"
+#import <FBSDKCoreKit/FBSDKCoreKit.h>
+#import <FBSDKLoginKit/FBSDKLoginKit.h>
+#import "LoginViewController.h"
 @interface AppDelegate ()
 @property (strong, nonatomic)  HomeViewController *homeViewController;
 @property (strong, nonatomic) UINavigationController *naviController;
@@ -15,17 +18,21 @@
 @end
 
 @implementation AppDelegate
-
+-(BOOL)application:(UIApplication *)application willFinishLaunchingWithOptions:(NSDictionary *)launchOptions{
+    NSLog(@"That's Good");
+    return YES;
+    }
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
-    // Override point for customization after application launch.
-    //self.window.frame = [[UIWindow alloc] setFrame:[[UIScreen mainScreen] bounds]];
-    self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
-    NSLog(@"%@",[[UIScreen mainScreen] bounds]);
-    [self.window makeKeyAndVisible];
     
-    _homeViewController = [[HomeViewController alloc] init];
-    _naviController = [[UINavigationController alloc] initWithRootViewController:_homeViewController];
+    // Override point for customization after application launch.
+    //FaceBook
+    [[FBSDKApplicationDelegate sharedInstance] application:application didFinishLaunchingWithOptions:launchOptions];
+    [FBSDKLoginButton class];
+    //--------------
+    self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
+    _naviController = [[UINavigationController alloc] initWithRootViewController:[[HomeViewController alloc] init]];
+    [self.window makeKeyAndVisible];
     [self.window setRootViewController: _naviController];
     
     return YES;
@@ -51,6 +58,7 @@
 
 - (void)applicationDidBecomeActive:(UIApplication *)application {
     // Restart any tasks that were paused (or not yet started) while the application was inactive. If the application was previously in the background, optionally refresh the user interface.
+    [FBSDKAppEvents activateApp];
 }
 
 
@@ -58,5 +66,10 @@
     // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
 }
 
-
+-(BOOL)application:(UIApplication *)application openURL:(NSURL *)url sourceApplication:(NSString *)sourceApplication annotation:(id)annotation{
+    return [[FBSDKApplicationDelegate sharedInstance] application:application
+                                                          openURL:url
+                                                sourceApplication:sourceApplication
+                                                       annotation:annotation];
+}
 @end
