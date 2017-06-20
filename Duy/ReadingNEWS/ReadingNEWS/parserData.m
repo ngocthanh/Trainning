@@ -87,10 +87,10 @@
     NSString *substring=[normalDate substringWithRange:NSMakeRange(5, 11)];
     NSString *day=[substring substringToIndex:2];
     NSString *month=[substring substringWithRange:NSMakeRange(3, 3)];
-    
     NSString *year=[substring substringFromIndex:7];
     month=[self convertMonth:month];
     normalDate = [NSString stringWithFormat:@"%@/%@/%@",year,month,day];
+   
     return normalDate;
 }
 -(id)convertMonth: (NSString *)month{

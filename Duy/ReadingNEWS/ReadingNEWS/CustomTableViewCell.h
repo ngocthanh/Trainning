@@ -9,15 +9,7 @@
 #import <UIKit/UIKit.h>
 
 @interface CustomTableViewCell : UITableViewCell
-@property (weak, nonatomic) IBOutlet UIImageView *imageCell;
-@property (weak, nonatomic) IBOutlet UILabel *titleCell;
-@property (weak, nonatomic) IBOutlet UILabel *decriptionCell;
-@property (weak, nonatomic) IBOutlet UILabel *dateCell;
-@property (weak, nonatomic) IBOutlet UIImageView *imageCell1;
-@property (weak, nonatomic) IBOutlet UILabel *titleCell1;
-@property (weak, nonatomic) IBOutlet UILabel *decriptionCell1;
-@property (weak, nonatomic) IBOutlet UILabel *dateCell1;
 
--(void)loadIntentForLeftCell :(NSString *)title description:(NSString *)decription link:(NSString *)linkImage date:(NSString *)date ;
--(void)loadIntentForRightCell :(NSString *)title description:(NSString *)decription link:(NSString *)linkImage date:(NSString *)date;
+-(void)loadIntentForRightCell :(NSString *)title description:(NSString *)description link:(NSString *)linkImage date:(NSString *)date;
+-(void)loadIntentForLeftCell :(NSString *)title description:(NSString *)description link:(NSString *)linkImage date:(NSString *)date;
 @end

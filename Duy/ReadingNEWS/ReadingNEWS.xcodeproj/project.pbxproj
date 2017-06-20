@@ -18,6 +18,10 @@
 		3950EB4B1EED94C200E41F49 /* Mushroom - 1UP.ico in Resources */ = {isa = PBXBuildFile; fileRef = 3950EB4A1EED94C200E41F49 /* Mushroom - 1UP.ico */; };
 		3950EB511EEE3C3A00E41F49 /* GetData.m in Sources */ = {isa = PBXBuildFile; fileRef = 3950EB501EEE3C3A00E41F49 /* GetData.m */; };
 		3950EB571EEE788100E41F49 /* parserData.m in Sources */ = {isa = PBXBuildFile; fileRef = 3950EB561EEE788100E41F49 /* parserData.m */; };
+		3960B93B1EF78D5200E08F51 /* Bolts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3960B9371EF78D5200E08F51 /* Bolts.framework */; };
+		3960B93C1EF78D5200E08F51 /* FBSDKCoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3960B9381EF78D5200E08F51 /* FBSDKCoreKit.framework */; };
+		3960B93D1EF78D5200E08F51 /* FBSDKLoginKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3960B9391EF78D5200E08F51 /* FBSDKLoginKit.framework */; };
+		3960B93E1EF78D5200E08F51 /* FBSDKShareKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3960B93A1EF78D5200E08F51 /* FBSDKShareKit.framework */; };
 		3976F5DA1EEF7BB100D9E8A0 /* CustomString.m in Sources */ = {isa = PBXBuildFile; fileRef = 3976F5D91EEF7BB100D9E8A0 /* CustomString.m */; };
 		3980E73C1EF23E7D001F969A /* CustomCellTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3980E73B1EF23E7D001F969A /* CustomCellTableViewController.m */; };
 /* End PBXBuildFile section */
@@ -53,6 +57,10 @@
 		3950EB501EEE3C3A00E41F49 /* GetData.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GetData.m; sourceTree = "<group>"; };
 		3950EB551EEE788100E41F49 /* parserData.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = parserData.h; sourceTree = "<group>"; };
 		3950EB561EEE788100E41F49 /* parserData.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = parserData.m; sourceTree = "<group>"; };
+		3960B9371EF78D5200E08F51 /* Bolts.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Bolts.framework; path = "../../../../Documents/FacebookSDKs-iOS-4.23.0/Bolts.framework"; sourceTree = "<group>"; };
+		3960B9381EF78D5200E08F51 /* FBSDKCoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = FBSDKCoreKit.framework; path = "../../../../Documents/FacebookSDKs-iOS-4.23.0/FBSDKCoreKit.framework"; sourceTree = "<group>"; };
+		3960B9391EF78D5200E08F51 /* FBSDKLoginKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = FBSDKLoginKit.framework; path = "../../../../Documents/FacebookSDKs-iOS-4.23.0/FBSDKLoginKit.framework"; sourceTree = "<group>"; };
+		3960B93A1EF78D5200E08F51 /* FBSDKShareKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = FBSDKShareKit.framework; path = "../../../../Documents/FacebookSDKs-iOS-4.23.0/FBSDKShareKit.framework"; sourceTree = "<group>"; };
 		3976F5D81EEF7BB100D9E8A0 /* CustomString.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CustomString.h; sourceTree = "<group>"; };
 		3976F5D91EEF7BB100D9E8A0 /* CustomString.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CustomString.m; sourceTree = "<group>"; };
 		3980E73B1EF23E7D001F969A /* CustomCellTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CustomCellTableViewController.m; sourceTree = "<group>"; };
@@ -63,6 +71,10 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3960B93E1EF78D5200E08F51 /* FBSDKShareKit.framework in Frameworks */,
+				3960B93B1EF78D5200E08F51 /* Bolts.framework in Frameworks */,
+				3960B93C1EF78D5200E08F51 /* FBSDKCoreKit.framework in Frameworks */,
+				3960B93D1EF78D5200E08F51 /* FBSDKLoginKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -97,24 +109,17 @@
 		3950EADF1EEA813100E41F49 /* ReadingNEWS */ = {
 			isa = PBXGroup;
 			children = (
+				3960B9361EF78CFA00E08F51 /* Framework */,
+				3960B73C1EF7698C00E08F51 /* Utility */,
+				3960B73B1EF7698000E08F51 /* ViewController */,
+				3960B73A1EF7697500E08F51 /* View */,
+				3960B7391EF7693700E08F51 /* Model */,
 				3950EAE31EEA813100E41F49 /* AppDelegate.h */,
 				3950EAE41EEA813100E41F49 /* AppDelegate.m */,
-				3950EAE91EEA813100E41F49 /* Main.storyboard */,
 				3950EAEC1EEA813100E41F49 /* Assets.xcassets */,
 				3950EAEE1EEA813100E41F49 /* LaunchScreen.storyboard */,
 				3950EAF11EEA813100E41F49 /* Info.plist */,
 				3950EAE01EEA813100E41F49 /* Supporting Files */,
-				3950EB421EED919A00E41F49 /* CustomCellTableViewController.h */,
-				3980E73B1EF23E7D001F969A /* CustomCellTableViewController.m */,
-				3950EB451EED91CE00E41F49 /* CustomTableViewCell.h */,
-				3950EB461EED91CE00E41F49 /* CustomTableViewCell.m */,
-				3950EB471EED91CE00E41F49 /* CustomTableViewCell.xib */,
-				3950EB4F1EEE3C3A00E41F49 /* GetData.h */,
-				3950EB501EEE3C3A00E41F49 /* GetData.m */,
-				3950EB551EEE788100E41F49 /* parserData.h */,
-				3950EB561EEE788100E41F49 /* parserData.m */,
-				3976F5D81EEF7BB100D9E8A0 /* CustomString.h */,
-				3976F5D91EEF7BB100D9E8A0 /* CustomString.m */,
 			);
 			path = ReadingNEWS;
 			sourceTree = "<group>";
@@ -135,6 +140,57 @@
 				3950EAFC1EEA813100E41F49 /* Info.plist */,
 			);
 			path = ReadingNEWSTests;
+			sourceTree = "<group>";
+		};
+		3960B7391EF7693700E08F51 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				3950EB4F1EEE3C3A00E41F49 /* GetData.h */,
+				3950EB501EEE3C3A00E41F49 /* GetData.m */,
+				3950EB551EEE788100E41F49 /* parserData.h */,
+				3950EB561EEE788100E41F49 /* parserData.m */,
+			);
+			name = Model;
+			sourceTree = "<group>";
+		};
+		3960B73A1EF7697500E08F51 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				3950EAE91EEA813100E41F49 /* Main.storyboard */,
+				3950EB471EED91CE00E41F49 /* CustomTableViewCell.xib */,
+			);
+			name = View;
+			sourceTree = "<group>";
+		};
+		3960B73B1EF7698000E08F51 /* ViewController */ = {
+			isa = PBXGroup;
+			children = (
+				3950EB451EED91CE00E41F49 /* CustomTableViewCell.h */,
+				3950EB461EED91CE00E41F49 /* CustomTableViewCell.m */,
+				3950EB421EED919A00E41F49 /* CustomCellTableViewController.h */,
+				3980E73B1EF23E7D001F969A /* CustomCellTableViewController.m */,
+			);
+			name = ViewController;
+			sourceTree = "<group>";
+		};
+		3960B73C1EF7698C00E08F51 /* Utility */ = {
+			isa = PBXGroup;
+			children = (
+				3976F5D81EEF7BB100D9E8A0 /* CustomString.h */,
+				3976F5D91EEF7BB100D9E8A0 /* CustomString.m */,
+			);
+			name = Utility;
+			sourceTree = "<group>";
+		};
+		3960B9361EF78CFA00E08F51 /* Framework */ = {
+			isa = PBXGroup;
+			children = (
+				3960B9371EF78D5200E08F51 /* Bolts.framework */,
+				3960B9381EF78D5200E08F51 /* FBSDKCoreKit.framework */,
+				3960B9391EF78D5200E08F51 /* FBSDKLoginKit.framework */,
+				3960B93A1EF78D5200E08F51 /* FBSDKShareKit.framework */,
+			);
+			name = Framework;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -292,7 +348,7 @@
 		3950EAFD1EEA813100E41F49 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ALWAYS_SEARCH_USER_PATHS = NO;
+				ALWAYS_SEARCH_USER_PATHS = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
@@ -316,6 +372,7 @@
 				DEBUG_INFORMATION_FORMAT = dwarf;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				ENABLE_TESTABILITY = YES;
+				FRAMEWORK_SEARCH_PATHS = "~/Documents/FacebookSDK";
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_NO_COMMON_BLOCKS = YES;
@@ -341,7 +398,7 @@
 		3950EAFE1EEA813100E41F49 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ALWAYS_SEARCH_USER_PATHS = NO;
+				ALWAYS_SEARCH_USER_PATHS = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
@@ -365,6 +422,7 @@
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				ENABLE_NS_ASSERTIONS = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				FRAMEWORK_SEARCH_PATHS = "~/Documents/FacebookSDK";
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_NO_COMMON_BLOCKS = YES;
 				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
