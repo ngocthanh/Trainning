@@ -12,7 +12,6 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="HomeViewController">
             <connections>
-                <outlet property="btnLogin" destination="FDz-p3-CXv" id="xfI-Hx-ohQ"/>
                 <outlet property="discoverCollectionView" destination="FMr-t6-Qnb" id="xPM-gb-htX"/>
                 <outlet property="lblLogin" destination="9hL-3q-YpK" id="iTt-AB-BQI"/>
                 <outlet property="progessView" destination="scZ-Vx-CUx" id="zsB-nJ-T7i"/>
@@ -30,22 +29,11 @@
                     <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     <nil key="highlightedColor"/>
                 </label>
-                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="FDz-p3-CXv">
-                    <rect key="frame" x="124.5" y="318.5" width="125" height="30"/>
-                    <color key="backgroundColor" red="0.25480669736862183" green="0.41572871804237366" blue="0.69875967502593994" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                    <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                    <state key="normal" title="Login Facebook">
-                        <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                    </state>
-                    <connections>
-                        <action selector="abtnLoginFB:" destination="-1" eventType="touchUpInside" id="m6Y-Om-OnH"/>
-                    </connections>
-                </button>
                 <progressView opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="750" progress="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="scZ-Vx-CUx">
                     <rect key="frame" x="94" y="332.5" width="187.5" height="2"/>
                 </progressView>
                 <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="none" translatesAutoresizingMaskIntoConstraints="NO" id="FMr-t6-Qnb">
-                    <rect key="frame" x="0.0" y="64" width="375" height="667"/>
+                    <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                     <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="ZP6-0o-G8u">
                         <size key="itemSize" width="50" height="50"/>
@@ -58,20 +46,17 @@
             <color key="backgroundColor" red="0.58292412760000001" green="0.1420904398" blue="0.33287090060000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
             <constraints>
                 <constraint firstItem="scZ-Vx-CUx" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="2fw-r0-uQm"/>
-                <constraint firstItem="FMr-t6-Qnb" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" constant="64" id="6nY-MF-mSv"/>
-                <constraint firstItem="FDz-p3-CXv" firstAttribute="width" secondItem="i5M-Pr-FkT" secondAttribute="width" multiplier="1/3" id="7Wo-S0-cc7"/>
+                <constraint firstItem="FMr-t6-Qnb" firstAttribute="centerY" secondItem="i5M-Pr-FkT" secondAttribute="centerY" id="8ga-2l-iZK"/>
                 <constraint firstItem="scZ-Vx-CUx" firstAttribute="width" secondItem="i5M-Pr-FkT" secondAttribute="width" multiplier="0.5" id="BSK-Lu-4Nf"/>
-                <constraint firstItem="FDz-p3-CXv" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="GtV-Vp-MGm"/>
                 <constraint firstItem="FMr-t6-Qnb" firstAttribute="height" secondItem="i5M-Pr-FkT" secondAttribute="height" id="Wn4-Kh-azI"/>
                 <constraint firstItem="FMr-t6-Qnb" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="ad7-CP-rVu"/>
                 <constraint firstItem="scZ-Vx-CUx" firstAttribute="centerY" secondItem="i5M-Pr-FkT" secondAttribute="centerY" id="bDF-59-HCv"/>
                 <constraint firstItem="9hL-3q-YpK" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="bJ0-iP-9EY"/>
-                <constraint firstItem="FDz-p3-CXv" firstAttribute="centerY" secondItem="i5M-Pr-FkT" secondAttribute="centerY" id="gbd-CC-g95"/>
                 <constraint firstItem="FMr-t6-Qnb" firstAttribute="width" secondItem="i5M-Pr-FkT" secondAttribute="width" id="kb1-P9-tdd"/>
                 <constraint firstItem="9hL-3q-YpK" firstAttribute="width" secondItem="i5M-Pr-FkT" secondAttribute="width" id="oIF-Fw-hHy"/>
                 <constraint firstItem="9hL-3q-YpK" firstAttribute="centerY" secondItem="i5M-Pr-FkT" secondAttribute="centerY" multiplier="4/5" id="ryE-f4-jkk"/>
             </constraints>
-            <point key="canvasLocation" x="-512" y="-18"/>
+            <point key="canvasLocation" x="-592" y="-32"/>
         </view>
     </objects>
 </document>

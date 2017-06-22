@@ -31,9 +31,16 @@
     [FBSDKLoginButton class];
     //--------------
     self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
+    self.window.backgroundColor = [UIColor colorWithRed:0 green:1 blue:0 alpha:1];
+    
     _naviController = [[UINavigationController alloc] initWithRootViewController:[[HomeViewController alloc] init]];
     [self.window makeKeyAndVisible];
-    [self.window setRootViewController: _naviController];
+    if ([FBSDKAccessToken currentAccessToken]) {
+        [self.window setRootViewController: _naviController];
+    }else{
+        [self.window setRootViewController:[[LoginViewController alloc] init]];
+    }
+    
     
     return YES;
 }

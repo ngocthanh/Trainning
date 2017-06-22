@@ -6,8 +6,8 @@
 //  Copyright © 2017 KterKC. All rights reserved.
 //
 
-#import <UIKit/UIKit.h>
 
+#import "DefineColor.h"
 @interface DiscoverCollectionViewCell : UICollectionViewCell
 @property (weak, nonatomic) IBOutlet UIImageView *img;
 @property (weak, nonatomic) IBOutlet UILabel *lblTitle;

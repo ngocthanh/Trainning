@@ -7,6 +7,7 @@
 //
 
 #import "DiscoverCollectionViewCell.h"
+
 @implementation DiscoverCollectionViewCell
 
 - (void)awakeFromNib {
@@ -16,37 +17,44 @@
 }
 - (void)setStyle{
 
-    [_lblTitle setFont:[UIFont boldSystemFontOfSize:11]];
-    _lblTitle.textColor = [UIColor colorWithRed:0.6 green:0.01 blue:0.3 alpha:1];
-    _lblTime.textColor = [UIColor colorWithRed:0.6 green:0.01 blue:0.3 alpha:1];
-    _lblDescription.textColor =[UIColor colorWithRed:0.6 green:0.01 blue:0.3 alpha:1];
-    self.layer.borderWidth = 1;
-    self.layer.borderColor = [UIColor colorWithRed:0.6 green:0.01 blue:0.3 alpha:1].CGColor;
+    [_lblTitle setFont:[UIFont boldSystemFontOfSize:frontSizeMinium]];
+    _lblTitle.textColor = [DefineColor colorPrimary];
+    _lblTime.textColor = [DefineColor colorPrimary];
+    _lblDescription.textColor =[DefineColor colorPrimary];
+    self.layer.borderWidth = intOne;
+    self.layer.borderColor = [DefineColor colorPrimary].CGColor;
     
 }
 -(void)getDataForImageAndTitle:(NSString*) title Time:(NSString*) time Description:(NSString*) description LinkURLImage:(NSString*) linkurl {
 
     //_img.image = [UIImage imageNamed:image];
+//    if ((title || time || description || linkurl ) == nil) {
+//        [self getImageOnline: textNil];
+//        _lblTitle.text = textNil;
+//        _lblTime.text = textNil;
+//        _lblDescription.text = textNil;
+//    }
     [self getImageOnline: linkurl];
     _lblTitle.text = title;
     _lblTime.text = time;
     _lblDescription.text = description;
 }
 -(void)getImageOnline:(NSString*) linkURL{
-    
-    NSURL *url = [NSURL URLWithString:[[NSString alloc]  initWithString:linkURL]];
-    
-    NSURLSessionTask *task = [[NSURLSession sharedSession] dataTaskWithURL:url completionHandler:^(NSData * _Nullable data, NSURLResponse * _Nullable response, NSError * _Nullable error) {
-        if (data) {
-            UIImage *image = [UIImage imageWithData:data];
-            if (image) {
-                dispatch_async(dispatch_get_main_queue(), ^{
-                    self.img.image = image;
-                });
+    if (![linkURL   isEqual: textNil]) {
+        NSURL *url = [NSURL URLWithString:[[NSString alloc]  initWithString:linkURL]];
+        NSURLSessionTask *task = [[NSURLSession sharedSession] dataTaskWithURL:url completionHandler:^(NSData * _Nullable data, NSURLResponse * _Nullable response, NSError * _Nullable error) {
+            if (data) {
+                UIImage *image = [UIImage imageWithData:data];
+                if (image) {
+                    dispatch_async(dispatch_get_main_queue(), ^{
+                        self.img.image = image;
+                    });
+                }
             }
-        }
-    }];
-    [task resume];
+        }];
+        [task resume];
+
+    }
 }
 
 @end

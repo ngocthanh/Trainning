@@ -12,13 +12,16 @@
 		5493EA751EE7D69700F703BB /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5493EA741EE7D69700F703BB /* Assets.xcassets */; };
 		5493EA831EE7D69700F703BB /* DiscoverCollectionViewTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 5493EA821EE7D69700F703BB /* DiscoverCollectionViewTests.m */; };
 		549AF23C1EF221EC00802338 /* Launch Screen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 549AF23B1EF221EC00802338 /* Launch Screen.storyboard */; };
+		54A0F48C1EFBCD370028AF50 /* Helper.m in Sources */ = {isa = PBXBuildFile; fileRef = 54A0F48B1EFBCD370028AF50 /* Helper.m */; };
+		54A8B1DA1EFA050800D442EF /* DefineObject.m in Sources */ = {isa = PBXBuildFile; fileRef = 54A8B1D91EFA050800D442EF /* DefineObject.m */; };
+		54A8B1DD1EFA6A9900D442EF /* DefineColor.m in Sources */ = {isa = PBXBuildFile; fileRef = 54A8B1DC1EFA6A9900D442EF /* DefineColor.m */; };
+		54A8B1E11EFA6FCF00D442EF /* LoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 54A8B1DF1EFA6FCF00D442EF /* LoginViewController.m */; };
+		54A8B1E21EFA6FCF00D442EF /* LoginViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 54A8B1E01EFA6FCF00D442EF /* LoginViewController.xib */; };
 		54ACCC561EF76BD50037AE5C /* LineFlowLayout.m in Sources */ = {isa = PBXBuildFile; fileRef = 54ACCC551EF76BD50037AE5C /* LineFlowLayout.m */; };
 		54ACCC5D1EF790EF0037AE5C /* Bolts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 54ACCC591EF790EF0037AE5C /* Bolts.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
 		54ACCC5E1EF790EF0037AE5C /* FBSDKCoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 54ACCC5A1EF790EF0037AE5C /* FBSDKCoreKit.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
 		54ACCC5F1EF790EF0037AE5C /* FBSDKLoginKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 54ACCC5B1EF790EF0037AE5C /* FBSDKLoginKit.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
 		54ACCC601EF790EF0037AE5C /* FBSDKShareKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 54ACCC5C1EF790EF0037AE5C /* FBSDKShareKit.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
-		54ACCC871EF7B2D60037AE5C /* LoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 54ACCC851EF7B2D60037AE5C /* LoginViewController.m */; };
-		54ACCC881EF7B2D60037AE5C /* LoginViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 54ACCC861EF7B2D60037AE5C /* LoginViewController.xib */; };
 		54B5C2EF1EEE08F3000E907E /* HomeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 54B5C2ED1EEE08F3000E907E /* HomeViewController.m */; };
 		54B5C2F01EEE08F3000E907E /* HomeViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 54B5C2EE1EEE08F3000E907E /* HomeViewController.xib */; };
 		54B5C2F41EEE325D000E907E /* CollectionReusableView.m in Sources */ = {isa = PBXBuildFile; fileRef = 54B5C2F21EEE325D000E907E /* CollectionReusableView.m */; };
@@ -63,15 +66,21 @@
 		5493EA821EE7D69700F703BB /* DiscoverCollectionViewTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DiscoverCollectionViewTests.m; sourceTree = "<group>"; };
 		5493EA841EE7D69700F703BB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		549AF23B1EF221EC00802338 /* Launch Screen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = "Launch Screen.storyboard"; sourceTree = "<group>"; };
+		54A0F48A1EFBCD370028AF50 /* Helper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Helper.h; sourceTree = "<group>"; };
+		54A0F48B1EFBCD370028AF50 /* Helper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Helper.m; sourceTree = "<group>"; };
+		54A8B1D81EFA050800D442EF /* DefineObject.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DefineObject.h; sourceTree = "<group>"; };
+		54A8B1D91EFA050800D442EF /* DefineObject.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DefineObject.m; sourceTree = "<group>"; };
+		54A8B1DB1EFA6A9900D442EF /* DefineColor.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DefineColor.h; sourceTree = "<group>"; };
+		54A8B1DC1EFA6A9900D442EF /* DefineColor.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DefineColor.m; sourceTree = "<group>"; };
+		54A8B1DE1EFA6FCF00D442EF /* LoginViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LoginViewController.h; sourceTree = "<group>"; };
+		54A8B1DF1EFA6FCF00D442EF /* LoginViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LoginViewController.m; sourceTree = "<group>"; };
+		54A8B1E01EFA6FCF00D442EF /* LoginViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = LoginViewController.xib; sourceTree = "<group>"; };
 		54ACCC541EF76BD50037AE5C /* LineFlowLayout.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LineFlowLayout.h; sourceTree = "<group>"; };
 		54ACCC551EF76BD50037AE5C /* LineFlowLayout.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LineFlowLayout.m; sourceTree = "<group>"; };
 		54ACCC591EF790EF0037AE5C /* Bolts.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Bolts.framework; path = "../../../Downloads/FacebookSDKs-iOS-4.23.0/Bolts.framework"; sourceTree = "<group>"; };
 		54ACCC5A1EF790EF0037AE5C /* FBSDKCoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = FBSDKCoreKit.framework; path = "../../../Downloads/FacebookSDKs-iOS-4.23.0/FBSDKCoreKit.framework"; sourceTree = "<group>"; };
 		54ACCC5B1EF790EF0037AE5C /* FBSDKLoginKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = FBSDKLoginKit.framework; path = "../../../Downloads/FacebookSDKs-iOS-4.23.0/FBSDKLoginKit.framework"; sourceTree = "<group>"; };
 		54ACCC5C1EF790EF0037AE5C /* FBSDKShareKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = FBSDKShareKit.framework; path = "../../../Downloads/FacebookSDKs-iOS-4.23.0/FBSDKShareKit.framework"; sourceTree = "<group>"; };
-		54ACCC841EF7B2D60037AE5C /* LoginViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LoginViewController.h; sourceTree = "<group>"; };
-		54ACCC851EF7B2D60037AE5C /* LoginViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LoginViewController.m; sourceTree = "<group>"; };
-		54ACCC861EF7B2D60037AE5C /* LoginViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = LoginViewController.xib; sourceTree = "<group>"; };
 		54ACCC891EF7CAE50037AE5C /* DiscoverCollectionView.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = DiscoverCollectionView.entitlements; sourceTree = "<group>"; };
 		54B5C2EC1EEE08F3000E907E /* HomeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HomeViewController.h; sourceTree = "<group>"; };
 		54B5C2ED1EEE08F3000E907E /* HomeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HomeViewController.m; sourceTree = "<group>"; };
@@ -168,6 +177,12 @@
 		54ACCC571EF76BF10037AE5C /* Utility */ = {
 			isa = PBXGroup;
 			children = (
+				54A8B1D81EFA050800D442EF /* DefineObject.h */,
+				54A8B1D91EFA050800D442EF /* DefineObject.m */,
+				54A8B1DB1EFA6A9900D442EF /* DefineColor.h */,
+				54A8B1DC1EFA6A9900D442EF /* DefineColor.m */,
+				54A0F48A1EFBCD370028AF50 /* Helper.h */,
+				54A0F48B1EFBCD370028AF50 /* Helper.m */,
 			);
 			path = Utility;
 			sourceTree = "<group>";
@@ -219,12 +234,12 @@
 		54B5C2F91EEE3350000E907E /* Controller */ = {
 			isa = PBXGroup;
 			children = (
+				54A8B1DE1EFA6FCF00D442EF /* LoginViewController.h */,
+				54A8B1DF1EFA6FCF00D442EF /* LoginViewController.m */,
+				54A8B1E01EFA6FCF00D442EF /* LoginViewController.xib */,
 				54B5C2EC1EEE08F3000E907E /* HomeViewController.h */,
 				54B5C2ED1EEE08F3000E907E /* HomeViewController.m */,
 				54B5C2EE1EEE08F3000E907E /* HomeViewController.xib */,
-				54ACCC841EF7B2D60037AE5C /* LoginViewController.h */,
-				54ACCC851EF7B2D60037AE5C /* LoginViewController.m */,
-				54ACCC861EF7B2D60037AE5C /* LoginViewController.xib */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -320,7 +335,7 @@
 			files = (
 				54B5C2F51EEE325D000E907E /* CollectionReusableView.xib in Resources */,
 				54CE685A1EE91CD800364D13 /* DiscoverCollectionViewCell.xib in Resources */,
-				54ACCC881EF7B2D60037AE5C /* LoginViewController.xib in Resources */,
+				54A8B1E21EFA6FCF00D442EF /* LoginViewController.xib in Resources */,
 				54B5C2F01EEE08F3000E907E /* HomeViewController.xib in Resources */,
 				549AF23C1EF221EC00802338 /* Launch Screen.storyboard in Resources */,
 				5493EA751EE7D69700F703BB /* Assets.xcassets in Resources */,
@@ -346,9 +361,12 @@
 				54CE68591EE91CD800364D13 /* DiscoverCollectionViewCell.m in Sources */,
 				5493EA6D1EE7D69700F703BB /* AppDelegate.m in Sources */,
 				5493EA6A1EE7D69700F703BB /* main.m in Sources */,
-				54ACCC871EF7B2D60037AE5C /* LoginViewController.m in Sources */,
+				54A8B1DA1EFA050800D442EF /* DefineObject.m in Sources */,
+				54A8B1DD1EFA6A9900D442EF /* DefineColor.m in Sources */,
+				54A0F48C1EFBCD370028AF50 /* Helper.m in Sources */,
 				54B5C2F41EEE325D000E907E /* CollectionReusableView.m in Sources */,
 				54B5C2EF1EEE08F3000E907E /* HomeViewController.m in Sources */,
+				54A8B1E11EFA6FCF00D442EF /* LoginViewController.m in Sources */,
 				54BCE4B91EEA98DC003C54E0 /* ModelRequest.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

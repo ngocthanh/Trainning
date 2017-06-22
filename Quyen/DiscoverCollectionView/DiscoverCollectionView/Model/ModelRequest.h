@@ -7,7 +7,7 @@
 //
 
 #import <Foundation/Foundation.h>
-
+#import "Helper.h"
 @interface ModelRequest : NSObject <NSXMLParserDelegate>
 -(NSArray*)getConnection:(NSString*) nameRSS;
 @property (strong, nonatomic) NSMutableDictionary *dictPart;
@@ -21,4 +21,5 @@
 @property (nonatomic) NSInteger numberData;
 @property (strong, nonatomic) NSXMLParser *parser;
 -(void)setArrayDataForCollectionView:(NSInteger) number;
+
 @end
