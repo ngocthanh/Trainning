@@ -10,21 +10,10 @@
 #import "CustomTableViewCell.h"
 #import "GetData.h"
 #import "parserData.h"
-#import "CustomString.h"
 #import <FBSDKCoreKit/FBSDKCoreKit.h>
 #import <FBSDKLoginKit/FBSDKLoginKit.h>
+#import "defineApp.h"
 
-#define heightForRow 250
-#define numberOfSection 5
-#define indexOfNext 1
-#define stringHomePage @"Trang chủ"
-#define stringNews @"Thời sự"
-#define stringWolrd @"Thế giới"
-#define stringHeathy @"Sức khoẻ"
-#define stringEducation @"Giáo dục"
-#define blank @""
-#define oneCell 1
-#define titleApp @"VN Express"
 
 
 @interface CustomCellTableViewController ()
@@ -34,15 +23,18 @@
 @property (weak, nonatomic) IBOutlet UIButton *btnLogin;
 @property (weak, nonatomic) IBOutlet UIProgressView *pgvLogin;
 
+
 @property (weak, nonatomic) IBOutlet UITableView *tableViewNews;
 @property (strong, nonatomic) CustomTableViewCell *cell;
 @property (strong, nonatomic) parserData *parse;
 @property (strong,nonatomic) GetData *getdata;
-@property (strong,nonatomic) CustomString *custom;
 @property (strong,nonatomic) NSMutableArray *allNewOnDisplay;
-
 @property float numberProgress;
-
+@property (nonatomic) NSInteger numberOfItemInSection0;
+@property (nonatomic) NSInteger numberOfItemInSection1;
+@property (nonatomic) NSInteger numberOfItemInSection2;
+@property (nonatomic) NSInteger numberOfItemInSection3;
+@property (nonatomic) NSInteger numberOfItemInSection4;
 @end
 
 @implementation CustomCellTableViewController
@@ -56,7 +48,6 @@
     
     //create parserData by Link;
     _parse =[parserData alloc];
-    _custom=[CustomString alloc];
     _getdata =[GetData alloc];
     _allNewOnDisplay = [[NSMutableArray alloc] init];
     
@@ -64,6 +55,11 @@
     self.tableViewNews.hidden=true;
     self.pgvLogin.hidden=true;
     
+    _numberOfItemInSection0=5;
+    _numberOfItemInSection1=6;
+    _numberOfItemInSection2=7;
+    _numberOfItemInSection3=8;
+    _numberOfItemInSection4=9;
 }
 
 - (void)didReceiveMemoryWarning {
@@ -80,50 +76,45 @@
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
     
-    NSInteger numberOfItem;
+    NSInteger numberOfItem = 0;
     
-    numberOfItem=[[[_allNewOnDisplay objectAtIndex:section] objectAtIndex:0]count];
-    NSInteger numberOfCell=numberOfItem/2;
-    if (numberOfCell*2==numberOfItem) {
+    numberOfItem=[[[_allNewOnDisplay objectAtIndex:section] objectAtIndex:locationOfItemTag]count];
+    NSInteger numberOfCell=numberOfItem/numberDivideToGetNumberOfCell;
+    if (numberOfCell*doubleRowToGetItemLeftSide==numberOfItem) {
         return numberOfCell;
     }
     else{
-        
         return numberOfCell+oneCell;
     }
-
 }
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
-    _cell = [_tableViewNews dequeueReusableCellWithIdentifier:@"cell" forIndexPath:indexPath];
+    _cell = [_tableViewNews dequeueReusableCellWithIdentifier:customCellIdentifier forIndexPath:indexPath];
        //Load information to Cell
-    NSUInteger numberOfItems=[[[_allNewOnDisplay objectAtIndex:indexPath.section] objectAtIndex:0] count];
-    if((indexPath.row*2) <= numberOfItems){
+    NSUInteger numberOfItems =[[[_allNewOnDisplay objectAtIndex:indexPath.section] objectAtIndex:locationOfItemTag] count];
+    if((indexPath.row*doubleRowToGetItemLeftSide) <= numberOfItems){
         [_cell loadIntentForLeftCell:
-         [[[_allNewOnDisplay objectAtIndex:indexPath.section] objectAtIndex:0] objectAtIndex:indexPath.row*2]
+         [[[_allNewOnDisplay objectAtIndex:indexPath.section] objectAtIndex:indexOfTitle] objectAtIndex:indexPath.row*doubleRowToGetItemLeftSide]
                      description:
-         [[[_allNewOnDisplay objectAtIndex:indexPath.section] objectAtIndex:1] objectAtIndex:indexPath.row*2]
+         [[[_allNewOnDisplay objectAtIndex:indexPath.section] objectAtIndex:indexOfDescription] objectAtIndex:indexPath.row*doubleRowToGetItemLeftSide]
                             link:
-         [[[_allNewOnDisplay objectAtIndex:indexPath.section] objectAtIndex:2] objectAtIndex:indexPath.row*2]
+         [[[_allNewOnDisplay objectAtIndex:indexPath.section] objectAtIndex:indexOfImageUrl] objectAtIndex:indexPath.row*doubleRowToGetItemLeftSide]
                             date:
-         [[[_allNewOnDisplay objectAtIndex:indexPath.section] objectAtIndex:3] objectAtIndex:indexPath.row*2]];
-       
+         [[[_allNewOnDisplay objectAtIndex:indexPath.section] objectAtIndex:indexOfDate] objectAtIndex:indexPath.row*doubleRowToGetItemLeftSide]];
     }
-    
-    
-    if ((indexPath.row*2+indexOfNext) < numberOfItems) {
+    if ((indexPath.row*doubleRowToGetItemLeftSide+itemRightSide) < numberOfItems) {
             
         [_cell loadIntentForRightCell:
-         [[[_allNewOnDisplay objectAtIndex:indexPath.section] objectAtIndex:0] objectAtIndex:indexPath.row*2+indexOfNext]
+         [[[_allNewOnDisplay objectAtIndex:indexPath.section] objectAtIndex:indexOfTitle] objectAtIndex:indexPath.row*doubleRowToGetItemLeftSide+itemRightSide]
                       description:
-         [[[_allNewOnDisplay objectAtIndex:indexPath.section] objectAtIndex:1] objectAtIndex:indexPath.row*2+indexOfNext]
+         [[[_allNewOnDisplay objectAtIndex:indexPath.section] objectAtIndex:indexOfDescription] objectAtIndex:indexPath.row*doubleRowToGetItemLeftSide+itemRightSide]
                              link:
-         [[[_allNewOnDisplay objectAtIndex:indexPath.section] objectAtIndex:2] objectAtIndex:indexPath.row*2+indexOfNext]
+         [[[_allNewOnDisplay objectAtIndex:indexPath.section] objectAtIndex:indexOfImageUrl] objectAtIndex:indexPath.row*doubleRowToGetItemLeftSide+itemRightSide]
                              date:
-         [[[_allNewOnDisplay objectAtIndex:indexPath.section] objectAtIndex:3] objectAtIndex:indexPath.row*2+indexOfNext]];
+         [[[_allNewOnDisplay objectAtIndex:indexPath.section] objectAtIndex:indexOfDate] objectAtIndex:indexPath.row*doubleRowToGetItemLeftSide+itemRightSide]];
     }
     else
     {
-        [_cell loadIntentForRightCell:nil description:blank link:blank date:blank];
+        [_cell loadIntentForRightCell:blank description:blank link:nil date:blank];
     }
    
     return _cell;
@@ -137,7 +128,7 @@
             return stringNews;
             break;
         case 2:
-            return stringWolrd;
+            return stringWorld;
             break;
         case 3:
             return stringHeathy;
@@ -163,7 +154,7 @@
     //2. Define the initial state (Before the animation)
     cell.layer.shadowColor = [[UIColor blackColor]CGColor];
     cell.layer.shadowOffset = CGSizeMake(10, 10);
-    cell.alpha = 0;
+    cell.alpha = alphaZero;
     
     cell.layer.transform = rotation;
     cell.layer.anchorPoint = CGPointMake(0, 0.5);
@@ -173,7 +164,7 @@
     [UIView beginAnimations:@"rotation" context:NULL];
     [UIView setAnimationDuration:0.8];
     cell.layer.transform = CATransform3DIdentity;
-    cell.alpha = 1;
+    cell.alpha = alphaOne;
     cell.layer.shadowOffset = CGSizeMake(0, 0);
     [UIView commitAnimations];
 }
@@ -195,23 +186,22 @@
      }];
 }
 -(void)unHiden{
+    [_allNewOnDisplay addObject:[_parse startParsing:urlHomePage numberOfItem:_numberOfItemInSection0]];
     
-    [_allNewOnDisplay addObject:[_parse startParsing:@"http://vnexpress.net/rss/tin-moi-nhat.rss"]];
-    
-    [UIView animateWithDuration:1 animations:^{
-        [_btnLogin setAlpha:0];
+    [UIView animateWithDuration:animateDurationOne animations:^{
+        [_btnLogin setAlpha:alphaZero];
         
     } completion:^(BOOL finished) {
         self.pgvLogin.hidden=false;
-        [UIView animateWithDuration:1 animations:^{
-            [_pgvLogin setAlpha:1];
+        [UIView animateWithDuration:animateDurationOne animations:^{
+            [_pgvLogin setAlpha:alphaOne];
         } completion:^(BOOL finished) {
-            [NSTimer  scheduledTimerWithTimeInterval:0.05 target:self selector:@selector(increaseNumber) userInfo:nil repeats:true];
-            [NSTimer scheduledTimerWithTimeInterval:3 repeats:false block:^(NSTimer * _Nonnull timer) {
-                if (_pgvLogin.progress == 1){
+            [NSTimer  scheduledTimerWithTimeInterval:timerChange target:self selector:@selector(increaseNumber) userInfo:nil repeats:true];
+            [NSTimer scheduledTimerWithTimeInterval:timerThree repeats:false block:^(NSTimer * _Nonnull timer) {
+                if (_pgvLogin.progress == progressBarStateFull){
                     [_pgvLogin setHidden:true];
-                    [_tableViewNews setAlpha:0];
-                    [_lblLogin setAlpha:0];
+                    [_tableViewNews setAlpha:alphaZero];
+                    [_lblLogin setAlpha:alphaZero];
                     [_tableViewNews setHidden:false];
                     [_tableViewNews setDelegate:self];
                     [_tableViewNews setDataSource:self];
@@ -220,10 +210,8 @@
                     _cell = [CustomTableViewCell alloc];
                     [_tableViewNews setAutoresizesSubviews:true];
                     [_tableViewNews layoutIfNeeded];
-                    [UIView animateWithDuration:2 animations:^{
-                        [_tableViewNews setAlpha:1];
-                        
-                        
+                    [UIView animateWithDuration:animateDurationTwo animations:^{
+                        [_tableViewNews setAlpha:alphaOne];
                     }];
                 }
             }];
@@ -231,19 +219,19 @@
     }];
 }
 -(void)startTheBackgroundJob{
-    [_allNewOnDisplay addObject:[_parse startParsing:@"http://vnexpress.net/rss/thoi-su.rss"]];
-    [_allNewOnDisplay addObject:[_parse startParsing:@"http://vnexpress.net/rss/the-gioi.rss"]];
-    [_allNewOnDisplay addObject:[_parse startParsing:@"http://vnexpress.net/rss/suc-khoe.rss"]];
-    [_allNewOnDisplay addObject:[_parse startParsing:@"http://vnexpress.net/rss/giao-duc.rss"]];
+    [_allNewOnDisplay addObject:[_parse startParsing:urlNews numberOfItem:_numberOfItemInSection1]];
+    [_allNewOnDisplay addObject:[_parse startParsing:urlWorld numberOfItem:_numberOfItemInSection2]];
+    [_allNewOnDisplay addObject:[_parse startParsing:urlHeathy numberOfItem:_numberOfItemInSection3]];
+    [_allNewOnDisplay addObject:[_parse startParsing:urlEducation numberOfItem:_numberOfItemInSection4]];
 }
 -(void)increaseNumber{
-    if (_pgvLogin.progress != 1) {
-        float one = 1;
-        float two = [[_allNewOnDisplay objectAtIndex:0] count]*10;
+    if (_pgvLogin.progress != progressBarStateFull) {
+        float one = progressBarStateFull;
+        float two = [[_allNewOnDisplay objectAtIndex:indexOfHomePage] count]*progressBarLastState;
         _numberProgress += one/two;
         
-        [_pgvLogin  setProgress:_numberProgress];//
-        NSLog(@"%f",_pgvLogin.progress);
+        [_pgvLogin  setProgress:_numberProgress];
+        NSLog(formatFloat,_pgvLogin.progress);
     }
 }
 @end

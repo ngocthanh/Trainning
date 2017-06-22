@@ -7,9 +7,8 @@
 //
 
 #import "CustomTableViewCell.h"
+#import "defineApp.h"
 
-#define numberRepresentLeftView 0
-#define numberRepresentRightView 1
 
 
 @interface CustomTableViewCell ()
@@ -57,7 +56,11 @@
     _titleCellR.text=title;
     _descriptionCellR.text=description;
     _dateCellR.text=date;
-    [self getImageOnline:linkImage :numberRepresentRightView];
+    if (linkImage!=nil) {
+        [self getImageOnline:linkImage :numberRepresentRightView];
+    }
+    else
+        [self getImageOnline:urlLogoVnexpress :numberRepresentRightView];
 }
 
 -(void)getImageOnline:(NSString*) linkURL :(NSInteger) number{
@@ -81,7 +84,5 @@
     }];
     [task resume];
 }
-//-(IBAction)goWithURL:(NSString*)Url{
-//    [[UIApplication sharedApplication] openURL:[NSURL URLWithString:Url]];
-//}
+
 @end

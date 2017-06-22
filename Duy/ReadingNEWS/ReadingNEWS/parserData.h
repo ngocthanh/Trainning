@@ -9,7 +9,7 @@
 #import <Foundation/Foundation.h>
 
 @interface parserData : NSObject <NSXMLParserDelegate>
-- (NSArray*)startParsing : (NSString *)urlLink;
+- (NSArray*)startParsing : (NSString *)urlLink numberOfItem:(NSInteger) numberOfItem;
 -(void) setDataForAllArray;
 @property (nonatomic,strong) NSMutableDictionary *dictionaryData;
 @property (nonatomic,strong) NSMutableArray *arrayXMLData;

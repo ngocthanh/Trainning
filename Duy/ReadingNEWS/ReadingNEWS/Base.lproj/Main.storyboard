@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12120" systemVersion="16F73" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="9YG-BU-Ffu">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12120" systemVersion="16F73" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="j98-Zf-gJD">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -7,29 +7,82 @@
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12088"/>
         <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
-        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--StartUp-->
-        <scene sceneID="BeX-ft-7R5">
+        <!--Login Facebook-->
+        <scene sceneID="vk2-wr-wBY">
             <objects>
-                <navigationController title="StartUp" automaticallyAdjustsScrollViewInsets="NO" id="9YG-BU-Ffu" sceneMemberID="viewController">
-                    <toolbarItems/>
-                    <navigationItem key="navigationItem" id="FlB-Aq-Nk3"/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" barStyle="blackTranslucent" id="CGs-1Z-kE6">
+                <viewController storyboardIdentifier="loginScreen" useStoryboardIdentifierAsRestorationIdentifier="YES" id="ZfG-Y7-fqN" customClass="loginFacebook" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="J0h-Tv-3Xt"/>
+                        <viewControllerLayoutGuide type="bottom" id="OpB-LP-4ih"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="hhj-Md-v31">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Gz4-uR-O0E">
+                                <rect key="frame" x="15" y="309" width="345" height="48"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="30"/>
+                                <state key="normal" title="  Connect with Facebook  ">
+                                    <color key="titleColor" red="0.23343215589999999" green="0.70313158009999999" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                </state>
+                                <connections>
+                                    <action selector="loginFacebook:" destination="e2B-fi-UzM" eventType="touchUpInside" id="vdj-38-0p9"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="LOGIN" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7OS-ad-WNb">
+                                <rect key="frame" x="143.5" y="40" width="88" height="36"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="30"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <progressView opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="750" progress="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="xHE-2Z-S46">
+                                <rect key="frame" x="44" y="332" width="300" height="2"/>
+                                <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                                <color key="progressTintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <color key="trackTintColor" red="0.66797741190000004" green="1" blue="0.66221821849999996" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            </progressView>
+                        </subviews>
+                        <color key="backgroundColor" red="0.23343215589999999" green="0.70313158009999999" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="Gz4-uR-O0E" firstAttribute="centerY" secondItem="hhj-Md-v31" secondAttribute="centerY" id="Auy-R2-bF1"/>
+                            <constraint firstItem="7OS-ad-WNb" firstAttribute="centerX" secondItem="hhj-Md-v31" secondAttribute="centerX" id="Nse-kW-YmB"/>
+                            <constraint firstItem="Gz4-uR-O0E" firstAttribute="centerX" secondItem="hhj-Md-v31" secondAttribute="centerX" id="QZK-jM-wxG"/>
+                            <constraint firstItem="xHE-2Z-S46" firstAttribute="centerX" secondItem="hhj-Md-v31" secondAttribute="centerX" constant="6.5" id="RML-GT-JaG"/>
+                            <constraint firstItem="xHE-2Z-S46" firstAttribute="centerY" secondItem="hhj-Md-v31" secondAttribute="centerY" id="UlE-EV-w64"/>
+                            <constraint firstItem="xHE-2Z-S46" firstAttribute="width" secondItem="hhj-Md-v31" secondAttribute="width" multiplier="4/5" id="UsX-vU-94t"/>
+                            <constraint firstItem="7OS-ad-WNb" firstAttribute="top" secondItem="J0h-Tv-3Xt" secondAttribute="bottom" constant="20" id="aN9-FQ-fGI"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="btnLogin" destination="Gz4-uR-O0E" id="tND-m8-BZg"/>
+                        <outlet property="lblLogin" destination="7OS-ad-WNb" id="3h9-vC-nhl"/>
+                        <outlet property="pgvLogin" destination="xHE-2Z-S46" id="nyc-3z-5SH"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="OKl-59-MxB" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-286" y="-230"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="Hdl-C6-cQs">
+            <objects>
+                <navigationController id="j98-Zf-gJD" sceneMemberID="viewController">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="VMH-CY-jzO">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
-                    <nil name="viewControllers"/>
                     <connections>
-                        <segue destination="e2B-fi-UzM" kind="relationship" relationship="rootViewController" id="4ix-Al-Ehd"/>
+                        <segue destination="e2B-fi-UzM" kind="relationship" relationship="rootViewController" id="OSD-0t-86c"/>
                     </connections>
                 </navigationController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="oLf-bD-4Cf" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="ZLv-tP-Hei" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="700" y="-233.43328335832086"/>
+            <point key="canvasLocation" x="714" y="-248"/>
         </scene>
         <!--Custom Cell Table View Controller-->
         <scene sceneID="Pgw-CW-bLa">
@@ -43,17 +96,6 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Gec-kf-YsA">
-                                <rect key="frame" x="15" y="309" width="345" height="48"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="30"/>
-                                <state key="normal" title="  Connect with Facebook  ">
-                                    <color key="titleColor" red="0.23343215589999999" green="0.70313158009999999" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                </state>
-                                <connections>
-                                    <action selector="loginFacebook:" destination="e2B-fi-UzM" eventType="touchUpInside" id="C1F-jU-eKB"/>
-                                </connections>
-                            </button>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="215" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="TFg-Em-q6n">
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -182,6 +224,17 @@
                                     </tableViewCell>
                                 </prototypes>
                             </tableView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Gec-kf-YsA">
+                                <rect key="frame" x="15" y="309" width="345" height="48"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="30"/>
+                                <state key="normal" title="  Connect with Facebook  ">
+                                    <color key="titleColor" red="0.23343215589999999" green="0.70313158009999999" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                </state>
+                                <connections>
+                                    <action selector="loginFacebook:" destination="e2B-fi-UzM" eventType="touchUpInside" id="C1F-jU-eKB"/>
+                                </connections>
+                            </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="LOGIN" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Xet-IP-9ue">
                                 <rect key="frame" x="0.0" y="84" width="374" height="36"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="30"/>
@@ -189,7 +242,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <progressView opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="750" progress="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="vwN-PG-x9I">
-                                <rect key="frame" x="112" y="333" width="150" height="2"/>
+                                <rect key="frame" x="37" y="333" width="300" height="2"/>
                                 <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                                 <color key="progressTintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <color key="trackTintColor" red="0.66797741190000004" green="1" blue="0.66221821849999996" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -205,8 +258,8 @@
                             <constraint firstItem="TFg-Em-q6n" firstAttribute="centerX" secondItem="2Xh-Jb-5p5" secondAttribute="centerX" id="MNN-vp-f5I"/>
                             <constraint firstItem="Xet-IP-9ue" firstAttribute="top" secondItem="G9p-KP-GYg" secondAttribute="bottom" constant="20" id="Q3V-VS-TW9"/>
                             <constraint firstItem="Gec-kf-YsA" firstAttribute="centerY" secondItem="2Xh-Jb-5p5" secondAttribute="centerY" id="amL-mB-Kcw"/>
-                            <constraint firstItem="vwN-PG-x9I" firstAttribute="leading" secondItem="2Xh-Jb-5p5" secondAttribute="leadingMargin" constant="96" id="cHY-qQ-Lt3"/>
                             <constraint firstItem="TFg-Em-q6n" firstAttribute="width" secondItem="2Xh-Jb-5p5" secondAttribute="width" id="jNM-kj-0m4"/>
+                            <constraint firstItem="vwN-PG-x9I" firstAttribute="width" secondItem="TFg-Em-q6n" secondAttribute="width" multiplier="4/5" id="mBk-8k-bHZ"/>
                             <constraint firstItem="vwN-PG-x9I" firstAttribute="centerX" secondItem="2Xh-Jb-5p5" secondAttribute="centerX" id="n4W-gc-wbW"/>
                             <constraint firstItem="Xet-IP-9ue" firstAttribute="centerX" secondItem="TFg-Em-q6n" secondAttribute="centerX" id="pyh-am-JVZ"/>
                         </constraints>
