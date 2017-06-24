@@ -12,29 +12,37 @@
 #import "CollectionReusableView.h"
 #import "ModelRequest.h"
 @interface HomeViewController ()
-@property (weak, nonatomic) IBOutlet UICollectionView *discoverCollectionView;
+@property (weak,   nonatomic) IBOutlet UICollectionView *discoverCollectionView;
 @property (strong, nonatomic) DiscoverCollectionViewCell *cell;
 @property (strong, nonatomic) NSArray *imageName;
-@property (strong, nonatomic) NSArray *name;
-@property (strong,nonatomic) UICollectionViewFlowLayout *flow;
+@property (strong, nonatomic) UICollectionViewFlowLayout *flow;
 @property (strong, nonatomic) NSArray *nameSection;
 @property (strong, nonatomic) ModelRequest *model;
+@property (strong, nonatomic) NSMutableArray *allArray;
+
 @end
 
 @implementation HomeViewController
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    
-    self.navigationController.navigationBar.barTintColor = [UIColor colorWithRed:0.0 green:0.65 blue:0.35 alpha:1];
+    self.view.backgroundColor = [UIColor redColor];
+    self.discoverCollectionView.alwaysBounceVertical = YES;
+    self.navigationController.navigationBar.barTintColor = [UIColor colorWithRed:0.6 green:0.01 blue:0.3 alpha:1];
     _nameSection = [NSArray arrayWithObjects:@"Trang Chủ",@"Số Hoá",@"Thể Thao",@"Giáo Dục",@"Xe", nil];
     [[self navigationItem] setTitle:@"VN Express"];
-//    _name = [NSArray arrayWithObjects:@"CocaCola",@"CocaCola",@"CocaCola",@"CocaCola",@"CocaCola",@"CocaCola", nil];
-    _imageName = [NSArray arrayWithObjects:@"batman-silhouette-variant",@"circular-arrow",@"japanese-dragon",@"iris",@"cat",@"eye", nil];
+    self.navigationController.navigationBar.titleTextAttributes = @{NSForegroundColorAttributeName:[UIColor whiteColor]};
     [_discoverCollectionView registerNib:[UINib nibWithNibName:@"DiscoverCollectionViewCell" bundle:[NSBundle mainBundle]] forCellWithReuseIdentifier:@"homecell"];
     [_discoverCollectionView registerNib:[UINib nibWithNibName:@"CollectionReusableView" bundle:[NSBundle mainBundle]] forSupplementaryViewOfKind:UICollectionElementKindSectionHeader withReuseIdentifier:@"supplementHome"];
+    
     _model = [ModelRequest alloc];
-    [_model getConnection:@"tin-moi-nhat.rss"];
+    _allArray = [[NSMutableArray alloc] init];
+    [_discoverCollectionView layoutIfNeeded];
+    [_allArray addObject:[_model getConnection:@"tin-moi-nhat.rss"]];
+    [_allArray addObject:[_model getConnection:@"so-hoa.rss"]];
+    [_allArray addObject:[_model getConnection:@"the-thao.rss"]];
+    [_allArray addObject:[_model getConnection:@"giao-duc.rss"]];
+    [_allArray addObject:[_model getConnection:@"oto-xe-may.rss"]];
     _cell = [DiscoverCollectionViewCell alloc];
     [_discoverCollectionView setDelegate:self];
     [_discoverCollectionView setDataSource:self];
@@ -42,14 +50,30 @@
     
     
 }
+-(NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section{
+    return [_model.arrayData count];
+}
+-(NSInteger)numberOfSectionsInCollectionView:(UICollectionView *)collectionView{
+    
 
+    return [self.nameSection count];
+}
 
 -(UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath{
-//    _name = [[[_model.arrayData objectAtIndex:indexPath.row] valueForKey:@"title"] stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceAndNewlineCharacterSet]];
-    
+
     _cell = [_discoverCollectionView dequeueReusableCellWithReuseIdentifier:@"homecell" forIndexPath: indexPath];
-    [_cell getDataForImageAndLabel:_imageName[indexPath.row] Title:[[[_model.arrayData objectAtIndex:indexPath.row] valueForKey:@"title"] stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceAndNewlineCharacterSet]] Time:[[[_model.arrayData objectAtIndex:indexPath.row] valueForKey:@"pubDate"] stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceAndNewlineCharacterSet]] Description:[[[_model.arrayData objectAtIndex:indexPath.row] valueForKey:@"description"] stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceAndNewlineCharacterSet]]];
+    //[_model setArrayDataForCollectionView:indexPath.row];
     
+
+
+    ;
+    NSLog(@"%ld",(long)indexPath.row)  ;
+    [_cell getDataForImageAndTitle:[[[_allArray objectAtIndex:indexPath.section] objectAtIndex:0]objectAtIndex:indexPath.row]
+                              Time:[[[_allArray objectAtIndex:indexPath.section] objectAtIndex:1]objectAtIndex:indexPath.row]
+                       Description:[[[_allArray objectAtIndex:indexPath.section] objectAtIndex:2]objectAtIndex:indexPath.row]
+                      LinkURLImage:[[[_allArray objectAtIndex:indexPath.section] objectAtIndex:3]objectAtIndex:indexPath.row]
+     ];
+   
     return _cell;
 }
 
@@ -57,8 +81,10 @@
     UICollectionReusableView *reusableview;
     CollectionReusableView *collectionSection = [_discoverCollectionView dequeueReusableSupplementaryViewOfKind:UICollectionElementKindSectionHeader withReuseIdentifier:@"supplementHome" forIndexPath:indexPath];
     [collectionSection getDataForTitleSection:_nameSection[indexPath.section]];
-    reusableview=collectionSection;
-    return reusableview;
+    
+    reusableview = collectionSection;
+        return reusableview;
+    
 }
 
 - (CGSize)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout *)collectionViewLayout sizeForItemAtIndexPath:(NSIndexPath *)indexPath{
@@ -66,19 +92,14 @@
 }
 
 - (CGFloat)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout *)collectionViewLayout minimumLineSpacingForSectionAtIndex:(NSInteger)section{
-    return 15;
+    return 10;
 }
 -(UIEdgeInsets)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout *)collectionViewLayout insetForSectionAtIndex:(NSInteger)section{
     return UIEdgeInsetsMake(10, 10, 10, 10);
     
 }
--(NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section{
-    NSLog(@"%ld view",(long)[_model numberData]);
-    return [_model.arrayData count];
-}
--(NSInteger)numberOfSectionsInCollectionView:(UICollectionView *)collectionView{
-    return 5;
-}
+
+
 
 
 

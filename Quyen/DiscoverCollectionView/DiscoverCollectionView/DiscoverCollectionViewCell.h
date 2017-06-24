@@ -13,6 +13,6 @@
 @property (weak, nonatomic) IBOutlet UILabel *lblTitle;
 @property (weak, nonatomic) IBOutlet UILabel *lblTime;
 @property (weak, nonatomic) IBOutlet UILabel *lblDescription;
--(void)getDataForImageAndLabel:(NSString*) image Title:(NSString*) title Time:(NSString*) time Description:(NSString*) description;
+-(void)getDataForImageAndTitle:(NSString*) title Time:(NSString*) time Description:(NSString*) description LinkURLImage:(NSString*) linkurl;
 
 @end

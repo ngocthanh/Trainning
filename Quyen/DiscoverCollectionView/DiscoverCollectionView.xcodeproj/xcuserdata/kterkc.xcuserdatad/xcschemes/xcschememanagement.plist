@@ -9,6 +9,11 @@
 			<key>orderHint</key>
 			<integer>0</integer>
 		</dict>
+		<key>FBSDK.xcscheme</key>
+		<dict>
+			<key>orderHint</key>
+			<integer>1</integer>
+		</dict>
 	</dict>
 	<key>SuppressBuildableAutocreation</key>
 	<dict>
@@ -18,6 +23,16 @@
 			<true/>
 		</dict>
 		<key>5493EA7D1EE7D69700F703BB</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>54ACCC651EF792990037AE5C</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>54ACCC6D1EF792990037AE5C</key>
 		<dict>
 			<key>primary</key>
 			<true/>

@@ -38,6 +38,16 @@
                ReferencedContainer = "container:DiscoverCollectionView.xcodeproj">
             </BuildableReference>
          </TestableReference>
+         <TestableReference
+            skipped = "NO">
+            <BuildableReference
+               BuildableIdentifier = "primary"
+               BlueprintIdentifier = "54ACCC6D1EF792990037AE5C"
+               BuildableName = "FBSDKTests.xctest"
+               BlueprintName = "FBSDKTests"
+               ReferencedContainer = "container:DiscoverCollectionView.xcodeproj">
+            </BuildableReference>
+         </TestableReference>
       </Testables>
       <MacroExpansion>
          <BuildableReference
