@@ -11,4 +11,5 @@
 -(NSString*)strimString:(NSString*) stringNeedToStrim Pattern:(NSString*) patternString ;
 -(NSString*)formatDateDDMMYYY:(NSString*) stringDate;
 -(NSInteger)setNumberOfRowsInSection:(NSInteger) number;
+-(void)loadWebViewWithURL:(NSString*) stringURL WebView:(UIWebView*) webview;
 @end

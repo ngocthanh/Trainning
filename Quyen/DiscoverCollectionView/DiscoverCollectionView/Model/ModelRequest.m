@@ -15,6 +15,7 @@
     _arrayTime = [[NSMutableArray alloc] init];
     _arrayDescription = [[NSMutableArray alloc] init];
     _arrayLink = [[NSMutableArray alloc] init];
+    _arrayLinkNews = [[NSMutableArray alloc] init];
     NSString *baseURL = urlBase;
     _url = [NSString stringWithFormat:stringAddString,baseURL,nameRSS];
     
@@ -25,7 +26,7 @@
     for (int i = 0; i<[self.arrayData count]; i++) {
         [self setArrayDataForCollectionView:i];
     }
-    NSArray *all =[[NSArray alloc] initWithObjects:_arrayTitle,_arrayTime,_arrayDescription,_arrayLink, nil];
+    NSArray *all =[[NSArray alloc] initWithObjects:_arrayTitle,_arrayTime,_arrayDescription,_arrayLink,_arrayLinkNews, nil];
     return all;
 }
 -(void)parser:(NSXMLParser *)parser didStartElement:(NSString *)elementName namespaceURI:(NSString *)namespaceURI qualifiedName:(NSString *)qName attributes:(NSDictionary<NSString *,NSString *> *)attributeDict{
@@ -82,6 +83,12 @@
     result = [[Helper alloc]strimString:string Pattern:patternStringDescription];
     if (result.length>0) {
         [_arrayDescription addObject:result];
+        
+    }
+    //--------------------
+    result = [[Helper alloc] strimString:string Pattern:patternStringLinkNews];
+    if (result.length>0) {
+        [_arrayLinkNews addObject:result];
         
     }
     

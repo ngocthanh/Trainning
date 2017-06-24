@@ -14,8 +14,10 @@
 #import "LineFlowLayout.h"
 #import <FBSDKLoginKit/FBSDKLoginKit.h>
 #import <FBSDKCoreKit/FBSDKCoreKit.h>
+#import "DisplayedNewsViewController.h"
 
-@interface HomeViewController ()
+@interface HomeViewController()
+
 @property (weak, nonatomic) IBOutlet UICollectionView *discoverCollectionView;
 @property (weak, nonatomic) IBOutlet UIProgressView *progessView;
 @property (weak, nonatomic) IBOutlet UILabel *lblLogin;
@@ -41,7 +43,7 @@
     self.navigationController.navigationBar.barTintColor = [DefineColor colorPrimary];
     self.navigationController.navigationBar.titleTextAttributes = @{NSForegroundColorAttributeName:[UIColor whiteColor]};
     [self.navigationController setNavigationBarHidden:true];
-    
+    self.navigationController.navigationBar.tintColor = [UIColor whiteColor];
     _model = [ModelRequest alloc];
     _allArray = [[NSMutableArray alloc] init];
     _numberProgress = floatNumberZero;
@@ -62,43 +64,39 @@
 
 -(void)unHiden{
    
-    [_allArray addObject:[_model getConnection: urlFirst]];
-    
-    [UIView animateWithDuration:intOne animations:^{
-        [_progessView setAlpha:intOne];
-        _lblLogin.text = titleDownloadData;
+    [_allArray addObject:[_model getConnection:urlSecond]];
 
-        
-    } completion:^(BOOL finished) {
-        [NSTimer  scheduledTimerWithTimeInterval:timeRepeatForProgress target:self selector:@selector(increaseNumber) userInfo:nil repeats:true];
-        [NSThread detachNewThreadSelector:@selector(startTheBackgroundJob) toTarget:self withObject:nil];
-        [NSTimer scheduledTimerWithTimeInterval:intThree repeats:false block:^(NSTimer * _Nonnull timer) {
-            if (_progessView.progress == intOne){
-                self.title = titleVNExpress;
-                [self.navigationController setNavigationBarHidden:false];
+    if ([[_allArray objectAtIndex:intZero] count] != 0) {
+        [UIView animateWithDuration:intOne animations:^{
+            [_progessView setAlpha:intOne];
+            _lblLogin.text = titleDownloadData;
+        } completion:^(BOOL finished) {
+            [NSTimer  scheduledTimerWithTimeInterval:timeRepeatForProgress target:self selector:@selector(increaseNumber) userInfo:nil repeats:true];
+            [NSThread detachNewThreadSelector:@selector(startTheBackgroundJob) toTarget:self withObject:nil];
+            [NSTimer scheduledTimerWithTimeInterval:intThree repeats:false block:^(NSTimer * _Nonnull timer) {
+                if (_progessView.progress == intOne){
+                    [self.navigationController setNavigationBarHidden:false];
+                    _cell = [DiscoverCollectionViewCell alloc];
+                    _nameSection = [NSArray arrayWithObjects:titleSecond,titleFirst,titleThird,titleFourth,titleFifth, nil];
+                    [_progessView setHidden:true];
+                    [_lblLogin setAlpha:intZero];
+                    [_discoverCollectionView setHidden:false];
+                    [_discoverCollectionView setAlpha:intZero];
+                    [_discoverCollectionView layoutIfNeeded];
+                    [_discoverCollectionView setDelegate:self];
+                    [_discoverCollectionView setDataSource:self];
+                    [_discoverCollectionView registerNib:[UINib nibWithNibName: nameCell bundle:[NSBundle mainBundle]] forCellWithReuseIdentifier: idCell];
+                    [_discoverCollectionView registerNib:[UINib nibWithNibName: nameSuplementary bundle:[NSBundle mainBundle]] forSupplementaryViewOfKind:UICollectionElementKindSectionHeader withReuseIdentifier: idSuplementary];
+                    [UIView animateWithDuration:intTwo animations:^{
+                        [_discoverCollectionView setAlpha:intOne];
+                    }];
+                    
+                }
                 
-                _cell = [DiscoverCollectionViewCell alloc];
-                _nameSection = [NSArray arrayWithObjects:titleFirst,titleSecond,titleThird,titleFourth,titleFifth, nil];
-                [_progessView setHidden:true];
-                [_lblLogin setAlpha:intZero];
-
-                [_discoverCollectionView setHidden:false];
-                [_discoverCollectionView setAlpha:intZero];
-                [_discoverCollectionView layoutIfNeeded];
-                [_discoverCollectionView setDelegate:self];
-                [_discoverCollectionView setDataSource:self];
-                [_discoverCollectionView registerNib:[UINib nibWithNibName: nameCell bundle:[NSBundle mainBundle]] forCellWithReuseIdentifier: idCell];
-                [_discoverCollectionView registerNib:[UINib nibWithNibName: nameSuplementary bundle:[NSBundle mainBundle]] forSupplementaryViewOfKind:UICollectionElementKindSectionHeader withReuseIdentifier: idSuplementary];
-                
-                [UIView animateWithDuration:intTwo animations:^{
-                    [_discoverCollectionView setAlpha:intOne];
-                }];
-                
-            }
-            
+            }];
         }];
-    }];
-}
+    }
+}// 1 ,10,3 ,7 5
 -(void)increaseNumber{
     if (_progessView.progress != intOne) {
         float one = intOne;
@@ -115,7 +113,8 @@
 //}
 
 -(void)startTheBackgroundJob{
-    [_allArray addObject:[_model getConnection:urlSecond]];
+    [_allArray addObject:[_model getConnection: urlFirst]];
+
     [_allArray addObject:[_model getConnection:urlThird]];
     [_allArray addObject:[_model getConnection:urlFourth]];
     [_allArray addObject:[_model getConnection:urlFifth]];
@@ -135,9 +134,10 @@
     _cell = [_discoverCollectionView dequeueReusableCellWithReuseIdentifier:idCell forIndexPath: indexPath];
     
     [_cell getDataForImageAndTitle:[[[_allArray objectAtIndex:indexPath.section] objectAtIndex:objectTitle]objectAtIndex:indexPath.row]
-                            Time:[[[_allArray objectAtIndex:indexPath.section] objectAtIndex:objectTime]objectAtIndex:indexPath.row]
-                      Description:[[[_allArray objectAtIndex:indexPath.section] objectAtIndex:objectDescription]objectAtIndex:indexPath.row]
-                     LinkURLImage:[[[_allArray objectAtIndex:indexPath.section] objectAtIndex:objectLinkImage]objectAtIndex:indexPath.row]
+                              Time:[[[_allArray objectAtIndex:indexPath.section] objectAtIndex:objectTime]objectAtIndex:indexPath.row]
+                       Description:[[[_allArray objectAtIndex:indexPath.section] objectAtIndex:objectDescription]objectAtIndex:indexPath.row]
+                      LinkURLImage:[[[_allArray objectAtIndex:indexPath.section] objectAtIndex:objectLinkImage]objectAtIndex:indexPath.row]
+                          LinkNews:[[[_allArray objectAtIndex:indexPath.section] objectAtIndex:objectLinkNews]objectAtIndex:indexPath.row]
      ];
     return _cell;
 }
@@ -150,6 +150,12 @@
     reusableview = collectionSection;
         return reusableview;
     
+}
+-(void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath{
+    
+    DisplayedNewsViewController *displayedViewController = [DisplayedNewsViewController alloc];
+    displayedViewController.url = [[[_allArray objectAtIndex:indexPath.section] objectAtIndex:objectLinkNews]objectAtIndex:indexPath.row];
+    [self.navigationController pushViewController:displayedViewController animated:YES];
 }
 
 - (CGSize)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout *)collectionViewLayout sizeForItemAtIndexPath:(NSIndexPath *)indexPath{
@@ -177,6 +183,14 @@
 -(UIEdgeInsets)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout *)collectionViewLayout insetForSectionAtIndex:(NSInteger)section{
     return UIEdgeInsetsMake(intTen, intTen, intTen, intTen);
     
+}
+-(void)viewWillAppear:(BOOL)animated{
+    self.title = titleVNExpress;
+
+}
+-(void)viewWillDisappear:(BOOL)animated{
+    self.title = textNil;
+
 }
 
 @end

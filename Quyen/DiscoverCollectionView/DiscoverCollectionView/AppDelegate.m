@@ -20,6 +20,7 @@
 @implementation AppDelegate
 -(BOOL)application:(UIApplication *)application willFinishLaunchingWithOptions:(NSDictionary *)launchOptions{
     NSLog(@"That's Good");
+    
     return YES;
     }
 
@@ -31,9 +32,8 @@
     [FBSDKLoginButton class];
     //--------------
     self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
-    self.window.backgroundColor = [UIColor colorWithRed:0 green:1 blue:0 alpha:1];
-    
     _naviController = [[UINavigationController alloc] initWithRootViewController:[[HomeViewController alloc] init]];
+    _naviController.navigationBar.tintColor = [UIColor whiteColor];
     [self.window makeKeyAndVisible];
     if ([FBSDKAccessToken currentAccessToken]) {
         [self.window setRootViewController: _naviController];

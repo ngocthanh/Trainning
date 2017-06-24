@@ -25,7 +25,7 @@
     self.layer.borderColor = [DefineColor colorPrimary].CGColor;
     
 }
--(void)getDataForImageAndTitle:(NSString*) title Time:(NSString*) time Description:(NSString*) description LinkURLImage:(NSString*) linkurl {
+-(void)getDataForImageAndTitle:(NSString*) title Time:(NSString*) time Description:(NSString*) description LinkURLImage:(NSString*) linkurl LinkNews:(NSString*) linknews {
 
     //_img.image = [UIImage imageNamed:image];
 //    if ((title || time || description || linkurl ) == nil) {
@@ -38,6 +38,8 @@
     _lblTitle.text = title;
     _lblTime.text = time;
     _lblDescription.text = description;
+    _linkNews = linknews;
+    
 }
 -(void)getImageOnline:(NSString*) linkURL{
     if (![linkURL   isEqual: textNil]) {

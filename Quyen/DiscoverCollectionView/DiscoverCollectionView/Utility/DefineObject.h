@@ -18,18 +18,20 @@
 #define intThree 3
 #define frontSizeMinium 11
 
-#define floatRed 0.6
-#define floatGreen 0.01
-#define floatBlue 0.3
-
 #define timeRepeatForProgress 0.05
-
+/*
+ - name is not meaning
+ - should use enum
+ 
+ */
 #define objectTitle 0
 #define objectTime 1
 #define objectDescription 2
 #define objectLinkImage 3
+#define objectLinkNews 4
 
 #define titleVNExpress @"VN Express"
+#define titleSubView @ "Thông Tin"
 #define titleFirst @"Trang Chủ"
 #define titleSecond @"Số Hoá"
 #define titleThird @"Thể Thao"
@@ -60,6 +62,7 @@
 #define formatDateVN @"dd/MM/yyyy HH:mm"
 #define patternStringLink @"src=\"([^\"]+)"
 #define patternStringDescription @"</br>([^&]+)"
+#define patternStringLinkNews @"ef=\"([^\"]+)"
 
 #define stringAddString @"%@%@"
 #define firstCheckString @"rss"
@@ -70,5 +73,5 @@
 
 
 @interface DefineObject : NSObject
-@property UIColor* colorPrimary ;
+
 @end

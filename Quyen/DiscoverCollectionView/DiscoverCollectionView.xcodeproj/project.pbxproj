@@ -11,6 +11,8 @@
 		5493EA6D1EE7D69700F703BB /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 5493EA6C1EE7D69700F703BB /* AppDelegate.m */; };
 		5493EA751EE7D69700F703BB /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5493EA741EE7D69700F703BB /* Assets.xcassets */; };
 		5493EA831EE7D69700F703BB /* DiscoverCollectionViewTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 5493EA821EE7D69700F703BB /* DiscoverCollectionViewTests.m */; };
+		54992A721EFCAA3E00523A50 /* DisplayedNewsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 54992A701EFCAA3E00523A50 /* DisplayedNewsViewController.m */; };
+		54992A731EFCAA3E00523A50 /* DisplayedNewsViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 54992A711EFCAA3E00523A50 /* DisplayedNewsViewController.xib */; };
 		549AF23C1EF221EC00802338 /* Launch Screen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 549AF23B1EF221EC00802338 /* Launch Screen.storyboard */; };
 		54A0F48C1EFBCD370028AF50 /* Helper.m in Sources */ = {isa = PBXBuildFile; fileRef = 54A0F48B1EFBCD370028AF50 /* Helper.m */; };
 		54A8B1DA1EFA050800D442EF /* DefineObject.m in Sources */ = {isa = PBXBuildFile; fileRef = 54A8B1D91EFA050800D442EF /* DefineObject.m */; };
@@ -65,6 +67,9 @@
 		5493EA7E1EE7D69700F703BB /* DiscoverCollectionViewTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = DiscoverCollectionViewTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		5493EA821EE7D69700F703BB /* DiscoverCollectionViewTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DiscoverCollectionViewTests.m; sourceTree = "<group>"; };
 		5493EA841EE7D69700F703BB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		54992A6F1EFCAA3E00523A50 /* DisplayedNewsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DisplayedNewsViewController.h; sourceTree = "<group>"; };
+		54992A701EFCAA3E00523A50 /* DisplayedNewsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DisplayedNewsViewController.m; sourceTree = "<group>"; };
+		54992A711EFCAA3E00523A50 /* DisplayedNewsViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = DisplayedNewsViewController.xib; sourceTree = "<group>"; };
 		549AF23B1EF221EC00802338 /* Launch Screen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = "Launch Screen.storyboard"; sourceTree = "<group>"; };
 		54A0F48A1EFBCD370028AF50 /* Helper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Helper.h; sourceTree = "<group>"; };
 		54A0F48B1EFBCD370028AF50 /* Helper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Helper.m; sourceTree = "<group>"; };
@@ -240,6 +245,9 @@
 				54B5C2EC1EEE08F3000E907E /* HomeViewController.h */,
 				54B5C2ED1EEE08F3000E907E /* HomeViewController.m */,
 				54B5C2EE1EEE08F3000E907E /* HomeViewController.xib */,
+				54992A6F1EFCAA3E00523A50 /* DisplayedNewsViewController.h */,
+				54992A701EFCAA3E00523A50 /* DisplayedNewsViewController.m */,
+				54992A711EFCAA3E00523A50 /* DisplayedNewsViewController.xib */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -338,6 +346,7 @@
 				54A8B1E21EFA6FCF00D442EF /* LoginViewController.xib in Resources */,
 				54B5C2F01EEE08F3000E907E /* HomeViewController.xib in Resources */,
 				549AF23C1EF221EC00802338 /* Launch Screen.storyboard in Resources */,
+				54992A731EFCAA3E00523A50 /* DisplayedNewsViewController.xib in Resources */,
 				5493EA751EE7D69700F703BB /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -361,6 +370,7 @@
 				54CE68591EE91CD800364D13 /* DiscoverCollectionViewCell.m in Sources */,
 				5493EA6D1EE7D69700F703BB /* AppDelegate.m in Sources */,
 				5493EA6A1EE7D69700F703BB /* main.m in Sources */,
+				54992A721EFCAA3E00523A50 /* DisplayedNewsViewController.m in Sources */,
 				54A8B1DA1EFA050800D442EF /* DefineObject.m in Sources */,
 				54A8B1DD1EFA6A9900D442EF /* DefineColor.m in Sources */,
 				54A0F48C1EFBCD370028AF50 /* Helper.m in Sources */,

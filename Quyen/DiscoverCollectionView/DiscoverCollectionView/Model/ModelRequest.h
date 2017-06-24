@@ -17,6 +17,7 @@
 @property (strong, nonatomic) NSMutableArray *arrayDescription;
 @property (strong, nonatomic) NSMutableArray *arrayTitle;
 @property (strong, nonatomic) NSMutableArray *arrayLink;
+@property (strong, nonatomic) NSMutableArray *arrayLinkNews;
 @property (strong, nonatomic) NSString *url;
 @property (nonatomic) NSInteger numberData;
 @property (strong, nonatomic) NSXMLParser *parser;

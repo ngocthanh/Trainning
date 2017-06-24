@@ -32,7 +32,36 @@
     return dateString;
 }
 -(NSInteger)setNumberOfRowsInSection:(NSInteger) number{
-    return  number + intThree + intOne;
+    switch (number) {
+        case 0:
+            return 3;
+            break;
+        case 1:
+            return 1;
+            break;
+        case 2:
+            return 10;
+            break;
+        case 3:
+            return 7;
+            break;
+        case 4:
+            return 5;
+            break;
+ 
+    }
+    return  0;//number + intThree + intOne;
+}
+
+-(void)loadWebViewWithURL:(NSString*) stringURL WebView:(UIWebView*) webview{
+    if (![stringURL isEqual: textNil]) {
+        NSURL *url = [[NSURL alloc] initWithString:stringURL];
+        
+        NSURLRequest *request = [[NSURLRequest alloc] initWithURL:url];
+        
+        [webview loadRequest:request];
+            
+    }
 }
 
 
