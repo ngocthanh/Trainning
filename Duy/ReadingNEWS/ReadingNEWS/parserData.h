@@ -19,5 +19,6 @@
 @property (nonatomic,strong) NSMutableArray *allDescription;
 @property (nonatomic,strong) NSMutableArray *allImageLink;
 @property (nonatomic,strong) NSMutableArray *allDate;
+@property (nonatomic,strong) NSMutableArray *allLink;
 @end
 

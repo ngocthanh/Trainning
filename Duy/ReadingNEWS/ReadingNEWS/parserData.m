@@ -17,12 +17,13 @@
     _allDescription=[[NSMutableArray alloc] init];
     _allImageLink=[[NSMutableArray alloc] init];
     _allDate=[[NSMutableArray alloc] init];
+    _allLink=[[NSMutableArray alloc]init];
     
     NSXMLParser *xmlparser = [[NSXMLParser alloc] initWithContentsOfURL:[NSURL URLWithString:urlLink]];
     [xmlparser setDelegate:self];
     [xmlparser parse];
     [self setDataForAllArray:numberOfItem];
-    NSArray *allIn1Section=[[NSArray alloc] initWithObjects:_allTitle,_allDescription,_allImageLink,_allDate, nil];
+    NSArray *allIn1Section=[[NSArray alloc] initWithObjects:_allTitle,_allDescription,_allImageLink,_allDate,_allLink, nil];
 
     return allIn1Section;
      
@@ -43,7 +44,7 @@
 }
 - (void)parser:(NSXMLParser *)parser didEndElement:(NSString *)elementName namespaceURI:(NSString *)namespaceURI qualifiedName:(NSString *)qName;
 {
-    if([elementName isEqualToString:elementTitle] || [elementName isEqualToString:elementDescription] ||[elementName isEqualToString:elementPudDate])
+    if([elementName isEqualToString:elementTitle] || [elementName isEqualToString:elementDescription] ||[elementName isEqualToString:elementPudDate]|| [elementName isEqualToString:@"link"])
     {
         [_mdictXMLPart setObject:_mstrXMLString forKey:elementName];
     }
@@ -102,6 +103,14 @@
         }
         else
             [_allImageLink addObject:urlLogoVnexpress];
+        string=[[[_arrayXMLData objectAtIndex:number]valueForKey:@"link"] stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceAndNewlineCharacterSet]];
+        if(string.length>noExistValue){
+            [_allLink addObject:string];
+        }
+        else{
+            [_allLink addObject:@"http://vnexpress.net"];
+        }
+        
     }
 }
 

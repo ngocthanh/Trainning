@@ -9,6 +9,8 @@
 /* Begin PBXBuildFile section */
 		390AF02E1EFA0F1C00E836E3 /* defineApp.m in Sources */ = {isa = PBXBuildFile; fileRef = 390AF02D1EFA0F1C00E836E3 /* defineApp.m */; };
 		390AF0371EFB785700E836E3 /* loginFacebook.m in Sources */ = {isa = PBXBuildFile; fileRef = 390AF0361EFB785700E836E3 /* loginFacebook.m */; };
+		390AF03A1EFCD77300E836E3 /* webViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 390AF0391EFCD77300E836E3 /* webViewController.m */; };
+		390AF03D1EFD2C9000E836E3 /* ItemModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 390AF03C1EFD2C9000E836E3 /* ItemModel.m */; };
 		3950EAE21EEA813100E41F49 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 3950EAE11EEA813100E41F49 /* main.m */; };
 		3950EAE51EEA813100E41F49 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 3950EAE41EEA813100E41F49 /* AppDelegate.m */; };
 		3950EAEB1EEA813100E41F49 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3950EAE91EEA813100E41F49 /* Main.storyboard */; };
@@ -42,6 +44,10 @@
 		390AF02D1EFA0F1C00E836E3 /* defineApp.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = defineApp.m; sourceTree = "<group>"; };
 		390AF0351EFB785700E836E3 /* loginFacebook.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = loginFacebook.h; sourceTree = "<group>"; };
 		390AF0361EFB785700E836E3 /* loginFacebook.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = loginFacebook.m; sourceTree = "<group>"; };
+		390AF0381EFCD77300E836E3 /* webViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = webViewController.h; sourceTree = "<group>"; };
+		390AF0391EFCD77300E836E3 /* webViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = webViewController.m; sourceTree = "<group>"; };
+		390AF03B1EFD2C9000E836E3 /* ItemModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ItemModel.h; sourceTree = "<group>"; };
+		390AF03C1EFD2C9000E836E3 /* ItemModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ItemModel.m; sourceTree = "<group>"; };
 		3950EADD1EEA813100E41F49 /* ReadingNEWS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ReadingNEWS.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		3950EAE11EEA813100E41F49 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		3950EAE31EEA813100E41F49 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -151,6 +157,8 @@
 				3950EB501EEE3C3A00E41F49 /* GetData.m */,
 				3950EB551EEE788100E41F49 /* parserData.h */,
 				3950EB561EEE788100E41F49 /* parserData.m */,
+				390AF03B1EFD2C9000E836E3 /* ItemModel.h */,
+				390AF03C1EFD2C9000E836E3 /* ItemModel.m */,
 			);
 			name = Model;
 			sourceTree = "<group>";
@@ -174,6 +182,8 @@
 				3980E73B1EF23E7D001F969A /* CustomCellTableViewController.m */,
 				390AF0351EFB785700E836E3 /* loginFacebook.h */,
 				390AF0361EFB785700E836E3 /* loginFacebook.m */,
+				390AF0381EFCD77300E836E3 /* webViewController.h */,
+				390AF0391EFCD77300E836E3 /* webViewController.m */,
 			);
 			name = ViewController;
 			sourceTree = "<group>";
@@ -302,11 +312,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				390AF03A1EFCD77300E836E3 /* webViewController.m in Sources */,
 				3950EB511EEE3C3A00E41F49 /* GetData.m in Sources */,
 				390AF02E1EFA0F1C00E836E3 /* defineApp.m in Sources */,
 				3980E73C1EF23E7D001F969A /* CustomCellTableViewController.m in Sources */,
 				3950EB481EED91CE00E41F49 /* CustomTableViewCell.m in Sources */,
 				3950EAE51EEA813100E41F49 /* AppDelegate.m in Sources */,
+				390AF03D1EFD2C9000E836E3 /* ItemModel.m in Sources */,
 				390AF0371EFB785700E836E3 /* loginFacebook.m in Sources */,
 				3950EB571EEE788100E41F49 /* parserData.m in Sources */,
 				3950EAE21EEA813100E41F49 /* main.m in Sources */,

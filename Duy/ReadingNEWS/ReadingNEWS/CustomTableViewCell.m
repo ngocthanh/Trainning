@@ -32,8 +32,8 @@
 
 - (void)awakeFromNib {
     [super awakeFromNib];
-    _leftView.layer.borderWidth=1;
-    _rightView.layer.borderWidth=1;
+    _leftView.layer.borderWidth=borderState;
+    _rightView.layer.borderWidth=borderState;
     // Initialization code
 }
 

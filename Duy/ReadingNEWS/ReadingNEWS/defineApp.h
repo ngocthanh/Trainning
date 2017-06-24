@@ -18,17 +18,19 @@
 #define numberDivideToGetNumberOfCell 2
 
 #define titleApp @"VN Express"
+#define detailsTitle @"Details"
 #define stringHomePage @"Trang chủ"
 #define stringNews @"Thời sự"
 #define stringWorld @"Thế giới"
 #define stringHeathy @"Sức khoẻ"
 #define stringEducation @"Giáo dục"
 #define urlHomePage @"http://vnexpress.net/rss/tin-moi-nhat.rss"
-#define urlNews @"http://vnexpress.net/rss/thoi-su.rss"
+#define urlNews @"http://vnexpress.net/rss/so-hoa.rss"
 #define urlWorld @"http://vnexpress.net/rss/the-gioi.rss"
 #define urlHeathy @"http://vnexpress.net/rss/suc-khoe.rss"
 #define urlEducation @"http://vnexpress.net/rss/giao-duc.rss"
 #define urlLogoVnexpress @"https://s.vnecdn.net/vnexpress/i/v44/logo_default.jpg"
+
 #define indexOfHomePage 0
 #define indexOfNews 1
 #define indexOfWorld 2
@@ -37,11 +39,16 @@
 
 #define customCellIdentifier @"cell"
 #define locationOfItemTag 0
-
+/* 
+ -  in a group should use Enum
+ -
+ 
+ */
 #define indexOfTitle 0
 #define indexOfDescription 1
 #define indexOfImageUrl 2
 #define indexOfDate 3
+#define indexOfUrl 4
 
 #define progressBarStateFull 1
 #define progressBarLastState 10
@@ -103,9 +110,12 @@
 #define numberOfOption 0
 #define indexStartup 0
 #define noExistValue 0
+#define borderState 1
 
 #define numberRepresentLeftView 0
 #define numberRepresentRightView 1
+
+
 @interface defineApp : NSObject
 
 @end

@@ -13,6 +13,7 @@
 #import <FBSDKCoreKit/FBSDKCoreKit.h>
 #import <FBSDKLoginKit/FBSDKLoginKit.h>
 #import "defineApp.h"
+#import "webViewController.h"
 
 
 
@@ -22,7 +23,6 @@
 @property (weak, nonatomic) IBOutlet UILabel *lblLogin;
 @property (weak, nonatomic) IBOutlet UIButton *btnLogin;
 @property (weak, nonatomic) IBOutlet UIProgressView *pgvLogin;
-
 
 @property (weak, nonatomic) IBOutlet UITableView *tableViewNews;
 @property (strong, nonatomic) CustomTableViewCell *cell;
@@ -54,12 +54,12 @@
     self.tableViewNews.alwaysBounceVertical=YES;
     self.tableViewNews.hidden=true;
     self.pgvLogin.hidden=true;
-    
-    _numberOfItemInSection0=5;
-    _numberOfItemInSection1=6;
-    _numberOfItemInSection2=7;
-    _numberOfItemInSection3=8;
-    _numberOfItemInSection4=9;
+    // 1/10/3/7/5
+    _numberOfItemInSection0=1;
+    _numberOfItemInSection1=10;
+    _numberOfItemInSection2=3;
+    _numberOfItemInSection3=7;
+    _numberOfItemInSection4=5;
 }
 
 - (void)didReceiveMemoryWarning {
@@ -89,8 +89,26 @@
 }
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     _cell = [_tableViewNews dequeueReusableCellWithIdentifier:customCellIdentifier forIndexPath:indexPath];
+    /* 
+    - hard to read code (use define object,do not use array to manage array)
+    -
+    
+     
+     */
+    /*
+     
+    -step 1: find objects what need to display
+    -step 2: set objects for this cell
+    
+     */
+    
+    
+    
+    
+    
        //Load information to Cell
     NSUInteger numberOfItems =[[[_allNewOnDisplay objectAtIndex:indexPath.section] objectAtIndex:locationOfItemTag] count];
+    
     if((indexPath.row*doubleRowToGetItemLeftSide) <= numberOfItems){
         [_cell loadIntentForLeftCell:
          [[[_allNewOnDisplay objectAtIndex:indexPath.section] objectAtIndex:indexOfTitle] objectAtIndex:indexPath.row*doubleRowToGetItemLeftSide]
@@ -99,7 +117,8 @@
                             link:
          [[[_allNewOnDisplay objectAtIndex:indexPath.section] objectAtIndex:indexOfImageUrl] objectAtIndex:indexPath.row*doubleRowToGetItemLeftSide]
                             date:
-         [[[_allNewOnDisplay objectAtIndex:indexPath.section] objectAtIndex:indexOfDate] objectAtIndex:indexPath.row*doubleRowToGetItemLeftSide]];
+         [[[_allNewOnDisplay objectAtIndex:indexPath.section] objectAtIndex:indexOfDate] objectAtIndex:indexPath.row*doubleRowToGetItemLeftSide]]
+        ;
     }
     if ((indexPath.row*doubleRowToGetItemLeftSide+itemRightSide) < numberOfItems) {
             
@@ -114,10 +133,29 @@
     }
     else
     {
-        [_cell loadIntentForRightCell:blank description:blank link:nil date:blank];
+        [_cell loadIntentForRightCell:blank description:blank link:blank date:blank];
     }
    
     return _cell;
+}
+
+- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
+{
+    CGPoint touchPoint = [sender convertPoint:CGPointZero toView:_tableViewNews]; // maintable --> replace your tableview name
+    
+    NSIndexPath *clickedButtonIndexPath = [_tableViewNews indexPathForRowAtPoint:touchPoint];
+//    NSUInteger numberOfItems =[[[_allNewOnDisplay objectAtIndex:clickedButtonIndexPath.section] objectAtIndex:locationOfItemTag] count];
+//    if (clickedButtonIndexPath.row*doubleRowToGetItemLeftSide<numberOfItems) {
+//        
+        if ([segue.identifier isEqualToString:@"leftButtonSegue"]) {
+            webViewController *webView = (webViewController *)segue.destinationViewController;
+            webView.url=[[[_allNewOnDisplay objectAtIndex:clickedButtonIndexPath.section] objectAtIndex:indexOfUrl] objectAtIndex:clickedButtonIndexPath.row*doubleRowToGetItemLeftSide];
+        }
+        else if([segue.identifier isEqualToString:@"rightButtonSegue"]){
+            webViewController *webView = (webViewController *)segue.destinationViewController;
+            webView.url=[[[_allNewOnDisplay objectAtIndex:clickedButtonIndexPath.section] objectAtIndex:indexOfUrl] objectAtIndex:clickedButtonIndexPath.row*doubleRowToGetItemLeftSide+itemRightSide];
+        }
+//    }
 }
 - (NSString *)tableView:(UITableView *)tableView titleForHeaderInSection:(NSInteger)section{
     switch (section) {
