@@ -39,6 +39,29 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		3906CAF31F009E21001EC3F1 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Model;
+			sourceTree = "<group>";
+		};
+		3906CAF41F009E28001EC3F1 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				549B4BD71EFE3E780002DC22 /* LaunchScreen.storyboard */,
+				549B4BD21EFE3E780002DC22 /* Main.storyboard */,
+			);
+			name = View;
+			sourceTree = "<group>";
+		};
+		3906CAF51F009E33001EC3F1 /* ViewController */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = ViewController;
+			sourceTree = "<group>";
+		};
 		549B4BBD1EFE3E780002DC22 = {
 			isa = PBXGroup;
 			children = (
@@ -58,13 +81,14 @@
 		549B4BC81EFE3E780002DC22 /* Photo Facebook */ = {
 			isa = PBXGroup;
 			children = (
+				3906CAF51F009E33001EC3F1 /* ViewController */,
+				3906CAF41F009E28001EC3F1 /* View */,
+				3906CAF31F009E21001EC3F1 /* Model */,
 				549B4BCC1EFE3E780002DC22 /* AppDelegate.h */,
 				549B4BCD1EFE3E780002DC22 /* AppDelegate.m */,
 				549B4BCF1EFE3E780002DC22 /* ViewController.h */,
 				549B4BD01EFE3E780002DC22 /* ViewController.m */,
-				549B4BD21EFE3E780002DC22 /* Main.storyboard */,
 				549B4BD51EFE3E780002DC22 /* Assets.xcassets */,
-				549B4BD71EFE3E780002DC22 /* LaunchScreen.storyboard */,
 				549B4BDA1EFE3E780002DC22 /* Info.plist */,
 				549B4BC91EFE3E780002DC22 /* Supporting Files */,
 			);
@@ -311,6 +335,7 @@
 				549B4BDF1EFE3E780002DC22 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
