@@ -7,11 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		549B4BCB1EFE3E780002DC22 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 549B4BCA1EFE3E780002DC22 /* main.m */; };
-		549B4BD41EFE3E780002DC22 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 549B4BD21EFE3E780002DC22 /* Main.storyboard */; };
-		549B4BD61EFE3E780002DC22 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 549B4BD51EFE3E780002DC22 /* Assets.xcassets */; };
-		549B4BD91EFE3E780002DC22 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 549B4BD71EFE3E780002DC22 /* LaunchScreen.storyboard */; };
-		54BBD42B1F00BF0D002CBC2C /* ConstantsSystem.m in Sources */ = {isa = PBXBuildFile; fileRef = 54BBD42A1F00BF0D002CBC2C /* ConstantsSystem.m */; };
 		54BBD43D1F00C094002CBC2C /* FBSDKCoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 54BBD4311F00C094002CBC2C /* FBSDKCoreKit.framework */; };
 		54BBD43E1F00C094002CBC2C /* FBSDKLoginKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 54BBD4321F00C094002CBC2C /* FBSDKLoginKit.framework */; };
 		54BBD4411F00C094002CBC2C /* FBSDKShareKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 54BBD4351F00C094002CBC2C /* FBSDKShareKit.framework */; };
@@ -21,17 +16,17 @@
 		54F079611F00C86B00B7C2D1 /* LoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 54F0795C1F00C86B00B7C2D1 /* LoginViewController.m */; };
 		54F079621F00C86B00B7C2D1 /* PhotoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 54F0795E1F00C86B00B7C2D1 /* PhotoViewController.m */; };
 		54F079661F00CAF300B7C2D1 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 54F079651F00CAF300B7C2D1 /* AppDelegate.m */; };
+		54F079691F00CC6800B7C2D1 /* ConstantsSystem.m in Sources */ = {isa = PBXBuildFile; fileRef = 54F079681F00CC6800B7C2D1 /* ConstantsSystem.m */; };
+		54F0796D1F00CD0600B7C2D1 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 54F0796B1F00CD0600B7C2D1 /* LaunchScreen.storyboard */; };
+		54F0796E1F00CD0600B7C2D1 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 54F0796C1F00CD0600B7C2D1 /* Main.storyboard */; };
+		54F079731F00CD4500B7C2D1 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 54F0796F1F00CD4500B7C2D1 /* Assets.xcassets */; };
+		54F079741F00CD4500B7C2D1 /* Base.lproj in Resources */ = {isa = PBXBuildFile; fileRef = 54F079701F00CD4500B7C2D1 /* Base.lproj */; };
+		54F079751F00CD4500B7C2D1 /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 54F079711F00CD4500B7C2D1 /* Info.plist */; };
+		54F079761F00CD4500B7C2D1 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 54F079721F00CD4500B7C2D1 /* main.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		549B4BC61EFE3E780002DC22 /* Photo Facebook.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Photo Facebook.app"; sourceTree = BUILT_PRODUCTS_DIR; };
-		549B4BCA1EFE3E780002DC22 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
-		549B4BD31EFE3E780002DC22 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
-		549B4BD51EFE3E780002DC22 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
-		549B4BD81EFE3E780002DC22 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
-		549B4BDA1EFE3E780002DC22 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		54BBD4291F00BF0D002CBC2C /* ConstantsSystem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ConstantsSystem.h; sourceTree = "<group>"; };
-		54BBD42A1F00BF0D002CBC2C /* ConstantsSystem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ConstantsSystem.m; sourceTree = "<group>"; };
 		54BBD4311F00C094002CBC2C /* FBSDKCoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = FBSDKCoreKit.framework; sourceTree = "<group>"; };
 		54BBD4321F00C094002CBC2C /* FBSDKLoginKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = FBSDKLoginKit.framework; sourceTree = "<group>"; };
 		54BBD4351F00C094002CBC2C /* FBSDKShareKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = FBSDKShareKit.framework; sourceTree = "<group>"; };
@@ -46,6 +41,14 @@
 		54F0795E1F00C86B00B7C2D1 /* PhotoViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PhotoViewController.m; sourceTree = "<group>"; };
 		54F079641F00CAF300B7C2D1 /* AppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		54F079651F00CAF300B7C2D1 /* AppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		54F079671F00CC6800B7C2D1 /* ConstantsSystem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ConstantsSystem.h; sourceTree = "<group>"; };
+		54F079681F00CC6800B7C2D1 /* ConstantsSystem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ConstantsSystem.m; sourceTree = "<group>"; };
+		54F0796B1F00CD0600B7C2D1 /* LaunchScreen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = LaunchScreen.storyboard; sourceTree = "<group>"; };
+		54F0796C1F00CD0600B7C2D1 /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
+		54F0796F1F00CD4500B7C2D1 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		54F079701F00CD4500B7C2D1 /* Base.lproj */ = {isa = PBXFileReference; lastKnownFileType = folder; path = Base.lproj; sourceTree = "<group>"; };
+		54F079711F00CD4500B7C2D1 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		54F079721F00CD4500B7C2D1 /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -73,8 +76,8 @@
 		3906CAF41F009E28001EC3F1 /* View */ = {
 			isa = PBXGroup;
 			children = (
-				549B4BD71EFE3E780002DC22 /* LaunchScreen.storyboard */,
-				549B4BD21EFE3E780002DC22 /* Main.storyboard */,
+				54F0796B1F00CD0600B7C2D1 /* LaunchScreen.storyboard */,
+				54F0796C1F00CD0600B7C2D1 /* Main.storyboard */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -113,34 +116,23 @@
 		549B4BC81EFE3E780002DC22 /* Photo Facebook */ = {
 			isa = PBXGroup;
 			children = (
+				54F0796A1F00CCAB00B7C2D1 /* Liberies */,
 				54F079631F00CABC00B7C2D1 /* Support */,
-				54BBD4241F00BBAD002CBC2C /* FBSDK */,
 				54BBD4231F00BB95002CBC2C /* Utility */,
 				3906CAF51F009E33001EC3F1 /* ViewController */,
 				3906CAF41F009E28001EC3F1 /* View */,
 				3906CAF31F009E21001EC3F1 /* Model */,
-				549B4BD51EFE3E780002DC22 /* Assets.xcassets */,
-				549B4BDA1EFE3E780002DC22 /* Info.plist */,
-				549B4BC91EFE3E780002DC22 /* Supporting Files */,
 			);
 			path = "Photo Facebook";
-			sourceTree = "<group>";
-		};
-		549B4BC91EFE3E780002DC22 /* Supporting Files */ = {
-			isa = PBXGroup;
-			children = (
-				549B4BCA1EFE3E780002DC22 /* main.m */,
-			);
-			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
 		54BBD4231F00BB95002CBC2C /* Utility */ = {
 			isa = PBXGroup;
 			children = (
-				54BBD4291F00BF0D002CBC2C /* ConstantsSystem.h */,
-				54BBD42A1F00BF0D002CBC2C /* ConstantsSystem.m */,
+				54F079671F00CC6800B7C2D1 /* ConstantsSystem.h */,
+				54F079681F00CC6800B7C2D1 /* ConstantsSystem.m */,
 			);
-			name = Utility;
+			path = Utility;
 			sourceTree = "<group>";
 		};
 		54BBD4241F00BBAD002CBC2C /* FBSDK */ = {
@@ -151,16 +143,29 @@
 				54BBD4321F00C094002CBC2C /* FBSDKLoginKit.framework */,
 				54BBD4351F00C094002CBC2C /* FBSDKShareKit.framework */,
 			);
-			path = FBSDK;
+			name = FBSDK;
+			path = ../FBSDK;
 			sourceTree = "<group>";
 		};
 		54F079631F00CABC00B7C2D1 /* Support */ = {
 			isa = PBXGroup;
 			children = (
+				54F0796F1F00CD4500B7C2D1 /* Assets.xcassets */,
+				54F079701F00CD4500B7C2D1 /* Base.lproj */,
+				54F079711F00CD4500B7C2D1 /* Info.plist */,
+				54F079721F00CD4500B7C2D1 /* main.m */,
 				54F079641F00CAF300B7C2D1 /* AppDelegate.h */,
 				54F079651F00CAF300B7C2D1 /* AppDelegate.m */,
 			);
 			path = Support;
+			sourceTree = "<group>";
+		};
+		54F0796A1F00CCAB00B7C2D1 /* Liberies */ = {
+			isa = PBXGroup;
+			children = (
+				54BBD4241F00BBAD002CBC2C /* FBSDK */,
+			);
+			path = Liberies;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -221,9 +226,11 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				549B4BD91EFE3E780002DC22 /* LaunchScreen.storyboard in Resources */,
-				549B4BD61EFE3E780002DC22 /* Assets.xcassets in Resources */,
-				549B4BD41EFE3E780002DC22 /* Main.storyboard in Resources */,
+				54F0796D1F00CD0600B7C2D1 /* LaunchScreen.storyboard in Resources */,
+				54F079731F00CD4500B7C2D1 /* Assets.xcassets in Resources */,
+				54F079741F00CD4500B7C2D1 /* Base.lproj in Resources */,
+				54F079751F00CD4500B7C2D1 /* Info.plist in Resources */,
+				54F0796E1F00CD0600B7C2D1 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -234,38 +241,17 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				549B4BCB1EFE3E780002DC22 /* main.m in Sources */,
 				54F079611F00C86B00B7C2D1 /* LoginViewController.m in Sources */,
 				54F079601F00C86B00B7C2D1 /* DetailPhotoViewController.m in Sources */,
+				54F079691F00CC6800B7C2D1 /* ConstantsSystem.m in Sources */,
 				54F079661F00CAF300B7C2D1 /* AppDelegate.m in Sources */,
-				54BBD42B1F00BF0D002CBC2C /* ConstantsSystem.m in Sources */,
 				54F0795F1F00C86B00B7C2D1 /* AccountInformationViewController.m in Sources */,
+				54F079761F00CD4500B7C2D1 /* main.m in Sources */,
 				54F079621F00C86B00B7C2D1 /* PhotoViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
-
-/* Begin PBXVariantGroup section */
-		549B4BD21EFE3E780002DC22 /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				549B4BD31EFE3E780002DC22 /* Base */,
-			);
-			name = Main.storyboard;
-			path = ..;
-			sourceTree = "<group>";
-		};
-		549B4BD71EFE3E780002DC22 /* LaunchScreen.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				549B4BD81EFE3E780002DC22 /* Base */,
-			);
-			name = LaunchScreen.storyboard;
-			path = ..;
-			sourceTree = "<group>";
-		};
-/* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
 		549B4BDB1EFE3E780002DC22 /* Debug */ = {
