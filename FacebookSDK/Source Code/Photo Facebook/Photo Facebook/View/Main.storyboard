@@ -47,7 +47,7 @@
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Login Photo Facebook" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="UJ8-K4-aRy">
-                                <rect key="frame" x="47" y="104" width="281" height="21"/>
+                                <rect key="frame" x="47" y="60" width="281" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
@@ -91,7 +91,7 @@
         <!--Account information-->
         <scene sceneID="mEC-Vo-LNI">
             <objects>
-                <viewController id="Ra4-mM-rWE" sceneMemberID="viewController">
+                <viewController id="Ra4-mM-rWE" customClass="AccountInformationViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="hva-Of-0vZ"/>
                         <viewControllerLayoutGuide type="bottom" id="rBv-pW-wx9"/>
@@ -112,13 +112,13 @@
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Live in" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="VQk-EW-85T">
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Hometown:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="VQk-EW-85T">
                                         <rect key="frame" x="5" y="99" width="300" height="26.5"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Date of birth" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rPg-gP-x0G">
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Date of birth:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rPg-gP-x0G">
                                         <rect key="frame" x="5" y="121" width="300" height="26.5"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                         <nil key="textColor"/>
@@ -217,6 +217,12 @@
                     </view>
                     <tabBarItem key="tabBarItem" title="Friends" id="f3F-Ji-pN0"/>
                     <navigationItem key="navigationItem" title="Account information" id="rVY-fh-5Ua"/>
+                    <connections>
+                        <outlet property="lblDateOfBirth" destination="rPg-gP-x0G" id="O5W-Qi-YOK"/>
+                        <outlet property="lblHometown" destination="VQk-EW-85T" id="b3z-fu-fyj"/>
+                        <outlet property="lblNameOfUser" destination="sfg-tD-bjc" id="XCs-MT-rn7"/>
+                        <outlet property="pictureOfUser" destination="oDE-Q5-ILR" id="cHG-2B-7O3"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="gFw-ep-bPy" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

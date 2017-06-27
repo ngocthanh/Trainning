@@ -7,18 +7,34 @@
 //
 
 #import "AccountInformationViewController.h"
-
+#import "AccountInformationModel.h"
 @interface AccountInformationViewController ()
+@property (weak, nonatomic) IBOutlet UIImageView *pictureOfUser;
+@property (weak, nonatomic) IBOutlet UILabel *lblNameOfUser;
+@property (weak, nonatomic) IBOutlet UILabel *lblHometown;
 
+@property (weak, nonatomic) IBOutlet UILabel *lblDateOfBirth;
+@property (strong,nonatomic) AccountInformationModel *accountInformationModel;
 @end
 
 @implementation AccountInformationViewController
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    // Do any additional setup after loading the view.
+    _accountInformationModel=[[AccountInformationModel alloc]init];
+    
+    [_accountInformationModel getInformationOfUser];
+    [self displayUserInformation];
 }
-
+- (void)displayUserInformation{
+    
+    _lblNameOfUser.text=[NSString stringWithFormat:@"%@",_accountInformationModel.userName];
+    _lblHometown.text=[NSString stringWithFormat:@"Hometown: %@",_accountInformationModel.userHometown];
+    _lblDateOfBirth.text=[NSString stringWithFormat:@"Date of birth: %@",_accountInformationModel.userBirthday];
+    
+    NSData *dataOfPicture=[NSData dataWithContentsOfURL:[NSURL URLWithString:[NSString stringWithFormat:@"%@",_accountInformationModel.userUrlPicture]]];
+    _pictureOfUser.image=[UIImage imageWithData:dataOfPicture];
+}
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.

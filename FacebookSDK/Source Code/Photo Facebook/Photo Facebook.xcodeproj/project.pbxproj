@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		393E42E11F00FF8500BF7105 /* AccountInformationModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 393E42E01F00FF8500BF7105 /* AccountInformationModel.m */; };
 		542239CE1F00E40100B5C3D1 /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 542239CD1F00E40100B5C3D1 /* Info.plist */; };
 		5486D2041F00EAD900E36A91 /* AccountKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5486D2001F00EAD900E36A91 /* AccountKit.framework */; };
 		5486D2051F00EAD900E36A91 /* FBSDKCoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5486D2011F00EAD900E36A91 /* FBSDKCoreKit.framework */; };
@@ -25,6 +26,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		393E42DF1F00FF8500BF7105 /* AccountInformationModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AccountInformationModel.h; path = "Photo Facebook/AccountInformationModel.h"; sourceTree = SOURCE_ROOT; };
+		393E42E01F00FF8500BF7105 /* AccountInformationModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = AccountInformationModel.m; path = "Photo Facebook/AccountInformationModel.m"; sourceTree = SOURCE_ROOT; };
 		542239CD1F00E40100B5C3D1 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = Info.plist; path = "Photo Facebook/Info.plist"; sourceTree = "<group>"; };
 		5486D2001F00EAD900E36A91 /* AccountKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AccountKit.framework; path = FBSDK/AccountKit.framework; sourceTree = "<group>"; };
 		5486D2011F00EAD900E36A91 /* FBSDKCoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = FBSDKCoreKit.framework; path = FBSDK/FBSDKCoreKit.framework; sourceTree = "<group>"; };
@@ -67,6 +70,8 @@
 		3906CAF31F009E21001EC3F1 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				393E42DF1F00FF8500BF7105 /* AccountInformationModel.h */,
+				393E42E01F00FF8500BF7105 /* AccountInformationModel.m */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -236,6 +241,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				393E42E11F00FF8500BF7105 /* AccountInformationModel.m in Sources */,
 				54F079611F00C86B00B7C2D1 /* LoginViewController.m in Sources */,
 				54F079601F00C86B00B7C2D1 /* DetailPhotoViewController.m in Sources */,
 				54F079691F00CC6800B7C2D1 /* ConstantsSystem.m in Sources */,
@@ -252,7 +258,7 @@
 		549B4BDB1EFE3E780002DC22 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ALWAYS_SEARCH_USER_PATHS = NO;
+				ALWAYS_SEARCH_USER_PATHS = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
@@ -276,6 +282,7 @@
 				DEBUG_INFORMATION_FORMAT = dwarf;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				ENABLE_TESTABILITY = YES;
+				FRAMEWORK_SEARCH_PATHS = "";
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_NO_COMMON_BLOCKS = YES;
@@ -301,7 +308,7 @@
 		549B4BDC1EFE3E780002DC22 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ALWAYS_SEARCH_USER_PATHS = NO;
+				ALWAYS_SEARCH_USER_PATHS = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
@@ -325,6 +332,7 @@
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				ENABLE_NS_ASSERTIONS = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				FRAMEWORK_SEARCH_PATHS = "";
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_NO_COMMON_BLOCKS = YES;
 				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
@@ -344,29 +352,9 @@
 		549B4BDE1EFE3E780002DC22 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				FRAMEWORK_SEARCH_PATHS = (
-					"$(inherited)",
-					"$(PROJECT_DIR)/Photo\\ Facebook/FBSDK",
-					"$(PROJECT_DIR)/Photo\\ Facebook/FBSDK",
-					"$(PROJECT_DIR)/Photo\\ Facebook/FBSDK",
-					"$(PROJECT_DIR)/Photo\\ Facebook/FBSDK",
-					"$(PROJECT_DIR)/Photo\\ Facebook/FBSDK",
-					"$(PROJECT_DIR)/Photo\\ Facebook/FBSDK",
-					"$(PROJECT_DIR)/Photo\\ Facebook/FBSDK",
-					"$(PROJECT_DIR)/Photo\\ Facebook/FBSDK",
-					"$(PROJECT_DIR)/Photo\\ Facebook/FBSDK",
-					"$(PROJECT_DIR)/Photo\\ Facebook/FBSDK",
-					"$(PROJECT_DIR)/Photo\\ Facebook/FBSDK",
-					"$(PROJECT_DIR)/Photo\\ Facebook/Liberies/FBSDK",
-					"$(PROJECT_DIR)/Photo\\ Facebook/Liberies/FBSDK",
-					"$(PROJECT_DIR)/Photo\\ Facebook/Liberies/FBSDK",
-					"$(PROJECT_DIR)/Photo\\ Facebook/Liberies/FBSDK",
-					"$(PROJECT_DIR)/Photo\\ Facebook/Liberies/FBSDK",
-					"$(PROJECT_DIR)/Photo\\ Facebook/Liberies/FBSDK",
-					"$(PROJECT_DIR)/Photo\\ Facebook/Liberies/FBSDK",
-					"$(PROJECT_DIR)/Photo\\ Facebook/Liberies/FBSDK",
-				);
+				FRAMEWORK_SEARCH_PATHS = "";
 				INFOPLIST_FILE = "Photo Facebook/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "Kter.KC.Photo-Facebook";
@@ -377,29 +365,9 @@
 		549B4BDF1EFE3E780002DC22 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				FRAMEWORK_SEARCH_PATHS = (
-					"$(inherited)",
-					"$(PROJECT_DIR)/Photo\\ Facebook/FBSDK",
-					"$(PROJECT_DIR)/Photo\\ Facebook/FBSDK",
-					"$(PROJECT_DIR)/Photo\\ Facebook/FBSDK",
-					"$(PROJECT_DIR)/Photo\\ Facebook/FBSDK",
-					"$(PROJECT_DIR)/Photo\\ Facebook/FBSDK",
-					"$(PROJECT_DIR)/Photo\\ Facebook/FBSDK",
-					"$(PROJECT_DIR)/Photo\\ Facebook/FBSDK",
-					"$(PROJECT_DIR)/Photo\\ Facebook/FBSDK",
-					"$(PROJECT_DIR)/Photo\\ Facebook/FBSDK",
-					"$(PROJECT_DIR)/Photo\\ Facebook/FBSDK",
-					"$(PROJECT_DIR)/Photo\\ Facebook/FBSDK",
-					"$(PROJECT_DIR)/Photo\\ Facebook/Liberies/FBSDK",
-					"$(PROJECT_DIR)/Photo\\ Facebook/Liberies/FBSDK",
-					"$(PROJECT_DIR)/Photo\\ Facebook/Liberies/FBSDK",
-					"$(PROJECT_DIR)/Photo\\ Facebook/Liberies/FBSDK",
-					"$(PROJECT_DIR)/Photo\\ Facebook/Liberies/FBSDK",
-					"$(PROJECT_DIR)/Photo\\ Facebook/Liberies/FBSDK",
-					"$(PROJECT_DIR)/Photo\\ Facebook/Liberies/FBSDK",
-					"$(PROJECT_DIR)/Photo\\ Facebook/Liberies/FBSDK",
-				);
+				FRAMEWORK_SEARCH_PATHS = "";
 				INFOPLIST_FILE = "Photo Facebook/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "Kter.KC.Photo-Facebook";

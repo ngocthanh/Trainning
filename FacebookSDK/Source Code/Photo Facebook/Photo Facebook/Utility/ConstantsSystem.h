@@ -7,6 +7,7 @@
 //
 
 #import <Foundation/Foundation.h>
+#define parameterForString @"%@"
 
 @interface ConstantsSystem : NSObject
 
