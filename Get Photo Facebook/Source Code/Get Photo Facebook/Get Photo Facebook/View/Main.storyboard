@@ -26,7 +26,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dbp-mr-TyH" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1031" y="49"/>
+            <point key="canvasLocation" x="969" y="139"/>
         </scene>
         <!--Login View Controller-->
         <scene sceneID="tne-QT-ifu">
@@ -72,6 +72,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="42" y="139"/>
         </scene>
         <!--Photo album-->
         <scene sceneID="GEx-zk-iD8">
@@ -91,7 +92,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Nsl-ON-qv2" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2705" y="630"/>
+            <point key="canvasLocation" x="2598" y="437"/>
         </scene>
         <!--Account information-->
         <scene sceneID="mEC-Vo-LNI">
@@ -233,7 +234,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="gFw-ep-bPy" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2704.8000000000002" y="-63.418290854572717"/>
+            <point key="canvasLocation" x="2599" y="-241"/>
         </scene>
         <!--Account Information-->
         <scene sceneID="tjg-MD-L7N">
