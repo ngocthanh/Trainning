@@ -8,6 +8,13 @@
 
 #import "LoginViewController.h"
 #import <FBSDKLoginKit/FBSDKLoginKit.h>
+#define publicUserPermission @"public_profile"
+#define userFriendsPermission @"user_friends"
+#define userPhotoPermission @"user_photos"
+#define userHomeTownPermission @"user_hometown"
+#define userBirthdayPermission @"user_birthday"
+#define idNaviControllerAccountInformation @"naviAccountInformation"
+
 @interface LoginViewController ()
 @property (weak, nonatomic) IBOutlet UIButton *btnLogin;
 
@@ -21,15 +28,16 @@
 - (IBAction)abtnLogin:(id)sender {
     FBSDKLoginManager *login = [[FBSDKLoginManager alloc] init];
     [login
-     logInWithReadPermissions: @[@"public_profile"]
+     logInWithReadPermissions: @[publicUserPermission,userPhotoPermission,userFriendsPermission,userBirthdayPermission,userHomeTownPermission]
      fromViewController:self
      handler:^(FBSDKLoginManagerLoginResult *result, NSError *error) {
          if (error) {
-             NSLog(@"Process error");
+             
          } else if (result.isCancelled) {
-             NSLog(@"Cancelled");
+             
          } else {
-             UINavigationController *navi = [self.storyboard instantiateViewControllerWithIdentifier:@"naviAccountInformation"];
+             
+             UINavigationController *navi = [self.storyboard instantiateViewControllerWithIdentifier:idNaviControllerAccountInformation];
              [self presentViewController:navi animated:YES completion:nil];
          }
      }];

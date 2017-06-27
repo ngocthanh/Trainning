@@ -19,14 +19,23 @@
     if ([FBSDKAccessToken currentAccessToken]) {
         FBSDKGraphRequest *request = [[FBSDKGraphRequest alloc]
                                       initWithGraphPath:@"/me"
-                                      parameters:@{ @"fields": @"name,picture,hometown,birthday",}
+                                      parameters:@{ @"fields": @"name,birthday,hometown,picture",}
                                       HTTPMethod:@"GET"];
         [request startWithCompletionHandler:^(FBSDKGraphRequestConnection *connection, id result, NSError *error) {
             if(!error){
-                information.userName = [NSString stringWithFormat:@"%@",[result objectForKey:@"name"]];
-                information.userBirthday=[NSString stringWithFormat:@"%@",[result objectForKey:@"birthday"]];
-                information.userHometown=[NSString stringWithFormat:@"%@",[[result objectForKey:@"hometown"] objectForKey:@"name"]];
-                information.userUrlPicture=[NSString stringWithFormat:@"https://graph.facebook.com/%@/picture?type=large",[result objectForKey:@"id"]];
+
+                _userName = [result objectForKey:@"name"];
+                _userBirthday=[result objectForKey:@"birthday"];
+                _userHometown=[[result objectForKey:@"hometown"] objectForKey:@"name"];
+                _userUrlPicture=[NSString stringWithFormat:@"https://graph.facebook.com/%@/picture?type=large",[result objectForKey:@"id"]];
+                NSLog(@"%@",_userName);
+                NSLog(@"%@",_userBirthday);
+                NSLog(@"%@",_userHometown);
+                NSLog(@"%@",_userUrlPicture);
+            }
+            else
+            {
+                NSLog(@"%@", [error localizedDescription]);
             }
         }];
     }
