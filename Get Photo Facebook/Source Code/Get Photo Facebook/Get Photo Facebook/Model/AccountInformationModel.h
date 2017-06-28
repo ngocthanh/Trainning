@@ -11,7 +11,7 @@
 @interface AccountInformationModel : NSObject
 
 @property (strong,nonatomic) NSString* userName;
-@property (strong,nonatomic) NSString* userBirthday;
+@property (strong,nonatomic) NSDate* userBirthday;
 @property (strong,nonatomic) NSString* userHometown;
 @property (strong,nonatomic) NSString* userUrlPicture;
 @property (strong,nonatomic) NSMutableArray *arrayFriends;
