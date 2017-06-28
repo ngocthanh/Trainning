@@ -8,7 +8,7 @@
 
 #import <Foundation/Foundation.h>
 #define parameterForString @"%@"
-
+#define textIsEmpty @""
 @interface ConstantsSystem : NSObject
 
 @end

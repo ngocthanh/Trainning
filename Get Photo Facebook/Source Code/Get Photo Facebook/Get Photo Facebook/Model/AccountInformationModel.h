@@ -14,6 +14,6 @@
 @property (strong,nonatomic) NSString* userBirthday;
 @property (strong,nonatomic) NSString* userHometown;
 @property (strong,nonatomic) NSString* userUrlPicture;
-
+@property (strong,nonatomic) NSMutableArray *arrayFriends;
 -(AccountInformationModel*) getInformationOfUser;
 @end

@@ -10,7 +10,7 @@
 #import <FBSDKCoreKit/FBSDKCoreKit.h>
 #import <FBSDKLoginKit/FBSDKLoginKit.h>
 #import "ConstantsSystem.h"
-
+#import "Friends.h"
 
 @implementation AccountInformationModel
 
@@ -27,6 +27,16 @@
                 information.userBirthday=[NSString stringWithFormat:@"%@",[result objectForKey:@"birthday"]];
                 information.userHometown=[NSString stringWithFormat:@"%@",[[result objectForKey:@"hometown"] objectForKey:@"name"]];
                 information.userUrlPicture=[NSString stringWithFormat:@"https://graph.facebook.com/%@/picture?type=large",[result objectForKey:@"id"]];
+                NSArray * allKeys = [[result valueForKey:@"friends"]objectForKey:@"data"];
+
+                Friends *friend = [Friends alloc];
+                for (int i = 0; i<[allKeys count]; i++) {
+                    NSString *idFriend = [[[[result valueForKey:@"friends"]objectForKey:@"data"] objectAtIndex:i] valueForKey:@"id"];
+                    
+                    friend.name = [[[[result valueForKey:@"friends"]objectForKey:@"data"] objectAtIndex:i] valueForKey:@"name"];
+                    friend.urlAvatar = [NSString stringWithFormat:@"http://graph.facebook.com/%@/picture?type=large",idFriend];
+                    [self.arrayFriends addObject:friend];
+                }
             }
         }];
     }
