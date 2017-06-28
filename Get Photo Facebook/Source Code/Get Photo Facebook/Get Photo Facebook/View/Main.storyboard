@@ -122,13 +122,13 @@
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Live in" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="VQk-EW-85T">
-                                        <rect key="frame" x="5" y="135" width="375" height="39.5"/>
+                                        <rect key="frame" x="5" y="135" width="375" height="36.5"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Date of birth" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rPg-gP-x0G">
-                                        <rect key="frame" x="5" y="170" width="375" height="40"/>
+                                        <rect key="frame" x="5" y="167" width="375" height="36.5"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
@@ -147,7 +147,7 @@
                                     <constraint firstItem="sfg-tD-bjc" firstAttribute="leading" secondItem="oDE-Q5-ILR" secondAttribute="trailing" constant="10" id="adY-Bz-hsP"/>
                                     <constraint firstAttribute="trailing" secondItem="sfg-tD-bjc" secondAttribute="trailing" constant="20" id="b4p-eK-zFM"/>
                                     <constraint firstItem="VQk-EW-85T" firstAttribute="leading" secondItem="EYs-qJ-DC1" secondAttribute="leading" constant="5" id="d24-SD-cFg"/>
-                                    <constraint firstItem="VQk-EW-85T" firstAttribute="height" secondItem="EYs-qJ-DC1" secondAttribute="height" multiplier="1/5" id="h3O-VM-LTs"/>
+                                    <constraint firstItem="VQk-EW-85T" firstAttribute="height" secondItem="EYs-qJ-DC1" secondAttribute="height" multiplier="1/5.5" id="h3O-VM-LTs"/>
                                     <constraint firstItem="rPg-gP-x0G" firstAttribute="height" secondItem="VQk-EW-85T" secondAttribute="height" id="jVY-wi-maY"/>
                                     <constraint firstItem="sfg-tD-bjc" firstAttribute="top" secondItem="EYs-qJ-DC1" secondAttribute="top" constant="5" id="p02-3T-dcK"/>
                                     <constraint firstItem="VQk-EW-85T" firstAttribute="top" secondItem="oDE-Q5-ILR" secondAttribute="bottom" constant="5" id="xYo-lT-5FZ"/>
@@ -170,7 +170,7 @@
                                                 <rect key="frame" x="0.0" y="28" width="375" height="62"/>
                                                 <autoresizingMask key="autoresizingMask"/>
                                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="1cH-NR-NPc" id="uWG-U6-J2k">
-                                                    <rect key="frame" x="0.0" y="0.0" width="375" height="61"/>
+                                                    <rect key="frame" x="0.0" y="0.0" width="375" height="62"/>
                                                     <autoresizingMask key="autoresizingMask"/>
                                                     <subviews>
                                                         <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="5RS-zt-gK3">

@@ -8,7 +8,7 @@
 
 #import "AccountInformationModel.h"
 #import <FBSDKCoreKit/FBSDKCoreKit.h>
-#import <FBSDKLoginKit/FBSDKLoginKit.h>
+
 #import "ConstantsSystem.h"
 
 
@@ -23,7 +23,6 @@
                                       HTTPMethod:@"GET"];
         [request startWithCompletionHandler:^(FBSDKGraphRequestConnection *connection, id result, NSError *error) {
             if(!error){
-
                 _userName = [result objectForKey:@"name"];
                 _userBirthday=[result objectForKey:@"birthday"];
                 _userHometown=[[result objectForKey:@"hometown"] objectForKey:@"name"];
