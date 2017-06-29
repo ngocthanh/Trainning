@@ -7,46 +7,81 @@
 //
 
 #import "AccountInformationViewController.h"
-#import "AccountInformationModel.h"
-
+#import "UserFacebook.h"
+#import "RequestDataFB.h"
+#import "AccountInformationTableViewCell.h"
 @interface AccountInformationViewController ()
 @property (weak, nonatomic) IBOutlet UIImageView *pictureOfUser;
 @property (weak, nonatomic) IBOutlet UILabel *lblNameOfUser;
 @property (weak, nonatomic) IBOutlet UILabel *lblHometown;
 @property (weak, nonatomic) IBOutlet UILabel *lblDateOfBirth;
+@property (weak, nonatomic) IBOutlet UITableView *tableListFriend;
 
-@property (strong,nonatomic) AccountInformationModel* accountInformationModel;
+@property (strong,nonatomic) RequestDataFB* requestFacebook;
+@property (strong,nonatomic) UserFacebook* userFacebook;
+@property (strong,nonatomic) NSMutableArray* arrayFriendList;
+@property (strong,nonatomic) AccountInformationTableViewCell *cell;
 @end
 
 @implementation AccountInformationViewController
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-
-    _accountInformationModel=[[AccountInformationModel alloc]init];
-     [_accountInformationModel getInformationOfUser];
+    
+    self.pictureOfUser.layer.cornerRadius=_pictureOfUser.frame.size.height/2.0;
+    self.pictureOfUser.clipsToBounds=YES;
+    _userFacebook = [[UserFacebook alloc] init];
+    _arrayFriendList = [[NSMutableArray alloc] init];
+    _requestFacebook = [RequestDataFB alloc];
+    [_requestFacebook getInformationOfUserSuccessAccount:
+     ^(UserFacebook *user) {
+         _userFacebook = user;
+         [self displayUserInformation];
+     } successFriend:^(NSMutableArray *arrayFriend) {
+         
+         _arrayFriendList = arrayFriend;
+         [_tableListFriend reloadData];
+     } failure:^(NSError *error) {
+         NSLog(@"%@---------------------",error);
+     }];
+    [_tableListFriend setDelegate:self];
+    [_tableListFriend setDataSource:self];
+    _cell= [[AccountInformationTableViewCell alloc] init];
 
 
 }
 -(void)viewWillAppear:(BOOL)animated{
-    self.pictureOfUser.layer.cornerRadius=_pictureOfUser.frame.size.height/2.0;
-    self.pictureOfUser.clipsToBounds=YES;
+    [super viewWillAppear:animated];
+    [_tableListFriend reloadData];
+
+
 }
 -(void)viewDidAppear:(BOOL)animated{
-    [self displayUserInformation];
-}
--(NSInteger)numberOfSectionsInTableView:(UITableView *)tableView{
-    return 3;
-}
--(NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
-    return 2;
+    [super viewDidAppear:animated];
+    [_tableListFriend reloadData];
+
 }
 
+-(NSInteger)numberOfSectionsInTableView:(UITableView *)tableView{
+    return 1;
+}
+-(NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
+    return [_arrayFriendList count];
+}
+-(UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
+   _cell = [_tableListFriend dequeueReusableCellWithIdentifier:@"cellListFriend" forIndexPath:indexPath];
+    UserFacebook *friend = [UserFacebook new];
+    friend =[_arrayFriendList objectAtIndex:indexPath.row];
+    NSString *name = friend.userName ;
+    NSString *link = friend.userUrlPicture;
+    [_cell getDataFromViewControllerWithURLImage:link FriendsName:name];
+    return _cell;
+}
 - (void)displayUserInformation{
-    _lblNameOfUser.text=[NSString stringWithFormat:@"%@",_accountInformationModel.userName];
-    _lblHometown.text=[NSString stringWithFormat:@"Hometown: %@",_accountInformationModel.userHometown];
-    _lblDateOfBirth.text=[NSString stringWithFormat:@"Date of birth: %@",_accountInformationModel.userBirthday];
-    NSData *dataOfPicture=[NSData dataWithContentsOfURL:[NSURL URLWithString:[NSString stringWithFormat:@"%@",_accountInformationModel.userUrlPicture]]];
+    _lblNameOfUser.text=[NSString stringWithFormat:@"%@",_userFacebook.userName];
+    _lblHometown.text=[NSString stringWithFormat:@"Hometown: %@",_userFacebook.userHometown];
+    _lblDateOfBirth.text=[NSString stringWithFormat:@"Date of birth: %@",_userFacebook.userBirthday];
+    NSData *dataOfPicture=[NSData dataWithContentsOfURL:[NSURL URLWithString:[NSString stringWithFormat:@"%@",_userFacebook.userUrlPicture]]];
     _pictureOfUser.image=[UIImage imageWithData:dataOfPicture];
 }
 

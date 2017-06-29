@@ -26,22 +26,26 @@
     
 }
 -(void)getDataFromViewControllerWithURLImage:(NSString *) urlString FriendsName:(NSString*) name{
-    if (![urlString   isEqual: textIsEmpty]) {
-        NSURL *url = [NSURL URLWithString:[[NSString alloc]  initWithString:urlString]];
+    
+    [self getImageOnline:urlString];
+    _lblFriendName.text = name;
+    
+}
+-(void)getImageOnline:(NSString*) linkURL{
+    if (![linkURL   isEqual: textIsEmpty]) {
+        NSURL *url = [NSURL URLWithString:[[NSString alloc]  initWithString:linkURL]];
         NSURLSessionTask *task = [[NSURLSession sharedSession] dataTaskWithURL:url completionHandler:^(NSData * _Nullable data, NSURLResponse * _Nullable response, NSError * _Nullable error) {
             if (data) {
                 UIImage *image = [UIImage imageWithData:data];
                 if (image) {
                     dispatch_async(dispatch_get_main_queue(), ^{
-                        self.imgAvatar.image = image;
-                        
+                        _imgAvatar.image = image;
                     });
                 }
             }
         }];
         [task resume];
         
-        self.lblFriendName.text = name;
     }
 }
 

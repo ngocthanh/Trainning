@@ -8,14 +8,10 @@
 
 #import <Foundation/Foundation.h>
 
-@interface AccountInformationModel : NSObject
+@interface UserFacebook : NSObject
 
 @property (strong,nonatomic) NSString* userName;
 @property (strong,nonatomic) NSDate* userBirthday;
 @property (strong,nonatomic) NSString* userHometown;
 @property (strong,nonatomic) NSString* userUrlPicture;
-@property (strong,nonatomic) NSMutableArray *arrayFriends;
-@property (strong,nonatomic) NSMutableArray *arrayPhotoLink;
-
--(AccountInformationModel*) getInformationOfUser;
 @end

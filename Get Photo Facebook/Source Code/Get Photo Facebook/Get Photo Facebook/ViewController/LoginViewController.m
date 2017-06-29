@@ -8,6 +8,7 @@
 
 #import "LoginViewController.h"
 #import <FBSDKLoginKit/FBSDKLoginKit.h>
+#import <FBSDKCoreKit/FBSDKCoreKit.h>
 #define publicUserPermission @"public_profile"
 #define userFriendsPermission @"user_friends"
 #define userPhotoPermission @"user_photos"
@@ -24,6 +25,10 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    if ([FBSDKAccessToken currentAccessToken]) {
+        UINavigationController *navi = [self.storyboard instantiateViewControllerWithIdentifier:idNaviControllerAccountInformation];
+        [self presentViewController:navi animated:YES completion:nil];
+    }
 }
 - (IBAction)abtnLogin:(id)sender {
     FBSDKLoginManager *login = [[FBSDKLoginManager alloc] init];

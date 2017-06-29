@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12120" systemVersion="16F73" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12121" systemVersion="16F73" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12088"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12089"/>
         <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
@@ -217,7 +217,7 @@
                                         <rect key="frame" x="0.0" y="50" width="375" height="360"/>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         <prototypes>
-                                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="62" id="1cH-NR-NPc">
+                                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="cellListFriend" rowHeight="62" id="1cH-NR-NPc" customClass="AccountInformationTableViewCell">
                                                 <rect key="frame" x="0.0" y="28" width="375" height="62"/>
                                                 <autoresizingMask key="autoresizingMask"/>
                                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="1cH-NR-NPc" id="uWG-U6-J2k">
@@ -247,6 +247,10 @@
                                                         <constraint firstItem="5RS-zt-gK3" firstAttribute="leading" secondItem="uWG-U6-J2k" secondAttribute="leading" id="rcn-ly-8bW"/>
                                                     </constraints>
                                                 </tableViewCellContentView>
+                                                <connections>
+                                                    <outlet property="imgAvatar" destination="5RS-zt-gK3" id="4dd-LR-qyI"/>
+                                                    <outlet property="lblFriendName" destination="ufb-m1-Kxq" id="HyN-Ln-zSs"/>
+                                                </connections>
                                             </tableViewCell>
                                         </prototypes>
                                     </tableView>
@@ -283,6 +287,7 @@
                         <outlet property="lblHometown" destination="VQk-EW-85T" id="5XZ-Gx-B9n"/>
                         <outlet property="lblNameOfUser" destination="sfg-tD-bjc" id="5q8-IS-6F2"/>
                         <outlet property="pictureOfUser" destination="oDE-Q5-ILR" id="EOv-zx-KN2"/>
+                        <outlet property="tableListFriend" destination="TQC-js-fvM" id="zHC-hU-kiv"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="gFw-ep-bPy" userLabel="First Responder" sceneMemberID="firstResponder"/>

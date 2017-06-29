@@ -12,7 +12,8 @@
 		39FB8E8A1F04F59000B205C6 /* AlbumPhotoCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 39FB8E891F04F59000B205C6 /* AlbumPhotoCollectionViewCell.m */; };
 		5413FF971F03C54F00518FB4 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5413FF961F03C54F00518FB4 /* Main.storyboard */; };
 		5455D8921F023B0900491836 /* AccountInformationTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 5455D8911F023B0900491836 /* AccountInformationTableViewCell.m */; };
-		54C226D11F02192C0066E8DA /* AccountInformationModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 54C226D01F02192C0066E8DA /* AccountInformationModel.m */; };
+		54974ADD1F04925100380DD5 /* RequestDataFB.m in Sources */ = {isa = PBXBuildFile; fileRef = 54974ADC1F04925100380DD5 /* RequestDataFB.m */; };
+		54C226D11F02192C0066E8DA /* UserFacebook.m in Sources */ = {isa = PBXBuildFile; fileRef = 54C226D01F02192C0066E8DA /* UserFacebook.m */; };
 		54C226D41F0219340066E8DA /* ConstantsSystem.m in Sources */ = {isa = PBXBuildFile; fileRef = 54C226D31F0219340066E8DA /* ConstantsSystem.m */; };
 		54C226D71F0219440066E8DA /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 54C226D51F0219440066E8DA /* LaunchScreen.storyboard */; };
 		54CCB1AB1F021600009D176C /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 54CCB1AA1F021600009D176C /* main.m */; };
@@ -32,8 +33,10 @@
 		5413FF961F03C54F00518FB4 /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
 		5455D8901F023B0900491836 /* AccountInformationTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AccountInformationTableViewCell.h; sourceTree = "<group>"; };
 		5455D8911F023B0900491836 /* AccountInformationTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AccountInformationTableViewCell.m; sourceTree = "<group>"; };
-		54C226CF1F02192C0066E8DA /* AccountInformationModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AccountInformationModel.h; sourceTree = "<group>"; };
-		54C226D01F02192C0066E8DA /* AccountInformationModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AccountInformationModel.m; sourceTree = "<group>"; };
+		54974ADB1F04925100380DD5 /* RequestDataFB.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RequestDataFB.h; sourceTree = "<group>"; };
+		54974ADC1F04925100380DD5 /* RequestDataFB.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RequestDataFB.m; sourceTree = "<group>"; };
+		54C226CF1F02192C0066E8DA /* UserFacebook.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UserFacebook.h; sourceTree = "<group>"; };
+		54C226D01F02192C0066E8DA /* UserFacebook.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UserFacebook.m; sourceTree = "<group>"; };
 		54C226D21F0219340066E8DA /* ConstantsSystem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ConstantsSystem.h; sourceTree = "<group>"; };
 		54C226D31F0219340066E8DA /* ConstantsSystem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ConstantsSystem.m; sourceTree = "<group>"; };
 		54C226D51F0219440066E8DA /* LaunchScreen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -131,8 +134,10 @@
 		54CCB1C11F021638009D176C /* Model */ = {
 			isa = PBXGroup;
 			children = (
-				54C226CF1F02192C0066E8DA /* AccountInformationModel.h */,
-				54C226D01F02192C0066E8DA /* AccountInformationModel.m */,
+				54C226CF1F02192C0066E8DA /* UserFacebook.h */,
+				54C226D01F02192C0066E8DA /* UserFacebook.m */,
+				54974ADB1F04925100380DD5 /* RequestDataFB.h */,
+				54974ADC1F04925100380DD5 /* RequestDataFB.m */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -301,8 +306,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				54CCB1AE1F021600009D176C /* AppDelegate.m in Sources */,
-				54C226D11F02192C0066E8DA /* AccountInformationModel.m in Sources */,
+				54C226D11F02192C0066E8DA /* UserFacebook.m in Sources */,
 				39FB8E871F04EE2200B205C6 /* AlbumPhotoViewController.m in Sources */,
+				54974ADD1F04925100380DD5 /* RequestDataFB.m in Sources */,
+				54C226D11F02192C0066E8DA /* UserFacebook.m in Sources */,
 				54CCB1AB1F021600009D176C /* main.m in Sources */,
 				5455D8921F023B0900491836 /* AccountInformationTableViewCell.m in Sources */,
 				39FB8E8A1F04F59000B205C6 /* AlbumPhotoCollectionViewCell.m in Sources */,
