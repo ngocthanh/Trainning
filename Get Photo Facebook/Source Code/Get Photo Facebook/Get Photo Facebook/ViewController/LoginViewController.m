@@ -26,10 +26,6 @@
     [super viewDidLoad];
 }
 - (IBAction)abtnLogin:(id)sender {
-    
-}
--(NSString *)loginFacebook{
-    __block NSString *resultManager;
     FBSDKLoginManager *login = [[FBSDKLoginManager alloc] init];
     [login
      logInWithReadPermissions: @[publicUserPermission,userPhotoPermission,userFriendsPermission,userBirthdayPermission,userHomeTownPermission]
@@ -45,8 +41,12 @@
              [self presentViewController:navi animated:YES completion:nil];
          }
      }];
-    return resultManager;
 }
+//-(NSString *)loginFacebook{
+//    __block NSString *resultManager;
+//    
+//    return resultManager;
+//}
 
 
 

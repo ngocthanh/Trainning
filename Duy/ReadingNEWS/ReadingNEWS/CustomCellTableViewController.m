@@ -92,8 +92,7 @@
     /* 
     - hard to read code (use define object,do not use array to manage array)
     -
-    
-     
+
      */
     /*
      
@@ -101,11 +100,6 @@
     -step 2: set objects for this cell
     
      */
-    
-    
-    
-    
-    
        //Load information to Cell
     NSUInteger numberOfItems =[[[_allNewOnDisplay objectAtIndex:indexPath.section] objectAtIndex:locationOfItemTag] count];
     

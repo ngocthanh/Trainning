@@ -18,7 +18,6 @@
 		3950EAF01EEA813100E41F49 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3950EAEE1EEA813100E41F49 /* LaunchScreen.storyboard */; };
 		3950EAFB1EEA813100E41F49 /* ReadingNEWSTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 3950EAFA1EEA813100E41F49 /* ReadingNEWSTests.m */; };
 		3950EB481EED91CE00E41F49 /* CustomTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 3950EB461EED91CE00E41F49 /* CustomTableViewCell.m */; };
-		3950EB491EED91CE00E41F49 /* CustomTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3950EB471EED91CE00E41F49 /* CustomTableViewCell.xib */; };
 		3950EB4B1EED94C200E41F49 /* Mushroom - 1UP.ico in Resources */ = {isa = PBXBuildFile; fileRef = 3950EB4A1EED94C200E41F49 /* Mushroom - 1UP.ico */; };
 		3950EB511EEE3C3A00E41F49 /* GetData.m in Sources */ = {isa = PBXBuildFile; fileRef = 3950EB501EEE3C3A00E41F49 /* GetData.m */; };
 		3950EB571EEE788100E41F49 /* parserData.m in Sources */ = {isa = PBXBuildFile; fileRef = 3950EB561EEE788100E41F49 /* parserData.m */; };
@@ -62,7 +61,6 @@
 		3950EB421EED919A00E41F49 /* CustomCellTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CustomCellTableViewController.h; sourceTree = "<group>"; };
 		3950EB451EED91CE00E41F49 /* CustomTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CustomTableViewCell.h; sourceTree = "<group>"; };
 		3950EB461EED91CE00E41F49 /* CustomTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CustomTableViewCell.m; sourceTree = "<group>"; };
-		3950EB471EED91CE00E41F49 /* CustomTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CustomTableViewCell.xib; sourceTree = "<group>"; };
 		3950EB4A1EED94C200E41F49 /* Mushroom - 1UP.ico */ = {isa = PBXFileReference; lastKnownFileType = image.ico; name = "Mushroom - 1UP.ico"; path = "../../../../Desktop/Mushroom - 1UP.ico"; sourceTree = "<group>"; };
 		3950EB4F1EEE3C3A00E41F49 /* GetData.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GetData.h; sourceTree = "<group>"; };
 		3950EB501EEE3C3A00E41F49 /* GetData.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GetData.m; sourceTree = "<group>"; };
@@ -168,7 +166,6 @@
 			children = (
 				3950EAEE1EEA813100E41F49 /* LaunchScreen.storyboard */,
 				3950EAE91EEA813100E41F49 /* Main.storyboard */,
-				3950EB471EED91CE00E41F49 /* CustomTableViewCell.xib */,
 			);
 			name = View;
 			sourceTree = "<group>";
@@ -293,7 +290,6 @@
 				3950EB4B1EED94C200E41F49 /* Mushroom - 1UP.ico in Resources */,
 				3950EAF01EEA813100E41F49 /* LaunchScreen.storyboard in Resources */,
 				3950EAED1EEA813100E41F49 /* Assets.xcassets in Resources */,
-				3950EB491EED91CE00E41F49 /* CustomTableViewCell.xib in Resources */,
 				3950EAEB1EEA813100E41F49 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

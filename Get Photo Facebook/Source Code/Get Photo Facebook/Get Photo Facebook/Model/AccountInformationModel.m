@@ -10,7 +10,6 @@
 #import <FBSDKCoreKit/FBSDKCoreKit.h>
 
 #import "ConstantsSystem.h"
-#import "Friends.h"
 
 @implementation AccountInformationModel
 
@@ -19,7 +18,7 @@
     if ([FBSDKAccessToken currentAccessToken]) {
         FBSDKGraphRequest *request = [[FBSDKGraphRequest alloc]
                                       initWithGraphPath:@"/me"
-                                      parameters:@{ @"fields": @"name,birthday,hometown,picture",}
+                                      parameters:@{ @"fields": @"name,birthday,hometown,picture,photos{link}",}
                                       HTTPMethod:@"GET"];
         [request startWithCompletionHandler:^(FBSDKGraphRequestConnection *connection, id result, NSError *error) {
             if(!error){
@@ -27,21 +26,16 @@
                 _userBirthday=[result objectForKey:@"birthday"];
                 _userHometown=[[result objectForKey:@"hometown"] objectForKey:@"name"];
                 _userUrlPicture=[NSString stringWithFormat:@"https://graph.facebook.com/%@/picture?type=large",[result objectForKey:@"id"]];
+
+                    _arrayPhotoLink=[[[result objectForKey:@"photos"]objectForKey:@"data" ] valueForKey:@"link"];
+//                for (int i=0; i<[[[[result objectForKey:@"photos"]objectForKey:@"data" ] valueForKey:@"link"] count]; i++){
+//                    NSLog(@"%@",[_arrayPhotoLink objectAtIndex:i]);
+//                }
                 NSLog(@"%@",_userName);
                 NSLog(@"%@",_userBirthday);
                 NSLog(@"%@",_userHometown);
                 NSLog(@"%@",_userUrlPicture);
                 
-                NSArray * allKeys = [[result valueForKey:@"friends"]objectForKey:@"data"];
-                Friends *friend = [Friends alloc];
-                for (int i = 0; i<[allKeys count]; i++) {
-                    NSString *idFriend = [[[[result valueForKey:@"friends"]objectForKey:@"data"] objectAtIndex:i] valueForKey:@"id"];
-                    
-                    friend.name = [[[[result valueForKey:@"friends"]objectForKey:@"data"] objectAtIndex:i] valueForKey:@"name"];
-                    friend.urlAvatar = [NSString stringWithFormat:@"http://graph.facebook.com/%@/picture?type=large",idFriend];
-                    [self.arrayFriends addObject:friend];
-                
-            }
             }
             else
             {

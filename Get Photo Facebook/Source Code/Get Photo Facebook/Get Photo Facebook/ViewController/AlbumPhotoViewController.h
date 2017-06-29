@@ -1,13 +1,13 @@
 //
 //  AlbumPhotoViewController.h
-//  Photo Design
+//  Get Photo Facebook
 //
-//  Created by KterKC on 6/26/17.
+//  Created by dankhanh on 6/29/17.
 //  Copyright © 2017 KterKC. All rights reserved.
 //
 
 #import <UIKit/UIKit.h>
 
-@interface AlbumPhotoViewController : UIViewController
+@interface AlbumPhotoViewController : UIViewController<UICollectionViewDelegate,UICollectionViewDataSource>
 
 @end
