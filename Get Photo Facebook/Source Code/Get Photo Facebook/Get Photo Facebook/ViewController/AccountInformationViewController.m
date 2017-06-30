@@ -8,8 +8,8 @@
 
 #import "AccountInformationViewController.h"
 #import "UserFacebook.h"
-#import "RequestDataFB.h"
 #import "AccountInformationTableViewCell.h"
+#import "Service.h"
 @interface AccountInformationViewController ()
 @property (weak, nonatomic) IBOutlet UIImageView *pictureOfUser;
 @property (weak, nonatomic) IBOutlet UILabel *lblNameOfUser;
@@ -17,8 +17,8 @@
 @property (weak, nonatomic) IBOutlet UILabel *lblDateOfBirth;
 @property (weak, nonatomic) IBOutlet UITableView *tableListFriend;
 
-@property (strong,nonatomic) RequestDataFB* requestFacebook;
 @property (strong,nonatomic) UserFacebook* userFacebook;
+@property (strong,nonatomic) Service* service;
 @property (strong,nonatomic) NSMutableArray* arrayFriendList;
 @property (strong,nonatomic) AccountInformationTableViewCell *cell;
 @end
@@ -30,38 +30,30 @@
     
     self.pictureOfUser.layer.cornerRadius=_pictureOfUser.frame.size.height/2.0;
     self.pictureOfUser.clipsToBounds=YES;
-    _userFacebook = [[UserFacebook alloc] init];
-    _arrayFriendList = [[NSMutableArray alloc] init];
-    _requestFacebook = [RequestDataFB alloc];
-    [_requestFacebook getInformationOfUserSuccessAccount:
-     ^(UserFacebook *user) {
-         _userFacebook = user;
-         [self displayUserInformation];
-     } successFriend:^(NSMutableArray *arrayFriend) {
-         
-         _arrayFriendList = arrayFriend;
-         [_tableListFriend reloadData];
-     } failure:^(NSError *error) {
-         NSLog(@"%@---------------------",error);
-     }];
-    [_tableListFriend setDelegate:self];
-    [_tableListFriend setDataSource:self];
+    [self loadAccountInformation];
+    [self loadFriendList];
     _cell= [[AccountInformationTableViewCell alloc] init];
-
-
-}
--(void)viewWillAppear:(BOOL)animated{
-    [super viewWillAppear:animated];
-    [_tableListFriend reloadData];
-
-
-}
--(void)viewDidAppear:(BOOL)animated{
-    [super viewDidAppear:animated];
-    [_tableListFriend reloadData];
-
 }
 
+-(void) loadAccountInformation{
+    _service = [Service alloc];
+    [_service privateInformationOfUser:^(UserFacebook *user) {
+        _userFacebook = user;
+        [self displayUserInformation];
+    } failure:^(NSError *error) {
+        Helper *helper = [Helper alloc];
+        [helper createAlertWithStringTitle:@"Oops!" contentAlert:[NSString stringWithFormat:@"Error with code %@", error]];
+    }];
+}
+-(void) loadFriendList{
+    _service = [Service alloc];
+    [_service friendList:^(NSMutableArray *arrayListFriends) {
+        _arrayFriendList=arrayListFriends;
+    } failure:^(NSError *error) {
+        Helper *helper = [Helper alloc];
+        [helper createAlertWithStringTitle:@"Oops!" contentAlert:[NSString stringWithFormat:@"Error with code %@", error]];
+    }];
+}
 -(NSInteger)numberOfSectionsInTableView:(UITableView *)tableView{
     return 1;
 }

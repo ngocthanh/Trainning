@@ -7,10 +7,8 @@
 //
 
 #import <Foundation/Foundation.h>
-#import "UserFacebook.h"
+
 @interface RequestDataFB : NSObject
-@property (strong,nonatomic) UserFacebook* userFacebook;
--(void) getInformationOfUserSuccessAccount:(void (^)(UserFacebook *user))successCurrentAccount successFriend:(void (^)(NSMutableArray *arrayFriend))successFriend failure:(void(^)(NSError* error))failure;
--(void) getInformationOfUserSuccessAccount;
-@property (strong,nonatomic) NSMutableArray *arrayFriends;
+-(void)requestInformation: (NSString *) nameFields success:(void (^)(id data))success  failure:(void(^)(NSError* error))failure;
+
 @end

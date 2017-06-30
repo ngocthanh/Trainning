@@ -14,7 +14,7 @@
 #define userPhotoPermission @"user_photos"
 #define userHomeTownPermission @"user_hometown"
 #define userBirthdayPermission @"user_birthday"
-#define idNaviControllerAccountInformation @"naviAccountInformation"
+#define idTabbarHome @"tabbarHome"
 
 @interface LoginViewController ()
 @property (weak, nonatomic) IBOutlet UIButton *btnLogin;
@@ -25,10 +25,7 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    if ([FBSDKAccessToken currentAccessToken]) {
-        UINavigationController *navi = [self.storyboard instantiateViewControllerWithIdentifier:idNaviControllerAccountInformation];
-        [self presentViewController:navi animated:YES completion:nil];
-    }
+    
 }
 - (IBAction)abtnLogin:(id)sender {
     FBSDKLoginManager *login = [[FBSDKLoginManager alloc] init];
@@ -42,17 +39,11 @@
              
          } else {
              
-             UINavigationController *navi = [self.storyboard instantiateViewControllerWithIdentifier:idNaviControllerAccountInformation];
-             [self presentViewController:navi animated:YES completion:nil];
+             UITabBarController *tabbar = [self.storyboard instantiateViewControllerWithIdentifier:idTabbarHome];
+             [self presentViewController:tabbar animated:YES completion:nil];
          }
      }];
 }
-//-(NSString *)loginFacebook{
-//    __block NSString *resultManager;
-//    
-//    return resultManager;
-//}
-
 
 
 @end

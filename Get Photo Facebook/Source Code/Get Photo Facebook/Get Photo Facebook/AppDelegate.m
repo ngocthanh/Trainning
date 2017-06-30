@@ -8,7 +8,7 @@
 
 #import "AppDelegate.h"
 #import <FBSDKCoreKit/FBSDKCoreKit.h>
-
+#import "LoginViewController.h"
 @interface AppDelegate ()
 
 @end
@@ -19,6 +19,16 @@
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     [[FBSDKApplicationDelegate sharedInstance] application:application didFinishLaunchingWithOptions:launchOptions];
     [FBSDKButton class];
+    if ([FBSDKAccessToken currentAccessToken]) {
+        UIStoryboard *storyBoard =[UIStoryboard storyboardWithName:@"Main" bundle:[NSBundle mainBundle]];
+        UITabBarController *rootViewController =[storyBoard instantiateViewControllerWithIdentifier:@"tabbarHome"];
+        self.window.rootViewController = rootViewController;
+    }else{
+        UIStoryboard *storyBoard =[UIStoryboard storyboardWithName:@"Main" bundle:[NSBundle mainBundle]];
+        LoginViewController *loginVC = [storyBoard instantiateViewControllerWithIdentifier:@"loginVC"];
+        self.window.rootViewController =loginVC;
+    }
+    
     return YES;
 }
 -(BOOL)application:(UIApplication *)application openURL:(NSURL *)url sourceApplication:(NSString *)sourceApplication annotation:(id)annotation{
