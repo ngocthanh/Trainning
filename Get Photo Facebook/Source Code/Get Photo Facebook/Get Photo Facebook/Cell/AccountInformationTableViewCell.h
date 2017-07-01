@@ -10,7 +10,7 @@
 
 @interface AccountInformationTableViewCell : UITableViewCell
 @property (weak, nonatomic) IBOutlet UIImageView *imgAvatar;
--(void)getDataFromViewControllerWithURLImage:(NSString *) urlString FriendsName:(NSString*) name;
+-(void)setDataFromViewControllerWithURLImage:(NSString *) urlString FriendsName:(NSString*) name;
 
 @property (weak, nonatomic) IBOutlet UILabel *lblFriendName;
 @end

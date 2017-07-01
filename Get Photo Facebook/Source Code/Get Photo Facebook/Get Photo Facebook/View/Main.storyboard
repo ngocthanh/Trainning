@@ -1,13 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12120" systemVersion="16F73" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12121" systemVersion="16F73" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12088"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12089"/>
         <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
-        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -146,7 +145,6 @@
                                             <constraint firstItem="2T0-02-MDv" firstAttribute="width" secondItem="piH-CR-XJB" secondAttribute="width" id="qMP-Rc-c8w"/>
                                         </constraints>
                                         <connections>
-                                            <outlet property="imageInCell" destination="2T0-02-MDv" id="oaf-Zj-RbR"/>
                                             <outlet property="photoInCell" destination="2T0-02-MDv" id="cm7-gr-0Oq"/>
                                         </connections>
                                     </collectionViewCell>
@@ -199,20 +197,20 @@
                                         </constraints>
                                     </imageView>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Name" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="sfg-tD-bjc">
-                                        <rect key="frame" x="99" y="11" width="271" height="29"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="24"/>
+                                        <rect key="frame" x="99" y="11" width="271" height="24"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Live in" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="VQk-EW-85T">
-                                        <rect key="frame" x="99" y="45" width="271" height="29"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <rect key="frame" x="99" y="40" width="271" height="24"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="12"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Date of birth" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rPg-gP-x0G">
-                                        <rect key="frame" x="99" y="79" width="271" height="29"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                                        <rect key="frame" x="99" y="69" width="271" height="24"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="12"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
@@ -257,27 +255,24 @@
                                                     <autoresizingMask key="autoresizingMask"/>
                                                     <subviews>
                                                         <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="avatarbackground" translatesAutoresizingMaskIntoConstraints="NO" id="5RS-zt-gK3">
-                                                            <rect key="frame" x="5" y="5" width="64" height="64.5"/>
+                                                            <rect key="frame" x="5" y="6" width="49" height="49.5"/>
                                                             <constraints>
                                                                 <constraint firstAttribute="width" secondItem="5RS-zt-gK3" secondAttribute="height" multiplier="1:1" id="5Jy-jg-nyx"/>
                                                             </constraints>
                                                         </imageView>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Friend's name" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ufb-m1-Kxq">
-                                                            <rect key="frame" x="74" y="1" width="281.5" height="37.5"/>
-                                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                            <rect key="frame" x="59" y="25.5" width="68" height="12"/>
+                                                            <fontDescription key="fontDescription" type="system" pointSize="10"/>
                                                             <nil key="textColor"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
                                                     </subviews>
                                                     <constraints>
-                                                        <constraint firstAttribute="bottom" secondItem="5RS-zt-gK3" secondAttribute="bottom" constant="5" id="3xS-In-CwD"/>
-                                                        <constraint firstItem="ufb-m1-Kxq" firstAttribute="leading" secondItem="5RS-zt-gK3" secondAttribute="trailing" constant="5" id="5cu-F6-KRe"/>
-                                                        <constraint firstItem="5RS-zt-gK3" firstAttribute="top" secondItem="uWG-U6-J2k" secondAttribute="top" constant="5" id="8s1-lm-jni"/>
-                                                        <constraint firstItem="ufb-m1-Kxq" firstAttribute="height" secondItem="uWG-U6-J2k" secondAttribute="height" multiplier="1/2" id="GX3-Iv-UGm"/>
-                                                        <constraint firstItem="ufb-m1-Kxq" firstAttribute="top" secondItem="uWG-U6-J2k" secondAttribute="topMargin" constant="-7" id="Qe8-gN-cEr"/>
-                                                        <constraint firstItem="5RS-zt-gK3" firstAttribute="width" secondItem="uWG-U6-J2k" secondAttribute="width" multiplier="1/4" id="WRA-yF-n4W"/>
-                                                        <constraint firstItem="ufb-m1-Kxq" firstAttribute="width" secondItem="uWG-U6-J2k" secondAttribute="width" multiplier="3/4" id="aJz-VH-U3r"/>
-                                                        <constraint firstItem="5RS-zt-gK3" firstAttribute="leading" secondItem="uWG-U6-J2k" secondAttribute="leading" constant="5" id="rcn-ly-8bW"/>
+                                                        <constraint firstItem="ufb-m1-Kxq" firstAttribute="centerY" secondItem="5RS-zt-gK3" secondAttribute="centerY" id="E30-OY-tBE"/>
+                                                        <constraint firstItem="5RS-zt-gK3" firstAttribute="centerY" secondItem="uWG-U6-J2k" secondAttribute="centerY" id="JeG-yK-x69"/>
+                                                        <constraint firstItem="ufb-m1-Kxq" firstAttribute="leading" secondItem="5RS-zt-gK3" secondAttribute="trailing" constant="5" id="aJU-v0-AyK"/>
+                                                        <constraint firstItem="5RS-zt-gK3" firstAttribute="leading" secondItem="uWG-U6-J2k" secondAttribute="leading" constant="5" id="g2l-Iv-bFY"/>
+                                                        <constraint firstItem="5RS-zt-gK3" firstAttribute="height" secondItem="uWG-U6-J2k" secondAttribute="height" multiplier="8/10" id="xxf-zY-4YX"/>
                                                     </constraints>
                                                 </tableViewCellContentView>
                                                 <connections>
@@ -286,6 +281,10 @@
                                                 </connections>
                                             </tableViewCell>
                                         </prototypes>
+                                        <connections>
+                                            <outlet property="dataSource" destination="Ra4-mM-rWE" id="gjv-eq-N03"/>
+                                            <outlet property="delegate" destination="Ra4-mM-rWE" id="5gF-EW-Mct"/>
+                                        </connections>
                                     </tableView>
                                 </subviews>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>

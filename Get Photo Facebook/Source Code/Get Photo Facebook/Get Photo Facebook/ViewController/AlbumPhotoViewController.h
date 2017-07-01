@@ -6,7 +6,7 @@
 //  Copyright © 2017 KterKC. All rights reserved.
 //
 
-#import <UIKit/UIKit.h>
+#import "Helper.h"
 
 @interface AlbumPhotoViewController : UIViewController<UICollectionViewDelegate,UICollectionViewDataSource>
 

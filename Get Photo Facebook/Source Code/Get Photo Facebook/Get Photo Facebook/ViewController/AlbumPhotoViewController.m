@@ -7,39 +7,33 @@
 //
 
 #import "AlbumPhotoViewController.h"
-//#import "AccountInformationModel.h"
-//#import "AlbumPhotoCollectionViewCell.h"
-//
+#import "AlbumPhotoCollectionViewCell.h"
+
 @interface AlbumPhotoViewController ()
-//@property (weak, nonatomic) IBOutlet UICollectionView *photoAlbum;
-//@property (strong,nonatomic) AccountInformationModel *accountPhoto;
+@property (weak, nonatomic) IBOutlet UICollectionView *photoAlbum;
 @end
-//
 @implementation AlbumPhotoViewController
-//
-//- (void)viewDidLoad {
-//    [super viewDidLoad];
-//    _accountPhoto=[[AccountInformationModel alloc] init];
-//    [self.photoAlbum registerClass:[AlbumPhotoCollectionViewCell class] forCellWithReuseIdentifier:@"photoCell"];
-//    [_accountPhoto getInformationOfUser];
-//    
-//}
-//
-//- (void)didReceiveMemoryWarning {
-//    [super didReceiveMemoryWarning];
-//
-//}
-//- (NSInteger)numberOfSectionsInCollectionView:(UICollectionView *)collectionView{
-//    return 1;
-//}
-//-(NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section{
-//    return [[_accountPhoto arrayPhotoLink]count];
-//}
-//-(UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath{
-//    AlbumPhotoCollectionViewCell *cellForCollectionView = [_photoAlbum dequeueReusableCellWithReuseIdentifier:@"photoCell" forIndexPath:indexPath];
-//    [cellForCollectionView getDataOfPhotoForCellWithLink:[_accountPhoto.arrayPhotoLink objectAtIndex:indexPath.row]];
-//    
-//    return cellForCollectionView;
-//}
+
+- (void)viewDidLoad {
+    [super viewDidLoad];
+    
+}
+
+- (void)didReceiveMemoryWarning {
+    [super didReceiveMemoryWarning];
+
+}
+- (NSInteger)numberOfSectionsInCollectionView:(UICollectionView *)collectionView{
+    return 1;
+}
+
+-(NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section{
+   return 1;
+}
+
+-(UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath{
+    AlbumPhotoCollectionViewCell *cellForCollectionView = [_photoAlbum dequeueReusableCellWithReuseIdentifier:@"photoCell" forIndexPath:indexPath];
+    return cellForCollectionView;
+}
 
 @end

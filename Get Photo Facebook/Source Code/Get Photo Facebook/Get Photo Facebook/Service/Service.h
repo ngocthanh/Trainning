@@ -11,6 +11,6 @@
 @class UserFacebook;
 @interface Service : NSObject
 -(void)privateInformationOfUser :(void (^)(UserFacebook *user))successCurrentAccount failure:(void(^)(NSError* error))failure;
--(void)friendList :(void (^)(NSMutableArray* arrayListFriends))successFriend failure:(void(^)(NSError* error))failure;
+-(void)friendListSuccess :(void (^)(NSArray* arrayListFriends))successFriend failure:(void(^)(NSError* error))failure;
 -(void)PhotoOfUser :(void (^)(UserFacebook *user))successPhoto failure:(void(^)(NSError* error))failure;
 @end

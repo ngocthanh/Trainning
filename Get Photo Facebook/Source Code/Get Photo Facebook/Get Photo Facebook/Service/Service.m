@@ -24,20 +24,20 @@
     }];
 }
 
--(void)friendList :(void (^)(NSMutableArray* arrayListFriends))successFriend failure:(void(^)(NSError* error))failure{
-    RequestDataFB* request;
+-(void)friendListSuccess :(void (^)(NSArray* arrayListFriends))successFriend failure:(void(^)(NSError* error))failure{
+    RequestDataFB* request = [RequestDataFB alloc];
     [request requestInformation:@"friends" success:^(id data) {
     NSArray * allKeys = [[data valueForKey:@"friends"]objectForKey:@"data"];
     NSMutableArray *arrayFriends = [[NSMutableArray alloc] init];
     
-    for (int i = 0; i<[allKeys count]; i++) {
+    for (NSDictionary *friend in allKeys) {
         UserFacebook *userFriend = [[UserFacebook alloc] init];
-        NSString *idFriend = [[allKeys objectAtIndex:i] valueForKey:@"id"];
-        userFriend.userName = [[allKeys objectAtIndex:i] valueForKey:@"name"];
+        NSString *idFriend = [friend valueForKey:@"id"];
+        userFriend.userName = [friend valueForKey:@"name"];
         userFriend.userUrlPicture = [NSString stringWithFormat:@"http://graph.facebook.com/%@/picture?type=large",idFriend];
         [arrayFriends addObject:userFriend];
     }
-    successFriend(arrayFriends);
+    successFriend([arrayFriends copy]);
     } failure:^(NSError *error) {
         failure(error);
     }];

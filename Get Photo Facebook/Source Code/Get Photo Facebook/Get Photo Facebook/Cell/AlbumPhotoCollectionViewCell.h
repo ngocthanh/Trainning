@@ -10,5 +10,5 @@
 
 @interface AlbumPhotoCollectionViewCell : UICollectionViewCell
 @property (weak, nonatomic) IBOutlet UIImageView *photoInCell;
--(void)getDataOfPhotoForCellWithLink:(NSString *) linkPhoto;
+-(void)setDataOfPhotoForCellWithLink:(NSString *) linkPhoto;
 @end

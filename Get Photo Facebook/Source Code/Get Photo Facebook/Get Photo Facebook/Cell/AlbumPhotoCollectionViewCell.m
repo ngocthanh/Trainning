@@ -12,7 +12,7 @@
 - (void)awakeFromNib {
     [super awakeFromNib];
 }
--(void)getDataOfPhotoForCellWithLink:(NSString *) linkPhoto {
+-(void)setDataOfPhotoForCellWithLink:(NSString *) linkPhoto {
     if(![linkPhoto isEqualToString:textIsEmpty])
     {
         NSURL *urlOfPhoto=[NSURL URLWithString:[[NSString alloc]  initWithString:linkPhoto]];
