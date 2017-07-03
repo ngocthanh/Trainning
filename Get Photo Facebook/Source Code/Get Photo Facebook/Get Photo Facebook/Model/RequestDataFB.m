@@ -7,9 +7,7 @@
 //
 
 #import "RequestDataFB.h"
-#import <FBSDKCoreKit/FBSDKCoreKit.h>
-#import "ConstantsSystem.h"
-#import "UserFacebook.h"
+
 @implementation RequestDataFB
 
 

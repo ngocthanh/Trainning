@@ -7,7 +7,11 @@
 //
 
 #import <Foundation/Foundation.h>
-
+#import <FBSDKCoreKit/FBSDKCoreKit.h>
+#import "ConstantsSystem.h"
+#import "UserFacebook.h"
+#import "FriendOfUser.h"
+#import "PhotoOfUser.h"
 @interface RequestDataFB : NSObject
 -(void)requestInformation: (NSString *) nameFields success:(void (^)(id data))success  failure:(void(^)(NSError* error))failure;
 

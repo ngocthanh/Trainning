@@ -6,11 +6,10 @@
 //  Copyright © 2017 KterKC. All rights reserved.
 //
 
-#import <Foundation/Foundation.h>
-#import "UserFacebook.h"
-@class UserFacebook;
+#import "RequestDataFB.h"
+
 @interface Service : NSObject
 -(void)privateInformationOfUser :(void (^)(UserFacebook *user))successCurrentAccount failure:(void(^)(NSError* error))failure;
 -(void)friendListSuccess :(void (^)(NSArray* arrayListFriends))successFriend failure:(void(^)(NSError* error))failure;
--(void)PhotoOfUser :(void (^)(UserFacebook *user))successPhoto failure:(void(^)(NSError* error))failure;
+-(void)PhotoOfUser :(void (^)(NSArray *arrayPhotos))successPhoto failure:(void(^)(NSError* error))failure;
 @end

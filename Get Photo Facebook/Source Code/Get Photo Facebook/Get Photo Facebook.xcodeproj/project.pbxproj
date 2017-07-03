@@ -15,6 +15,8 @@
 		5413FF971F03C54F00518FB4 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5413FF961F03C54F00518FB4 /* Main.storyboard */; };
 		5455D8921F023B0900491836 /* AccountInformationTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 5455D8911F023B0900491836 /* AccountInformationTableViewCell.m */; };
 		54974ADD1F04925100380DD5 /* RequestDataFB.m in Sources */ = {isa = PBXBuildFile; fileRef = 54974ADC1F04925100380DD5 /* RequestDataFB.m */; };
+		549B30EF1F08B059007A776A /* FriendOfUser.m in Sources */ = {isa = PBXBuildFile; fileRef = 549B30EE1F08B059007A776A /* FriendOfUser.m */; };
+		549B30F21F08B06B007A776A /* PhotoOfUser.m in Sources */ = {isa = PBXBuildFile; fileRef = 549B30F11F08B06B007A776A /* PhotoOfUser.m */; };
 		54C226D11F02192C0066E8DA /* UserFacebook.m in Sources */ = {isa = PBXBuildFile; fileRef = 54C226D01F02192C0066E8DA /* UserFacebook.m */; };
 		54C226D41F0219340066E8DA /* ConstantsSystem.m in Sources */ = {isa = PBXBuildFile; fileRef = 54C226D31F0219340066E8DA /* ConstantsSystem.m */; };
 		54C226D71F0219440066E8DA /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 54C226D51F0219440066E8DA /* LaunchScreen.storyboard */; };
@@ -41,6 +43,10 @@
 		5455D8911F023B0900491836 /* AccountInformationTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AccountInformationTableViewCell.m; sourceTree = "<group>"; };
 		54974ADB1F04925100380DD5 /* RequestDataFB.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RequestDataFB.h; sourceTree = "<group>"; };
 		54974ADC1F04925100380DD5 /* RequestDataFB.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RequestDataFB.m; sourceTree = "<group>"; };
+		549B30ED1F08B059007A776A /* FriendOfUser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FriendOfUser.h; sourceTree = "<group>"; };
+		549B30EE1F08B059007A776A /* FriendOfUser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FriendOfUser.m; sourceTree = "<group>"; };
+		549B30F01F08B06B007A776A /* PhotoOfUser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PhotoOfUser.h; sourceTree = "<group>"; };
+		549B30F11F08B06B007A776A /* PhotoOfUser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PhotoOfUser.m; sourceTree = "<group>"; };
 		54C226CF1F02192C0066E8DA /* UserFacebook.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UserFacebook.h; sourceTree = "<group>"; };
 		54C226D01F02192C0066E8DA /* UserFacebook.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UserFacebook.m; sourceTree = "<group>"; };
 		54C226D21F0219340066E8DA /* ConstantsSystem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ConstantsSystem.h; sourceTree = "<group>"; };
@@ -156,6 +162,10 @@
 				54C226D01F02192C0066E8DA /* UserFacebook.m */,
 				54974ADB1F04925100380DD5 /* RequestDataFB.h */,
 				54974ADC1F04925100380DD5 /* RequestDataFB.m */,
+				549B30ED1F08B059007A776A /* FriendOfUser.h */,
+				549B30EE1F08B059007A776A /* FriendOfUser.m */,
+				549B30F01F08B06B007A776A /* PhotoOfUser.h */,
+				549B30F11F08B06B007A776A /* PhotoOfUser.m */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -329,6 +339,7 @@
 				54974ADD1F04925100380DD5 /* RequestDataFB.m in Sources */,
 				54C226D11F02192C0066E8DA /* UserFacebook.m in Sources */,
 				54CCB1AB1F021600009D176C /* main.m in Sources */,
+				549B30F21F08B06B007A776A /* PhotoOfUser.m in Sources */,
 				5455D8921F023B0900491836 /* AccountInformationTableViewCell.m in Sources */,
 				39FB8E8A1F04F59000B205C6 /* AlbumPhotoCollectionViewCell.m in Sources */,
 				54C226D41F0219340066E8DA /* ConstantsSystem.m in Sources */,
@@ -336,6 +347,7 @@
 				39B28D741F06343E001A2FCC /* Helper.m in Sources */,
 				54CCB1D61F0216D9009D176C /* DetailPhotoViewController.m in Sources */,
 				54CCB1D41F0216D9009D176C /* AccountInformationViewController.m in Sources */,
+				549B30EF1F08B059007A776A /* FriendOfUser.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

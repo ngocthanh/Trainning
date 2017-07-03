@@ -8,20 +8,33 @@
 
 #import "AlbumPhotoViewController.h"
 #import "AlbumPhotoCollectionViewCell.h"
-
+#import "Service.h"
+#import "Helper.h"
 @interface AlbumPhotoViewController ()
 @property (weak, nonatomic) IBOutlet UICollectionView *photoAlbum;
+@property (strong,nonatomic) Service *service;
+@property (strong,nonatomic) NSMutableArray *arrayPhotos;
 @end
 @implementation AlbumPhotoViewController
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    
+    _arrayPhotos=[NSMutableArray new];
+    _service=[[Service alloc]init];
+    [self GetPhoto]; 
 }
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
 
+}
+-(void)GetPhoto{
+    
+   [_service PhotoOfUser:^(NSArray *arrayPhotos) {
+       _arrayPhotos=[[NSMutableArray alloc ] initWithArray:arrayPhotos];
+   } failure:^(NSError *error) {
+       NSLog(@"------");
+   }];
 }
 - (NSInteger)numberOfSectionsInCollectionView:(UICollectionView *)collectionView{
     return 1;

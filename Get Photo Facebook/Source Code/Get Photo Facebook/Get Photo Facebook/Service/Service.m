@@ -1,4 +1,4 @@
-//
+	//
 //  Service.m
 //  Get Photo Facebook
 //
@@ -7,7 +7,6 @@
 //
 
 #import "Service.h"
-#import "RequestDataFB.h"
 @implementation Service
 
 -(void)privateInformationOfUser :(void (^)(UserFacebook *user))successCurrentAccount failure:(void(^)(NSError* error))failure{
@@ -43,14 +42,18 @@
     }];
 }
 
--(void)PhotoOfUser :(void (^)(UserFacebook *user))successPhoto failure:(void(^)(NSError* error))failure{
-    RequestDataFB* request;
-    UserFacebook *photo=[[UserFacebook alloc] init];
+-(void)PhotoOfUser :(void (^)(NSArray* arrayPhotos))successPhoto failure:(void(^)(NSError* error))failure{
+    RequestDataFB* request=[RequestDataFB new];
     [request requestInformation:@"photos{id,link}" success:^(id data) {
-    
-    photo.arrayPhoto=[[[data objectForKey:@"photos"]objectForKey:@"data" ] valueForKey:@"link"];
-    
-    successPhoto(photo);
+        NSArray *allKeys =[[data objectForKey:@"photos"] objectForKey:@"data"];
+        NSMutableArray *arrayPhotos=[[NSMutableArray alloc] init];
+        for(NSDictionary *photo in allKeys){
+            PhotoOfUser *photoOfUser=[PhotoOfUser new] ;
+            photoOfUser.idPhoto=[photo valueForKey:@"id"];
+            photoOfUser.linkPhoto=[photo valueForKey:@"link"];
+            [arrayPhotos addObject:photoOfUser];
+        }
+    successPhoto(arrayPhotos);
     } failure:^(NSError *error) {
         failure(error);
     }];
