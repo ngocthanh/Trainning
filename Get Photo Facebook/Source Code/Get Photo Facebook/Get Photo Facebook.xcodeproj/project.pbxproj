@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		0DE670A0C6FA8B89D02FF245 /* libPods-Get Photo Facebook.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 80D01800FEB428C0BDCA88A0 /* libPods-Get Photo Facebook.a */; };
+		397FE2551F0B27AD00B19D6D /* ManagerCache.m in Sources */ = {isa = PBXBuildFile; fileRef = 397FE2541F0B27AD00B19D6D /* ManagerCache.m */; };
+		397FE2581F0B27B900B19D6D /* FileManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 397FE2571F0B27B900B19D6D /* FileManager.m */; };
 		39B28D711F0606CA001A2FCC /* Service.m in Sources */ = {isa = PBXBuildFile; fileRef = 39B28D701F0606CA001A2FCC /* Service.m */; };
 		39B28D741F06343E001A2FCC /* Helper.m in Sources */ = {isa = PBXBuildFile; fileRef = 39B28D731F06343E001A2FCC /* Helper.m */; };
 		39FB8E871F04EE2200B205C6 /* AlbumPhotoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 39FB8E861F04EE2200B205C6 /* AlbumPhotoViewController.m */; };
@@ -30,6 +32,10 @@
 
 /* Begin PBXFileReference section */
 		0F31186C9ED98C43F389C573 /* Pods-Get Photo Facebook.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Get Photo Facebook.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Get Photo Facebook/Pods-Get Photo Facebook.debug.xcconfig"; sourceTree = "<group>"; };
+		397FE2531F0B27AD00B19D6D /* ManagerCache.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ManagerCache.h; sourceTree = "<group>"; };
+		397FE2541F0B27AD00B19D6D /* ManagerCache.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ManagerCache.m; sourceTree = "<group>"; };
+		397FE2561F0B27B900B19D6D /* FileManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FileManager.h; sourceTree = "<group>"; };
+		397FE2571F0B27B900B19D6D /* FileManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FileManager.m; sourceTree = "<group>"; };
 		39B28D6F1F0606CA001A2FCC /* Service.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Service.h; sourceTree = "<group>"; };
 		39B28D701F0606CA001A2FCC /* Service.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Service.m; sourceTree = "<group>"; };
 		39B28D721F06343E001A2FCC /* Helper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Helper.h; sourceTree = "<group>"; };
@@ -166,6 +172,10 @@
 				549B30EE1F08B059007A776A /* FriendOfUser.m */,
 				549B30F01F08B06B007A776A /* PhotoOfUser.h */,
 				549B30F11F08B06B007A776A /* PhotoOfUser.m */,
+				397FE2531F0B27AD00B19D6D /* ManagerCache.h */,
+				397FE2541F0B27AD00B19D6D /* ManagerCache.m */,
+				397FE2561F0B27B900B19D6D /* FileManager.h */,
+				397FE2571F0B27B900B19D6D /* FileManager.m */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -341,11 +351,13 @@
 				54CCB1AB1F021600009D176C /* main.m in Sources */,
 				549B30F21F08B06B007A776A /* PhotoOfUser.m in Sources */,
 				5455D8921F023B0900491836 /* AccountInformationTableViewCell.m in Sources */,
+				397FE2551F0B27AD00B19D6D /* ManagerCache.m in Sources */,
 				39FB8E8A1F04F59000B205C6 /* AlbumPhotoCollectionViewCell.m in Sources */,
 				54C226D41F0219340066E8DA /* ConstantsSystem.m in Sources */,
 				54CCB1D71F0216D9009D176C /* LoginViewController.m in Sources */,
 				39B28D741F06343E001A2FCC /* Helper.m in Sources */,
 				54CCB1D61F0216D9009D176C /* DetailPhotoViewController.m in Sources */,
+				397FE2581F0B27B900B19D6D /* FileManager.m in Sources */,
 				54CCB1D41F0216D9009D176C /* AccountInformationViewController.m in Sources */,
 				549B30EF1F08B059007A776A /* FriendOfUser.m in Sources */,
 			);

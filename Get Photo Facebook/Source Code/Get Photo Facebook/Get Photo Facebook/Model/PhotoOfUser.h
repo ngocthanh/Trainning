@@ -10,6 +10,7 @@
 
 @interface PhotoOfUser : NSObject
 @property (strong,nonatomic) NSString* idPhoto;
-@property (strong,nonatomic) NSString* linkPhoto;
+@property (strong,nonatomic) NSString* linkOriPhoto;
+@property (strong,nonatomic) NSString* linkThumbPhoto;
 
 @end

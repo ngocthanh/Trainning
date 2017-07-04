@@ -13,7 +13,8 @@
 @interface AlbumPhotoViewController ()
 @property (weak, nonatomic) IBOutlet UICollectionView *photoAlbum;
 @property (strong,nonatomic) Service *service;
-@property (strong,nonatomic) NSMutableArray *arrayPhotos;
+@property (strong,nonatomic) NSArray *arrayPhotos;
+@property (strong,nonatomic) AlbumPhotoCollectionViewCell *cell;
 @end
 @implementation AlbumPhotoViewController
 
@@ -21,32 +22,37 @@
     [super viewDidLoad];
     _arrayPhotos=[NSMutableArray new];
     _service=[[Service alloc]init];
-    [self GetPhoto]; 
+    [self getIdAndLinkOfPhoto];
 }
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
 
 }
--(void)GetPhoto{
+-(void)getIdAndLinkOfPhoto{
     
-   [_service PhotoOfUser:^(NSArray *arrayPhotos) {
-       _arrayPhotos=[[NSMutableArray alloc ] initWithArray:arrayPhotos];
+   [_service getUrlOfPhoto:^(NSArray *arraySourcePhotoWithLargestSize) {
+       _arrayPhotos = arraySourcePhotoWithLargestSize;
+       [_photoAlbum reloadData];
    } failure:^(NSError *error) {
-       NSLog(@"------");
+       
    }];
 }
+
 - (NSInteger)numberOfSectionsInCollectionView:(UICollectionView *)collectionView{
     return 1;
 }
 
 -(NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section{
-   return 1;
+   return [_arrayPhotos count];
 }
 
 -(UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath{
-    AlbumPhotoCollectionViewCell *cellForCollectionView = [_photoAlbum dequeueReusableCellWithReuseIdentifier:@"photoCell" forIndexPath:indexPath];
-    return cellForCollectionView;
+    _cell = [[AlbumPhotoCollectionViewCell alloc] init];
+    _cell = [_photoAlbum dequeueReusableCellWithReuseIdentifier:@"photoCell" forIndexPath:indexPath];
+    [_cell setDataOfPhotoForCellWithLink:[[_arrayPhotos valueForKey:@"linkThumbPhoto"] objectAtIndex:indexPath.row]];
+    
+    return _cell;
 }
 
 @end

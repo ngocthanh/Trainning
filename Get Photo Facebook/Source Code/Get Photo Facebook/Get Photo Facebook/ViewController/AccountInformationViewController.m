@@ -10,6 +10,7 @@
 #import "UserFacebook.h"
 #import "AccountInformationTableViewCell.h"
 #import "Service.h"
+#import "FileManager.h"
 @interface AccountInformationViewController ()
 @property (weak, nonatomic) IBOutlet UIImageView *pictureOfUser;
 @property (weak, nonatomic) IBOutlet UILabel *lblNameOfUser;
@@ -22,6 +23,8 @@
 @property (strong,nonatomic) NSArray* arrayFriendList;
 @property (strong,nonatomic) AccountInformationTableViewCell *cell;
 @property (strong,nonatomic) __block Helper *helper;
+
+@property (strong,nonatomic) FileManager *file;
 @end
 
 @implementation AccountInformationViewController
@@ -35,6 +38,8 @@
     [self setStyleForAccountInformation];	
     [self loadAccountInformation];
     [self loadFriendList];
+    _file =[FileManager alloc];
+//    [_file createDirectoryPath:@"FileName"];
     
 }
 

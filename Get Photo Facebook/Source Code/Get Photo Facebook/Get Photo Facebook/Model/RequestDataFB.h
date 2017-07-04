@@ -13,6 +13,6 @@
 #import "FriendOfUser.h"
 #import "PhotoOfUser.h"
 @interface RequestDataFB : NSObject
--(void)requestInformation: (NSString *) nameFields success:(void (^)(id data))success  failure:(void(^)(NSError* error))failure;
+-(void)requestInformation:(NSString *)nameGraphPath NameField:(NSString *) nameFields success:(void (^)(id data))success  failure:(void(^)(NSError* error))failure;
 
 @end

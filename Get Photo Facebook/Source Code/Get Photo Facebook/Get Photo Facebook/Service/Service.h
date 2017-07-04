@@ -7,9 +7,13 @@
 //
 
 #import "RequestDataFB.h"
+#import "FileManager.h"
 
 @interface Service : NSObject
 -(void)privateInformationOfUser :(void (^)(UserFacebook *user))successCurrentAccount failure:(void(^)(NSError* error))failure;
 -(void)friendListSuccess :(void (^)(NSArray* arrayListFriends))successFriend failure:(void(^)(NSError* error))failure;
--(void)PhotoOfUser :(void (^)(NSArray *arrayPhotos))successPhoto failure:(void(^)(NSError* error))failure;
+-(void)photoOfUser :(void (^)(NSArray *arrayPhotos))successPhoto failure:(void(^)(NSError* error))failure;
+-(void)getUrlOfPhoto:(void (^)(NSArray *arraySourcePhotoWithLargestSize))successUrlSource failure:(void (^)(NSError *error))failure;
+
+
 @end
