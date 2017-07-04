@@ -9,8 +9,9 @@
 #import <Foundation/Foundation.h>
 
 @interface FileManager : NSObject
--(NSString*) createDirectoryPath :(NSString *)folderName;
--(BOOL) checkExistImageInMemory : (NSString *)imageName FolderName: (NSString *)folderName;
--(void) storeImageFileToMemory: (NSString *)imageName FolderName: (NSString *)folderName ImagaData:(NSData *)imageData;
--(NSData *) loadImageFileFromMemory: (NSString *)imageName FolderName:(NSString *)folderName;
+-(NSString*) createDirectoryPath;
+-(BOOL) checkExistImageInMemory : (NSString *)imageName;
+-(void) storeImageFileToMemory: (NSString *)imageName ImagaData:(NSData *)imageData;
+-(NSData *) loadImageFileFromMemory: (NSString *)imageName;
+
 @end

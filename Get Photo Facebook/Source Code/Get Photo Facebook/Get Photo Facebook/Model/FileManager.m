@@ -9,10 +9,11 @@
 #import "FileManager.h"
 
 @implementation FileManager
--(NSString*) createDirectoryPath :(NSString *)folderName{
+
+-(NSString*) createDirectoryPath {
     NSString *path;
     NSArray *paths=NSSearchPathForDirectoriesInDomains(NSCachesDirectory, NSUserDomainMask, YES);
-    path=[[paths objectAtIndex:0]stringByAppendingPathComponent:folderName];
+    path=[[paths objectAtIndex:0]stringByAppendingPathComponent:@"ImageFile"];
     NSError * error;
     if (![[NSFileManager defaultManager] fileExistsAtPath:path]) {
         if (![[NSFileManager defaultManager] createDirectoryAtPath:path withIntermediateDirectories:NO attributes:nil error:
@@ -28,9 +29,10 @@
     }
     return nil;
 }
--(BOOL) checkExistImageInMemory : (NSString *)imageName FolderName: (NSString *)folderName{
+
+-(BOOL) checkExistImageInMemory : (NSString *)imageName {
     NSString * path;
-    path=[self createDirectoryPath:(folderName)];
+    path=[self createDirectoryPath];
     path=[path stringByAppendingPathComponent:[NSString stringWithFormat:@"%@",imageName]];
     if ([[NSFileManager defaultManager]fileExistsAtPath:path]) {
         return YES;
@@ -39,18 +41,18 @@
         return NO;
     }
 }
--(void) storeImageFileToMemory: (NSString *)imageName FolderName: (NSString *)folderName ImagaData:(NSData *)imageData{
+-(void) storeImageFileToMemory: (NSString *)imageName ImagaData:(NSData *)imageData{
     NSString * path;
-    path=[self createDirectoryPath:folderName];
+    path=[self createDirectoryPath];
     path = [path stringByAppendingPathComponent:imageName];
-    if (![self checkExistImageInMemory:imageName FolderName:folderName]) {
+    if (![self checkExistImageInMemory:imageName]) {
         [[NSFileManager defaultManager] createFileAtPath:path contents:imageData attributes:nil];
-    }
+    }   
     else{}
 }
--(NSData *) loadImageFileFromMemory: (NSString *)imageName FolderName:(NSString *)folderName{
+-(NSData *) loadImageFileFromMemory: (NSString *)imageName{
     NSString * path;
-    path=[self createDirectoryPath:folderName];
+    path=[self createDirectoryPath];
     path=[path stringByAppendingPathComponent:imageName];
     if([[NSFileManager defaultManager]fileExistsAtPath:path]){
         NSData * imageData=[[NSData alloc] initWithContentsOfFile:path];
@@ -60,4 +62,5 @@
     }
     return nil;
 }
+
 @end
