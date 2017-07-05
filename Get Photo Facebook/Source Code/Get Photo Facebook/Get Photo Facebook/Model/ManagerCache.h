@@ -12,5 +12,6 @@
 @property (strong,nonatomic) NSCache *cache;
 +(ManagerCache*)sharedInstance ;
 - (void)cacheImage:(NSData*)imageData forKey:(NSString*)key;
+- (void)cacheOriImage:(NSData*)imageData forKey:(NSString*)key;
 - (NSData*)getCachedImageForKey:(NSString*)key ;
 @end

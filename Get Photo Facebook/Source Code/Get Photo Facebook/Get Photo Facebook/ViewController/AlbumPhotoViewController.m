@@ -9,6 +9,7 @@
 #import "AlbumPhotoViewController.h"
 #import "AlbumPhotoCollectionViewCell.h"
 #import "DetailPhotoViewController.h"
+#import "LazyLoadingService.h"
 #import "Service.h"
 #import "Helper.h"
 @interface AlbumPhotoViewController ()
@@ -51,18 +52,32 @@
 -(UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath{
     _cell = [[AlbumPhotoCollectionViewCell alloc] init];
     _cell = [_photoAlbum dequeueReusableCellWithReuseIdentifier:@"photoCell" forIndexPath:indexPath];
+    
     NSString *linkThumblr = [[_arrayPhotos valueForKey:@"linkThumbPhoto"] objectAtIndex:indexPath.row];
     NSString *idPhoto =[[_arrayPhotos valueForKey:@"idPhoto"] objectAtIndex:indexPath.row];
     [_cell setDataFromViewControllerWithURLImage: linkThumblr
                                                   IDImage:idPhoto];
+   
     
     return _cell;
 }
--(void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath{
-    UIStoryboard *storyBoard =[UIStoryboard storyboardWithName:@"Main" bundle:[NSBundle mainBundle]];
-    DetailPhotoViewController *deTailPhotoVC=[storyBoard instantiateViewControllerWithIdentifier:@"detailPhoto"];
-    [self.navigationController pushViewController:deTailPhotoVC animated:YES];
+-(void) prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender{
+    CGPoint touchPoint = [sender convertPoint:CGPointZero toView:_photoAlbum]; // maintable --> replace your tableview name
+    NSIndexPath *clickedButtonIndexPath = [_photoAlbum indexPathForItemAtPoint:touchPoint];
+    
+    NSString *idPhoto =[[_arrayPhotos valueForKey:@"idPhoto"] objectAtIndex:clickedButtonIndexPath.row];
+    NSString *linkOri = [[_arrayPhotos valueForKey:@"linkOriPhoto"] objectAtIndex:clickedButtonIndexPath.row];
+    
+    if ([segue.identifier isEqualToString:@"segueDetailPhoto"]) {
+        DetailPhotoViewController *detail = (DetailPhotoViewController*)segue.destinationViewController;
+        [_cell DataForOriginalPhoto:linkOri IDImage:idPhoto Success:^(NSData *dataImage) {
+            detail.dataImage =dataImage;
+            
+        } Failure:^(NSError *error) {
+            
+        }];
 
+    }
 }
 -(UIEdgeInsets)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout *)collectionViewLayout insetForSectionAtIndex:(NSInteger)section{
     return UIEdgeInsetsMake(10, 10, 10, 10);
@@ -70,5 +85,7 @@
 -(CGSize)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout *)collectionViewLayout sizeForItemAtIndexPath:(NSIndexPath *)indexPath{
     return CGSizeMake((self.view.frame.size.width - 40 )/3, (self.view.frame.size.height )/5);
 }
-
+-(CGFloat)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout *)collectionViewLayout minimumLineSpacingForSectionAtIndex:(NSInteger)section{
+    return 10;
+}
 @end

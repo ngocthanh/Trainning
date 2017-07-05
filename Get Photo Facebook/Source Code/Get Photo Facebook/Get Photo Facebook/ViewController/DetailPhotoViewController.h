@@ -9,5 +9,6 @@
 #import "Helper.h"
 
 @interface DetailPhotoViewController : UIViewController<UIScrollViewDelegate>
-
+@property (weak, nonatomic) IBOutlet UIImageView *image;
+@property (weak, nonatomic) NSData *dataImage;
 @end

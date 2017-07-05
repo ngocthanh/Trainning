@@ -38,7 +38,11 @@ static NetwokingService *networkService;
     [_cache setObject:imageData forKey:key];
     [fileManager storeImageFileToMemory:[fileManager setUpNameForImageAsThumb:key] ImagaData:imageData];
 }
-
+-(void)cacheOriImage:(NSData *)imageData forKey:(NSString *)key{
+    [_cache setCountLimit:25];
+    [_cache setObject:imageData forKey:key];
+    [fileManager storeImageFileToMemory:key ImagaData:imageData];
+}
 - (NSData*)getCachedImageForKey:(NSString*)key {
     if ([_cache objectForKey:key]) {
         return [_cache objectForKey:key] ;
