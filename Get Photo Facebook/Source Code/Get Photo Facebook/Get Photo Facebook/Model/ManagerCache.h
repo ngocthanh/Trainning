@@ -9,5 +9,8 @@
 #import <Foundation/Foundation.h>
 
 @interface ManagerCache : NSObject
-
+@property (strong,nonatomic) NSCache *cache;
++(ManagerCache*)sharedInstance ;
+- (void)cacheImage:(NSData*)imageData forKey:(NSString*)key;
+- (NSData*)getCachedImageForKey:(NSString*)key ;
 @end

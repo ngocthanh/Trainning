@@ -20,6 +20,8 @@
 		54974ADD1F04925100380DD5 /* RequestDataFB.m in Sources */ = {isa = PBXBuildFile; fileRef = 54974ADC1F04925100380DD5 /* RequestDataFB.m */; };
 		549B30EF1F08B059007A776A /* FriendOfUser.m in Sources */ = {isa = PBXBuildFile; fileRef = 549B30EE1F08B059007A776A /* FriendOfUser.m */; };
 		549B30F21F08B06B007A776A /* PhotoOfUser.m in Sources */ = {isa = PBXBuildFile; fileRef = 549B30F11F08B06B007A776A /* PhotoOfUser.m */; };
+		54A37C171F0C76BF0087F610 /* LazyLoadingService.m in Sources */ = {isa = PBXBuildFile; fileRef = 54A37C161F0C76BF0087F610 /* LazyLoadingService.m */; };
+		54A37C1A1F0C842D0087F610 /* NetwokingService.m in Sources */ = {isa = PBXBuildFile; fileRef = 54A37C191F0C842D0087F610 /* NetwokingService.m */; };
 		54C226D11F02192C0066E8DA /* UserFacebook.m in Sources */ = {isa = PBXBuildFile; fileRef = 54C226D01F02192C0066E8DA /* UserFacebook.m */; };
 		54C226D41F0219340066E8DA /* ConstantsSystem.m in Sources */ = {isa = PBXBuildFile; fileRef = 54C226D31F0219340066E8DA /* ConstantsSystem.m */; };
 		54C226D71F0219440066E8DA /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 54C226D51F0219440066E8DA /* LaunchScreen.storyboard */; };
@@ -54,6 +56,10 @@
 		549B30EE1F08B059007A776A /* FriendOfUser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FriendOfUser.m; sourceTree = "<group>"; };
 		549B30F01F08B06B007A776A /* PhotoOfUser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PhotoOfUser.h; sourceTree = "<group>"; };
 		549B30F11F08B06B007A776A /* PhotoOfUser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PhotoOfUser.m; sourceTree = "<group>"; };
+		54A37C151F0C76BF0087F610 /* LazyLoadingService.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LazyLoadingService.h; sourceTree = "<group>"; };
+		54A37C161F0C76BF0087F610 /* LazyLoadingService.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LazyLoadingService.m; sourceTree = "<group>"; };
+		54A37C181F0C842D0087F610 /* NetwokingService.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NetwokingService.h; sourceTree = "<group>"; };
+		54A37C191F0C842D0087F610 /* NetwokingService.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NetwokingService.m; sourceTree = "<group>"; };
 		54C226CF1F02192C0066E8DA /* UserFacebook.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UserFacebook.h; sourceTree = "<group>"; };
 		54C226D01F02192C0066E8DA /* UserFacebook.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UserFacebook.m; sourceTree = "<group>"; };
 		54C226D21F0219340066E8DA /* ConstantsSystem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ConstantsSystem.h; sourceTree = "<group>"; };
@@ -91,6 +97,10 @@
 			children = (
 				39B28D6F1F0606CA001A2FCC /* Service.h */,
 				39B28D701F0606CA001A2FCC /* Service.m */,
+				54A37C151F0C76BF0087F610 /* LazyLoadingService.h */,
+				54A37C161F0C76BF0087F610 /* LazyLoadingService.m */,
+				54A37C181F0C842D0087F610 /* NetwokingService.h */,
+				54A37C191F0C842D0087F610 /* NetwokingService.m */,
 			);
 			path = Service;
 			sourceTree = "<group>";
@@ -343,6 +353,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				54A37C171F0C76BF0087F610 /* LazyLoadingService.m in Sources */,
 				54CCB1AE1F021600009D176C /* AppDelegate.m in Sources */,
 				39FB8E871F04EE2200B205C6 /* AlbumPhotoViewController.m in Sources */,
 				39B28D711F0606CA001A2FCC /* Service.m in Sources */,
@@ -359,6 +370,7 @@
 				54CCB1D61F0216D9009D176C /* DetailPhotoViewController.m in Sources */,
 				397FE2581F0B27B900B19D6D /* FileManager.m in Sources */,
 				54CCB1D41F0216D9009D176C /* AccountInformationViewController.m in Sources */,
+				54A37C1A1F0C842D0087F610 /* NetwokingService.m in Sources */,
 				549B30EF1F08B059007A776A /* FriendOfUser.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

@@ -51,7 +51,10 @@
 -(UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath{
     _cell = [[AlbumPhotoCollectionViewCell alloc] init];
     _cell = [_photoAlbum dequeueReusableCellWithReuseIdentifier:@"photoCell" forIndexPath:indexPath];
-    [_cell setDataOfPhotoForCellWithLink:[[_arrayPhotos valueForKey:@"linkThumbPhoto"] objectAtIndex:indexPath.row]];
+    NSString *linkThumblr = [[_arrayPhotos valueForKey:@"linkThumbPhoto"] objectAtIndex:indexPath.row];
+    NSString *idPhoto =[[_arrayPhotos valueForKey:@"idPhoto"] objectAtIndex:indexPath.row];
+    [_cell setDataFromViewControllerWithURLImage: linkThumblr
+                                                  IDImage:idPhoto];
     
     return _cell;
 }

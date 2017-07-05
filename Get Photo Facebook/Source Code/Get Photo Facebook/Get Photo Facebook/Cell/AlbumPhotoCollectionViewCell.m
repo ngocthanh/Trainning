@@ -9,26 +9,18 @@
 #import "AlbumPhotoCollectionViewCell.h"
 #import "ConstantsSystem.h"
 #import "FileManager.h"
+#import "LazyLoadingService.h"
 @implementation AlbumPhotoCollectionViewCell
 - (void)awakeFromNib {
     [super awakeFromNib];
 }
-
--(void)setDataOfPhotoForCellWithLink:(NSString *) linkPhoto {
-    if (![linkPhoto   isEqual: textIsEmpty]) {
-        NSURL *url = [NSURL URLWithString:[[NSString alloc]  initWithString:linkPhoto]];
-        NSURLSessionTask *task = [[NSURLSession sharedSession] dataTaskWithURL:url completionHandler:^(NSData * _Nullable data, NSURLResponse * _Nullable response, NSError * _Nullable error) {
-            if (data) {
-                UIImage *image = [UIImage imageWithData:data];
-                if (image) {
-                    dispatch_async(dispatch_get_main_queue(), ^{
-                        self.photoInCell.image = image;
-                    });
-                }
-            }
-        }];
-        [task resume];
-    }
+-(void)setDataFromViewControllerWithURLImage:(NSString *) urlString IDImage:(NSString *)idImage{
+    LazyLoadingService *lazy = [LazyLoadingService new];
+    [lazy imageDataWithIDImage:idImage LinkURL:urlString Success:^(NSData *dataImage) {
+        self.photoInCell.image = [[UIImage alloc] initWithData:dataImage];
+    } Failure:^(NSError *error) {
+        
+    }];
 }
 
 
