@@ -10,6 +10,7 @@
 		0DE670A0C6FA8B89D02FF245 /* libPods-Get Photo Facebook.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 80D01800FEB428C0BDCA88A0 /* libPods-Get Photo Facebook.a */; };
 		397FE2551F0B27AD00B19D6D /* ManagerCache.m in Sources */ = {isa = PBXBuildFile; fileRef = 397FE2541F0B27AD00B19D6D /* ManagerCache.m */; };
 		397FE2581F0B27B900B19D6D /* FileManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 397FE2571F0B27B900B19D6D /* FileManager.m */; };
+		397FE25A1F0CA97D00B19D6D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 397FE2591F0CA97D00B19D6D /* Assets.xcassets */; };
 		39B28D711F0606CA001A2FCC /* Service.m in Sources */ = {isa = PBXBuildFile; fileRef = 39B28D701F0606CA001A2FCC /* Service.m */; };
 		39B28D741F06343E001A2FCC /* Helper.m in Sources */ = {isa = PBXBuildFile; fileRef = 39B28D731F06343E001A2FCC /* Helper.m */; };
 		39FB8E871F04EE2200B205C6 /* AlbumPhotoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 39FB8E861F04EE2200B205C6 /* AlbumPhotoViewController.m */; };
@@ -24,7 +25,6 @@
 		54C226D71F0219440066E8DA /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 54C226D51F0219440066E8DA /* LaunchScreen.storyboard */; };
 		54CCB1AB1F021600009D176C /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 54CCB1AA1F021600009D176C /* main.m */; };
 		54CCB1AE1F021600009D176C /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 54CCB1AD1F021600009D176C /* AppDelegate.m */; };
-		54CCB1B61F021600009D176C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 54CCB1B51F021600009D176C /* Assets.xcassets */; };
 		54CCB1D41F0216D9009D176C /* AccountInformationViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 54CCB1CD1F0216D9009D176C /* AccountInformationViewController.m */; };
 		54CCB1D61F0216D9009D176C /* DetailPhotoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 54CCB1D11F0216D9009D176C /* DetailPhotoViewController.m */; };
 		54CCB1D71F0216D9009D176C /* LoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 54CCB1D31F0216D9009D176C /* LoginViewController.m */; };
@@ -36,6 +36,7 @@
 		397FE2541F0B27AD00B19D6D /* ManagerCache.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ManagerCache.m; sourceTree = "<group>"; };
 		397FE2561F0B27B900B19D6D /* FileManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FileManager.h; sourceTree = "<group>"; };
 		397FE2571F0B27B900B19D6D /* FileManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FileManager.m; sourceTree = "<group>"; };
+		397FE2591F0CA97D00B19D6D /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = Assets.xcassets; path = Utility/Assets.xcassets; sourceTree = "<group>"; };
 		39B28D6F1F0606CA001A2FCC /* Service.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Service.h; sourceTree = "<group>"; };
 		39B28D701F0606CA001A2FCC /* Service.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Service.m; sourceTree = "<group>"; };
 		39B28D721F06343E001A2FCC /* Helper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Helper.h; sourceTree = "<group>"; };
@@ -62,7 +63,6 @@
 		54CCB1AA1F021600009D176C /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		54CCB1AC1F021600009D176C /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		54CCB1AD1F021600009D176C /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
-		54CCB1B51F021600009D176C /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		54CCB1BA1F021600009D176C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		54CCB1CC1F0216D9009D176C /* AccountInformationViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AccountInformationViewController.h; sourceTree = "<group>"; };
 		54CCB1CD1F0216D9009D176C /* AccountInformationViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AccountInformationViewController.m; sourceTree = "<group>"; };
@@ -135,8 +135,8 @@
 				54CCB1C01F02162C009D176C /* Utility */,
 				54CCB1AC1F021600009D176C /* AppDelegate.h */,
 				54CCB1AD1F021600009D176C /* AppDelegate.m */,
-				54CCB1B51F021600009D176C /* Assets.xcassets */,
 				54CCB1BA1F021600009D176C /* Info.plist */,
+				397FE2591F0CA97D00B19D6D /* Assets.xcassets */,
 				54CCB1A91F021600009D176C /* Supporting Files */,
 			);
 			path = "Get Photo Facebook";
@@ -283,8 +283,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				5413FF971F03C54F00518FB4 /* Main.storyboard in Resources */,
+				397FE25A1F0CA97D00B19D6D /* Assets.xcassets in Resources */,
 				54C226D71F0219440066E8DA /* LaunchScreen.storyboard in Resources */,
-				54CCB1B61F021600009D176C /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

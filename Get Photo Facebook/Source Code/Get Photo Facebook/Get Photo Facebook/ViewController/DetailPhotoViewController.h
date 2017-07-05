@@ -8,6 +8,6 @@
 
 #import "Helper.h"
 
-@interface DetailPhotoViewController : UIViewController
+@interface DetailPhotoViewController : UIViewController<UIScrollViewDelegate>
 
 @end

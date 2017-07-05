@@ -237,7 +237,7 @@
                                 <rect key="frame" x="0.0" y="180" width="375" height="400.5"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Friends list" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2Pf-CI-HUa">
-                                        <rect key="frame" x="0.0" y="20" width="375" height="15"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="375" height="35"/>
                                         <color key="backgroundColor" red="0.27916157250000001" green="0.34848222140000001" blue="0.57741999629999996" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                         <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -296,7 +296,7 @@
                                     <constraint firstItem="TQC-js-fvM" firstAttribute="height" secondItem="6ti-A5-XCc" secondAttribute="height" multiplier="9/10" id="apu-HV-dTl"/>
                                     <constraint firstItem="TQC-js-fvM" firstAttribute="width" secondItem="6ti-A5-XCc" secondAttribute="width" id="dVA-Hg-6bo"/>
                                     <constraint firstItem="TQC-js-fvM" firstAttribute="top" secondItem="2Pf-CI-HUa" secondAttribute="bottom" constant="5" id="gih-Iw-hDr"/>
-                                    <constraint firstItem="2Pf-CI-HUa" firstAttribute="top" secondItem="6ti-A5-XCc" secondAttribute="top" constant="20" symbolic="YES" id="viK-Ne-7SY"/>
+                                    <constraint firstItem="2Pf-CI-HUa" firstAttribute="top" secondItem="6ti-A5-XCc" secondAttribute="top" id="viK-Ne-7SY"/>
                                 </constraints>
                             </view>
                         </subviews>
@@ -329,7 +329,7 @@
         <!--Detail Photo-->
         <scene sceneID="VQX-Cg-KI5">
             <objects>
-                <viewController title="Detail Photo" id="AAH-bh-gZX" customClass="DetailPhotoViewController" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="detailPhoto" title="Detail Photo" id="AAH-bh-gZX" customClass="DetailPhotoViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="hvb-8F-EmH"/>
                         <viewControllerLayoutGuide type="bottom" id="eJg-sG-cgp"/>
@@ -338,23 +338,45 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="HtL-5N-YS3">
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="kjN-x0-7Sq">
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
-                            </imageView>
+                                <subviews>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" restorationIdentifier="detailPhoto" translatesAutoresizingMaskIntoConstraints="NO" id="z0h-5f-mYO">
+                                        <rect key="frame" x="5" y="0.0" width="365" height="667"/>
+                                    </imageView>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstAttribute="bottom" secondItem="z0h-5f-mYO" secondAttribute="bottom" constant="5" id="2EO-Kl-lNS"/>
+                                    <constraint firstItem="z0h-5f-mYO" firstAttribute="height" secondItem="kjN-x0-7Sq" secondAttribute="height" id="KWl-Cx-xZs"/>
+                                    <constraint firstItem="z0h-5f-mYO" firstAttribute="centerY" secondItem="kjN-x0-7Sq" secondAttribute="centerY" id="kbM-Dx-nWF"/>
+                                    <constraint firstItem="z0h-5f-mYO" firstAttribute="leading" secondItem="kjN-x0-7Sq" secondAttribute="leading" constant="5" id="mDw-Em-HjM"/>
+                                    <constraint firstItem="z0h-5f-mYO" firstAttribute="top" secondItem="kjN-x0-7Sq" secondAttribute="top" id="phM-DG-GZq"/>
+                                    <constraint firstAttribute="trailing" secondItem="z0h-5f-mYO" secondAttribute="trailing" constant="5" id="rhw-Yx-4DX"/>
+                                    <constraint firstItem="z0h-5f-mYO" firstAttribute="centerX" secondItem="kjN-x0-7Sq" secondAttribute="centerX" id="s82-aa-Ayv"/>
+                                </constraints>
+                                <connections>
+                                    <outlet property="delegate" destination="AAH-bh-gZX" id="Khu-L1-FKU"/>
+                                </connections>
+                            </scrollView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="HtL-5N-YS3" firstAttribute="width" secondItem="kcU-Gc-iKT" secondAttribute="width" id="Ghc-Kq-Hur"/>
-                            <constraint firstItem="HtL-5N-YS3" firstAttribute="height" secondItem="kcU-Gc-iKT" secondAttribute="height" id="kN1-iA-2Xd"/>
-                            <constraint firstItem="HtL-5N-YS3" firstAttribute="centerY" secondItem="kcU-Gc-iKT" secondAttribute="centerY" id="wsn-A6-Wcf"/>
-                            <constraint firstItem="HtL-5N-YS3" firstAttribute="centerX" secondItem="kcU-Gc-iKT" secondAttribute="centerX" id="zCZ-Lm-iht"/>
+                            <constraint firstAttribute="trailing" secondItem="kjN-x0-7Sq" secondAttribute="trailing" id="XNL-uR-iuV"/>
+                            <constraint firstItem="kjN-x0-7Sq" firstAttribute="leading" secondItem="kcU-Gc-iKT" secondAttribute="leading" id="aJy-bS-G5S"/>
+                            <constraint firstItem="kjN-x0-7Sq" firstAttribute="top" secondItem="kcU-Gc-iKT" secondAttribute="top" id="agV-S0-JgL"/>
+                            <constraint firstAttribute="bottom" secondItem="kjN-x0-7Sq" secondAttribute="bottom" id="s91-O2-AV5"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Detail Photo" id="39d-kO-tCc"/>
+                    <connections>
+                        <outlet property="image" destination="z0h-5f-mYO" id="Iwi-qS-ZoV"/>
+                        <outlet property="scrollViewZoom" destination="kjN-x0-7Sq" id="nTT-Rk-g5n"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="fcQ-Yo-UvY" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <pinchGestureRecognizer id="H09-P3-hM7"/>
             </objects>
-            <point key="canvasLocation" x="3311" y="437"/>
+            <point key="canvasLocation" x="3309.5999999999999" y="436.73163418290858"/>
         </scene>
         <!--Account Information-->
         <scene sceneID="tjg-MD-L7N">

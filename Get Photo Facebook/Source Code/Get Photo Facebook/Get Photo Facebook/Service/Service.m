@@ -72,7 +72,6 @@
                 photoOfUser.idPhoto=[[arrayPhotos objectAtIndex:i] valueForKey:@"idPhoto"];
                 photoOfUser.linkOriPhoto=[[[data objectForKey:@"images"] objectAtIndex:0] valueForKey:@"source"];
                 photoOfUser.linkThumbPhoto=[[[data objectForKey:@"images"] objectAtIndex:indexOfThumbPhoto]valueForKey:@"source"];
-                NSLog(@"%@",photoOfUser.idPhoto);
                 [arrayUrlSource addObject:photoOfUser];
                 if (i == [arrayPhotos count]-1) {
                     successUrlSource(arrayUrlSource);
@@ -88,6 +87,7 @@
     }];
     
 }
+
 
 
 @end

@@ -9,6 +9,8 @@
 #import "DetailPhotoViewController.h"
 
 @interface DetailPhotoViewController ()
+@property (weak, nonatomic) IBOutlet UIScrollView *scrollViewZoom;
+@property (weak, nonatomic) IBOutlet UIImageView *image;
 
 @end
 
@@ -16,9 +18,13 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    // Do any additional setup after loading the view.
+    _scrollViewZoom.delegate=self;
+    self.scrollViewZoom.minimumZoomScale=1.0;
+    self.scrollViewZoom.maximumZoomScale=4.0;
 }
-
+-(UIView *)viewForZoomingInScrollView:(UIScrollView *)scrollView{
+    return _image;
+}
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.

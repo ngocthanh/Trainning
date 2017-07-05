@@ -8,6 +8,7 @@
 
 #import "AlbumPhotoViewController.h"
 #import "AlbumPhotoCollectionViewCell.h"
+#import "DetailPhotoViewController.h"
 #import "Service.h"
 #import "Helper.h"
 @interface AlbumPhotoViewController ()
@@ -54,5 +55,10 @@
     
     return _cell;
 }
+-(void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath{
+    UIStoryboard *storyBoard =[UIStoryboard storyboardWithName:@"Main" bundle:[NSBundle mainBundle]];
+    DetailPhotoViewController *deTailPhotoVC=[storyBoard instantiateViewControllerWithIdentifier:@"detailPhoto"];
+    [self.navigationController pushViewController:deTailPhotoVC animated:YES];
 
+}
 @end

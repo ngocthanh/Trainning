@@ -39,7 +39,7 @@
     [self loadAccountInformation];
     [self loadFriendList];
     _file =[FileManager alloc];
-//    [_file createDirectoryPath:@"FileName"];
+//    [_file getdata];
     
 }
 
