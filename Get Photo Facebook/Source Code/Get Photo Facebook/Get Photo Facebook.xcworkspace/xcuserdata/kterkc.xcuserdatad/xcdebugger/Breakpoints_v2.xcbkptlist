@@ -9,13 +9,13 @@
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "Get Photo Facebook/ViewController/AlbumPhotoViewController.m"
-            timestampString = "520666711.619512"
+            filePath = "Get Photo Facebook/Model/ManagerCache.m"
+            timestampString = "520930648.362856"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "34"
-            endingLineNumber = "34"
-            landmarkName = "-GetPhoto"
+            startingLineNumber = "44"
+            endingLineNumber = "44"
+            landmarkName = "-getCachedImageForKey:"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>

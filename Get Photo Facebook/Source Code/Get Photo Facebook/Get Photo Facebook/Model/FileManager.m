@@ -19,6 +19,8 @@
         if (![[NSFileManager defaultManager] createDirectoryAtPath:path withIntermediateDirectories:NO attributes:nil error:
               &error]) {
             NSLog(@"create error %@",error);
+            return nil;
+
         }
         else{
             return path;
@@ -27,7 +29,7 @@
     else{
         return path;
     }
-    return nil;
+    //return nil;
 }
 
 -(BOOL) checkExistImageInMemory : (NSString *)imageName {
@@ -48,9 +50,10 @@
     if (![self checkExistImageInMemory:imageName]) {
         [[NSFileManager defaultManager] createFileAtPath:path contents:imageData attributes:nil];
     }   
-    else{}
+    
 }
 -(NSData *) loadImageFileFromMemory: (NSString *)imageName{
+
     NSString * path;
     path=[self createDirectoryPath];
     path=[path stringByAppendingPathComponent:imageName];

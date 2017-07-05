@@ -7,7 +7,6 @@
 //
 
 #import "RequestDataFB.h"
-#import "FileManager.h"
 
 @interface Service : NSObject
 -(void)privateInformationOfUser :(void (^)(UserFacebook *user))successCurrentAccount failure:(void(^)(NSError* error))failure;
