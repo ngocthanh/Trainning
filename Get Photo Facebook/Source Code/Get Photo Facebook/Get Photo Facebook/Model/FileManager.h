@@ -13,5 +13,5 @@
 -(BOOL) checkExistImageInMemory : (NSString *)imageName;
 -(void) storeImageFileToMemory: (NSString *)imageName ImagaData:(NSData *)imageData;
 -(NSData *) loadImageFileFromMemory: (NSString *)imageName;
-
+-(NSString *)setUpNameForImageAsThumb :(NSString *)imageId;
 @end
