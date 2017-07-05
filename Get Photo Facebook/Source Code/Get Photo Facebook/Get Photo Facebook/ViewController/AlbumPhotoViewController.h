@@ -8,6 +8,6 @@
 
 #import "Helper.h"
 
-@interface AlbumPhotoViewController : UIViewController<UICollectionViewDelegate,UICollectionViewDataSource>
+@interface AlbumPhotoViewController : UIViewController<UICollectionViewDelegate,UICollectionViewDataSource,UICollectionViewDelegateFlowLayout>
 
 @end

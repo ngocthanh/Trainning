@@ -64,4 +64,11 @@
     [self.navigationController pushViewController:deTailPhotoVC animated:YES];
 
 }
+-(UIEdgeInsets)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout *)collectionViewLayout insetForSectionAtIndex:(NSInteger)section{
+    return UIEdgeInsetsMake(10, 10, 10, 10);
+}
+-(CGSize)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout *)collectionViewLayout sizeForItemAtIndexPath:(NSIndexPath *)indexPath{
+    return CGSizeMake((self.view.frame.size.width - 40 )/3, (self.view.frame.size.height )/5);
+}
+
 @end

@@ -34,7 +34,7 @@ static NetwokingService *networkService;
 }
 
 - (void)cacheImage:(NSData*)imageData forKey:(NSString*)key {
-    [_cache setCountLimit:20];
+    [_cache setCountLimit:25];
     [_cache setObject:imageData forKey:key];
     [fileManager storeImageFileToMemory:[fileManager setUpNameForImageAsThumb:key] ImagaData:imageData];
 }
