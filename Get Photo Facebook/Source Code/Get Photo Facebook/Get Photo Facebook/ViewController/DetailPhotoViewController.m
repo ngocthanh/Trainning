@@ -30,6 +30,16 @@
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
 }
+- (IBAction)rotation:(UIGestureRecognizer *)sender {
+    CGFloat netRotation = 0.0;
+    CGFloat rotation = [ (UIRotationGestureRecognizer*)sender rotation];
+    CGAffineTransform transform = CGAffineTransformMakeRotation(rotation + netRotation);
+    sender.view.transform = transform;
+    if (sender.state == UIGestureRecognizerStateEnded) {
+        netRotation += rotation;
+    }
+    
+}
 
 /*
 #pragma mark - Navigation

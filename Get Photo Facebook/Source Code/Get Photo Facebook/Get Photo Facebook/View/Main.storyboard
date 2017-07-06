@@ -340,8 +340,12 @@
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="kjN-x0-7Sq">
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                                 <subviews>
-                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" restorationIdentifier="detailPhoto" translatesAutoresizingMaskIntoConstraints="NO" id="z0h-5f-mYO">
+                                    <imageView multipleTouchEnabled="YES" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" restorationIdentifier="detailPhoto" translatesAutoresizingMaskIntoConstraints="NO" id="z0h-5f-mYO">
                                         <rect key="frame" x="0.0" y="155.5" width="375" height="222.5"/>
+                                        <gestureRecognizers/>
+                                        <connections>
+                                            <outletCollection property="gestureRecognizers" destination="skG-DG-sBT" appends="YES" id="BU5-8y-mBD"/>
+                                        </connections>
                                     </imageView>
                                 </subviews>
                                 <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -372,6 +376,11 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="fcQ-Yo-UvY" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <pinchGestureRecognizer id="H09-P3-hM7"/>
+                <rotationGestureRecognizer id="skG-DG-sBT">
+                    <connections>
+                        <action selector="rotation:" destination="AAH-bh-gZX" id="IjU-46-nPl"/>
+                    </connections>
+                </rotationGestureRecognizer>
             </objects>
             <point key="canvasLocation" x="3309.5999999999999" y="436.73163418290858"/>
         </scene>
