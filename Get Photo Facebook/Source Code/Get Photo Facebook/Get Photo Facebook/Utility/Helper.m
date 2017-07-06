@@ -19,4 +19,10 @@
     }];
     [errorAlert addAction:ok];
 }
+-(NSString *)setUpNameForImageAsThumb :(NSString *)imageId {
+    NSString *imageNameAsThumb;
+    imageNameAsThumb=[NSString stringWithFormat:@"%@_t",imageId];
+    return imageNameAsThumb;
+}
+
 @end

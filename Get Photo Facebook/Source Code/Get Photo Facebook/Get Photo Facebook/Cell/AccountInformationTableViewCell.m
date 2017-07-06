@@ -9,6 +9,7 @@
 #import "AccountInformationTableViewCell.h"
 #import "ConstantsSystem.h"
 
+
 @implementation AccountInformationTableViewCell
 
 - (void)awakeFromNib {
@@ -29,29 +30,33 @@
 }
 -(void)setDataFromViewControllerWithURLImage:(NSString *) urlString FriendsName:(NSString*) name{
     
-    [self getImageOnline:urlString];
-    _lblFriendName.text = name;
-    [self setStyle];
-
-    
-}
--(void)getImageOnline:(NSString*) linkURL{
-    if (![linkURL   isEqual: textIsEmpty]) {
-        NSURL *url = [NSURL URLWithString:[[NSString alloc]  initWithString:linkURL]];
-        NSURLSessionTask *task = [[NSURLSession sharedSession] dataTaskWithURL:url completionHandler:^(NSData * _Nullable data, NSURLResponse * _Nullable response, NSError * _Nullable error) {
-            if (data) {
-                UIImage *image = [UIImage imageWithData:data];
+    [_network getImageOnline:urlString Success:^(NSData *dataImage) {
+        if (dataImage) {
+                UIImage *image = [UIImage imageWithData:dataImage];
                 if (image) {
                     dispatch_async(dispatch_get_main_queue(), ^{
                         _imgAvatar.image = image;
                     });
                 }
             }
-        }];
-        [task resume];
-        
-    }
+
+    } Failure:^(NSError *error) {
+    }];
+    _lblFriendName.text = name;
+    [self setStyle];
+    
 }
+
+// duplicate function
+//-(void)getImageOnline:(NSString*) linkURL{
+//    if (![linkURL   isEqual: textIsEmpty]) {
+//        NSURL *url = [NSURL URLWithString:[[NSString alloc]  initWithString:linkURL]];
+//        NSURLSessionTask *task = [[NSURLSession sharedSession] dataTaskWithURL:url completionHandler:^(NSData * _Nullable data, NSURLResponse * _Nullable response, NSError * _Nullable error) {
+////        }];
+//        [task resume];
+//        
+//    }
+//}
 
 
 @end

@@ -41,7 +41,7 @@
                                 </connections>
                             </button>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="facebook3x" translatesAutoresizingMaskIntoConstraints="NO" id="Ly5-lQ-0vN">
-                                <rect key="frame" x="140.5" y="153" width="94" height="94"/>
+                                <rect key="frame" x="140.5" y="153" width="94" height="94.5"/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="Ly5-lQ-0vN" secondAttribute="height" multiplier="1:1" id="g49-Zv-whY"/>
                                 </constraints>
@@ -190,25 +190,25 @@
                                 <rect key="frame" x="0.0" y="69" width="375" height="111"/>
                                 <subviews>
                                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="avatarbackground" translatesAutoresizingMaskIntoConstraints="NO" id="oDE-Q5-ILR">
-                                        <rect key="frame" x="5" y="11" width="89.5" height="90"/>
+                                        <rect key="frame" x="5" y="11.5" width="89.5" height="89"/>
                                         <constraints>
                                             <constraint firstAttribute="width" secondItem="oDE-Q5-ILR" secondAttribute="height" multiplier="1:1" id="pc9-3W-yrV"/>
                                         </constraints>
                                     </imageView>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Name" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="sfg-tD-bjc">
-                                        <rect key="frame" x="99.5" y="11" width="270.5" height="24"/>
+                                        <rect key="frame" x="99.5" y="11.5" width="270.5" height="24"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Live in" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="VQk-EW-85T">
-                                        <rect key="frame" x="99.5" y="40" width="270.5" height="24"/>
+                                        <rect key="frame" x="99.5" y="40.5" width="270.5" height="24"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="12"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Date of birth" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rPg-gP-x0G">
-                                        <rect key="frame" x="99.5" y="69" width="270.5" height="24"/>
+                                        <rect key="frame" x="99.5" y="69.5" width="270.5" height="24"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="12"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
@@ -250,7 +250,7 @@
                                                 <rect key="frame" x="0.0" y="28" width="375" height="62"/>
                                                 <autoresizingMask key="autoresizingMask"/>
                                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="1cH-NR-NPc" id="uWG-U6-J2k">
-                                                    <rect key="frame" x="0.0" y="0.0" width="375" height="61.5"/>
+                                                    <rect key="frame" x="0.0" y="0.0" width="375" height="61"/>
                                                     <autoresizingMask key="autoresizingMask"/>
                                                     <subviews>
                                                         <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="avatarbackground" translatesAutoresizingMaskIntoConstraints="NO" id="5RS-zt-gK3">

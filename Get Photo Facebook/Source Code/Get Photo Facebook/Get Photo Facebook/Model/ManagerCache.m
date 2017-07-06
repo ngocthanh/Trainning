@@ -29,21 +29,18 @@ static NetwokingService *networkService;
         self.cache = [[NSCache alloc] init];
         fileManager = [[FileManager alloc] init];
         networkService = [NetwokingService new];
+        [_cache setCountLimit:25];
     }
     return self;
 }
 
 - (void)cacheImage:(NSData*)imageData forKey:(NSString*)key {
-    [_cache setCountLimit:25];
-    [_cache setObject:imageData forKey:key];
-    [fileManager storeImageFileToMemory:[fileManager setUpNameForImageAsThumb:key] ImagaData:imageData];
-}
--(void)cacheOriImage:(NSData *)imageData forKey:(NSString *)key{
-    [_cache setCountLimit:25];
+    //code wrong location
     [_cache setObject:imageData forKey:key];
     [fileManager storeImageFileToMemory:key ImagaData:imageData];
 }
-- (NSData*)getCachedImageForKey:(NSString*)key {
+
+- (NSData*)getCachedImageForKey:(NSString*)key {// recheck ojectforkey
     if ([_cache objectForKey:key]) {
         return [_cache objectForKey:key] ;
     }else{

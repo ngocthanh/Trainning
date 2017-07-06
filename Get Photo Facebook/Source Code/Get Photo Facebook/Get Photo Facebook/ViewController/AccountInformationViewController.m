@@ -31,18 +31,21 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    
-    
-    _service = [Service alloc];
-    _helper = [Helper alloc];
-    [self setStyleForAccountInformation];	
+    [self classesInit];
+    [self setStyleForAccountInformation];
     [self loadAccountInformation];
     [self loadFriendList];
-    _file =[FileManager alloc];
-//    [_file getdata];
+
     
 }
+-(void)classesInit{
+    // code is not enough
 
+    _service = [[Service alloc] init];
+    _helper = [[Helper alloc]init];
+    _file =[[FileManager alloc] init];
+
+}
 -(void) loadAccountInformation{
     [_service privateInformationOfUser:^(UserFacebook *user) {
         _userFacebook = user;
@@ -68,29 +71,26 @@
 -(UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
     _cell= [[AccountInformationTableViewCell alloc] init];
     _cell = [_tableListFriend dequeueReusableCellWithIdentifier:@"cellListFriend" forIndexPath:indexPath];
-    UserFacebook *friend = [UserFacebook new];
+    UserFacebook *friend = [[UserFacebook alloc]init];// wrong init style
     friend =[_arrayFriendList objectAtIndex:indexPath.row];
     NSString *name = friend.userName ;
     NSString *link = friend.userUrlPicture;
     [_cell setDataFromViewControllerWithURLImage:link FriendsName:name];
     return _cell;
 }
-
+//duplicate code
 - (void)displayUserInformation{
-    if (!(_userFacebook.userHometown == nil) ) {
-        _lblNameOfUser.text=[NSString stringWithFormat:@"%@",_userFacebook.userName];
-        _lblHometown.text=[NSString stringWithFormat:@"Hometown: %@",_userFacebook.userHometown];
-        _lblDateOfBirth.text=[NSString stringWithFormat:@"Date of birth: %@",_userFacebook.userBirthday];
-        NSData *dataOfPicture=[NSData dataWithContentsOfURL:[NSURL URLWithString:[NSString stringWithFormat:@"%@",_userFacebook.userUrlPicture]]];
-        _pictureOfUser.image=[UIImage imageWithData:dataOfPicture];
-    }else {
-        _lblHometown.text=[NSString stringWithFormat:@"Not Found User's Hometown"];
-        _lblNameOfUser.text=[NSString stringWithFormat:@"%@",_userFacebook.userName];
-        _lblDateOfBirth.text=[NSString stringWithFormat:@"Date of birth: %@",_userFacebook.userBirthday];
-        NSData *dataOfPicture=[NSData dataWithContentsOfURL:[NSURL URLWithString:[NSString stringWithFormat:@"%@",_userFacebook.userUrlPicture]]];
-        _pictureOfUser.image=[UIImage imageWithData:dataOfPicture];
-    }
+    _lblNameOfUser.text=[NSString stringWithFormat:@"%@",_userFacebook.userName];
     
+    _lblDateOfBirth.text=[NSString stringWithFormat:@"Date of birth: %@",_userFacebook.userBirthday];
+    NSData *dataOfPicture=[NSData dataWithContentsOfURL:[NSURL URLWithString:[NSString stringWithFormat:@"%@",_userFacebook.userUrlPicture]]];
+    _pictureOfUser.image=[UIImage imageWithData:dataOfPicture];
+    if (!(_userFacebook.userHometown == nil) ) {
+        _lblHometown.text=[NSString stringWithFormat:@"Hometown: %@",_userFacebook.userHometown];
+    }
+    else {
+        _lblHometown.text=[NSString stringWithFormat:@"Not Found User's Hometown"];
+    }
 }
 -(void)setStyleForAccountInformation{
     self.pictureOfUser.layer.cornerRadius=_pictureOfUser.frame.size.height/2.0;

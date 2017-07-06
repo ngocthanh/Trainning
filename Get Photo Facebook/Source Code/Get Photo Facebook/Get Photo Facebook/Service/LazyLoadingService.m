@@ -12,6 +12,7 @@
 #import "NetwokingService.h"
 @implementation LazyLoadingService
 -(void)imageDataWithIDImage:(NSString*)key LinkURL:(NSString *) linkURL Success:(void(^)(NSData* dataImage))success Failure:(void (^)(NSError* error))failure{
+    //performent not good
     NSData *dataImage =[[ManagerCache sharedInstance] getCachedImageForKey:key];
     if (dataImage) {
         success(dataImage);

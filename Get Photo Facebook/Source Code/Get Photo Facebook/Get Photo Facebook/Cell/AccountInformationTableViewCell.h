@@ -7,9 +7,11 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "NetwokingService.h"
 
 @interface AccountInformationTableViewCell : UITableViewCell
 @property (weak, nonatomic) IBOutlet UIImageView *imgAvatar;
+@property (strong,nonatomic) NetwokingService* network;
 -(void)setDataFromViewControllerWithURLImage:(NSString *) urlString FriendsName:(NSString*) name;
 
 @property (weak, nonatomic) IBOutlet UILabel *lblFriendName;

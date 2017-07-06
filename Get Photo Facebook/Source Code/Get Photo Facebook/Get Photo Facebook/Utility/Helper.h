@@ -11,4 +11,5 @@
 
 @interface Helper : UIViewController
 -(void)createAlertWithStringTitle:(NSString *)titleAlert contentAlert:(NSString *)contentAlert;
+-(NSString *)setUpNameForImageAsThumb :(NSString *)imageId;
 @end

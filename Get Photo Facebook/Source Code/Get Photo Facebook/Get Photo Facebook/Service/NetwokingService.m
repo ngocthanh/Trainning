@@ -30,5 +30,9 @@ static NetwokingService *sharedInstance;
         }];
         [task resume];
     }
+    else{
+        NSError * error;
+        failure(error);
+    }
 }
 @end

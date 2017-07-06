@@ -10,6 +10,6 @@
 
 @interface AlbumPhotoCollectionViewCell : UICollectionViewCell
 @property (weak, nonatomic) IBOutlet UIImageView *photoInCell;
--(void)setDataFromViewControllerWithURLImage:(NSString *) urlString IDImage:(NSString *)idImage;
--(void)DataForOriginalPhoto:(NSString *) urlString IDImage:(NSString *)idImage Success:(void(^)(NSData* dataImage))success Failure:(void(^)(NSError *error))failure;
+-(void)setImageWithURLImage:(NSString *) urlString IDImage:(NSString *)idImage;
+-(void)dataForOriginalPhoto:(NSString *) urlString IDImage:(NSString *)idImage Success:(void(^)(NSData* dataImage))success Failure:(void(^)(NSError *error))failure;
 @end

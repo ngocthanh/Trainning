@@ -22,11 +22,15 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    _arrayPhotos=[NSMutableArray new];
-    _service=[[Service alloc]init];
+    [self classesInit];
     [self getIdAndLinkOfPhoto];
 }
+-(void)classesInit{
+    _arrayPhotos=[[NSMutableArray alloc] init];
+    _service=[[Service alloc]init];
+    _cell = [AlbumPhotoCollectionViewCell alloc];
 
+}
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
 
@@ -50,33 +54,32 @@
 }
 
 -(UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath{
-    _cell = [[AlbumPhotoCollectionViewCell alloc] init];
+    // check logic code
     _cell = [_photoAlbum dequeueReusableCellWithReuseIdentifier:@"photoCell" forIndexPath:indexPath];
-    
-    NSString *linkThumblr = [[_arrayPhotos valueForKey:@"linkThumbPhoto"] objectAtIndex:indexPath.row];
-    NSString *idPhoto =[[_arrayPhotos valueForKey:@"idPhoto"] objectAtIndex:indexPath.row];
-    [_cell setDataFromViewControllerWithURLImage: linkThumblr
-                                                  IDImage:idPhoto];
-   
+    // check name function method
+    PhotoOfUser *phoOfUser = [_arrayPhotos objectAtIndex:indexPath.row];
+    NSString *linkThumblr =  phoOfUser.linkThumbPhoto;
+    NSString *idPhoto = phoOfUser.idPhoto;
+    [_cell setImageWithURLImage: linkThumblr IDImage:idPhoto];
     
     return _cell;
 }
 -(void) prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender{
     CGPoint touchPoint = [sender convertPoint:CGPointZero toView:_photoAlbum]; // maintable --> replace your tableview name
     NSIndexPath *clickedButtonIndexPath = [_photoAlbum indexPathForItemAtPoint:touchPoint];
-    
-    NSString *idPhoto =[[_arrayPhotos valueForKey:@"idPhoto"] objectAtIndex:clickedButtonIndexPath.row];
-    NSString *linkOri = [[_arrayPhotos valueForKey:@"linkOriPhoto"] objectAtIndex:clickedButtonIndexPath.row];
+   //check stucture arrayphotos
+    PhotoOfUser *phoOfUser = [_arrayPhotos objectAtIndex:clickedButtonIndexPath.row];
+    NSString *idPhoto = phoOfUser.idPhoto;
+    NSString *linkOri = phoOfUser.linkOriPhoto;
     
     if ([segue.identifier isEqualToString:@"segueDetailPhoto"]) {
         DetailPhotoViewController *detail = (DetailPhotoViewController*)segue.destinationViewController;
-        [_cell DataForOriginalPhoto:linkOri IDImage:idPhoto Success:^(NSData *dataImage) {
+        [_cell dataForOriginalPhoto:linkOri IDImage:idPhoto Success:^(NSData *dataImage) {
             detail.dataImage =dataImage;
             
         } Failure:^(NSError *error) {
             
         }];
-
     }
 }
 -(UIEdgeInsets)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout *)collectionViewLayout insetForSectionAtIndex:(NSInteger)section{

@@ -29,7 +29,6 @@
     else{
         return path;
     }
-    //return nil;
 }
 
 -(BOOL) checkExistImageInMemory : (NSString *)imageName {
@@ -64,10 +63,5 @@
         }
     }
     return nil;
-}
--(NSString *)setUpNameForImageAsThumb :(NSString *)imageId {
-    NSString *imageNameAsThumb;
-    imageNameAsThumb=[NSString stringWithFormat:@"%@_t",imageId];
-    return imageNameAsThumb;
 }
 @end
