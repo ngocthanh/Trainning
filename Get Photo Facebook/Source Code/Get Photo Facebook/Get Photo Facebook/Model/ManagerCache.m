@@ -9,6 +9,8 @@
 #import "ManagerCache.h"
 #import "FileManager.h"
 #import "NetwokingService.h"
+
+#define numberLimitElemetnCached 25
 static ManagerCache *sharedInstance;
 static FileManager *fileManager;
 static NetwokingService *networkService;
@@ -29,7 +31,7 @@ static NetwokingService *networkService;
         self.cache = [[NSCache alloc] init];
         fileManager = [[FileManager alloc] init];
         networkService = [NetwokingService new];
-        [_cache setCountLimit:25];
+        [_cache setCountLimit:numberLimitElemetnCached];
     }
     return self;
 }

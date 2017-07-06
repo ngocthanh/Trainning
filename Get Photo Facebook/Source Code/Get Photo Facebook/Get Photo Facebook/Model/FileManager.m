@@ -8,17 +8,20 @@
 
 #import "FileManager.h"
 
+#define folderNameContentImageFile @"ImageFile"
+#define addString @"%@"
+
 @implementation FileManager
 
 -(NSString*) createDirectoryPath {
     NSString *path;
     NSArray *paths=NSSearchPathForDirectoriesInDomains(NSCachesDirectory, NSUserDomainMask, YES);
-    path=[[paths objectAtIndex:0]stringByAppendingPathComponent:@"ImageFile"];
+    path=[[paths objectAtIndex:0]stringByAppendingPathComponent:folderNameContentImageFile];
     NSError * error;
     if (![[NSFileManager defaultManager] fileExistsAtPath:path]) {
         if (![[NSFileManager defaultManager] createDirectoryAtPath:path withIntermediateDirectories:NO attributes:nil error:
               &error]) {
-            NSLog(@"create error %@",error);
+            
             return nil;
 
         }
@@ -34,7 +37,7 @@
 -(BOOL) checkExistImageInMemory : (NSString *)imageName {
     NSString * path;
     path=[self createDirectoryPath];
-    path=[path stringByAppendingPathComponent:[NSString stringWithFormat:@"%@",imageName]];
+    path=[path stringByAppendingPathComponent:[NSString stringWithFormat:addString,imageName]];
     if ([[NSFileManager defaultManager]fileExistsAtPath:path]) {
         return YES;
     }

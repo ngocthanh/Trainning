@@ -57,20 +57,20 @@
     // check logic code
     _cell = [_photoAlbum dequeueReusableCellWithReuseIdentifier:@"photoCell" forIndexPath:indexPath];
     // check name function method
-    PhotoOfUser *phoOfUser = [_arrayPhotos objectAtIndex:indexPath.row];
-    NSString *linkThumblr =  phoOfUser.linkThumbPhoto;
-    NSString *idPhoto = phoOfUser.idPhoto;
+    PhotoOfUser *photoOfUser = [_arrayPhotos objectAtIndex:indexPath.row];
+    NSString *linkThumblr =  photoOfUser.linkThumbPhoto;
+    NSString *idPhoto = [[[Helper alloc]init] setUpNameForImageAsThumb:photoOfUser.idPhoto ];
     [_cell setImageWithURLImage: linkThumblr IDImage:idPhoto];
-    
     return _cell;
 }
 -(void) prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender{
     CGPoint touchPoint = [sender convertPoint:CGPointZero toView:_photoAlbum]; // maintable --> replace your tableview name
     NSIndexPath *clickedButtonIndexPath = [_photoAlbum indexPathForItemAtPoint:touchPoint];
    //check stucture arrayphotos
-    PhotoOfUser *phoOfUser = [_arrayPhotos objectAtIndex:clickedButtonIndexPath.row];
-    NSString *idPhoto = phoOfUser.idPhoto;
-    NSString *linkOri = phoOfUser.linkOriPhoto;
+    PhotoOfUser *photoOfUser = [_arrayPhotos objectAtIndex:clickedButtonIndexPath.row];
+    NSString *idPhoto = photoOfUser.idPhoto;
+    NSString *linkOri = photoOfUser.linkOriPhoto;
+
     
     if ([segue.identifier isEqualToString:@"segueDetailPhoto"]) {
         DetailPhotoViewController *detail = (DetailPhotoViewController*)segue.destinationViewController;
@@ -88,7 +88,5 @@
 -(CGSize)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout *)collectionViewLayout sizeForItemAtIndexPath:(NSIndexPath *)indexPath{
     return CGSizeMake((self.view.frame.size.width - 40 )/3, (self.view.frame.size.height )/5);
 }
--(CGFloat)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout *)collectionViewLayout minimumLineSpacingForSectionAtIndex:(NSInteger)section{
-    return 10;
-}
+
 @end

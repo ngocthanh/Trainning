@@ -7,16 +7,40 @@
 //
 
 #import "Service.h"
+
+
+#define nameFieldAccountInformation @"id,name,birthday,hometown,picture"
+#define nameFieldFriendInfomation @"friends"
+#define nameFieldPhotoInformation @"photos{id,link}"
+#define nameFieldImages @"images"
+
+#define folderMeForRequestFB @"me"
+#define idUser @"id"
+#define nameUser @"name"
+#define birthdayUser @"birthday"
+#define hometownUser @"hometown"
+#define pictureParameterLink @"https://graph.facebook.com/%@/picture?type=large"
+
+#define keyGetValuePhoto @"photos"
+#define keyGetValueIdPhoto @"id"
+#define keyGetValueLinkPhoto @"link"
+#define keyGetLinkPhoto @"idPhoto"
+#define keyGetValueFriends @"friends"
+#define keyGetValueData @"data"
+#define keyGetValueImages @"images"
+#define keyGetSourceLinkPhoto @"source"
+
+#define parameterNotFoundDataPhoto @"Data Photo From Facebook Not Found"
 @implementation Service
 
 -(void)privateInformationOfUser :(void (^)(UserFacebook *user))successCurrentAccount failure:(void(^)(NSError* error))failure{
     RequestDataFB* request = [[RequestDataFB alloc] init];// code is not enough
-    [request requestInformation:@"me" NameField:@"id,name,birthday,hometown,picture" success:^(id data) {
+    [request requestInformation:folderMeForRequestFB NameField: nameFieldAccountInformation success:^(id data) {
         UserFacebook *information=[[UserFacebook alloc] init];
-        information.userName = [data objectForKey:@"name"];
-        information.userBirthday = [data objectForKey:@"birthday"];
-        information.userHometown = [[data objectForKey:@"hometown"] objectForKey:@"name"];
-        information.userUrlPicture = [NSString stringWithFormat:@"https://graph.facebook.com/%@/picture?type=large",[data objectForKey:@"id"]];
+        information.userName = [data objectForKey: nameUser];
+        information.userBirthday = [data objectForKey:birthdayUser];
+        information.userHometown = [[data objectForKey: hometownUser] objectForKey:nameUser];
+        information.userUrlPicture = [NSString stringWithFormat:pictureParameterLink,[data objectForKey:idUser]];
         successCurrentAccount(information);
     } failure:^(NSError *error) {
         failure(error);
@@ -25,15 +49,15 @@
 
 -(void)friendListSuccess :(void (^)(NSArray* arrayListFriends))successFriend failure:(void(^)(NSError* error))failure{
     RequestDataFB* request = [RequestDataFB alloc];
-    [request requestInformation:@"me" NameField:@"friends" success:^(id data) {
-    NSArray * friendDataFromFB = [[data valueForKey:@"friends"]objectForKey:@"data"]; // wrong name value
+    [request requestInformation:folderMeForRequestFB NameField:nameFieldFriendInfomation success:^(id data) {
+    NSArray * friendDataFromFB = [[data valueForKey: keyGetValueFriends]objectForKey:keyGetValueData]; // wrong name value
     NSMutableArray *arrayFriends = [[NSMutableArray alloc] init];
     
     for (NSDictionary *friend in friendDataFromFB) {
         UserFacebook *userFriend = [[UserFacebook alloc] init];
-        NSString *idFriend = [friend valueForKey:@"id"];
-        userFriend.userName = [friend valueForKey:@"name"];
-        userFriend.userUrlPicture = [NSString stringWithFormat:@"http://graph.facebook.com/%@/picture?type=large",idFriend];
+        NSString *idFriend = [friend valueForKey:idUser];
+        userFriend.userName = [friend valueForKey:nameUser];
+        userFriend.userUrlPicture = [NSString stringWithFormat:pictureParameterLink,idFriend];
         [arrayFriends addObject:userFriend];
     }
     successFriend([arrayFriends copy]);// why use copy here
@@ -44,14 +68,14 @@
 
 -(void)photoOfUser :(void (^)(NSArray* arrayPhotos))successPhoto failure:(void(^)(NSError* error))failure{
     RequestDataFB* request=[RequestDataFB new];
-    [request requestInformation:@"me" NameField:@"photos{id,link}" success:^(id data) {
-        NSArray *photoDataFromFB =[[data objectForKey:@"photos"] objectForKey:@"data"];
+    [request requestInformation:folderMeForRequestFB NameField:nameFieldPhotoInformation success:^(id data) {
+        NSArray *photoDataFromFB =[[data objectForKey:keyGetValuePhoto] objectForKey:keyGetValueData];
         NSMutableArray *arrayPhotos=[[NSMutableArray alloc] init];
         
         for(NSDictionary *photo in photoDataFromFB){
             PhotoOfUser *photoOfUser=[PhotoOfUser new] ;
-            photoOfUser.idPhoto=[photo valueForKey:@"id"];
-            photoOfUser.linkOriPhoto=[photo valueForKey:@"link"];
+            photoOfUser.idPhoto=[photo valueForKey: keyGetValueIdPhoto];
+            photoOfUser.linkOriPhoto=[photo valueForKey: keyGetValueLinkPhoto];
             [arrayPhotos addObject:photoOfUser];
         }
     successPhoto(arrayPhotos);
@@ -66,12 +90,12 @@
         if(![arrayPhotos isEqual:nil]){
             for (int i = 0 ; i<[arrayPhotos count];i++) {
                 
-                [request requestInformation:[[arrayPhotos objectAtIndex:i] valueForKey:@"idPhoto"] NameField:@"images" success:^(id data) {
+                [request requestInformation:[[arrayPhotos objectAtIndex:i] valueForKey:keyGetLinkPhoto] NameField: nameFieldImages success:^(id data) {
                     PhotoOfUser *photoOfUser=[PhotoOfUser new];
-                    NSInteger indexOfThumbPhoto=[[[data objectForKey:@"images" ] objectAtIndex:1]count]-1;
-                    photoOfUser.idPhoto=[[arrayPhotos objectAtIndex:i] valueForKey:@"idPhoto"];
-                    photoOfUser.linkOriPhoto=[[[data objectForKey:@"images"] objectAtIndex:0] valueForKey:@"source"];
-                    photoOfUser.linkThumbPhoto=[[[data objectForKey:@"images"] objectAtIndex:indexOfThumbPhoto]valueForKey:@"source"];
+                    NSInteger indexOfThumbPhoto=[[[data objectForKey: keyGetValueImages] objectAtIndex:1]count]-1;
+                    photoOfUser.idPhoto=[[arrayPhotos objectAtIndex:i] valueForKey:keyGetLinkPhoto];
+                    photoOfUser.linkOriPhoto=[[[data objectForKey:keyGetValueImages] objectAtIndex:0] valueForKey:keyGetSourceLinkPhoto];
+                    photoOfUser.linkThumbPhoto=[[[data objectForKey:keyGetValueImages] objectAtIndex:indexOfThumbPhoto]valueForKey:keyGetSourceLinkPhoto];
                     [arrayUrlSource addObject:photoOfUser];
                     if (i == [arrayPhotos count]-1) {
                         successUrlSource(arrayUrlSource);// wrong logic
@@ -83,7 +107,7 @@
             }
         }else{
             NSError *errorArrayNil;
-            errorArrayNil = [[NSError alloc] initWithDomain:@"Data Photo From Facebook Not Found" code:120 userInfo:nil];
+            errorArrayNil = [[NSError alloc] initWithDomain:parameterNotFoundDataPhoto code:120 userInfo:nil];
             failure(errorArrayNil);
         }
 

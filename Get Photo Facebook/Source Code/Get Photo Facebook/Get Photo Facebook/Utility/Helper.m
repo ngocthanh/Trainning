@@ -8,20 +8,22 @@
 
 #import "Helper.h"
 #import "ConstantsSystem.h"
+#define titleOkOfAlertButton @"OK"
+#define nameOfIdImageThumblr @"%@_t"
 @implementation Helper
 -(void)createAlertWithStringTitle:(NSString *)titleAlert contentAlert:(NSString *)contentAlert{
        UIAlertController *errorAlert=[UIAlertController new];
     
     
     errorAlert = [UIAlertController alertControllerWithTitle:titleAlert message:contentAlert preferredStyle: UIAlertControllerStyleAlert];
-    UIAlertAction *ok = [UIAlertAction actionWithTitle:@"OK" style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
+    UIAlertAction *ok = [UIAlertAction actionWithTitle:titleOkOfAlertButton style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
         
     }];
     [errorAlert addAction:ok];
 }
 -(NSString *)setUpNameForImageAsThumb :(NSString *)imageId {
     NSString *imageNameAsThumb;
-    imageNameAsThumb=[NSString stringWithFormat:@"%@_t",imageId];
+    imageNameAsThumb=[NSString stringWithFormat:nameOfIdImageThumblr,imageId];
     return imageNameAsThumb;
 }
 

@@ -9,6 +9,11 @@
 #import "AccountInformationTableViewCell.h"
 #import "ConstantsSystem.h"
 
+#define redColorNumber 0
+#define greenColorNumber 0.1
+#define blueColorNumber 0.9
+#define alphaNumber 1
+#define borderWidthNumber 1
 
 @implementation AccountInformationTableViewCell
 
@@ -24,13 +29,13 @@
 -(void)setStyle{
     _imgAvatar.layer.cornerRadius = _imgAvatar.frame.size.height/2;
     _imgAvatar.clipsToBounds = YES;
-    self.imgAvatar.layer.borderColor = [UIColor colorWithRed:0 green:0.1 blue:0.9 alpha:1].CGColor;
-    self.imgAvatar.layer.borderWidth = 1;
+    self.imgAvatar.layer.borderColor = [UIColor colorWithRed:redColorNumber green:greenColorNumber blue:blueColorNumber alpha:alphaNumber].CGColor;
+    self.imgAvatar.layer.borderWidth = borderWidthNumber;
     
 }
 -(void)setDataFromViewControllerWithURLImage:(NSString *) urlString FriendsName:(NSString*) name{
     
-    [_network getImageOnline:urlString Success:^(NSData *dataImage) {
+    [[NetwokingService sharedInstance ]getImageOnline:urlString Success:^(NSData *dataImage) {
         if (dataImage) {
                 UIImage *image = [UIImage imageWithData:dataImage];
                 if (image) {
@@ -47,16 +52,7 @@
     
 }
 
-// duplicate function
-//-(void)getImageOnline:(NSString*) linkURL{
-//    if (![linkURL   isEqual: textIsEmpty]) {
-//        NSURL *url = [NSURL URLWithString:[[NSString alloc]  initWithString:linkURL]];
-//        NSURLSessionTask *task = [[NSURLSession sharedSession] dataTaskWithURL:url completionHandler:^(NSData * _Nullable data, NSURLResponse * _Nullable response, NSError * _Nullable error) {
-////        }];
-//        [task resume];
-//        
-//    }
-//}
+
 
 
 @end

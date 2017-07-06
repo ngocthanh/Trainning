@@ -11,6 +11,14 @@
 #import "AccountInformationTableViewCell.h"
 #import "Service.h"
 #import "FileManager.h"
+
+#define titleForAlert @"Oops!"
+#define messageOfAlert @"Error with code %@"
+#define idTableViewCell @"cellListFriend"
+#define parameterOfUserBirthDay @"Date of birth: %@"
+#define parameterOfUserHometown @"Hometown: %@"
+#define parameterNotFoundHomeTown @"Not Found User's Hometown"
+
 @interface AccountInformationViewController ()
 @property (weak, nonatomic) IBOutlet UIImageView *pictureOfUser;
 @property (weak, nonatomic) IBOutlet UILabel *lblNameOfUser;
@@ -51,7 +59,7 @@
         _userFacebook = user;
         [self displayUserInformation];
     } failure:^(NSError *error) {
-        [_helper createAlertWithStringTitle:@"Oops!" contentAlert:[NSString stringWithFormat:@"Error with code %@", error]];
+        [_helper createAlertWithStringTitle:titleForAlert contentAlert:[NSString stringWithFormat:messageOfAlert, error]];
     }];
 }
 -(void) loadFriendList{
@@ -59,7 +67,7 @@
         _arrayFriendList = [[NSArray alloc] initWithArray:arrayListFriends];
         [_tableListFriend reloadData];
     } failure:^(NSError *error) {
-        [_helper createAlertWithStringTitle:@"Oops!" contentAlert:[NSString stringWithFormat:@"Error with code %@", error]];
+        [_helper createAlertWithStringTitle:titleForAlert contentAlert:[NSString stringWithFormat:messageOfAlert, error]];
     }];
 }
 -(NSInteger)numberOfSectionsInTableView:(UITableView *)tableView{
@@ -70,7 +78,7 @@
 }
 -(UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
     _cell= [[AccountInformationTableViewCell alloc] init];
-    _cell = [_tableListFriend dequeueReusableCellWithIdentifier:@"cellListFriend" forIndexPath:indexPath];
+    _cell = [_tableListFriend dequeueReusableCellWithIdentifier: idTableViewCell forIndexPath:indexPath];
     UserFacebook *friend = [[UserFacebook alloc]init];// wrong init style
     friend =[_arrayFriendList objectAtIndex:indexPath.row];
     NSString *name = friend.userName ;
@@ -80,16 +88,16 @@
 }
 //duplicate code
 - (void)displayUserInformation{
-    _lblNameOfUser.text=[NSString stringWithFormat:@"%@",_userFacebook.userName];
+    _lblNameOfUser.text=[NSString stringWithFormat:parameterForString,_userFacebook.userName];
     
-    _lblDateOfBirth.text=[NSString stringWithFormat:@"Date of birth: %@",_userFacebook.userBirthday];
-    NSData *dataOfPicture=[NSData dataWithContentsOfURL:[NSURL URLWithString:[NSString stringWithFormat:@"%@",_userFacebook.userUrlPicture]]];
+    _lblDateOfBirth.text=[NSString stringWithFormat:parameterOfUserBirthDay,_userFacebook.userBirthday];
+    NSData *dataOfPicture=[NSData dataWithContentsOfURL:[NSURL URLWithString:[NSString stringWithFormat:parameterForString,_userFacebook.userUrlPicture]]];
     _pictureOfUser.image=[UIImage imageWithData:dataOfPicture];
     if (!(_userFacebook.userHometown == nil) ) {
-        _lblHometown.text=[NSString stringWithFormat:@"Hometown: %@",_userFacebook.userHometown];
+        _lblHometown.text=[NSString stringWithFormat:parameterOfUserHometown,_userFacebook.userHometown];
     }
     else {
-        _lblHometown.text=[NSString stringWithFormat:@"Not Found User's Hometown"];
+        _lblHometown.text=[NSString stringWithFormat:parameterNotFoundHomeTown];
     }
 }
 -(void)setStyleForAccountInformation{
