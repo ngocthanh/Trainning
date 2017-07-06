@@ -63,6 +63,7 @@
     [_cell setImageWithURLImage: linkThumblr IDImage:idPhoto];
     return _cell;
 }
+
 -(void) prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender{
     CGPoint touchPoint = [sender convertPoint:CGPointZero toView:_photoAlbum]; // maintable --> replace your tableview name
     NSIndexPath *clickedButtonIndexPath = [_photoAlbum indexPathForItemAtPoint:touchPoint];
@@ -74,12 +75,20 @@
     
     if ([segue.identifier isEqualToString:@"segueDetailPhoto"]) {
         DetailPhotoViewController *detail = (DetailPhotoViewController*)segue.destinationViewController;
-        [_cell dataForOriginalPhoto:linkOri IDImage:idPhoto Success:^(NSData *dataImage) {
-            detail.dataImage =dataImage;
-            
+
+        [[[Helper alloc] init] lazyLoadingForImage:linkOri IDImage:idPhoto Success:^(NSData *dataImage) {
+            if (dataImage) {
+                UIImage *image = [UIImage imageWithData:dataImage];
+                if (image) {
+                    dispatch_async(dispatch_get_main_queue(), ^{
+                        detail.image.image = image;
+                    });
+                }
+            }
         } Failure:^(NSError *error) {
             
         }];
+        
     }
 }
 -(UIEdgeInsets)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout *)collectionViewLayout insetForSectionAtIndex:(NSInteger)section{

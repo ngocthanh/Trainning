@@ -21,7 +21,7 @@
     _scrollViewZoom.delegate=self;
     self.scrollViewZoom.minimumZoomScale=1.0;
     self.scrollViewZoom.maximumZoomScale=4.0;
-    _image.image=[[UIImage alloc] initWithData:_dataImage];
+    _image.image = [UIImage imageWithData:_dataImage];
 }
 -(UIView *)viewForZoomingInScrollView:(UIScrollView *)scrollView{
     return _image;

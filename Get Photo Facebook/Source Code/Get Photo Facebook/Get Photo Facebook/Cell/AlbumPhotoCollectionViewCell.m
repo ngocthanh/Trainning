@@ -14,7 +14,7 @@
 - (void)awakeFromNib {
     [super awakeFromNib];
 }
--(void)setImageWithURLImage:(NSString *) urlString IDImage:(NSString *)idImage{
+-(void)setImageWithURLImage:(NSString *) urlString IDImage:(NSString *)idImage  {
     LazyLoadingService *lazy = [LazyLoadingService new];
     [lazy imageDataWithIDImage:idImage LinkURL:urlString Success:^(NSData *dataImage) {
         self.photoInCell.image = [[UIImage alloc] initWithData:dataImage];
@@ -22,13 +22,6 @@
         
     }];
 }
--(void)dataForOriginalPhoto:(NSString *) urlString IDImage:(NSString *)idImage Success:(void(^)(NSData* dataImage))success Failure:(void(^)(NSError *error))failure{
-    LazyLoadingService *lazy = [LazyLoadingService new];
-    [lazy imageDataWithIDImage:idImage LinkURL:urlString Success:^(NSData *dataImage) {
-        success(dataImage);
-    } Failure:^(NSError *error) {
-        failure(error);
-    }];
-}
+
 
 @end

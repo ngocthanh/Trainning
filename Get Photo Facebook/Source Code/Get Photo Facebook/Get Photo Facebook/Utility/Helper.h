@@ -12,4 +12,6 @@
 @interface Helper : UIViewController
 -(void)createAlertWithStringTitle:(NSString *)titleAlert contentAlert:(NSString *)contentAlert;
 -(NSString *)setUpNameForImageAsThumb :(NSString *)imageId;
+-(void)lazyLoadingForImage:(NSString *) urlString IDImage:(NSString *)idImage Success:(void(^)(NSData* dataImage))success Failure:(void (^)(NSError* error))failure;
+
 @end
