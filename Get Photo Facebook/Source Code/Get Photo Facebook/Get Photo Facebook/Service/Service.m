@@ -11,20 +11,20 @@
 
 #define nameFieldAccountInformation @"id,name,birthday,hometown,picture"
 #define nameFieldFriendInfomation @"friends"
-#define nameFieldPhotoInformation @"photos{id,link}"
+#define nameFieldPhotoInformation @"id,link,type:uploaded"//"albums{photos{id,link}}"
 #define nameFieldImages @"images"
-
+#define folderPhotos @"me/photos"
 #define folderMeForRequestFB @"me"
 #define idUser @"id"
 #define nameUser @"name"
 #define birthdayUser @"birthday"
 #define hometownUser @"hometown"
 #define pictureParameterLink @"https://graph.facebook.com/%@/picture?type=large"
-
+#define ketGetValueAlbum @"albums"
 #define keyGetValuePhoto @"photos"
 #define keyGetValueIdPhoto @"id"
 #define keyGetValueLinkPhoto @"link"
-#define keyGetLinkPhoto @"idPhoto"
+#define nameIDOfPhotoOfUser @"idPhoto"
 #define keyGetValueFriends @"friends"
 #define keyGetValueData @"data"
 #define keyGetValueImages @"images"
@@ -68,14 +68,14 @@
 
 -(void)photoOfUser :(void (^)(NSArray* arrayPhotos))successPhoto failure:(void(^)(NSError* error))failure{
     RequestDataFB* request=[RequestDataFB new];
-    [request requestInformation:folderMeForRequestFB NameField:nameFieldPhotoInformation success:^(id data) {
-        NSArray *photoDataFromFB =[[data objectForKey:keyGetValuePhoto] objectForKey:keyGetValueData];
+    [request requestInformation:folderPhotos NameField:nameFieldPhotoInformation success:^(id data) {
+        NSArray *photoDataFromFB = [data objectForKey:keyGetValueData];
+        //NSArray *photoDataFromFB =[[[[[data objectForKey:ketGetValueAlbum] objectForKey:keyGetValueData]objectAtIndex:0] objectForKey:keyGetValuePhoto] objectForKey:keyGetValueData];
         NSMutableArray *arrayPhotos=[[NSMutableArray alloc] init];
         
         for(NSDictionary *photo in photoDataFromFB){
             PhotoOfUser *photoOfUser=[PhotoOfUser new] ;
             photoOfUser.idPhoto=[photo valueForKey: keyGetValueIdPhoto];
-            photoOfUser.linkOriPhoto=[photo valueForKey: keyGetValueLinkPhoto];
             [arrayPhotos addObject:photoOfUser];
         }
     successPhoto(arrayPhotos);
@@ -90,10 +90,10 @@
         if(![arrayPhotos isEqual:nil]){
             for (int i = 0 ; i<[arrayPhotos count];i++) {
                 
-                [request requestInformation:[[arrayPhotos objectAtIndex:i] valueForKey:keyGetLinkPhoto] NameField: nameFieldImages success:^(id data) {
+                [request requestInformation:[[arrayPhotos objectAtIndex:i] valueForKey:nameIDOfPhotoOfUser] NameField: nameFieldImages success:^(id data) {
                     PhotoOfUser *photoOfUser=[PhotoOfUser new];
-                    NSInteger indexOfThumbPhoto=[[[data objectForKey: keyGetValueImages] objectAtIndex:1]count]-1;
-                    photoOfUser.idPhoto=[[arrayPhotos objectAtIndex:i] valueForKey:keyGetLinkPhoto];
+                    NSInteger indexOfThumbPhoto=[[data objectForKey: keyGetValueImages]count]-1;
+                    photoOfUser.idPhoto=[data valueForKey:keyGetValueIdPhoto];
                     photoOfUser.linkOriPhoto=[[[data objectForKey:keyGetValueImages] objectAtIndex:0] valueForKey:keyGetSourceLinkPhoto];
                     photoOfUser.linkThumbPhoto=[[[data objectForKey:keyGetValueImages] objectAtIndex:indexOfThumbPhoto]valueForKey:keyGetSourceLinkPhoto];
                     [arrayUrlSource addObject:photoOfUser];

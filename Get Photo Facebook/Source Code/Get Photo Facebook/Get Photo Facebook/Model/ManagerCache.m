@@ -10,7 +10,7 @@
 #import "FileManager.h"
 #import "NetwokingService.h"
 
-#define numberLimitElemetnCached 50
+#define numberLimitElemetnCached 100
 static ManagerCache *sharedInstance;
 static FileManager *fileManager;
 static NetwokingService *networkService;

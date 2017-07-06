@@ -10,6 +10,7 @@
 
 @interface DetailPhotoViewController ()
 @property (weak, nonatomic) IBOutlet UIScrollView *scrollViewZoom;
+@property  CGFloat netRotation;
 
 @end
 
@@ -21,6 +22,7 @@
     _scrollViewZoom.delegate=self;
     self.scrollViewZoom.minimumZoomScale=1.0;
     self.scrollViewZoom.maximumZoomScale=4.0;
+    _netRotation = 0.0;
     _image.image = [UIImage imageWithData:_dataImage];
 }
 -(UIView *)viewForZoomingInScrollView:(UIScrollView *)scrollView{
@@ -31,12 +33,11 @@
     // Dispose of any resources that can be recreated.
 }
 - (IBAction)rotation:(UIGestureRecognizer *)sender {
-    CGFloat netRotation = 0.0;
     CGFloat rotation = [ (UIRotationGestureRecognizer*)sender rotation];
-    CGAffineTransform transform = CGAffineTransformMakeRotation(rotation + netRotation);
+    CGAffineTransform transform = CGAffineTransformMakeRotation(rotation + _netRotation);
     sender.view.transform = transform;
     if (sender.state == UIGestureRecognizerStateEnded) {
-        netRotation += rotation;
+        _netRotation += rotation;
     }
     
 }
