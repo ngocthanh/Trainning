@@ -17,6 +17,7 @@
 @property (strong,nonatomic) Service *service;
 @property (strong,nonatomic) NSArray *arrayPhotos;
 @property (strong,nonatomic) AlbumPhotoCollectionViewCell *cell;
+@property (strong,nonatomic) Helper *helper;
 @end
 @implementation AlbumPhotoViewController
 
@@ -29,7 +30,7 @@
     _arrayPhotos=[[NSMutableArray alloc] init];
     _service=[[Service alloc]init];
     _cell = [AlbumPhotoCollectionViewCell alloc];
-
+    _helper=[[Helper alloc] init];
 }
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
@@ -59,8 +60,9 @@
     // check name function method
     PhotoOfUser *photoOfUser = [_arrayPhotos objectAtIndex:indexPath.row];
     NSString *linkThumblr =  photoOfUser.linkThumbPhoto;
-    NSString *idPhoto = [[[Helper alloc]init] setUpNameForImageAsThumb:photoOfUser.idPhoto ];
-    [_cell setImageWithURLImage: linkThumblr IDImage:idPhoto];
+    NSString *idPhoto = [_helper setUpNameForImageAsThumb:photoOfUser.idPhoto ];
+    NSString *createdTimeOfPhoto=[_helper formatDateForCell:photoOfUser.created_time];
+    [_cell setDataForCellWithUrlImage: linkThumblr IDImage:idPhoto CreatedTime:createdTimeOfPhoto];
     return _cell;
 }
 

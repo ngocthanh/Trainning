@@ -12,5 +12,5 @@
 @property (strong,nonatomic) NSString* idPhoto;
 @property (strong,nonatomic) NSString* linkOriPhoto;
 @property (strong,nonatomic) NSString* linkThumbPhoto;
-
+@property (strong,nonatomic) NSString* created_time;
 @end

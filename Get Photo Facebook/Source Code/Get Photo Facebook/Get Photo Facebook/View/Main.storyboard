@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12121" systemVersion="16F73" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12120" systemVersion="16F73" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12089"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12088"/>
         <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
         <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -136,15 +136,26 @@
                                                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="album" translatesAutoresizingMaskIntoConstraints="NO" id="2T0-02-MDv">
                                                     <rect key="frame" x="0.0" y="0.0" width="100" height="100"/>
                                                 </imageView>
+                                                <label opaque="NO" userInteractionEnabled="NO" alpha="0.45000000000000001" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tAN-fO-ojY">
+                                                    <rect key="frame" x="-5" y="88" width="100" height="12"/>
+                                                    <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="10"/>
+                                                    <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
                                             </subviews>
                                         </view>
                                         <constraints>
                                             <constraint firstItem="2T0-02-MDv" firstAttribute="centerY" secondItem="piH-CR-XJB" secondAttribute="centerY" id="BM8-JT-x1q"/>
+                                            <constraint firstItem="tAN-fO-ojY" firstAttribute="width" secondItem="piH-CR-XJB" secondAttribute="width" id="DlP-nK-EF3"/>
+                                            <constraint firstAttribute="bottom" secondItem="tAN-fO-ojY" secondAttribute="bottom" id="MvV-GK-XZU"/>
                                             <constraint firstItem="2T0-02-MDv" firstAttribute="centerX" secondItem="piH-CR-XJB" secondAttribute="centerX" id="Ra4-cD-zNh"/>
+                                            <constraint firstAttribute="trailing" secondItem="tAN-fO-ojY" secondAttribute="trailing" constant="5" id="hP2-mM-00U"/>
                                             <constraint firstItem="2T0-02-MDv" firstAttribute="height" secondItem="piH-CR-XJB" secondAttribute="height" id="hg7-2P-gvq"/>
                                             <constraint firstItem="2T0-02-MDv" firstAttribute="width" secondItem="piH-CR-XJB" secondAttribute="width" id="qMP-Rc-c8w"/>
                                         </constraints>
                                         <connections>
+                                            <outlet property="created_time" destination="tAN-fO-ojY" id="Rmu-dJ-q8J"/>
                                             <outlet property="photoInCell" destination="2T0-02-MDv" id="cm7-gr-0Oq"/>
                                             <segue destination="AAH-bh-gZX" kind="push" identifier="segueDetailPhoto" id="ZSI-bG-WgK"/>
                                         </connections>

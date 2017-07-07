@@ -33,5 +33,10 @@
         failure(error);
     }];
 }
+-(NSString *)formatDateForCell :(NSString *)inputDate{
+    NSString *dateAfterFormat;
+    dateAfterFormat=[inputDate substringToIndex:10];
 
+    return dateAfterFormat;
+}
 @end

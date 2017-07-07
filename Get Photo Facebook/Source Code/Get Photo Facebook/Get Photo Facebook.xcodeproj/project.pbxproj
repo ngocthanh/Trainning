@@ -95,12 +95,12 @@
 		39B28D6E1F060681001A2FCC /* Service */ = {
 			isa = PBXGroup;
 			children = (
-				39B28D6F1F0606CA001A2FCC /* Service.h */,
-				39B28D701F0606CA001A2FCC /* Service.m */,
 				54A37C151F0C76BF0087F610 /* LazyLoadingService.h */,
 				54A37C161F0C76BF0087F610 /* LazyLoadingService.m */,
 				54A37C181F0C842D0087F610 /* NetwokingService.h */,
 				54A37C191F0C842D0087F610 /* NetwokingService.m */,
+				39B28D6F1F0606CA001A2FCC /* Service.h */,
+				39B28D701F0606CA001A2FCC /* Service.m */,
 			);
 			path = Service;
 			sourceTree = "<group>";
