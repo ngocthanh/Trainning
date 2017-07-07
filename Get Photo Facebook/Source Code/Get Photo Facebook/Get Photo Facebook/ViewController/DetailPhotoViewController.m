@@ -18,12 +18,10 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-
     _scrollViewZoom.delegate=self;
     self.scrollViewZoom.minimumZoomScale=1.0;
     self.scrollViewZoom.maximumZoomScale=4.0;
     _netRotation = 0.0;
-    
     [self setDataForSelf];
     
 }
@@ -33,9 +31,17 @@
     [[[Helper alloc] init] lazyLoadingForImage:linkImage IDImage:idImage Success:^(NSData *dataImage) {
         if (dataImage) {
             UIImage *image = [UIImage imageWithData:dataImage];
+            //NSLog(@"%f ---------- %f",,image.size.width);
             if (image) {
                 dispatch_async(dispatch_get_main_queue(), ^{
                     self.image.image = image;
+                    CGFloat frame= image.size.height/image.size.width;
+                    if (frame > 1) {
+                        [self.image setFrame:CGRectMake(0, 0, self.view.frame.size.width, self.view.frame.size.height) ]  ;
+                    }else{
+
+                    }
+                    
                 });
             }
         }
@@ -62,14 +68,6 @@
     
 }
 
-/*
-#pragma mark - Navigation
 
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
-}
-*/
 
 @end

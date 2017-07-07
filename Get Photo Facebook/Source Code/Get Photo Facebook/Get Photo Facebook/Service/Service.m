@@ -96,40 +96,46 @@
 }
 
 -(void)getUrlOfPhoto:(void (^)(NSArray *arraySourcePhotoWithLargestSize))successUrlSource failure:(void (^)(NSError * error))failure{
-    RequestDataFB* request=[RequestDataFB new];
+    
     [self photoOfUser:^(NSArray *arrayPhotos) {
         NSMutableArray *arrayUrlSource = [NSMutableArray new];
         if(![arrayPhotos isEqual:nil]){
-            for (int i = 0 ; i<[arrayPhotos count];i++) {
-                
-                [request requestInformation:[[arrayPhotos objectAtIndex:i] valueForKey:nameIDOfPhotoOfUser] NameField: nameFieldImages success:^(id data) {
-                    PhotoOfUser *photoOfUser=[PhotoOfUser new];
-                    NSInteger indexOfThumbPhoto=[[data objectForKey: keyGetValueImages]count]-1;
-                    photoOfUser.idPhoto=[data valueForKey:keyGetValueIdPhoto];
-                    photoOfUser.linkOriPhoto=[[[data objectForKey:keyGetValueImages] objectAtIndex:0] valueForKey:keyGetSourceLinkPhoto];
-                    photoOfUser.linkThumbPhoto=[[[data objectForKey:keyGetValueImages] objectAtIndex:indexOfThumbPhoto]valueForKey:keyGetSourceLinkPhoto];
-                    photoOfUser.created_time=[data valueForKey:keyGetCreatedTime];
-                    [arrayUrlSource addObject:photoOfUser];
-                    if (i == [arrayPhotos count]-1) {
+            //NSString *lastIDImage = [[arrayPhotos lastObject] valueForKey:nameIDOfPhotoOfUser];
+            for (NSDictionary *photo in arrayPhotos) {
+                NSString *idImage = [photo valueForKey:nameIDOfPhotoOfUser];
+                [self getOnePhotoUserWithIDImage:idImage Success:^(PhotoOfUser *photo) {
+                    [arrayUrlSource addObject:photo];
+                    if ([arrayUrlSource count] == [arrayPhotos count]) {
                         successUrlSource(arrayUrlSource);// wrong logic
                     }
-                }failure:^(NSError *error)
-                 {
-                     failure(error);
-                 }];
+                } Failure:^(NSError *error) {
+                }];
             }
         }else{
             NSError *errorArrayNil;
             errorArrayNil = [[NSError alloc] initWithDomain:parameterNotFoundDataPhoto code:120 userInfo:nil];
             failure(errorArrayNil);
         }
-
     } failure:^(NSError *error) {
         failure(error);
     }];
-    
 }
 
+-(void)getOnePhotoUserWithIDImage:(NSString *)idImage Success:(void(^)(PhotoOfUser *photo))success Failure:(void(^)(NSError * error))failure{
+    RequestDataFB* request=[RequestDataFB new];
+    [request requestInformation: idImage NameField: nameFieldImages success:^(id data) {
+        PhotoOfUser *photoOfUser=[PhotoOfUser new];
+        NSInteger indexOfThumbPhoto=[[data objectForKey: keyGetValueImages]count]-1;
+        photoOfUser.idPhoto=[data valueForKey:keyGetValueIdPhoto];
+        photoOfUser.linkOriPhoto=[[[data objectForKey:keyGetValueImages] objectAtIndex:0] valueForKey:keyGetSourceLinkPhoto];
+        photoOfUser.linkThumbPhoto=[[[data objectForKey:keyGetValueImages] objectAtIndex:indexOfThumbPhoto]valueForKey:keyGetSourceLinkPhoto];
+        photoOfUser.created_time=[data valueForKey:keyGetCreatedTime];
+        success(photoOfUser);
+    }failure:^(NSError *error)
+     {
+         failure(error);
+     }];
+}
 
 
 @end

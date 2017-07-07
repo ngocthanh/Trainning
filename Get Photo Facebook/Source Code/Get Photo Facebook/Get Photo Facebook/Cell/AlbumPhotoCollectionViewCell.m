@@ -23,6 +23,7 @@
         
     }];
     self.created_time.text=createdTime;
+    
 }
 
 @end

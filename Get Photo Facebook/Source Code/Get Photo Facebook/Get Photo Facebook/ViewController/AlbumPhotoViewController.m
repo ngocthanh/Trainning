@@ -80,7 +80,7 @@
     return UIEdgeInsetsMake(10, 10, 10, 10);
 }
 -(CGSize)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout *)collectionViewLayout sizeForItemAtIndexPath:(NSIndexPath *)indexPath{
-    return CGSizeMake((self.view.frame.size.width - 41 )/3, (self.view.frame.size.height )/5);
+    return CGSizeMake((self.view.frame.size.width - 41 )/3, (self.view.frame.size.height)/6);
 }
 
 @end

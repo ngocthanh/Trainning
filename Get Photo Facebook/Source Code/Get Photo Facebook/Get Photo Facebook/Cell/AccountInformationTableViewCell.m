@@ -31,6 +31,7 @@
     _imgAvatar.clipsToBounds = YES;
     self.imgAvatar.layer.borderColor = [UIColor colorWithRed:redColorNumber green:greenColorNumber blue:blueColorNumber alpha:alphaNumber].CGColor;
     self.imgAvatar.layer.borderWidth = borderWidthNumber;
+
     
 }
 -(void)setDataFromViewControllerWithURLImage:(NSString *) urlString FriendsName:(NSString*) name{
