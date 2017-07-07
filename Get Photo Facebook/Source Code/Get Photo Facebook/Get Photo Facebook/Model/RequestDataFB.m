@@ -34,6 +34,4 @@
         failure(errorToken);
     }
 }
-
-
 @end

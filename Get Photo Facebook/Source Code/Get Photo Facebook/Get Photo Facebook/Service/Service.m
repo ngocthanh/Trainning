@@ -11,9 +11,9 @@
 
 #define nameFieldAccountInformation @"id,name,birthday,hometown,picture"
 #define nameFieldFriendInfomation @"friends"
-#define nameFieldPhotoInformation @"id,link,type:uploaded"//"albums{photos{id,link}}"
-#define nameFieldImages @"images"
-#define folderPhotos @"me/photos"
+#define nameFieldPhotoInformation @"id,created_time"
+#define nameFieldImages @"images,created_time"
+#define folderPhotos @"me/photos/uploaded"
 #define folderMeForRequestFB @"me"
 #define idUser @"id"
 #define nameUser @"name"
@@ -29,6 +29,7 @@
 #define keyGetValueData @"data"
 #define keyGetValueImages @"images"
 #define keyGetSourceLinkPhoto @"source"
+#define keyGetCreatedTime @"created_time"
 
 #define parameterNotFoundDataPhoto @"Data Photo From Facebook Not Found"
 @implementation Service
@@ -70,7 +71,6 @@
     RequestDataFB* request=[RequestDataFB new];
     [request requestInformation:folderPhotos NameField:nameFieldPhotoInformation success:^(id data) {
         NSArray *photoDataFromFB = [data objectForKey:keyGetValueData];
-        //NSArray *photoDataFromFB =[[[[[data objectForKey:ketGetValueAlbum] objectForKey:keyGetValueData]objectAtIndex:0] objectForKey:keyGetValuePhoto] objectForKey:keyGetValueData];
         NSMutableArray *arrayPhotos=[[NSMutableArray alloc] init];
         
         for(NSDictionary *photo in photoDataFromFB){
@@ -83,6 +83,7 @@
         failure(error);
     }];
 }
+
 -(void)getUrlOfPhoto:(void (^)(NSArray *arraySourcePhotoWithLargestSize))successUrlSource failure:(void (^)(NSError * error))failure{
     RequestDataFB* request=[RequestDataFB new];
     [self photoOfUser:^(NSArray *arrayPhotos) {
@@ -96,6 +97,7 @@
                     photoOfUser.idPhoto=[data valueForKey:keyGetValueIdPhoto];
                     photoOfUser.linkOriPhoto=[[[data objectForKey:keyGetValueImages] objectAtIndex:0] valueForKey:keyGetSourceLinkPhoto];
                     photoOfUser.linkThumbPhoto=[[[data objectForKey:keyGetValueImages] objectAtIndex:indexOfThumbPhoto]valueForKey:keyGetSourceLinkPhoto];
+                    photoOfUser.created_time=[data valueForKey:keyGetCreatedTime];
                     [arrayUrlSource addObject:photoOfUser];
                     if (i == [arrayPhotos count]-1) {
                         successUrlSource(arrayUrlSource);// wrong logic
