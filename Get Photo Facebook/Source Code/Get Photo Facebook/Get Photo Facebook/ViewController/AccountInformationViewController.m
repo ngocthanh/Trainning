@@ -7,7 +7,6 @@
 //
 
 #import "AccountInformationViewController.h"
-#import "UserFacebook.h"
 #import "AccountInformationTableViewCell.h"
 #import "Service.h"
 #import "FileManager.h"

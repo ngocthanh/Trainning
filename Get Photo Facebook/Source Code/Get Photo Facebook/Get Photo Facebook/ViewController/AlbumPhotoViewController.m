@@ -25,6 +25,7 @@
     [super viewDidLoad];
     [self classesInit];
     [self getIdAndLinkOfPhoto];
+    
 }
 -(void)classesInit{
     _arrayPhotos=[[NSMutableArray alloc] init];
@@ -65,34 +66,16 @@
     [_cell setDataForCellWithUrlImage: linkThumblr IDImage:idPhoto CreatedTime:createdTimeOfPhoto];
     return _cell;
 }
-
--(void) prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender{
-    CGPoint touchPoint = [sender convertPoint:CGPointZero toView:_photoAlbum]; // maintable --> replace your tableview name
-    NSIndexPath *clickedButtonIndexPath = [_photoAlbum indexPathForItemAtPoint:touchPoint];
-   //check stucture arrayphotos
-    PhotoOfUser *photoOfUser = [_arrayPhotos objectAtIndex:clickedButtonIndexPath.row];
-    NSString *idPhoto = photoOfUser.idPhoto;
-    NSString *linkOri = photoOfUser.linkOriPhoto;
-
+-(void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath{
+    PhotoOfUser *photoOfUser = [_arrayPhotos objectAtIndex:indexPath.row];
+    UIStoryboard *storyBoard =[UIStoryboard storyboardWithName:@"Main" bundle:[NSBundle mainBundle]];
+    DetailPhotoViewController *detail = [storyBoard instantiateViewControllerWithIdentifier:@"detailPhoto"];
+    detail.photoUser = photoOfUser;
+    [self.navigationController pushViewController:detail animated:YES];
     
-    if ([segue.identifier isEqualToString:@"segueDetailPhoto"]) {
-        DetailPhotoViewController *detail = (DetailPhotoViewController*)segue.destinationViewController;
 
-        [[[Helper alloc] init] lazyLoadingForImage:linkOri IDImage:idPhoto Success:^(NSData *dataImage) {
-            if (dataImage) {
-                UIImage *image = [UIImage imageWithData:dataImage];
-                if (image) {
-                    dispatch_async(dispatch_get_main_queue(), ^{
-                        detail.image.image = image;
-                    });
-                }
-            }
-        } Failure:^(NSError *error) {
-            
-        }];
-        
-    }
 }
+
 -(UIEdgeInsets)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout *)collectionViewLayout insetForSectionAtIndex:(NSInteger)section{
     return UIEdgeInsetsMake(10, 10, 10, 10);
 }

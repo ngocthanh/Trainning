@@ -23,8 +23,28 @@
     self.scrollViewZoom.minimumZoomScale=1.0;
     self.scrollViewZoom.maximumZoomScale=4.0;
     _netRotation = 0.0;
-    _image.image = [UIImage imageWithData:_dataImage];
+    
+    [self setDataForSelf];
+    
 }
+-(void)setDataForSelf{
+    NSString *linkImage = _photoUser.linkOriPhoto;
+    NSString *idImage = _photoUser.idPhoto;
+    [[[Helper alloc] init] lazyLoadingForImage:linkImage IDImage:idImage Success:^(NSData *dataImage) {
+        if (dataImage) {
+            UIImage *image = [UIImage imageWithData:dataImage];
+            if (image) {
+                dispatch_async(dispatch_get_main_queue(), ^{
+                    self.image.image = image;
+                });
+            }
+        }
+        
+    } Failure:^(NSError *error) {
+        
+    }];
+}
+
 -(UIView *)viewForZoomingInScrollView:(UIScrollView *)scrollView{
     return _image;
 }

@@ -155,7 +155,7 @@
     
     DisplayedNewsViewController *displayedViewController = [DisplayedNewsViewController alloc];
     displayedViewController.url = [[[_allArray objectAtIndex:indexPath.section] objectAtIndex:objectLinkNews]objectAtIndex:indexPath.row];
-    [self.navigationController pushViewController:displayedViewController animated:YES];
+    [self.navigationController pushViewController:displayedViewController animated:YES];	
 }
 
 - (CGSize)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout *)collectionViewLayout sizeForItemAtIndexPath:(NSIndexPath *)indexPath{

@@ -157,7 +157,6 @@
                                         <connections>
                                             <outlet property="created_time" destination="tAN-fO-ojY" id="Rmu-dJ-q8J"/>
                                             <outlet property="photoInCell" destination="2T0-02-MDv" id="cm7-gr-0Oq"/>
-                                            <segue destination="AAH-bh-gZX" kind="push" identifier="segueDetailPhoto" id="ZSI-bG-WgK"/>
                                         </connections>
                                     </collectionViewCell>
                                 </cells>
@@ -179,6 +178,7 @@
                     <navigationItem key="navigationItem" title="Photo Album" id="G9l-hB-yfm"/>
                     <connections>
                         <outlet property="photoAlbum" destination="Fu0-fR-Bsu" id="4X2-9t-2f1"/>
+                        <segue destination="AAH-bh-gZX" kind="show" id="0BK-hR-oGJ"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Nsl-ON-qv2" userLabel="First Responder" sceneMemberID="firstResponder"/>

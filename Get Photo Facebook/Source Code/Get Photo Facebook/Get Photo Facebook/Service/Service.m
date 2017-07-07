@@ -11,9 +11,15 @@
 
 #define nameFieldAccountInformation @"id,name,birthday,hometown,picture"
 #define nameFieldFriendInfomation @"friends"
+
 #define nameFieldPhotoInformation @"id,created_time"
 #define nameFieldImages @"images,created_time"
 #define folderPhotos @"me/photos/uploaded"
+
+//#define nameFieldPhotoInformation @"albums{photos{id,link}}"
+//#define nameFieldImages @"images"
+//#define folderPhotos @"me/photos"
+
 #define folderMeForRequestFB @"me"
 #define idUser @"id"
 #define nameUser @"name"
@@ -69,8 +75,13 @@
 
 -(void)photoOfUser :(void (^)(NSArray* arrayPhotos))successPhoto failure:(void(^)(NSError* error))failure{
     RequestDataFB* request=[RequestDataFB new];
+
     [request requestInformation:folderPhotos NameField:nameFieldPhotoInformation success:^(id data) {
         NSArray *photoDataFromFB = [data objectForKey:keyGetValueData];
+
+//    [request requestInformation:folderMeForRequestFB NameField:nameFieldPhotoInformation success:^(id data) {
+//        NSArray *photoDataFromFB =[[[[[data objectForKey:ketGetValueAlbum] objectForKey:keyGetValueData]objectAtIndex:0] objectForKey:keyGetValuePhoto] objectForKey:keyGetValueData];
+
         NSMutableArray *arrayPhotos=[[NSMutableArray alloc] init];
         
         for(NSDictionary *photo in photoDataFromFB){
