@@ -133,15 +133,15 @@
          failure(error);
      }];
 }
-//-(void)linkForNextPhotoPage :(void (^)(NSString *linkNextPage))successLink failure:(void(^)(NSError* error))failure{
-//    RequestDataFB* request=[RequestDataFB new];
-//    [request requestInformation:folderPhotos NameField:nameFieldImages success:^(id data) {
-//        NSString *codeOfNextPage=[[data objectForKey:@"paging"] valueForKey:@"next"];
-//        successLink(codeOfNextPage);
-//    } failure:^(NSError *error) {
-//        
-//    }];
-//}
+-(void)getCodeNextPage:(void (^)(NSString *))successCode failure:(void (^)(NSError *))failure{
+    RequestDataFB* request=[RequestDataFB new];
+    [request requestInformation:folderPhotos NameField:nameFieldImages success:^(id data) {
+        NSString *codeOfNextPage=[[[data objectForKey:@"paging"] objectForKey:@"cursors"]valueForKey:@"after"];
+        successCode(codeOfNextPage);
+    } failure:^(NSError *error) {
+        
+    }];
+}
 
 
 @end

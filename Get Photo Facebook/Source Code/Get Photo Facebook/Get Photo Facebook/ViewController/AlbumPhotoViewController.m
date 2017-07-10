@@ -18,6 +18,7 @@
 @property (strong,nonatomic) NSArray *arrayPhotos;
 @property (strong,nonatomic) AlbumPhotoCollectionViewCell *cell;
 @property (strong,nonatomic) Helper *helper;
+@property (strong, nonatomic) NSString* codeOfNextPage;
 @end
 @implementation AlbumPhotoViewController
 
@@ -25,7 +26,10 @@
     [super viewDidLoad];
     [self classesInit];
     [self getIdAndLinkOfPhoto];
-    
+    [_service getCodeNextPage:^(NSString *linkNextPage) {
+        _codeOfNextPage=linkNextPage;
+    } failure:^(NSError *error) {
+    }];
 }
 -(void)classesInit{
     _arrayPhotos=[[NSMutableArray alloc] init];
@@ -52,19 +56,20 @@
 }
 
 -(NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section{
-   return [_arrayPhotos count];
+    return [_arrayPhotos count];
 }
 
 -(UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath{
-    // check logic code
-    _cell = [_photoAlbum dequeueReusableCellWithReuseIdentifier:@"photoCell" forIndexPath:indexPath];
-    // check name function method
-    PhotoOfUser *photoOfUser = [_arrayPhotos objectAtIndex:indexPath.row];
-    NSString *linkThumblr =  photoOfUser.linkThumbPhoto;
-    NSString *idPhoto = [_helper setUpNameForImageAsThumb:photoOfUser.idPhoto ];
-    NSString *createdTimeOfPhoto=[_helper formatDateForCell:photoOfUser.created_time];
+        // check logic code
+        _cell = [_photoAlbum dequeueReusableCellWithReuseIdentifier:@"photoCell" forIndexPath:indexPath];
+        // check name function method
+        PhotoOfUser *photoOfUser = [_arrayPhotos objectAtIndex:indexPath.row];
+        NSString *linkThumblr =  photoOfUser.linkThumbPhoto;
+        NSString *idPhoto = [_helper setUpNameForImageAsThumb:photoOfUser.idPhoto ];
+        NSString *createdTimeOfPhoto=[_helper formatDateForCell:photoOfUser.created_time];
+        [_cell setDataForCellWithUrlImage: linkThumblr IDImage:idPhoto CreatedTime:createdTimeOfPhoto];
+
     
-    [_cell setDataForCellWithUrlImage: linkThumblr IDImage:idPhoto CreatedTime:createdTimeOfPhoto];
     return _cell;
 }
 -(void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath{
