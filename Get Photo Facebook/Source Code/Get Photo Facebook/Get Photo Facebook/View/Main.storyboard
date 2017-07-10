@@ -23,7 +23,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Login Photo Facebook" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="UJ8-K4-aRy">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Login With Facebook" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="UJ8-K4-aRy">
                                 <rect key="frame" x="47" y="263" width="281" height="30"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="25"/>
                                 <color key="textColor" red="0.27916157245635986" green="0.34848222136497498" blue="0.57741999626159668" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -40,7 +40,7 @@
                                     <action selector="abtnLogin:" destination="BYZ-38-t0r" eventType="touchUpInside" id="5ek-g1-0D7"/>
                                 </connections>
                             </button>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="facebook3x" translatesAutoresizingMaskIntoConstraints="NO" id="Ly5-lQ-0vN">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Ly5-lQ-0vN">
                                 <rect key="frame" x="140.5" y="153" width="94" height="94.5"/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="Ly5-lQ-0vN" secondAttribute="height" multiplier="1:1" id="g49-Zv-whY"/>
@@ -435,7 +435,6 @@
     <resources>
         <image name="album" width="32" height="32"/>
         <image name="avatarbackground" width="64" height="64"/>
-        <image name="facebook3x" width="85" height="85"/>
         <image name="users-group" width="32" height="32"/>
     </resources>
 </document>

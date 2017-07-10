@@ -15,10 +15,13 @@
 @interface AlbumPhotoViewController ()
 @property (weak, nonatomic) IBOutlet UICollectionView *photoAlbum;
 @property (strong,nonatomic) Service *service;
-@property (strong,nonatomic) NSArray *arrayPhotos;
+@property (strong,nonatomic) NSMutableArray *arrayPhotos;
 @property (strong,nonatomic) AlbumPhotoCollectionViewCell *cell;
 @property (strong,nonatomic) Helper *helper;
+
 @property (strong, nonatomic) NSString* codeOfNextPage;
+ @property (strong, nonatomic) NSString *codeNextPageForCompare ;
+
 @end
 @implementation AlbumPhotoViewController
 
@@ -26,10 +29,7 @@
     [super viewDidLoad];
     [self classesInit];
     [self getIdAndLinkOfPhoto];
-    [_service getCodeNextPage:^(NSString *linkNextPage) {
-        _codeOfNextPage=linkNextPage;
-    } failure:^(NSError *error) {
-    }];
+    
 }
 -(void)classesInit{
     _arrayPhotos=[[NSMutableArray alloc] init];
@@ -42,13 +42,16 @@
 
 }
 -(void)getIdAndLinkOfPhoto{
-    
-   [_service getUrlOfPhoto:^(NSArray *arraySourcePhotoWithLargestSize) {
-       _arrayPhotos = arraySourcePhotoWithLargestSize;
-       [_photoAlbum reloadData];
-   } failure:^(NSError *error) {
-       
-   }];
+    [_service getUrlOfPhotoWithLinkAfter:nil Success:^(NSArray *arraySourcePhotoWithLargestSize) {
+        _arrayPhotos = arraySourcePhotoWithLargestSize;
+        [_photoAlbum reloadData];
+    } failure:^(NSError *error) {
+        
+    }];
+    [_service getCodeNextPage:^(NSString *linkNextPage) {
+        _codeOfNextPage=linkNextPage;
+    } failure:^(NSError *error) {
+    }];
 }
 
 - (NSInteger)numberOfSectionsInCollectionView:(UICollectionView *)collectionView{
@@ -70,6 +73,26 @@
         [_cell setDataForCellWithUrlImage: linkThumblr IDImage:idPhoto CreatedTime:createdTimeOfPhoto];
 
     
+
+    [_cell setDataForCellWithUrlImage: linkThumblr IDImage:idPhoto CreatedTime:createdTimeOfPhoto];
+    
+    if (indexPath.row == [_arrayPhotos count]-1 && _codeOfNextPage != nil) {
+        _codeNextPageForCompare = _codeOfNextPage;
+        [_service loadMoreURLWithLinkAfter:_codeOfNextPage Success:^(NSArray *arraySourcePhotoWithLargestSize) {
+            [_arrayPhotos addObjectsFromArray:arraySourcePhotoWithLargestSize];
+            [_cell setDataForCellWithUrlImage:linkThumblr IDImage:idPhoto CreatedTime:createdTimeOfPhoto];
+            [self.photoAlbum reloadData];
+            [_service getCodeNextPage:^(NSString *linkNextPage) {
+                _codeOfNextPage=linkNextPage;
+            } failure:^(NSError *error) {
+                
+            }];
+            NSLog(@"%@", _codeOfNextPage);
+        } Failure:^(NSError *error) {
+            
+        }];
+    }
+
     return _cell;
 }
 -(void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath{

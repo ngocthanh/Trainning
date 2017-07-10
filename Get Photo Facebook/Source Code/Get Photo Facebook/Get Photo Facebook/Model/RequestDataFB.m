@@ -8,12 +8,35 @@
 
 #import "RequestDataFB.h"
 #define fieldsParameters @"fields"
+#define fieldsParametersLimit @"limit"
+#define fieldsParametersAfter @"after"
+#define limitNumber @25
 #define addString @"/%@"
 #define getRequest @"GET"
 #define failGetTokenDevice @"failToken"
 @implementation RequestDataFB
 
 
+-(void)requestInformationForLoadMore:(NSString *)nameGraphPath NameField:(NSString *) nameFields NameField1:(NSString * ) nameFields1 success:(void (^)(id data))success  failure:(void(^)(NSError* error))failure{
+    if ([FBSDKAccessToken currentAccessToken]) {
+        FBSDKGraphRequest *request = [[FBSDKGraphRequest alloc]
+                                      initWithGraphPath: [NSString stringWithFormat:addString, nameGraphPath]
+                                      parameters:@{ fieldsParameters: nameFields, fieldsParametersLimit: limitNumber, fieldsParametersAfter: nameFields1,}
+                                      HTTPMethod: getRequest];
+        [request startWithCompletionHandler:^(FBSDKGraphRequestConnection *connection, id result, NSError *error) {
+            if(!error){
+                success(result);
+            }
+            else{
+                failure(error);
+            }
+        }];
+    }else{
+        NSError *errorToken= [[NSError alloc] initWithDomain:failGetTokenDevice code:110 userInfo:nil];
+        
+        failure(errorToken);
+    }
+}
 -(void)requestInformation:(NSString *)nameGraphPath NameField:(NSString *) nameFields success:(void (^)(id data))success  failure:(void(^)(NSError* error))failure{
     if ([FBSDKAccessToken currentAccessToken]) {
         FBSDKGraphRequest *request = [[FBSDKGraphRequest alloc]
@@ -34,4 +57,6 @@
         failure(errorToken);
     }
 }
+
+
 @end

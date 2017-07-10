@@ -21,7 +21,7 @@
 //#define folderPhotos @"me/photos"
 
 #define folderMeForRequestFB @"me"
-#define idUser @"id"
+#define idUser @"id"	
 #define nameUser @"name"
 #define birthdayUser @"birthday"
 #define hometownUser @"hometown"
@@ -42,7 +42,7 @@
 
 -(void)privateInformationOfUser :(void (^)(UserFacebook *user))successCurrentAccount failure:(void(^)(NSError* error))failure{
     RequestDataFB* request = [[RequestDataFB alloc] init];// code is not enough
-    [request requestInformation:folderMeForRequestFB NameField: nameFieldAccountInformation success:^(id data) {
+    [request requestInformation:folderMeForRequestFB NameField:nameFieldAccountInformation success:^(id data) {
         UserFacebook *information=[[UserFacebook alloc] init];
         information.userName = [data objectForKey: nameUser];
         information.userBirthday = [data objectForKey:birthdayUser];
@@ -57,44 +57,61 @@
 -(void)friendListSuccess :(void (^)(NSArray* arrayListFriends))successFriend failure:(void(^)(NSError* error))failure{
     RequestDataFB* request = [RequestDataFB alloc];
     [request requestInformation:folderMeForRequestFB NameField:nameFieldFriendInfomation success:^(id data) {
-    NSArray * friendDataFromFB = [[data valueForKey: keyGetValueFriends]objectForKey:keyGetValueData]; // wrong name value
-    NSMutableArray *arrayFriends = [[NSMutableArray alloc] init];
-    
-    for (NSDictionary *friend in friendDataFromFB) {
-        UserFacebook *userFriend = [[UserFacebook alloc] init];
-        NSString *idFriend = [friend valueForKey:idUser];
-        userFriend.userName = [friend valueForKey:nameUser];
-        userFriend.userUrlPicture = [NSString stringWithFormat:pictureParameterLink,idFriend];
-        [arrayFriends addObject:userFriend];
-    }
-    successFriend([arrayFriends copy]);// why use copy here
+        NSArray * friendDataFromFB = [[data valueForKey: keyGetValueFriends]objectForKey:keyGetValueData]; // wrong name value
+        NSMutableArray *arrayFriends = [[NSMutableArray alloc] init];
+        
+        for (NSDictionary *friend in friendDataFromFB) {
+            UserFacebook *userFriend = [[UserFacebook alloc] init];
+            NSString *idFriend = [friend valueForKey:idUser];
+            userFriend.userName = [friend valueForKey:nameUser];
+            userFriend.userUrlPicture = [NSString stringWithFormat:pictureParameterLink,idFriend];
+            [arrayFriends addObject:userFriend];
+        }
+        successFriend([arrayFriends copy]);// why use copy here
     } failure:^(NSError *error) {
         failure(error);
     }];
 }
 
--(void)photoOfUser :(void (^)(NSArray* arrayPhotos))successPhoto failure:(void(^)(NSError* error))failure{
+-(void)photoOfUserWithLinkAfter:(NSString * _Nullable)linkAfter Success:(void (^)(NSArray* arrayPhotos))successPhoto failure:(void(^)(NSError* error))failure{
     RequestDataFB* request=[RequestDataFB new];
-
-    [request requestInformation:folderPhotos NameField:nameFieldPhotoInformation success:^(id data) {
-        NSArray *photoDataFromFB = [data objectForKey:keyGetValueData];
-        NSMutableArray *arrayPhotos=[[NSMutableArray alloc] init];
+    if (linkAfter != nil) {
+        [request requestInformationForLoadMore:folderPhotos NameField:nameFieldPhotoInformation NameField1:linkAfter success:^(id data) {
+            NSArray *photoDataFromFB = [data objectForKey:keyGetValueData];
+            NSArray *arrayPhotos= [self getArrayIDImageWithData:photoDataFromFB];
+            successPhoto(arrayPhotos);
+        } failure:^(NSError *error) {
+            failure(error);
+            
+        }];
         
-        for(NSDictionary *photo in photoDataFromFB){
-            PhotoOfUser *photoOfUser=[PhotoOfUser new] ;
-            photoOfUser.idPhoto=[photo valueForKey: keyGetValueIdPhoto];
-            //photoOfUser.linkNextPage=[[data objectForKey:@"paging"]valueForKey:@"next"];
-            [arrayPhotos addObject:photoOfUser];
-        }
-    successPhoto(arrayPhotos);
-    } failure:^(NSError *error) {
-        failure(error);
-    }];
+    }else{
+        
+        [request requestInformation:folderPhotos NameField:nameFieldPhotoInformation success:^(id data) {
+            NSArray *photoDataFromFB = [data objectForKey:keyGetValueData];
+            NSArray *arrayPhotos= [self getArrayIDImageWithData:photoDataFromFB];
+            successPhoto(arrayPhotos);
+        } failure:^(NSError *error) {
+            failure(error);
+
+        }];
+    }
+    
 }   
 
--(void)getUrlOfPhoto:(void (^)(NSArray *arraySourcePhotoWithLargestSize))successUrlSource failure:(void (^)(NSError * error))failure{
-    
-    [self photoOfUser:^(NSArray *arrayPhotos) {
+-(NSArray *)getArrayIDImageWithData:(NSArray* )data{
+    NSMutableArray *arrayPhotos=[[NSMutableArray alloc] init];
+    for(NSDictionary *photo in data){
+        PhotoOfUser *photoOfUser=[PhotoOfUser new] ;
+        photoOfUser.idPhoto=[photo valueForKey: keyGetValueIdPhoto];
+        //photoOfUser.linkNextPage=[[data objectForKey:@"paging"]valueForKey:@"next"];
+        [arrayPhotos addObject:photoOfUser];
+    }
+    return arrayPhotos;
+}
+
+-(void)getUrlOfPhotoWithLinkAfter:(NSString * _Nullable)linkAfter Success:(void (^)(NSArray *arraySourcePhotoWithLargestSize))successUrlSource failure:(void (^)(NSError * error))failure{
+    [self photoOfUserWithLinkAfter:linkAfter Success:^(NSArray *arrayPhotos) {
         NSMutableArray *arrayUrlSource = [NSMutableArray new];
         if(![arrayPhotos isEqual:nil]){
             //NSString *lastIDImage = [[arrayPhotos lastObject] valueForKey:nameIDOfPhotoOfUser];
@@ -115,12 +132,13 @@
         }
     } failure:^(NSError *error) {
         failure(error);
+
     }];
 }
 
 -(void)getOnePhotoUserWithIDImage:(NSString *)idImage Success:(void(^)(PhotoOfUser *photo))success Failure:(void(^)(NSError * error))failure{
     RequestDataFB* request=[RequestDataFB new];
-    [request requestInformation: idImage NameField: nameFieldImages success:^(id data) {
+    [request requestInformation:idImage NameField:nameFieldImages success:^(id data) {
         PhotoOfUser *photoOfUser=[PhotoOfUser new];
         NSInteger indexOfThumbPhoto=[[data objectForKey: keyGetValueImages]count]-1;
         photoOfUser.idPhoto=[data valueForKey:keyGetValueIdPhoto];
@@ -128,6 +146,7 @@
         photoOfUser.linkThumbPhoto=[[[data objectForKey:keyGetValueImages] objectAtIndex:indexOfThumbPhoto]valueForKey:keyGetSourceLinkPhoto];
         photoOfUser.created_time=[data valueForKey:keyGetCreatedTime];
         success(photoOfUser);
+
     }failure:^(NSError *error)
      {
          failure(error);
@@ -141,7 +160,15 @@
     } failure:^(NSError *error) {
         
     }];
+
 }
 
-
+-(void)loadMoreURLWithLinkAfter:(NSString * _Nullable)linkAfter Success:(void (^)(NSArray *arraySourcePhotoWithLargestSize))successUrlSource Failure:(void (^)(NSError * error))failure{
+    [self getUrlOfPhotoWithLinkAfter:linkAfter Success:^(NSArray *arraySourcePhotoWithLargestSize) {
+        successUrlSource(arraySourcePhotoWithLargestSize);
+    } failure:^(NSError *error) {
+        failure(error);
+    }];
+    
+}
 @end
