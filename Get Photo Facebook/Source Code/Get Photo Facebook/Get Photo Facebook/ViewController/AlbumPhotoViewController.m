@@ -20,7 +20,6 @@
 @property (strong,nonatomic) Helper *helper;
 
 @property (strong, nonatomic) NSString* codeOfNextPage;
- @property (strong, nonatomic) NSString *codeNextPageForCompare ;
 
 @end
 @implementation AlbumPhotoViewController
@@ -48,10 +47,12 @@
     } failure:^(NSError *error) {
         
     }];
-    [_service getCodeNextPage:^(NSString *linkNextPage) {
-        _codeOfNextPage=linkNextPage;
+    [_service getCodeNextPage:nil Success:^(NSString *linkNextPage) {
+        _codeOfNextPage = linkNextPage;
     } failure:^(NSError *error) {
+        
     }];
+   
 }
 
 - (NSInteger)numberOfSectionsInCollectionView:(UICollectionView *)collectionView{
@@ -77,13 +78,12 @@
     [_cell setDataForCellWithUrlImage: linkThumblr IDImage:idPhoto CreatedTime:createdTimeOfPhoto];
     
     if (indexPath.row == [_arrayPhotos count]-1 && _codeOfNextPage != nil) {
-        _codeNextPageForCompare = _codeOfNextPage;
         [_service loadMoreURLWithLinkAfter:_codeOfNextPage Success:^(NSArray *arraySourcePhotoWithLargestSize) {
             [_arrayPhotos addObjectsFromArray:arraySourcePhotoWithLargestSize];
             [_cell setDataForCellWithUrlImage:linkThumblr IDImage:idPhoto CreatedTime:createdTimeOfPhoto];
             [self.photoAlbum reloadData];
-            [_service getCodeNextPage:^(NSString *linkNextPage) {
-                _codeOfNextPage=linkNextPage;
+            [_service getCodeNextPage:_codeOfNextPage Success:^(NSString *linkNextPage) {
+                _codeOfNextPage = linkNextPage;
             } failure:^(NSError *error) {
                 
             }];

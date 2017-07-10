@@ -11,7 +11,7 @@
 @interface Service : NSObject
 -(void)privateInformationOfUser :(void (^)(UserFacebook *user))successCurrentAccount failure:(void(^)(NSError* error))failure;
 -(void)friendListSuccess :(void (^)(NSArray* arrayListFriends))successFriend failure:(void(^)(NSError* error))failure;
--(void)getCodeNextPage :(void (^)(NSString *linkNextPage))successPhoto failure:(void(^)(NSError* error))failure;
+-(void)getCodeNextPage:(NSString * _Nullable)codeAfter Success:(void (^)(NSString * linkNextPage))successCode failure:(void (^)(NSError * error))failure;
 -(void)getUrlOfPhotoWithLinkAfter:(NSString * _Nullable)linkAfter Success:(void (^)(NSArray *arraySourcePhotoWithLargestSize))successUrlSource failure:(void (^)(NSError * error))failure;
 -(void)loadMoreURLWithLinkAfter:(NSString * _Nullable)linkAfter Success:(void (^)(NSArray *arraySourcePhotoWithLargestSize))successUrlSource Failure:(void (^)(NSError * error))failure;
 

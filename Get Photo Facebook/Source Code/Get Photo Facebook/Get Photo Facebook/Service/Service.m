@@ -152,14 +152,24 @@
          failure(error);
      }];
 }
--(void)getCodeNextPage:(void (^)(NSString *))successCode failure:(void (^)(NSError *))failure{
+-(void)getCodeNextPage:(NSString * _Nullable)codeAfter Success:(void (^)(NSString *))successCode failure:(void (^)(NSError *))failure{
     RequestDataFB* request=[RequestDataFB new];
-    [request requestInformation:folderPhotos NameField:nameFieldImages success:^(id data) {
-        NSString *codeOfNextPage=[[[data objectForKey:@"paging"] objectForKey:@"cursors"]valueForKey:@"after"];
-        successCode(codeOfNextPage);
-    } failure:^(NSError *error) {
-        
-    }];
+    if (codeAfter == nil ) {
+        [request requestInformation:folderPhotos NameField:nameFieldImages success:^(id data) {
+            NSString *codeOfNextPage=[[[data objectForKey:@"paging"] objectForKey:@"cursors"]valueForKey:@"after"];
+            successCode(codeOfNextPage);
+        } failure:^(NSError *error) {
+            
+        }];
+    }else{
+        [request requestInformationForLoadMore:folderPhotos NameField:nameFieldImages NameField1:codeAfter success:^(id data) {
+            NSString *codeOfNextPage=[[[data objectForKey:@"paging"] objectForKey:@"cursors"]valueForKey:@"after"];
+            successCode(codeOfNextPage);
+        } failure:^(NSError *error) {
+            
+        }];
+    }
+   
 
 }
 
