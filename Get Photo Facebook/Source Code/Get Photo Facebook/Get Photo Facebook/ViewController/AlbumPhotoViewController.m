@@ -63,6 +63,7 @@
     NSString *linkThumblr =  photoOfUser.linkThumbPhoto;
     NSString *idPhoto = [_helper setUpNameForImageAsThumb:photoOfUser.idPhoto ];
     NSString *createdTimeOfPhoto=[_helper formatDateForCell:photoOfUser.created_time];
+    
     [_cell setDataForCellWithUrlImage: linkThumblr IDImage:idPhoto CreatedTime:createdTimeOfPhoto];
     return _cell;
 }
@@ -72,8 +73,6 @@
     DetailPhotoViewController *detail = [storyBoard instantiateViewControllerWithIdentifier:@"detailPhoto"];
     detail.photoUser = photoOfUser;
     [self.navigationController pushViewController:detail animated:YES];
-    
-
 }
 
 -(UIEdgeInsets)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout *)collectionViewLayout insetForSectionAtIndex:(NSInteger)section{

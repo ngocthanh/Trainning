@@ -14,5 +14,5 @@
 -(void)photoOfUser :(void (^)(NSArray *arrayPhotos))successPhoto failure:(void(^)(NSError* error))failure;
 -(void)getUrlOfPhoto:(void (^)(NSArray *arraySourcePhotoWithLargestSize))successUrlSource failure:(void (^)(NSError *error))failure;
 
-
+-(void)linkForNextPhotoPage :(void (^)(NSString *linkNextPage))successPhoto failure:(void(^)(NSError* error))failure;
 @end

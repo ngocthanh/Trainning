@@ -17,6 +17,7 @@
 #define parameterOfUserBirthDay @"Date of birth: %@"
 #define parameterOfUserHometown @"Hometown: %@"
 #define parameterNotFoundHomeTown @"Not Found User's Hometown"
+#define parameterNotFoundBirthday @"Not Found User's Birthday"
 
 @interface AccountInformationViewController ()
 @property (weak, nonatomic) IBOutlet UIImageView *pictureOfUser;
@@ -89,14 +90,16 @@
 - (void)displayUserInformation{
     _lblNameOfUser.text=[NSString stringWithFormat:parameterForString,_userFacebook.userName];
     
-    _lblDateOfBirth.text=[NSString stringWithFormat:parameterOfUserBirthDay,_userFacebook.userBirthday];
     NSData *dataOfPicture=[NSData dataWithContentsOfURL:[NSURL URLWithString:[NSString stringWithFormat:parameterForString,_userFacebook.userUrlPicture]]];
     _pictureOfUser.image=[UIImage imageWithData:dataOfPicture];
-    if (!(_userFacebook.userHometown == nil) ) {
+    if (!(_userFacebook.userHometown == nil) || !(_userFacebook.userBirthday==nil) ) {
         _lblHometown.text=[NSString stringWithFormat:parameterOfUserHometown,_userFacebook.userHometown];
+        _lblDateOfBirth.text=[NSString stringWithFormat:parameterOfUserBirthDay,_userFacebook.userBirthday];
+
     }
     else {
         _lblHometown.text=[NSString stringWithFormat:parameterNotFoundHomeTown];
+        _lblDateOfBirth.text=[NSString stringWithFormat:parameterNotFoundBirthday];
     }
 }
 -(void)setStyleForAccountInformation{

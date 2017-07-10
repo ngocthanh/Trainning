@@ -1,4 +1,4 @@
-	//
+//
 //  Service.m
 //  Get Photo Facebook
 //
@@ -78,22 +78,19 @@
 
     [request requestInformation:folderPhotos NameField:nameFieldPhotoInformation success:^(id data) {
         NSArray *photoDataFromFB = [data objectForKey:keyGetValueData];
-
-//    [request requestInformation:folderMeForRequestFB NameField:nameFieldPhotoInformation success:^(id data) {
-//        NSArray *photoDataFromFB =[[[[[data objectForKey:ketGetValueAlbum] objectForKey:keyGetValueData]objectAtIndex:0] objectForKey:keyGetValuePhoto] objectForKey:keyGetValueData];
-
         NSMutableArray *arrayPhotos=[[NSMutableArray alloc] init];
         
         for(NSDictionary *photo in photoDataFromFB){
             PhotoOfUser *photoOfUser=[PhotoOfUser new] ;
             photoOfUser.idPhoto=[photo valueForKey: keyGetValueIdPhoto];
+            //photoOfUser.linkNextPage=[[data objectForKey:@"paging"]valueForKey:@"next"];
             [arrayPhotos addObject:photoOfUser];
         }
     successPhoto(arrayPhotos);
     } failure:^(NSError *error) {
         failure(error);
     }];
-}
+}   
 
 -(void)getUrlOfPhoto:(void (^)(NSArray *arraySourcePhotoWithLargestSize))successUrlSource failure:(void (^)(NSError * error))failure{
     
@@ -136,6 +133,15 @@
          failure(error);
      }];
 }
+//-(void)linkForNextPhotoPage :(void (^)(NSString *linkNextPage))successLink failure:(void(^)(NSError* error))failure{
+//    RequestDataFB* request=[RequestDataFB new];
+//    [request requestInformation:folderPhotos NameField:nameFieldImages success:^(id data) {
+//        NSString *codeOfNextPage=[[data objectForKey:@"paging"] valueForKey:@"next"];
+//        successLink(codeOfNextPage);
+//    } failure:^(NSError *error) {
+//        
+//    }];
+//}
 
 
 @end
