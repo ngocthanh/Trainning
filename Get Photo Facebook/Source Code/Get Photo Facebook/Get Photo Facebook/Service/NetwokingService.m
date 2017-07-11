@@ -23,7 +23,7 @@ static NetwokingService *sharedInstance;
         NSURL *url = [NSURL URLWithString:linkURL];
         NSURLSessionTask *task = [[NSURLSession sharedSession] dataTaskWithURL:url completionHandler:^(NSData * _Nullable data, NSURLResponse * _Nullable response, NSError * _Nullable error) {
             if (data) {
-                    success(data);
+                success(data);
             }else{
                 failure(error);
             }

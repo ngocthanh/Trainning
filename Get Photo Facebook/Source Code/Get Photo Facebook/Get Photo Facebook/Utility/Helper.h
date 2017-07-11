@@ -14,4 +14,5 @@
 -(NSString *)setUpNameForImageAsThumb :(NSString *)imageId;
 -(void)lazyLoadingForImage:(NSString *) urlString IDImage:(NSString *)idImage Success:(void(^)(NSData* dataImage))success Failure:(void (^)(NSError* error))failure;
 -(NSString *)formatDateForCell :(NSString *)inputDate;
+-(void)setStyleForImage : (UIImageView *)avatarImage;
 @end

@@ -10,14 +10,16 @@
 #import "AccountInformationTableViewCell.h"
 #import "Service.h"
 #import "FileManager.h"
+#import "ConstantsSystem.h"
+#import "Helper.h"
 
 #define titleForAlert @"Oops!"
 #define messageOfAlert @"Error with code %@"
 #define idTableViewCell @"cellListFriend"
 #define parameterOfUserBirthDay @"Date of birth: %@"
 #define parameterOfUserHometown @"Hometown: %@"
-#define parameterNotFoundHomeTown @"Not Found User's Hometown"
-#define parameterNotFoundBirthday @"Not Found User's Birthday"
+#define numberOfSection 1
+
 
 @interface AccountInformationViewController ()
 @property (weak, nonatomic) IBOutlet UIImageView *pictureOfUser;
@@ -40,19 +42,18 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     [self classesInit];
-    [self setStyleForAccountInformation];
+    [_helper setStyleForImage:_pictureOfUser];
     [self loadAccountInformation];
     [self loadFriendList];
-
     
 }
 -(void)classesInit{
     // code is not enough
-
+    
     _service = [[Service alloc] init];
     _helper = [[Helper alloc]init];
     _file =[[FileManager alloc] init];
-
+    
 }
 -(void) loadAccountInformation{
     [_service privateInformationOfUser:^(UserFacebook *user) {
@@ -71,7 +72,7 @@
     }];
 }
 -(NSInteger)numberOfSectionsInTableView:(UITableView *)tableView{
-    return 1;
+    return numberOfSection;
 }
 -(NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
     return [_arrayFriendList count];
@@ -89,24 +90,10 @@
 //duplicate code
 - (void)displayUserInformation{
     _lblNameOfUser.text=[NSString stringWithFormat:parameterForString,_userFacebook.userName];
-    
     NSData *dataOfPicture=[NSData dataWithContentsOfURL:[NSURL URLWithString:[NSString stringWithFormat:parameterForString,_userFacebook.userUrlPicture]]];
     _pictureOfUser.image=[UIImage imageWithData:dataOfPicture];
-    if (!(_userFacebook.userHometown == nil) || !(_userFacebook.userBirthday==nil) ) {
-        _lblHometown.text=[NSString stringWithFormat:parameterOfUserHometown,_userFacebook.userHometown];
-        _lblDateOfBirth.text=[NSString stringWithFormat:parameterOfUserBirthDay,_userFacebook.userBirthday];
-
-    }
-    else {
-        _lblHometown.text=[NSString stringWithFormat:parameterNotFoundHomeTown];
-        _lblDateOfBirth.text=[NSString stringWithFormat:parameterNotFoundBirthday];
-    }
-}
--(void)setStyleForAccountInformation{
-    self.pictureOfUser.layer.cornerRadius=_pictureOfUser.frame.size.height/2.0;
-    self.pictureOfUser.clipsToBounds=YES;
-    self.pictureOfUser.layer.borderColor = [UIColor colorWithRed:0 green:0.1 blue:0.9 alpha:1].CGColor;
-    self.pictureOfUser.layer.borderWidth = 1;
+    _lblHometown.text=[NSString stringWithFormat:parameterOfUserHometown,_userFacebook.userHometown];
+    _lblDateOfBirth.text=[NSString stringWithFormat:parameterOfUserBirthDay,_userFacebook.userBirthday];
 }
 
 @end

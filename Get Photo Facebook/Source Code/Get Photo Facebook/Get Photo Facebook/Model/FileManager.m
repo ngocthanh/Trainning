@@ -23,7 +23,7 @@
               &error]) {
             
             return nil;
-
+            
         }
         else{
             return path;
@@ -51,11 +51,11 @@
     path = [path stringByAppendingPathComponent:imageName];
     if (![self checkExistImageInMemory:imageName]) {
         [[NSFileManager defaultManager] createFileAtPath:path contents:imageData attributes:nil];
-    }   
+    }
     
 }
 -(NSData *) loadImageFileFromMemory: (NSString *)imageName{
-
+    
     NSString * path;
     path=[self createDirectoryPath];
     path=[path stringByAppendingPathComponent:imageName];

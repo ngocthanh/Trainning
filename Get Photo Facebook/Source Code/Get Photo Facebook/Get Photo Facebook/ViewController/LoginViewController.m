@@ -16,6 +16,10 @@
 #define userBirthdayPermission @"user_birthday"
 #define idTabbarHome @"tabbarHome"
 
+#define alertTitle @"We Need"
+#define alertMessage @"Get your information include (public information, friends, photos)."
+#define alertActionTitleOK @"OK"
+#define alertActionCancel @"Cancel"
 @interface LoginViewController ()
 @property (weak, nonatomic) IBOutlet UIButton *btnLogin;
 
@@ -29,8 +33,8 @@
 }
 - (IBAction)abtnLogin:(id)sender {
     UIAlertController *errorAlert=[UIAlertController new];
-    errorAlert = [UIAlertController alertControllerWithTitle:@"We Need" message:@"Get your information include (public information, friends, photos)." preferredStyle: UIAlertControllerStyleAlert];
-    UIAlertAction *ok = [UIAlertAction actionWithTitle:@"OK" style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
+    errorAlert = [UIAlertController alertControllerWithTitle:alertTitle message:alertMessage preferredStyle: UIAlertControllerStyleAlert];
+    UIAlertAction *ok = [UIAlertAction actionWithTitle:alertActionTitleOK style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
         FBSDKLoginManager *login = [[FBSDKLoginManager alloc] init];
         [login
          logInWithReadPermissions: @[publicUserPermission,userPhotoPermission,userFriendsPermission,userBirthdayPermission,userHomeTownPermission]
@@ -47,7 +51,7 @@
              }
          }];
     }];
-    UIAlertAction *cancel = [UIAlertAction actionWithTitle:@"Cancel" style:UIAlertActionStyleDestructive handler:^(UIAlertAction * _Nonnull action) {
+    UIAlertAction *cancel = [UIAlertAction actionWithTitle:alertActionCancel style:UIAlertActionStyleDestructive handler:^(UIAlertAction * _Nonnull action) {
         
     }];
     [errorAlert addAction:ok];

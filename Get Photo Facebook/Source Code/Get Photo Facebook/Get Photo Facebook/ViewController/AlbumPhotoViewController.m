@@ -18,8 +18,16 @@
 @property (strong,nonatomic) NSMutableArray *arrayPhotos;
 @property (strong,nonatomic) AlbumPhotoCollectionViewCell *cell;
 @property (strong,nonatomic) Helper *helper;
-
 @property (strong, nonatomic) NSString* codeOfNextPage;
+
+#define nameOfCell @"photoCell"
+#define storyBoardName @"Main"
+#define identifierOfDetailPhotoView @"detailPhoto"
+#define oneUnit 1
+#define widthOfMargin 41
+#define widthOfItemInRow 3
+#define marginBetweenTwoItem 10
+#define ratioByWidth 3/4
 
 @end
 @implementation AlbumPhotoViewController
@@ -28,17 +36,16 @@
     [super viewDidLoad];
     [self classesInit];
     [self getIdAndLinkOfPhoto];
-    
 }
 -(void)classesInit{
     _arrayPhotos=[[NSMutableArray alloc] init];
     _service=[[Service alloc]init];
-    _cell = [AlbumPhotoCollectionViewCell alloc];
+    _cell = [[AlbumPhotoCollectionViewCell alloc] init];
     _helper=[[Helper alloc] init];
 }
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
-
+    
 }
 -(void)getIdAndLinkOfPhoto{
     [_service getUrlOfPhotoWithLinkAfter:nil Success:^(NSArray *arraySourcePhotoWithLargestSize) {
@@ -52,7 +59,7 @@
     } failure:^(NSError *error) {
         
     }];
-   
+    
 }
 
 - (NSInteger)numberOfSectionsInCollectionView:(UICollectionView *)collectionView{
@@ -64,20 +71,13 @@
 }
 
 -(UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath{
-        // check logic code
-        _cell = [_photoAlbum dequeueReusableCellWithReuseIdentifier:@"photoCell" forIndexPath:indexPath];
-        // check name function method
-        PhotoOfUser *photoOfUser = [_arrayPhotos objectAtIndex:indexPath.row];
-        NSString *linkThumblr =  photoOfUser.linkThumbPhoto;
-        NSString *idPhoto = [_helper setUpNameForImageAsThumb:photoOfUser.idPhoto ];
-        NSString *createdTimeOfPhoto=[_helper formatDateForCell:photoOfUser.created_time];
-        [_cell setDataForCellWithUrlImage: linkThumblr IDImage:idPhoto CreatedTime:createdTimeOfPhoto];
-
+    _cell = [_photoAlbum dequeueReusableCellWithReuseIdentifier:nameOfCell forIndexPath:indexPath];
+    PhotoOfUser *photoOfUser = [_arrayPhotos objectAtIndex:indexPath.row];
+    NSString *linkThumblr =  photoOfUser.linkThumbPhoto;
+    NSString *idPhoto = [_helper setUpNameForImageAsThumb:photoOfUser.idPhoto ];
+    NSString *createdTimeOfPhoto=[_helper formatDateForCell:photoOfUser.created_time];
     
-
-    [_cell setDataForCellWithUrlImage: linkThumblr IDImage:idPhoto CreatedTime:createdTimeOfPhoto];
-    
-    if (indexPath.row == [_arrayPhotos count]-1 && _codeOfNextPage != nil) {
+    if (indexPath.row == [_arrayPhotos count]-oneUnit && _codeOfNextPage != nil) {
         [_service loadMoreURLWithLinkAfter:_codeOfNextPage Success:^(NSArray *arraySourcePhotoWithLargestSize) {
             [_arrayPhotos addObjectsFromArray:arraySourcePhotoWithLargestSize];
             [_cell setDataForCellWithUrlImage:linkThumblr IDImage:idPhoto CreatedTime:createdTimeOfPhoto];
@@ -87,27 +87,30 @@
             } failure:^(NSError *error) {
                 
             }];
-            NSLog(@"%@", _codeOfNextPage);
         } Failure:^(NSError *error) {
             
         }];
     }
-
+    else
+    {
+        [_cell setDataForCellWithUrlImage: linkThumblr IDImage:idPhoto CreatedTime:createdTimeOfPhoto];
+    }
+    
     return _cell;
 }
 -(void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath{
     PhotoOfUser *photoOfUser = [_arrayPhotos objectAtIndex:indexPath.row];
-    UIStoryboard *storyBoard =[UIStoryboard storyboardWithName:@"Main" bundle:[NSBundle mainBundle]];
-    DetailPhotoViewController *detail = [storyBoard instantiateViewControllerWithIdentifier:@"detailPhoto"];
+    UIStoryboard *storyBoard =[UIStoryboard storyboardWithName:storyBoardName bundle:[NSBundle mainBundle]];
+    DetailPhotoViewController *detail = [storyBoard instantiateViewControllerWithIdentifier:identifierOfDetailPhotoView];
     detail.photoUser = photoOfUser;
     [self.navigationController pushViewController:detail animated:YES];
 }
 
 -(UIEdgeInsets)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout *)collectionViewLayout insetForSectionAtIndex:(NSInteger)section{
-    return UIEdgeInsetsMake(10, 10, 10, 10);
+    return UIEdgeInsetsMake(marginBetweenTwoItem, marginBetweenTwoItem, marginBetweenTwoItem, marginBetweenTwoItem);
 }
 -(CGSize)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout *)collectionViewLayout sizeForItemAtIndexPath:(NSIndexPath *)indexPath{
-    return CGSizeMake((self.view.frame.size.width - 41 )/3, (self.view.frame.size.height)/6);
+    return CGSizeMake((self.view.frame.size.width - widthOfMargin )/widthOfItemInRow, (self.view.frame.size.width - widthOfMargin)/widthOfItemInRow*ratioByWidth);
 }
 
 @end

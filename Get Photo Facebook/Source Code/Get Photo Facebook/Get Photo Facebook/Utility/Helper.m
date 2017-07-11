@@ -11,6 +11,7 @@
 #import "LazyLoadingService.h"
 #define titleOkOfAlertButton @"OK"
 #define nameOfIdImageThumblr @"%@_t"
+#define numberCharactorOfDate 10
 @implementation Helper
 -(void)createAlertWithStringTitle:(NSString *)titleAlert contentAlert:(NSString *)contentAlert{
        UIAlertController *errorAlert=[UIAlertController new];
@@ -35,8 +36,15 @@
 }
 -(NSString *)formatDateForCell :(NSString *)inputDate{
     NSString *dateAfterFormat;
-    dateAfterFormat=[inputDate substringToIndex:10];
+    dateAfterFormat=[inputDate substringToIndex:numberCharactorOfDate];
 
     return dateAfterFormat;
+}
+-(void)setStyleForImage : (UIImageView *)avatarImage{
+    avatarImage.layer.cornerRadius = avatarImage.frame.size.height/roundAvatarRatio;
+    avatarImage.clipsToBounds = YES;
+    avatarImage.layer.borderColor = [UIColor colorWithRed:redColorNumber green:greenColorNumber blue:blueColorNumber alpha:alphaNumber].CGColor;
+    avatarImage.layer.borderWidth = borderWidthNumber;
+    
 }
 @end

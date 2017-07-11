@@ -14,6 +14,7 @@
 #define addString @"/%@"
 #define getRequest @"GET"
 #define failGetTokenDevice @"failToken"
+#define errorTokenCode 110
 @implementation RequestDataFB
 
 
@@ -32,7 +33,7 @@
             }
         }];
     }else{
-        NSError *errorToken= [[NSError alloc] initWithDomain:failGetTokenDevice code:110 userInfo:nil];
+        NSError *errorToken= [[NSError alloc] initWithDomain:failGetTokenDevice code:errorTokenCode userInfo:nil];
         
         failure(errorToken);
     }
@@ -52,11 +53,10 @@
             }
         }];
     }else{
-        NSError *errorToken= [[NSError alloc] initWithDomain:failGetTokenDevice code:110 userInfo:nil];
+        NSError *errorToken= [[NSError alloc] initWithDomain:failGetTokenDevice code:errorTokenCode userInfo:nil];
         
         failure(errorToken);
     }
 }
-
 
 @end
