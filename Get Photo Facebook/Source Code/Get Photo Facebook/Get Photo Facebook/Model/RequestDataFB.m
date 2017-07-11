@@ -18,7 +18,7 @@
 @implementation RequestDataFB
 
 
--(void)requestInformationForLoadMore:(NSString *)nameGraphPath NameField:(NSString *) nameFields NameField1:(NSString * ) nameFields1 success:(void (^)(id data))success  failure:(void(^)(NSError* error))failure{
+-(void)requestInformationForLoadMore:(NSString *)nameGraphPath NameField:(NSString *) nameFields CodeAfter:(NSString * ) nameFields1 success:(void (^)(id data))success  failure:(void(^)(NSError* error))failure{
     if ([FBSDKAccessToken currentAccessToken]) {
         FBSDKGraphRequest *request = [[FBSDKGraphRequest alloc]
                                       initWithGraphPath: [NSString stringWithFormat:addString, nameGraphPath]
@@ -38,6 +38,7 @@
         failure(errorToken);
     }
 }
+
 -(void)requestInformation:(NSString *)nameGraphPath NameField:(NSString *) nameFields success:(void (^)(id data))success  failure:(void(^)(NSError* error))failure{
     if ([FBSDKAccessToken currentAccessToken]) {
         FBSDKGraphRequest *request = [[FBSDKGraphRequest alloc]

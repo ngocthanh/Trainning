@@ -49,7 +49,7 @@
 }
 -(void)getIdAndLinkOfPhoto{
     [_service getUrlOfPhotoWithLinkAfter:nil Success:^(NSArray *arraySourcePhotoWithLargestSize) {
-        _arrayPhotos = arraySourcePhotoWithLargestSize;
+        [_arrayPhotos addObjectsFromArray:arraySourcePhotoWithLargestSize];
         [_photoAlbum reloadData];
     } failure:^(NSError *error) {
         
@@ -71,29 +71,30 @@
 }
 
 -(UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath{
+
     _cell = [_photoAlbum dequeueReusableCellWithReuseIdentifier:nameOfCell forIndexPath:indexPath];
     PhotoOfUser *photoOfUser = [_arrayPhotos objectAtIndex:indexPath.row];
     NSString *linkThumblr =  photoOfUser.linkThumbPhoto;
     NSString *idPhoto = [_helper setUpNameForImageAsThumb:photoOfUser.idPhoto ];
     NSString *createdTimeOfPhoto=[_helper formatDateForCell:photoOfUser.created_time];
-    
-    if (indexPath.row == [_arrayPhotos count]-oneUnit && _codeOfNextPage != nil) {
-        [_service loadMoreURLWithLinkAfter:_codeOfNextPage Success:^(NSArray *arraySourcePhotoWithLargestSize) {
-            [_arrayPhotos addObjectsFromArray:arraySourcePhotoWithLargestSize];
-            [_cell setDataForCellWithUrlImage:linkThumblr IDImage:idPhoto CreatedTime:createdTimeOfPhoto];
-            [self.photoAlbum reloadData];
-            [_service getCodeNextPage:_codeOfNextPage Success:^(NSString *linkNextPage) {
-                _codeOfNextPage = linkNextPage;
-            } failure:^(NSError *error) {
-                
-            }];
-        } Failure:^(NSError *error) {
-            
-        }];
+    if (!(indexPath.row == [_arrayPhotos count]-oneUnit && _codeOfNextPage != nil)) {
+        [_cell setDataForCellWithUrlImage: linkThumblr IDImage:idPhoto CreatedTime:createdTimeOfPhoto];
     }
     else
     {
-        [_cell setDataForCellWithUrlImage: linkThumblr IDImage:idPhoto CreatedTime:createdTimeOfPhoto];
+        [_service loadMoreURLWithLinkAfter:_codeOfNextPage Success:^(NSArray *arraySourcePhotoWithLargestSize) {
+            [_arrayPhotos addObjectsFromArray:arraySourcePhotoWithLargestSize];
+            [_cell setDataForCellWithUrlImage:linkThumblr IDImage:idPhoto CreatedTime:createdTimeOfPhoto];
+            [_service getCodeNextPage:_codeOfNextPage Success:^(NSString *linkNextPage) {
+                _codeOfNextPage = linkNextPage;
+            } failure:^(NSError *error) {
+                _codeOfNextPage = nil;
+            }];
+            [self.photoAlbum reloadData];
+            
+        } Failure:^(NSError *error) {
+            
+        }];
     }
     
     return _cell;
@@ -110,7 +111,9 @@
     return UIEdgeInsetsMake(marginBetweenTwoItem, marginBetweenTwoItem, marginBetweenTwoItem, marginBetweenTwoItem);
 }
 -(CGSize)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout *)collectionViewLayout sizeForItemAtIndexPath:(NSIndexPath *)indexPath{
+
     return CGSizeMake((self.view.frame.size.width - widthOfMargin )/widthOfItemInRow, (self.view.frame.size.width - widthOfMargin)/widthOfItemInRow*ratioByWidth);
+
 }
 
 @end

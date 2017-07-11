@@ -10,7 +10,7 @@
 #import "FileManager.h"
 #import "NetwokingService.h"
 
-#define numberLimitElemetnCached 100
+#define numberLimitElemetnCached 1000
 static ManagerCache *sharedInstance;
 static FileManager *fileManager;
 static NetwokingService *networkService;
@@ -47,7 +47,9 @@ static NetwokingService *networkService;
         return [_cache objectForKey:key] ;
     }else{
         if ([fileManager checkExistImageInMemory:key]) {
-            return [fileManager loadImageFileFromMemory:key];
+            NSData *imageData = [fileManager loadImageFileFromMemory:key];
+            [_cache setObject:imageData forKey:key];
+            return imageData;
         }else{
             return nil;
         }

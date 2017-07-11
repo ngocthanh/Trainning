@@ -17,13 +17,12 @@
 -(void)setDataForCellWithUrlImage:(NSString *) urlString IDImage:(NSString *)idImage  CreatedTime:(NSString *)createdTime{
     LazyLoadingService *lazy = [LazyLoadingService new];
     [lazy imageDataWithIDImage:idImage LinkURL:urlString Success:^(NSData *dataImage) {
-        self.photoInCell.image = [[UIImage alloc] initWithData:dataImage];
-        
+        if (dataImage) {
+                self.photoInCell.image = [[UIImage alloc] initWithData:dataImage];
+        }
     } Failure:^(NSError *error) {
-        
     }];
     self.created_time.text=createdTime;
-    
 }
 
 @end

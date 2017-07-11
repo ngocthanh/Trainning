@@ -351,8 +351,9 @@
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="kjN-x0-7Sq">
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                                 <subviews>
-                                    <imageView multipleTouchEnabled="YES" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" restorationIdentifier="detailPhoto" translatesAutoresizingMaskIntoConstraints="NO" id="z0h-5f-mYO">
-                                        <rect key="frame" x="0.0" y="155.5" width="375" height="222.5"/>
+                                    <imageView multipleTouchEnabled="YES" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" restorationIdentifier="detailPhoto" translatesAutoresizingMaskIntoConstraints="NO" id="z0h-5f-mYO">
+                                        <rect key="frame" x="0.0" y="126" width="375" height="281.5"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <gestureRecognizers/>
                                         <connections>
                                             <outletCollection property="gestureRecognizers" destination="skG-DG-sBT" appends="YES" id="BU5-8y-mBD"/>
@@ -360,12 +361,6 @@
                                     </imageView>
                                 </subviews>
                                 <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <constraints>
-                                    <constraint firstItem="z0h-5f-mYO" firstAttribute="width" secondItem="kjN-x0-7Sq" secondAttribute="width" id="L3L-3R-zwm"/>
-                                    <constraint firstItem="z0h-5f-mYO" firstAttribute="centerX" secondItem="kjN-x0-7Sq" secondAttribute="centerX" id="Oay-2K-9ju"/>
-                                    <constraint firstItem="z0h-5f-mYO" firstAttribute="height" secondItem="kjN-x0-7Sq" secondAttribute="height" multiplier="1/3" id="sx3-Ob-JFk"/>
-                                    <constraint firstItem="z0h-5f-mYO" firstAttribute="centerY" secondItem="kjN-x0-7Sq" secondAttribute="centerY" multiplier="4/5" id="uTA-Av-ELN"/>
-                                </constraints>
                                 <connections>
                                     <outlet property="delegate" destination="AAH-bh-gZX" id="Khu-L1-FKU"/>
                                 </connections>

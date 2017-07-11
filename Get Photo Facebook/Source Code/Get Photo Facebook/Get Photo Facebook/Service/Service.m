@@ -11,10 +11,12 @@
 
 #define nameFieldAccountInformation @"id,name,birthday,hometown,picture"
 #define nameFieldFriendInfomation @"friends"
-
+#define nameFieldInformationFriend @"id,name"
 #define nameFieldPhotoInformation @"id,created_time"
 #define nameFieldImages @"images,created_time"
 #define folderPhotos @"me/photos/uploaded"
+
+#define folderFriends @"me/friends"
 
 #define folderMeForRequestFB @"me"
 #define idUser @"id"	
@@ -64,7 +66,7 @@
 }
 
 -(void)friendListSuccess :(void (^)(NSArray* arrayListFriends))successFriend failure:(void(^)(NSError* error))failure{
-    RequestDataFB* request = [RequestDataFB alloc];
+    RequestDataFB* request = [[RequestDataFB alloc] init];
     [request requestInformation:folderMeForRequestFB NameField:nameFieldFriendInfomation success:^(id data) {
         NSArray * friendDataFromFB = [[data valueForKey: keyGetValueFriends]objectForKey:keyGetValueData]; // wrong name value
         NSMutableArray *arrayFriends = [[NSMutableArray alloc] init];
@@ -81,16 +83,55 @@
         failure(error);
     }];
 }
+-(void)loadMoreFriendWithCodeAfter:(NSString * _Nullable)linkAfter Success:(void (^)(NSArray* arrayListFriends))successFriend failure:(void(^)(NSError* error))failure{
+    RequestDataFB* request = [[RequestDataFB alloc] init];
+    [request requestInformationForLoadMore:folderFriends NameField:nameFieldFriendInfomation CodeAfter:linkAfter success:^(id data) {
+        NSArray * friendDataFromFB = [[data valueForKey: keyGetValueFriends]objectForKey:keyGetValueData]; // wrong name value
+        NSMutableArray *arrayFriends = [[NSMutableArray alloc] init];
+        
+        for (NSDictionary *friend in friendDataFromFB) {
+            UserFacebook *userFriend = [[UserFacebook alloc] init];
+            NSString *idFriend = [friend valueForKey:idUser];
+            userFriend.userName = [friend valueForKey:nameUser];
+            userFriend.userUrlPicture = [NSString stringWithFormat:pictureParameterLink,idFriend];
+            [arrayFriends addObject:userFriend];
+        }
+        successFriend(arrayFriends);
+    } failure:^(NSError *error) {
+        failure(error);
+
+    }];
+}
+
+-(void)loadCodeAfter:(NSString * _Nullable)codeAfter Success:(void (^)(NSString *))successCode failure:(void (^)(NSError *))failure{
+    RequestDataFB* request=[[RequestDataFB alloc] init];
+    if (codeAfter == nil ) {
+        [request requestInformation:folderFriends NameField:nameFieldFriendInfomation success:^(id data) {
+            NSString *codeOfNextPage=[[[data objectForKey:@"paging"] objectForKey:@"cursors"]valueForKey:@"after"];
+            successCode(codeOfNextPage);
+        } failure:^(NSError *error) {
+            
+        }];
+    }else{
+        [request requestInformationForLoadMore:folderFriends NameField:nameFieldFriendInfomation CodeAfter:codeAfter success:^(id data) {
+            NSString *codeOfNextPage=[[[data objectForKey:@"paging"] objectForKey:@"cursors"]valueForKey:@"after"];
+            successCode(codeOfNextPage);
+        } failure:^(NSError *error) {
+            
+        }];
+    }
+}
 
 -(void)photoOfUserWithLinkAfter:(NSString * _Nullable)linkAfter Success:(void (^)(NSArray* arrayPhotos))successPhoto failure:(void(^)(NSError* error))failure{
-    RequestDataFB* request=[RequestDataFB new];
-    
+
+    RequestDataFB* request=[[RequestDataFB alloc] init];
+
     if (linkAfter != nil) {
-        [request requestInformationForLoadMore:folderPhotos NameField:nameFieldPhotoInformation NameField1:linkAfter success:^(id data) {
+        [request requestInformationForLoadMore:folderPhotos NameField:nameFieldPhotoInformation CodeAfter:linkAfter success:^(id data) {
             NSArray *photoDataFromFB = [data objectForKey:keyGetValueData];
             NSArray *arrayPhotos= [self getArrayIDImageWithData:photoDataFromFB];
-            
             successPhoto(arrayPhotos);
+            
         } failure:^(NSError *error) {
             failure(error);
             
@@ -113,7 +154,7 @@
 -(NSArray *)getArrayIDImageWithData:(NSArray* )data{
     NSMutableArray *arrayPhotos=[[NSMutableArray alloc] init];
     for(NSDictionary *photo in data){
-        PhotoOfUser *photoOfUser=[PhotoOfUser new] ;
+        PhotoOfUser *photoOfUser=[[PhotoOfUser alloc] init] ;
         photoOfUser.idPhoto=[photo valueForKey: keyGetValueIdPhoto];
         [arrayPhotos addObject:photoOfUser];
     }
@@ -122,7 +163,7 @@
 
 -(void)getUrlOfPhotoWithLinkAfter:(NSString * _Nullable)linkAfter Success:(void (^)(NSArray *arraySourcePhotoWithLargestSize))successUrlSource failure:(void (^)(NSError * error))failure{
     [self photoOfUserWithLinkAfter:linkAfter Success:^(NSArray *arrayPhotos) {
-        NSMutableArray *arrayUrlSource = [NSMutableArray new];
+        NSMutableArray *arrayUrlSource = [[NSMutableArray alloc] init];
         if(![arrayPhotos isEqual:nil]){
             for (NSDictionary *photo in arrayPhotos) {
                 NSString *idImage = [photo valueForKey:nameIDOfPhotoOfUser];
@@ -146,10 +187,12 @@
 }
 
 -(void)getOnePhotoUserWithIDImage:(NSString *)idImage Success:(void(^)(PhotoOfUser *photo))success Failure:(void(^)(NSError * error))failure{
-    RequestDataFB* request=[RequestDataFB new];
+    RequestDataFB* request=[[RequestDataFB alloc ] init];
     [request requestInformation:idImage NameField:nameFieldImages success:^(id data) {
-        PhotoOfUser *photoOfUser=[PhotoOfUser new];
-        NSInteger indexOfThumbPhoto=[[data objectForKey: keyGetValueImages]count]-oneUnit;
+
+        PhotoOfUser *photoOfUser=[[PhotoOfUser alloc] init];
+        NSInteger indexOfThumbPhoto=[[data objectForKey: keyGetValueImages]count]-1;
+
         photoOfUser.idPhoto=[data valueForKey:keyGetValueIdPhoto];
         photoOfUser.linkOriPhoto=[[[data objectForKey:keyGetValueImages] objectAtIndex:indexOfOriginalPhoto] valueForKey:keyGetSourceLinkPhoto];
         photoOfUser.linkThumbPhoto=[[[data objectForKey:keyGetValueImages] objectAtIndex:indexOfThumbPhoto]valueForKey:keyGetSourceLinkPhoto];
@@ -163,7 +206,7 @@
 }
 
 -(void)getCodeNextPage:(NSString * _Nullable)codeAfter Success:(void (^)(NSString *))successCode failure:(void (^)(NSError *))failure{
-    RequestDataFB* request=[RequestDataFB new];
+    RequestDataFB* request=[[RequestDataFB alloc] init];
     if (codeAfter == nil ) {
         [request requestInformation:folderPhotos NameField:nameFieldImages success:^(id data) {
             
@@ -174,8 +217,10 @@
         }];
         
     }else{
-        [request requestInformationForLoadMore:folderPhotos NameField:nameFieldImages NameField1:codeAfter success:^(id data) {
-            NSString *codeOfNextPage=[[[data objectForKey:keyGetPaging] objectForKey:keyGetCursors]valueForKey:keyGetAfter];
+
+        [request requestInformationForLoadMore:folderPhotos NameField:nameFieldImages CodeAfter:codeAfter success:^(id data) {
+            NSString *codeOfNextPage=[[[data objectForKey:@"paging"] objectForKey:@"cursors"]valueForKey:@"after"];
+
             successCode(codeOfNextPage);
         } failure:^(NSError *error) {
             

@@ -26,7 +26,7 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     _scrollViewZoom.delegate=self;
-    [self setScrollViewZoom];
+//    [self setScrollViewZoom];
     [self setDataForSelf];
     
 }
@@ -39,10 +39,13 @@
             if (image) {
                 dispatch_async(dispatch_get_main_queue(), ^{
                     self.image.image = image;
-                    CGFloat frame= image.size.height/image.size.width;
-                    if (frame > frameState) {
-                        [self.image setFrame:CGRectMake(originalX, originalY, self.view.frame.size.width, self.view.frame.size.height)];
-                    }
+                    CGFloat frame = image.size.height/image.size.width;
+                    self.scrollViewZoom.minimumZoomScale=numberMinimumZoomScale;
+                    self.scrollViewZoom.maximumZoomScale=numberMaximumZoonScale;
+                    _netRotation = numberNetRotaion;
+                    [self.image setFrame:CGRectMake(originalX, (self.view.frame.size.height - (self.view.frame.size.width*frame + 108))/2, self.view.frame.size.width, self.view.frame.size.width*frame)];
+                        
+                    
                 });
             }
         }
@@ -60,6 +63,8 @@
     // Dispose of any resources that can be recreated.
 }
 - (IBAction)rotation:(UIGestureRecognizer *)sender {
+    [self.scrollViewZoom setScrollEnabled:false];
+    [self.scrollViewZoom.pinchGestureRecognizer setEnabled:NO];
     CGFloat rotation = [ (UIRotationGestureRecognizer*)sender rotation];
     CGAffineTransform transform = CGAffineTransformMakeRotation(rotation + _netRotation);
     sender.view.transform = transform;
@@ -68,9 +73,9 @@
     }
     
 }
--(void) setScrollViewZoom{
-    self.scrollViewZoom.minimumZoomScale=numberMinimumZoomScale;
-    self.scrollViewZoom.maximumZoomScale=numberMaximumZoonScale;
-    _netRotation = numberNetRotaion;
-}
+//-(void) setScrollViewZoom{
+//    self.scrollViewZoom.minimumZoomScale=numberMinimumZoomScale;
+//    self.scrollViewZoom.maximumZoomScale=numberMaximumZoonScale;
+//    _netRotation = numberNetRotaion;
+//}
 @end
