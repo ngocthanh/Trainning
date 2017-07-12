@@ -54,10 +54,10 @@
     
     _service = [[Service alloc] init];
     _helper = [[Helper alloc]init];
-
+    
     _file = [[FileManager alloc] init];
     _arrayFriendList = [[NSMutableArray alloc] init];
-
+    
 }
 -(void) loadAccountInformation{
     [_service privateInformationOfUser:^(UserFacebook *user) {
@@ -68,19 +68,18 @@
     }];
 }
 -(void) loadFriendList{
-    [_service friendListSuccess:^(NSArray *arrayListFriends) {
+    [_service friendListSuccess:stringIsEmpty Success:^(NSArray *arrayListFriends) {
         [_arrayFriendList addObjectsFromArray:arrayListFriends];
         [_tableListFriend reloadData];
     } failure:^(NSError *error) {
         [_helper createAlertWithStringTitle:titleForAlert contentAlert:[NSString stringWithFormat:messageOfAlert, error]];
     }];
-    
-    [_service loadCodeAfter:nil Success:^(NSString *linkNextPage) {
+    [_service loadCodeAfter:nil CheckFriendList:YES Success:^(NSString *linkNextPage) {
         _codeAfter =linkNextPage;
     } failure:^(NSError *error) {
         
     }];
-   
+    
 }
 -(NSInteger)numberOfSectionsInTableView:(UITableView *)tableView{
     return numberOfSection;
@@ -97,12 +96,12 @@
     NSString *link = friend.userUrlPicture;
     [_cell setDataFromViewControllerWithURLImage:link FriendsName:name];
     if (indexPath.row == [_arrayFriendList count] && _codeAfter != nil) {
-        [_service loadCodeAfter:_codeAfter Success:^(NSString *linkNextPage) {
+        [_service loadCodeAfter:_codeAfter CheckFriendList:YES Success:^(NSString *linkNextPage) {
             _codeAfter = linkNextPage;
         } failure:^(NSError *error) {
             
         }];
-        [_service loadMoreFriendWithCodeAfter:_codeAfter Success:^(NSArray *arrayListFriends) {
+        [_service friendListSuccess:_codeAfter Success:^(NSArray *arrayListFriends) {
             [_arrayFriendList addObjectsFromArray:arrayListFriends];
             [_cell setDataFromViewControllerWithURLImage:link FriendsName:name];
         } failure:^(NSError *error) {
@@ -118,7 +117,7 @@
     _pictureOfUser.image=[UIImage imageWithData:dataOfPicture];
     _lblHometown.text=[NSString stringWithFormat:parameterOfUserHometown,_userFacebook.userHometown];
     _lblDateOfBirth.text=[NSString stringWithFormat:parameterOfUserBirthDay,_userFacebook.userBirthday];
-
+    
 }
 
 

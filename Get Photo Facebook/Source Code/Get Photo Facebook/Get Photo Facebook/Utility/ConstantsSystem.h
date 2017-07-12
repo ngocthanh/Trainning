@@ -8,7 +8,7 @@
 
 #import <Foundation/Foundation.h>
 #define parameterForString @"%@"
-#define textIsEmpty @""
+#define stringIsEmpty @""
 
 #define redColorNumber 0
 #define greenColorNumber 0.1

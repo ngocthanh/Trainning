@@ -19,7 +19,7 @@ static NetwokingService *sharedInstance;
     return sharedInstance;
 }
 -(void)getImageOnline:(NSString*) linkURL Success:(void(^)(NSData* dataImage))success Failure:(void (^)(NSError* error))failure{
-    if (![linkURL   isEqual: textIsEmpty]) {
+    if (![linkURL   isEqual: stringIsEmpty]) {
         NSURL *url = [NSURL URLWithString:linkURL];
         NSURLSessionTask *task = [[NSURLSession sharedSession] dataTaskWithURL:url completionHandler:^(NSData * _Nullable data, NSURLResponse * _Nullable response, NSError * _Nullable error) {
             if (data) {

@@ -54,7 +54,7 @@
     } failure:^(NSError *error) {
         
     }];
-    [_service getCodeNextPage:nil Success:^(NSString *linkNextPage) {
+    [_service loadCodeAfter:nil CheckFriendList:NO Success:^(NSString *linkNextPage) {
         _codeOfNextPage = linkNextPage;
     } failure:^(NSError *error) {
         
@@ -77,25 +77,23 @@
     NSString *linkThumblr =  photoOfUser.linkThumbPhoto;
     NSString *idPhoto = [_helper setUpNameForImageAsThumb:photoOfUser.idPhoto ];
     NSString *createdTimeOfPhoto=[_helper formatDateForCell:photoOfUser.created_time];
-    if (!(indexPath.row == [_arrayPhotos count]-oneUnit && _codeOfNextPage != nil)) {
-        [_cell setDataForCellWithUrlImage: linkThumblr IDImage:idPhoto CreatedTime:createdTimeOfPhoto];
-    }
-    else
-    {
+    [_cell setDataForCellWithUrlImage: linkThumblr IDImage:idPhoto CreatedTime:createdTimeOfPhoto];
+    if (indexPath.row == [_arrayPhotos count]-oneUnit && _codeOfNextPage != nil) {
         [_service loadMoreURLWithLinkAfter:_codeOfNextPage Success:^(NSArray *arraySourcePhotoWithLargestSize) {
             [_arrayPhotos addObjectsFromArray:arraySourcePhotoWithLargestSize];
-            [_cell setDataForCellWithUrlImage:linkThumblr IDImage:idPhoto CreatedTime:createdTimeOfPhoto];
-            [_service getCodeNextPage:_codeOfNextPage Success:^(NSString *linkNextPage) {
+        
+            [_service loadCodeAfter:_codeOfNextPage CheckFriendList:NO Success:^(NSString *linkNextPage) {
                 _codeOfNextPage = linkNextPage;
+                [self.photoAlbum reloadData];
             } failure:^(NSError *error) {
                 _codeOfNextPage = nil;
             }];
-            [self.photoAlbum reloadData];
             
         } Failure:^(NSError *error) {
             
         }];
     }
+
     
     return _cell;
 }
