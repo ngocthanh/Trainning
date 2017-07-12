@@ -43,8 +43,9 @@ static NetwokingService *networkService;
 }
 
 - (NSData*)getCachedImageForKey:(NSString*)key {// recheck ojectforkey
-    if ([_cache objectForKey:key]) {
-        return [_cache objectForKey:key] ;
+    NSData *data = [_cache objectForKey:key];
+    if (data) {
+        return data ;
     }else{
         if ([fileManager checkExistImageInMemory:key]) {
             NSData *imageData = [fileManager loadImageFileFromMemory:key];

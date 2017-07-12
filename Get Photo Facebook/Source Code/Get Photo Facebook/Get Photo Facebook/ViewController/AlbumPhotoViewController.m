@@ -78,11 +78,13 @@
     NSString *idPhoto = [_helper setUpNameForImageAsThumb:photoOfUser.idPhoto ];
     NSString *createdTimeOfPhoto=[_helper formatDateForCell:photoOfUser.created_time];
     [_cell setDataForCellWithUrlImage: linkThumblr IDImage:idPhoto CreatedTime:createdTimeOfPhoto];
+
     if (indexPath.row == [_arrayPhotos count]-oneUnit && _codeOfNextPage != nil) {
         [_service loadMoreURLWithLinkAfter:_codeOfNextPage Success:^(NSArray *arraySourcePhotoWithLargestSize) {
             [_arrayPhotos addObjectsFromArray:arraySourcePhotoWithLargestSize];
         
             [_service loadCodeAfter:_codeOfNextPage CheckFriendList:NO Success:^(NSString *linkNextPage) {
+
                 _codeOfNextPage = linkNextPage;
                 [self.photoAlbum reloadData];
             } failure:^(NSError *error) {
@@ -90,12 +92,12 @@
             }];
             
         } Failure:^(NSError *error) {
-            
+            	
         }];
     }
-
-    
     return _cell;
+    
+    
 }
 -(void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath{
     PhotoOfUser *photoOfUser = [_arrayPhotos objectAtIndex:indexPath.row];

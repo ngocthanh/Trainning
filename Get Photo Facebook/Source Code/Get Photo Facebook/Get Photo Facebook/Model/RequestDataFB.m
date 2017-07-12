@@ -7,11 +7,13 @@
 //
 
 #import "RequestDataFB.h"
+
 #define addString @"/%@"
 #define getRequest @"GET"
 #define failGetTokenDevice @"failToken"
 #define errorTokenCode 110
 @implementation RequestDataFB
+
 
 -(void)requestInformation: (NSString *)nameGraphPath parameterField:(NSDictionary *)parameterField success:(void (^)(id data))success  failure:(void(^)(NSError* error))failure{
     if([FBSDKAccessToken currentAccessToken]){

@@ -14,16 +14,17 @@
 #define nameFieldInformationFriend @"id,name"
 #define nameFieldPhotoInformation @"id,created_time"
 #define nameFieldImages @"images,created_time"
+
 #define folderPhotos @"me/photos/uploaded"
-
 #define folderFriends @"me/friends"
-
 #define folderMeForRequestFB @"me"
+
 #define idUser @"id"	
 #define nameUser @"name"
 #define birthdayUser @"birthday"
 #define hometownUser @"hometown"
 #define pictureParameterLink @"https://graph.facebook.com/%@/picture?type=large"
+
 #define ketGetValueAlbum @"albums"
 #define keyGetValuePhoto @"photos"
 #define keyGetValueIdPhoto @"id"
@@ -129,7 +130,6 @@
         
     }];
 
-}
 
 -(void)photoOfUserWithLinkAfter:(NSString * _Nullable)linkAfter Success:(void (^)(NSArray* arrayPhotos))successPhoto failure:(void(^)(NSError* error))failure{
     
@@ -163,15 +163,21 @@
 
 -(void)getUrlOfPhotoWithLinkAfter:(NSString * _Nullable)linkAfter Success:(void (^)(NSArray *arraySourcePhotoWithLargestSize))successUrlSource failure:(void (^)(NSError * error))failure{
     [self photoOfUserWithLinkAfter:linkAfter Success:^(NSArray *arrayPhotos) {
-        NSMutableArray *arrayUrlSource = [[NSMutableArray alloc] init];
+         NSMutableArray *arrayUrlSource = [[NSMutableArray alloc] initWithArray:arrayPhotos];
+        __block NSInteger i = 0;
         if(![arrayPhotos isEqual:nil]){
+            NSMutableArray *arrayID = [[NSMutableArray alloc] init];
             for (NSDictionary *photo in arrayPhotos) {
                 NSString *idImage = [photo valueForKey:nameIDOfPhotoOfUser];
+                [arrayID addObject:idImage];
                 [self getOnePhotoUserWithIDImage:idImage Success:^(PhotoOfUser *photo) {
-                    [arrayUrlSource addObject:photo];
-                    if ([arrayUrlSource count] == [arrayPhotos count]) {
+                    [arrayUrlSource replaceObjectAtIndex:[arrayID indexOfObject:photo.idPhoto] withObject:photo];
+                    
+                    if (i == [arrayPhotos count]-1) {
                         successUrlSource(arrayUrlSource);// wrong logic
                     }
+                    i++;
+
                 } Failure:^(NSError *error) {
                 }];
             }
@@ -192,7 +198,9 @@
     [request requestInformation:idImage parameterField:_parameter success:^(id data) {
         
         PhotoOfUser *photoOfUser=[[PhotoOfUser alloc] init];
-        NSInteger indexOfThumbPhoto=[[data objectForKey: keyGetValueImages]count]-1;
+
+        NSInteger indexOfThumbPhoto=[[data objectForKey: keyGetValueImages]count]-2;
+
         photoOfUser.idPhoto=[data valueForKey:keyGetValueIdPhoto];
         photoOfUser.linkOriPhoto=[[[data objectForKey:keyGetValueImages] objectAtIndex:indexOfOriginalPhoto] valueForKey:keyGetSourceLinkPhoto];
         photoOfUser.linkThumbPhoto=[[[data objectForKey:keyGetValueImages] objectAtIndex:indexOfThumbPhoto]valueForKey:keyGetSourceLinkPhoto];
@@ -204,6 +212,7 @@
          failure(error);
      }];
 }
+
 
 
 -(void)loadMoreURLWithLinkAfter:(NSString * _Nullable)linkAfter Success:(void (^)(NSArray *arraySourcePhotoWithLargestSize))successUrlSource Failure:(void (^)(NSError * error))failure{

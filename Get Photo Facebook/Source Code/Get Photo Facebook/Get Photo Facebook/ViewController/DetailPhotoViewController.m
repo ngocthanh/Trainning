@@ -14,11 +14,12 @@
 #define numberMinimumZoomScale 1.0
 #define numberMaximumZoonScale 4.0
 #define numberNetRotaion 0.0
-
+#define valueTotalHeightOfNavibarAndTabbar 108
+#define numberSpaceOfBetweenViewAndImage 2
 @interface DetailPhotoViewController ()
 @property (weak, nonatomic) IBOutlet UIScrollView *scrollViewZoom;
 @property  CGFloat netRotation;
-
+@property CGFloat frame;
 @end
 
 @implementation DetailPhotoViewController
@@ -39,11 +40,12 @@
             if (image) {
                 dispatch_async(dispatch_get_main_queue(), ^{
                     self.image.image = image;
-                    CGFloat frame = image.size.height/image.size.width;
+                     _frame= image.size.height/image.size.width;
                     self.scrollViewZoom.minimumZoomScale=numberMinimumZoomScale;
                     self.scrollViewZoom.maximumZoomScale=numberMaximumZoonScale;
                     _netRotation = numberNetRotaion;
-                    [self.image setFrame:CGRectMake(originalX, (self.view.frame.size.height - (self.view.frame.size.width*frame + 108))/2, self.view.frame.size.width, self.view.frame.size.width*frame)];
+                    
+                    [self setFrameForImage];
                         
                     
                 });
@@ -57,6 +59,15 @@
 
 -(UIView *)viewForZoomingInScrollView:(UIScrollView *)scrollView{
     return _image;
+}
+-(void)scrollViewWillBeginZooming:(UIScrollView *)scrollView withView:(UIView *)view{
+    [self.image setUserInteractionEnabled:NO];
+}
+-(void)scrollViewDidEndZooming:(UIScrollView *)scrollView withView:(UIView *)view atScale:(CGFloat)scale{
+    if (scale == numberMinimumZoomScale) {
+        [self.image setUserInteractionEnabled:YES];
+
+    }
 }
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
@@ -73,9 +84,22 @@
     }
     
 }
-//-(void) setScrollViewZoom{
-//    self.scrollViewZoom.minimumZoomScale=numberMinimumZoomScale;
-//    self.scrollViewZoom.maximumZoomScale=numberMaximumZoonScale;
-//    _netRotation = numberNetRotaion;
-//}
+- (IBAction)tapAction:(id)sender {
+    [self returnDefault];
+}
+- (IBAction)tapActionForScrollview:(id)sender {
+    [self returnDefault];
+}
+-(void)returnDefault{
+        self.scrollViewZoom.zoomScale = numberMinimumZoomScale;
+        [self.image setUserInteractionEnabled:YES];
+        _netRotation = numberNetRotaion;
+        [self setFrameForImage];    
+}
+
+-(void)setFrameForImage{
+    CGFloat heightView = self.view.frame.size.height;
+    CGFloat widthView = self.view.frame.size.width;
+    [self.image setFrame:CGRectMake(originalX, (heightView - (widthView*_frame + valueTotalHeightOfNavibarAndTabbar))/numberSpaceOfBetweenViewAndImage, widthView, widthView*_frame)];
+}
 @end
