@@ -129,7 +129,7 @@
     } failure:^(NSError *error) {
         
     }];
-
+}
 
 -(void)photoOfUserWithLinkAfter:(NSString * _Nullable)linkAfter Success:(void (^)(NSArray* arrayPhotos))successPhoto failure:(void(^)(NSError* error))failure{
     
