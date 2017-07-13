@@ -27,7 +27,7 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     _scrollViewZoom.delegate=self;
-//    [self setScrollViewZoom];
+    [self initForClass];
     [self setDataForSelf];
     
 }
@@ -41,9 +41,7 @@
                 dispatch_async(dispatch_get_main_queue(), ^{
                     self.image.image = image;
                      _frame= image.size.height/image.size.width;
-                    self.scrollViewZoom.minimumZoomScale=numberMinimumZoomScale;
-                    self.scrollViewZoom.maximumZoomScale=numberMaximumZoonScale;
-                    _netRotation = numberNetRotaion;
+                    
                     
                     [self setFrameForImage];
                         
@@ -74,7 +72,7 @@
     // Dispose of any resources that can be recreated.
 }
 - (IBAction)rotation:(UIGestureRecognizer *)sender {
-    [self.scrollViewZoom setScrollEnabled:false];
+    [self.scrollViewZoom setScrollEnabled:NO];
     [self.scrollViewZoom.pinchGestureRecognizer setEnabled:NO];
     CGFloat rotation = [ (UIRotationGestureRecognizer*)sender rotation];
     CGAffineTransform transform = CGAffineTransformMakeRotation(rotation + _netRotation);
@@ -91,15 +89,29 @@
     [self returnDefault];
 }
 -(void)returnDefault{
+    [self.scrollViewZoom setScrollEnabled:YES];
+    [self.scrollViewZoom.pinchGestureRecognizer setEnabled:YES];
         self.scrollViewZoom.zoomScale = numberMinimumZoomScale;
         [self.image setUserInteractionEnabled:YES];
         _netRotation = numberNetRotaion;
         [self setFrameForImage];    
 }
+-(void)initForClass{
+    self.scrollViewZoom.minimumZoomScale=numberMinimumZoomScale;
+    self.scrollViewZoom.maximumZoomScale=numberMaximumZoonScale;
+    _netRotation = numberNetRotaion;
 
+}
 -(void)setFrameForImage{
+    
     CGFloat heightView = self.view.frame.size.height;
     CGFloat widthView = self.view.frame.size.width;
-    [self.image setFrame:CGRectMake(originalX, (heightView - (widthView*_frame + valueTotalHeightOfNavibarAndTabbar))/numberSpaceOfBetweenViewAndImage, widthView, widthView*_frame)];
+    self.image.center = self.scrollViewZoom.center;
+    CGRect size = self.image.frame ;
+    size.size.height =  widthView*_frame;
+    size.size.width = widthView;
+    self.image.frame = size;
+    self.scrollViewZoom.contentSize=self.image.image.size;
+
 }
 @end

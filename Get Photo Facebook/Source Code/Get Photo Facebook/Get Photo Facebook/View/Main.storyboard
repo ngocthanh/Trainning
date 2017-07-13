@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12120" systemVersion="16F73" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12121" systemVersion="16F73" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12088"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12089"/>
         <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
         <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -348,13 +348,11 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-
-                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" ambiguous="YES" directionalLockEnabled="YES" translatesAutoresizingMaskIntoConstraints="NO" id="kjN-x0-7Sq">
-
-                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" ambiguous="YES" directionalLockEnabled="YES" translatesAutoresizingMaskIntoConstraints="NO" id="kjN-x0-7Sq">
+                                <rect key="frame" x="0.0" y="64" width="375" height="559"/>
                                 <subviews>
                                     <imageView multipleTouchEnabled="YES" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" restorationIdentifier="detailPhoto" translatesAutoresizingMaskIntoConstraints="NO" id="z0h-5f-mYO">
-                                        <rect key="frame" x="0.0" y="126" width="375" height="281.5"/>
+                                        <rect key="frame" x="0.0" y="-118" width="375" height="667"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <gestureRecognizers/>
                                         <connections>
@@ -371,12 +369,12 @@
                                 </connections>
                             </scrollView>
                         </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
-                            <constraint firstItem="kjN-x0-7Sq" firstAttribute="width" secondItem="kcU-Gc-iKT" secondAttribute="width" id="0BI-U2-MaH"/>
-                            <constraint firstItem="kjN-x0-7Sq" firstAttribute="height" secondItem="kcU-Gc-iKT" secondAttribute="height" id="9Zw-eR-EO8"/>
-                            <constraint firstItem="kjN-x0-7Sq" firstAttribute="centerY" secondItem="kcU-Gc-iKT" secondAttribute="centerY" id="Cdk-AY-OpY"/>
-                            <constraint firstItem="kjN-x0-7Sq" firstAttribute="centerX" secondItem="kcU-Gc-iKT" secondAttribute="centerX" id="N6X-Ua-6vh"/>
+                            <constraint firstItem="kjN-x0-7Sq" firstAttribute="leading" secondItem="kcU-Gc-iKT" secondAttribute="leading" id="3Xz-a7-cOS"/>
+                            <constraint firstAttribute="bottom" secondItem="kjN-x0-7Sq" secondAttribute="bottom" constant="44" id="C9d-iZ-XKI"/>
+                            <constraint firstItem="kjN-x0-7Sq" firstAttribute="top" secondItem="kcU-Gc-iKT" secondAttribute="top" constant="64" id="luD-Zl-4ah"/>
+                            <constraint firstAttribute="trailing" secondItem="kjN-x0-7Sq" secondAttribute="trailing" id="ypk-L8-LVk"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Detail Photo" id="39d-kO-tCc"/>

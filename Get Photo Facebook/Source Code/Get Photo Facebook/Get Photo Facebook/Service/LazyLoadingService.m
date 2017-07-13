@@ -16,20 +16,19 @@
     if (dataOfImage) {//---1
         success(dataOfImage);
     }else{
-        [[NetwokingService sharedInstance] getImageOnline:linkURL Success:^(NSData *dataImage) {//---2
-            [[ManagerCache sharedInstance] cacheImage:dataImage forKey:key];
-            dataOfImage = [[ManagerCache sharedInstance] getCachedImageForKey:key];
-            
-            if(dataOfImage){
-                dispatch_async(dispatch_get_main_queue(), ^{
-                    success(dataOfImage);
-                });
-            }
-        } Failure:^(NSError *error) {
-            failure(error);
-        }];
+            [[NetwokingService sharedInstance] getImageOnline:linkURL Success:^(NSData *dataImage) {//---2
+                [[ManagerCache sharedInstance] cacheImage:dataImage forKey:key];
+                dataOfImage = [[ManagerCache sharedInstance] getCachedImageForKey:key];
+                
+                if(dataOfImage){
+                    dispatch_async(dispatch_get_main_queue(), ^{
+                        success(dataOfImage);
+                    });
+                }
+            } Failure:^(NSError *error) {
+                failure(error);
+            }];
     }
-    
 }
 @end
 			

@@ -87,7 +87,7 @@
 
                 _codeOfNextPage = linkNextPage;
                 [self.photoAlbum reloadData];
-            } failure:^(NSError *error) {
+            } failure:^(NSError *error) {		
                 _codeOfNextPage = nil;
             }];
             

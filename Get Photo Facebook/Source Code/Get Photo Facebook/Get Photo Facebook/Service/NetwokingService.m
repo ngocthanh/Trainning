@@ -19,23 +19,29 @@ static NetwokingService *sharedInstance;
     return sharedInstance;
 }
 -(void)getImageOnline:(NSString*) linkURL Success:(void(^)(NSData* dataImage))success Failure:(void (^)(NSError* error))failure{
-    if (![linkURL   isEqual: stringIsEmpty]) {
-
-        NSURL *url = [NSURL URLWithString:linkURL];
-        NSMutableURLRequest *request = [[NSMutableURLRequest alloc] initWithURL:url cachePolicy:NSURLRequestUseProtocolCachePolicy timeoutInterval:60];
-        [request setHTTPShouldUsePipelining:YES];
-        NSURLSessionTask *task = [[NSURLSession sharedSession] dataTaskWithRequest:request completionHandler:^(NSData * _Nullable data, NSURLResponse * _Nullable response, NSError * _Nullable error) {
-            if (data) {
-                success(data);
-            }else{
-                failure(error);
-            }
-        }];
-        [task resume];
-    }
-    else{
-        NSError * error;
-        failure(error);
-    }
+    
+    [NSThread detachNewThreadWithBlock:^{
+        if (![linkURL   isEqual: stringIsEmpty]) {
+            NSURL *url = [NSURL URLWithString:linkURL];
+            NSMutableURLRequest *request = [[NSMutableURLRequest alloc] initWithURL:url cachePolicy:NSURLRequestUseProtocolCachePolicy timeoutInterval:60];
+            [request setHTTPShouldUsePipelining:YES];
+            NSURLSessionTask *task = [[NSURLSession sharedSession] dataTaskWithRequest:request completionHandler:^(NSData * _Nullable data, NSURLResponse * _Nullable response, NSError * _Nullable error) {
+                if (data) {
+                    success(data);
+                    NSLog(@"11");
+                    
+                }else{
+                    failure(error);
+                }
+            }];
+            [task resume];
+        }
+        else{
+            NSError * error;
+            failure(error);
+        }
+    }] ;
+    
+    
 }
 @end
