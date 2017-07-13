@@ -18,11 +18,10 @@
     }else{
             [[NetwokingService sharedInstance] getImageOnline:linkURL Success:^(NSData *dataImage) {//---2
                 [[ManagerCache sharedInstance] cacheImage:dataImage forKey:key];
-                dataOfImage = [[ManagerCache sharedInstance] getCachedImageForKey:key];
                 
-                if(dataOfImage){
+                if(dataImage){
                     dispatch_async(dispatch_get_main_queue(), ^{
-                        success(dataOfImage);
+                        success(dataImage);
                     });
                 }
             } Failure:^(NSError *error) {

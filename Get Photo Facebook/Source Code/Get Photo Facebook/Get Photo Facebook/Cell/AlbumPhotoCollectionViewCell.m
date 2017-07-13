@@ -26,7 +26,7 @@
     if (_lazy == nil ) {
         _lazy = [[LazyLoadingService alloc] init];
     }
-    self.photoInCell.image = [UIImage imageNamed:@"album"];
+    //self.photoInCell.image = [UIImage imageNamed:@"album"];
     [_lazy imageDataWithIDImage:idImage LinkURL:urlString Success:^(NSData *dataImage) {
 
         if (dataImage) {

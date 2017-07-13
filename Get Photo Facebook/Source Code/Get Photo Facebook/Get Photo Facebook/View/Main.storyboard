@@ -339,7 +339,7 @@
         <!--Detail Photo-->
         <scene sceneID="VQX-Cg-KI5">
             <objects>
-                <viewController storyboardIdentifier="detailPhoto" title="Detail Photo" id="AAH-bh-gZX" customClass="DetailPhotoViewController" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="detailPhoto" title="Detail Photo" automaticallyAdjustsScrollViewInsets="NO" id="AAH-bh-gZX" customClass="DetailPhotoViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="hvb-8F-EmH"/>
                         <viewControllerLayoutGuide type="bottom" id="eJg-sG-cgp"/>
@@ -348,19 +348,8 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" ambiguous="YES" directionalLockEnabled="YES" translatesAutoresizingMaskIntoConstraints="NO" id="kjN-x0-7Sq">
-                                <rect key="frame" x="0.0" y="64" width="375" height="559"/>
-                                <subviews>
-                                    <imageView multipleTouchEnabled="YES" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" restorationIdentifier="detailPhoto" translatesAutoresizingMaskIntoConstraints="NO" id="z0h-5f-mYO">
-                                        <rect key="frame" x="0.0" y="-118" width="375" height="667"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                        <gestureRecognizers/>
-                                        <connections>
-                                            <outletCollection property="gestureRecognizers" destination="skG-DG-sBT" appends="YES" id="BU5-8y-mBD"/>
-                                            <outletCollection property="gestureRecognizers" destination="dFi-TH-djR" appends="YES" id="zHa-vB-qQK"/>
-                                        </connections>
-                                    </imageView>
-                                </subviews>
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" directionalLockEnabled="YES" alwaysBounceVertical="YES" alwaysBounceHorizontal="YES" translatesAutoresizingMaskIntoConstraints="NO" id="kjN-x0-7Sq">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                                 <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <gestureRecognizers/>
                                 <connections>
@@ -372,29 +361,18 @@
                         <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="kjN-x0-7Sq" firstAttribute="leading" secondItem="kcU-Gc-iKT" secondAttribute="leading" id="3Xz-a7-cOS"/>
-                            <constraint firstAttribute="bottom" secondItem="kjN-x0-7Sq" secondAttribute="bottom" constant="44" id="C9d-iZ-XKI"/>
-                            <constraint firstItem="kjN-x0-7Sq" firstAttribute="top" secondItem="kcU-Gc-iKT" secondAttribute="top" constant="64" id="luD-Zl-4ah"/>
+                            <constraint firstAttribute="bottom" secondItem="kjN-x0-7Sq" secondAttribute="bottom" id="C9d-iZ-XKI"/>
+                            <constraint firstItem="kjN-x0-7Sq" firstAttribute="top" secondItem="kcU-Gc-iKT" secondAttribute="top" id="luD-Zl-4ah"/>
                             <constraint firstAttribute="trailing" secondItem="kjN-x0-7Sq" secondAttribute="trailing" id="ypk-L8-LVk"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Detail Photo" id="39d-kO-tCc"/>
                     <connections>
-                        <outlet property="image" destination="z0h-5f-mYO" id="Zkt-nr-P7s"/>
                         <outlet property="scrollViewZoom" destination="kjN-x0-7Sq" id="nTT-Rk-g5n"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="fcQ-Yo-UvY" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <pinchGestureRecognizer id="H09-P3-hM7"/>
-                <rotationGestureRecognizer id="skG-DG-sBT">
-                    <connections>
-                        <action selector="rotation:" destination="AAH-bh-gZX" id="IjU-46-nPl"/>
-                    </connections>
-                </rotationGestureRecognizer>
-                <tapGestureRecognizer numberOfTapsRequired="2" id="dFi-TH-djR">
-                    <connections>
-                        <action selector="tapAction:" destination="AAH-bh-gZX" id="4Zd-sI-YIn"/>
-                    </connections>
-                </tapGestureRecognizer>
                 <tapGestureRecognizer numberOfTapsRequired="2" id="YJI-dR-kwd">
                     <connections>
                         <action selector="tapActionForScrollview:" destination="AAH-bh-gZX" id="PZe-Te-Roo"/>

@@ -59,7 +59,7 @@
 		54A37C151F0C76BF0087F610 /* LazyLoadingService.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LazyLoadingService.h; sourceTree = "<group>"; };
 		54A37C161F0C76BF0087F610 /* LazyLoadingService.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LazyLoadingService.m; sourceTree = "<group>"; };
 		54A37C181F0C842D0087F610 /* NetwokingService.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NetwokingService.h; sourceTree = "<group>"; };
-		54A37C191F0C842D0087F610 /* NetwokingService.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NetwokingService.m; sourceTree = "<group>"; };
+		54A37C191F0C842D0087F610 /* NetwokingService.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NetwokingService.m; sourceTree = "<group>"; usesTabs = 1; };
 		54C226CF1F02192C0066E8DA /* UserFacebook.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UserFacebook.h; sourceTree = "<group>"; };
 		54C226D01F02192C0066E8DA /* UserFacebook.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UserFacebook.m; sourceTree = "<group>"; };
 		54C226D21F0219340066E8DA /* ConstantsSystem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ConstantsSystem.h; sourceTree = "<group>"; };

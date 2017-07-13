@@ -20,7 +20,6 @@ static NetwokingService *sharedInstance;
 }
 -(void)getImageOnline:(NSString*) linkURL Success:(void(^)(NSData* dataImage))success Failure:(void (^)(NSError* error))failure{
     
-    [NSThread detachNewThreadWithBlock:^{
         if (![linkURL   isEqual: stringIsEmpty]) {
             NSURL *url = [NSURL URLWithString:linkURL];
             NSMutableURLRequest *request = [[NSMutableURLRequest alloc] initWithURL:url cachePolicy:NSURLRequestUseProtocolCachePolicy timeoutInterval:60];
@@ -28,7 +27,6 @@ static NetwokingService *sharedInstance;
             NSURLSessionTask *task = [[NSURLSession sharedSession] dataTaskWithRequest:request completionHandler:^(NSData * _Nullable data, NSURLResponse * _Nullable response, NSError * _Nullable error) {
                 if (data) {
                     success(data);
-                    NSLog(@"11");
                     
                 }else{
                     failure(error);
@@ -40,8 +38,5 @@ static NetwokingService *sharedInstance;
             NSError * error;
             failure(error);
         }
-    }] ;
-    
-    
 }
 @end
