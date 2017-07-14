@@ -13,7 +13,6 @@
 
 @interface AlbumPhotoCollectionViewCell ()
 @property (strong, nonatomic) LazyLoadingService *lazy;
-
 @end
 @implementation AlbumPhotoCollectionViewCell
 - (void)awakeFromNib {
@@ -26,14 +25,10 @@
     if (_lazy == nil ) {
         _lazy = [[LazyLoadingService alloc] init];
     }
-    //self.photoInCell.image = [UIImage imageNamed:@"album"];
+    self.photoInCell.image = [UIImage imageNamed:@"album"];
     [_lazy imageDataWithIDImage:idImage LinkURL:urlString Success:^(NSData *dataImage) {
-
         if (dataImage) {
-                self.photoInCell.image = [UIImage imageWithData:dataImage];
-        }else{
-            self.photoInCell.image = [UIImage imageNamed:@"album"];
-
+            self.photoInCell.image = [UIImage imageWithData:dataImage];
         }
     } Failure:^(NSError *error) {
     }];

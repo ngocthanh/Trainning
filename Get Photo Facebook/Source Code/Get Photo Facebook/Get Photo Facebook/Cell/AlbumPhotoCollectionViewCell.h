@@ -11,5 +11,5 @@
 @interface AlbumPhotoCollectionViewCell : UICollectionViewCell
 @property (weak, nonatomic) IBOutlet UIImageView *photoInCell;
 @property (weak, nonatomic) IBOutlet UILabel *created_time;
--(void)setDataForCellWithUrlImage:(NSString *) urlString IDImage:(NSString *)idImage  CreatedTime:(NSString *)createdTime;
+-(void)setDataForCellWithUrlImage:(NSString *) urlString IDImage:(NSString *)idImage  CreatedTime:(NSString *)createdTime ;
 @end

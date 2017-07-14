@@ -11,4 +11,6 @@
 @interface NetwokingService : NSObject
 +(NetwokingService*)sharedInstance;
 -(void)getImageOnline:(NSString*) linkURL Success:(void(^)(NSData* dataImage))success Failure:(void (^)(NSError* error))failure;
+@property (nonatomic, copy) void (^completionHandler)(void);
+@property (strong ,nonatomic) NSData *data;
 @end

@@ -78,21 +78,19 @@
     NSString *idPhoto = [_helper setUpNameForImageAsThumb:photoOfUser.idPhoto ];
     NSString *createdTimeOfPhoto=[_helper formatDateForCell:photoOfUser.created_time];
     [_cell setDataForCellWithUrlImage: linkThumblr IDImage:idPhoto CreatedTime:createdTimeOfPhoto];
-
+    
     if (indexPath.row == [_arrayPhotos count]-oneUnit && _codeOfNextPage != nil) {
         [_service loadMoreURLWithLinkAfter:_codeOfNextPage Success:^(NSArray *arraySourcePhotoWithLargestSize) {
             [_arrayPhotos addObjectsFromArray:arraySourcePhotoWithLargestSize];
-        
             [_service loadCodeAfter:_codeOfNextPage CheckFriendList:NO Success:^(NSString *linkNextPage) {
-
                 _codeOfNextPage = linkNextPage;
                 [self.photoAlbum reloadData];
-            } failure:^(NSError *error) {		
+            } failure:^(NSError *error) {
                 _codeOfNextPage = nil;
             }];
             
         } Failure:^(NSError *error) {
-            	
+            
         }];
     }
     return _cell;
