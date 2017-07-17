@@ -48,7 +48,7 @@
 
 #define oneUnit 1
 #define indexOfOriginalPhoto 0
-#define numberOfLimitData @99
+#define numberOfLimitData @24
 
 @interface Service()
 @property (strong,nonatomic) NSMutableDictionary *parameter;

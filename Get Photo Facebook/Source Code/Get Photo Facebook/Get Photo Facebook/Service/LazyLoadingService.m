@@ -19,12 +19,12 @@
         [[NetwokingService sharedInstance] getImageOnline:linkURL Success:^(NSData *dataImage) {
             //---2
             [[ManagerCache sharedInstance] cacheImage:dataImage forKey:key];
-            NSData *data = [[ManagerCache sharedInstance ] getCachedImageForKey:key];
-            if(data){
+            //NSData *data = [[ManagerCache sharedInstance ] getCachedImageForKey:key];
+            //if(data){
                 dispatch_async(dispatch_get_main_queue(), ^{
-                    success(data);
+                    success(dataImage);
                 });
-            }
+            //}
         } Failure:^(NSError *error) {
             failure(error);
         }];

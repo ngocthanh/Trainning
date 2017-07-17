@@ -90,7 +90,7 @@
     self.scrollViewZoom.frame = self.view.frame;
     [self.scrollViewZoom setClipsToBounds:YES];
     [_image setContentMode:UIViewContentModeScaleAspectFit];
-    [_image setFrame:CGRectMake(originalX, originalY, widthView,heightView )];
+    [_image setFrame:CGRectMake(originalX, originalY, widthView,heightView)];
     [_scrollViewZoom addSubview:_image];
 }
 - (void)rotation:(UIRotationGestureRecognizer *)sender {

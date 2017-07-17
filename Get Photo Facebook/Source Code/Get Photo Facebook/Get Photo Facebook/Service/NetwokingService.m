@@ -25,18 +25,18 @@ static NetwokingService *sharedInstance;
             NSMutableURLRequest *request = [[NSMutableURLRequest alloc] initWithURL:url cachePolicy:NSURLRequestUseProtocolCachePolicy timeoutInterval:60];
             [request setHTTPShouldUsePipelining:YES];
             NSURLSessionTask *task = [[NSURLSession sharedSession] dataTaskWithRequest:request completionHandler:^(NSData * _Nullable data, NSURLResponse * _Nullable response, NSError * _Nullable error) {
-				
-				NSMutableArray *arr = [[NSMutableArray alloc] init];
-				if (data) {
-					[arr addObject:data];
-					if ([arr count] > 1) {
-						NSLog(@"%ld",[arr count]);
-					}
+				do{
 					success(data);
 
-				}else{
-                    failure(error);
-                }
+				}while (data == nil);
+					
+				
+//				if (data) {
+//					success(data);
+//
+//				}else{
+//                    failure(error);
+//                }
 			
             }];
             [task resume];
