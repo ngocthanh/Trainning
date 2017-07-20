@@ -7,7 +7,8 @@
 //
 
 #import <Foundation/Foundation.h>
-
+#define parameterForString @"%@"
+#define stringIsEmpty @""
 @interface ConstantSystem : NSObject
 
 @end

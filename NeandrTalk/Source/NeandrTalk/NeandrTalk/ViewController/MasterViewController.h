@@ -8,6 +8,6 @@
 
 #import <UIKit/UIKit.h>
 
-@interface MasterViewController : UIViewController
+@interface MasterViewController : UIViewController <UICollectionViewDelegate, UICollectionViewDataSource ,UITableViewDataSource,UITableViewDelegate>
 
 @end

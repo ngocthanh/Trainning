@@ -7,7 +7,8 @@
 //
 
 #import "ConstantSystem.h"
-
-@interface Helper : NSObject
-
+#import <UIKit/UIKit.h>
+@interface Helper : UIViewController
+-(void)createAlertWithStringTitle:(NSString *)titleAlert contentAlert:(NSString *)contentAlert;
+-(void)createAlert2ButtonWithTitle:(NSString *)titleAlert contentAlert:(NSString *)contentAlert;
 @end

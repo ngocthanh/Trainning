@@ -8,6 +8,6 @@
 
 #import "MasterViewController.h"
 
-@interface CommentViewController : MasterViewController
+@interface CommentViewController : MasterViewController 
 
 @end

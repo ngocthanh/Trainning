@@ -8,6 +8,7 @@
 
 #import "ConstantSystem.h"
 
-@interface NetworkService : ConstantSystem
+@interface NetworkService : NSObject
+-(void)getImageOnline:(NSString*) linkURL Success:(void(^)(NSData* dataImage))success Failure:(void (^)(NSError* error))failure;
 
 @end

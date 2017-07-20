@@ -29,7 +29,7 @@ static NetwokingService *sharedInstance;
 					success(data);
 
 				}while (data == nil);
-			
+
             }];
             [task resume];
         }

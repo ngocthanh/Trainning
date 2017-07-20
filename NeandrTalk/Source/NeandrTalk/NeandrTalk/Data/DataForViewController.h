@@ -7,7 +7,9 @@
 //
 
 #import "Helper.h"
-
+#import "UserModel.h"
+#import "PostModel.h"
 @interface DataForViewController : NSObject
-
+@property (strong ,nonatomic) UserModel *user;
+@property (strong, nonatomic) PostModel *post;
 @end

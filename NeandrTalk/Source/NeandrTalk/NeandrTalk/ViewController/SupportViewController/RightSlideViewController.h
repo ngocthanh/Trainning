@@ -8,6 +8,5 @@
 
 #import "MasterViewController.h"
 
-@interface RightSlideViewController : MasterViewController
-
+@interface RightSlideViewController : MasterViewController 
 @end
