@@ -37,6 +37,24 @@
 		549DB6151F204690005A1574 /* NewFeedViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 549DB6141F204690005A1574 /* NewFeedViewController.m */; };
 		549DB6191F2046F8005A1574 /* CommentViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 549DB6181F2046F8005A1574 /* CommentViewController.m */; };
 		549DB61C1F204709005A1574 /* RightSlideViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 549DB61B1F204709005A1574 /* RightSlideViewController.m */; };
+		549DB61F1F204E86005A1574 /* DiscussionCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 549DB61E1F204E86005A1574 /* DiscussionCollectionViewCell.m */; };
+		549DB6251F20504F005A1574 /* BlogCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 549DB6241F20504F005A1574 /* BlogCollectionViewCell.m */; };
+		549DB6361F205314005A1574 /* NewFeedMarketPlaceCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 549DB6351F205314005A1574 /* NewFeedMarketPlaceCollectionViewCell.m */; };
+		549DB6391F205349005A1574 /* NewFeedBlogAndDiscussionPostCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 549DB6381F205349005A1574 /* NewFeedBlogAndDiscussionPostCollectionViewCell.m */; };
+		549DB63C1F205511005A1574 /* LandingPagePostCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 549DB63B1F205511005A1574 /* LandingPagePostCollectionViewCell.m */; };
+		549DB63F1F205560005A1574 /* LandingPageTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 549DB63E1F205560005A1574 /* LandingPageTableViewCell.m */; };
+		549DB6421F205585005A1574 /* CommentTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 549DB6411F205585005A1574 /* CommentTableViewCell.m */; };
+		549DB6481F2055B3005A1574 /* TagsCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 549DB6471F2055B3005A1574 /* TagsCollectionViewCell.m */; };
+		549DB64E1F205A54005A1574 /* TimeOpenProfileTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 549DB64D1F205A54005A1574 /* TimeOpenProfileTableViewCell.m */; };
+		549DB6511F205A94005A1574 /* ProfileRestaurantUserViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 549DB6501F205A94005A1574 /* ProfileRestaurantUserViewController.m */; };
+		549DB6541F205BE8005A1574 /* SinglePostRelatedTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 549DB6531F205BE8005A1574 /* SinglePostRelatedTableViewCell.m */; };
+		549DB6571F205C86005A1574 /* ProductTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 549DB6561F205C86005A1574 /* ProductTableViewCell.m */; };
+		549DB65A1F205CA7005A1574 /* InformationTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 549DB6591F205CA7005A1574 /* InformationTableViewCell.m */; };
+		549DB65D1F205CBF005A1574 /* OderCheckTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 549DB65C1F205CBF005A1574 /* OderCheckTableViewCell.m */; };
+		549DB6601F205D2E005A1574 /* CartTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 549DB65F1F205D2E005A1574 /* CartTableViewCell.m */; };
+		549DB6631F205D3F005A1574 /* PurchaseDetailTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 549DB6621F205D3F005A1574 /* PurchaseDetailTableViewCell.m */; };
+		549DB6661F205D65005A1574 /* MarketPostCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 549DB6651F205D65005A1574 /* MarketPostCollectionViewCell.m */; };
+		549DB6691F205DFB005A1574 /* DiscussionImageTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 549DB6681F205DFB005A1574 /* DiscussionImageTableViewCell.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -98,6 +116,42 @@
 		549DB6181F2046F8005A1574 /* CommentViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CommentViewController.m; sourceTree = "<group>"; };
 		549DB61A1F204709005A1574 /* RightSlideViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RightSlideViewController.h; sourceTree = "<group>"; };
 		549DB61B1F204709005A1574 /* RightSlideViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RightSlideViewController.m; sourceTree = "<group>"; };
+		549DB61D1F204E86005A1574 /* DiscussionCollectionViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DiscussionCollectionViewCell.h; sourceTree = "<group>"; };
+		549DB61E1F204E86005A1574 /* DiscussionCollectionViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DiscussionCollectionViewCell.m; sourceTree = "<group>"; };
+		549DB6231F20504F005A1574 /* BlogCollectionViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BlogCollectionViewCell.h; sourceTree = "<group>"; };
+		549DB6241F20504F005A1574 /* BlogCollectionViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BlogCollectionViewCell.m; sourceTree = "<group>"; };
+		549DB6341F205314005A1574 /* NewFeedMarketPlaceCollectionViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NewFeedMarketPlaceCollectionViewCell.h; sourceTree = "<group>"; };
+		549DB6351F205314005A1574 /* NewFeedMarketPlaceCollectionViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NewFeedMarketPlaceCollectionViewCell.m; sourceTree = "<group>"; };
+		549DB6371F205349005A1574 /* NewFeedBlogAndDiscussionPostCollectionViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NewFeedBlogAndDiscussionPostCollectionViewCell.h; sourceTree = "<group>"; };
+		549DB6381F205349005A1574 /* NewFeedBlogAndDiscussionPostCollectionViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NewFeedBlogAndDiscussionPostCollectionViewCell.m; sourceTree = "<group>"; };
+		549DB63A1F205511005A1574 /* LandingPagePostCollectionViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LandingPagePostCollectionViewCell.h; sourceTree = "<group>"; };
+		549DB63B1F205511005A1574 /* LandingPagePostCollectionViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LandingPagePostCollectionViewCell.m; sourceTree = "<group>"; };
+		549DB63D1F205560005A1574 /* LandingPageTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LandingPageTableViewCell.h; sourceTree = "<group>"; };
+		549DB63E1F205560005A1574 /* LandingPageTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LandingPageTableViewCell.m; sourceTree = "<group>"; };
+		549DB6401F205585005A1574 /* CommentTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CommentTableViewCell.h; sourceTree = "<group>"; };
+		549DB6411F205585005A1574 /* CommentTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CommentTableViewCell.m; sourceTree = "<group>"; };
+		549DB6461F2055B3005A1574 /* TagsCollectionViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TagsCollectionViewCell.h; sourceTree = "<group>"; };
+		549DB6471F2055B3005A1574 /* TagsCollectionViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TagsCollectionViewCell.m; sourceTree = "<group>"; };
+		549DB64C1F205A54005A1574 /* TimeOpenProfileTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TimeOpenProfileTableViewCell.h; sourceTree = "<group>"; };
+		549DB64D1F205A54005A1574 /* TimeOpenProfileTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TimeOpenProfileTableViewCell.m; sourceTree = "<group>"; };
+		549DB64F1F205A94005A1574 /* ProfileRestaurantUserViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ProfileRestaurantUserViewController.h; sourceTree = "<group>"; };
+		549DB6501F205A94005A1574 /* ProfileRestaurantUserViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ProfileRestaurantUserViewController.m; sourceTree = "<group>"; };
+		549DB6521F205BE8005A1574 /* SinglePostRelatedTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SinglePostRelatedTableViewCell.h; sourceTree = "<group>"; };
+		549DB6531F205BE8005A1574 /* SinglePostRelatedTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SinglePostRelatedTableViewCell.m; sourceTree = "<group>"; };
+		549DB6551F205C86005A1574 /* ProductTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ProductTableViewCell.h; sourceTree = "<group>"; };
+		549DB6561F205C86005A1574 /* ProductTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ProductTableViewCell.m; sourceTree = "<group>"; };
+		549DB6581F205CA7005A1574 /* InformationTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = InformationTableViewCell.h; sourceTree = "<group>"; };
+		549DB6591F205CA7005A1574 /* InformationTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = InformationTableViewCell.m; sourceTree = "<group>"; };
+		549DB65B1F205CBF005A1574 /* OderCheckTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OderCheckTableViewCell.h; sourceTree = "<group>"; };
+		549DB65C1F205CBF005A1574 /* OderCheckTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OderCheckTableViewCell.m; sourceTree = "<group>"; };
+		549DB65E1F205D2E005A1574 /* CartTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CartTableViewCell.h; sourceTree = "<group>"; };
+		549DB65F1F205D2E005A1574 /* CartTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CartTableViewCell.m; sourceTree = "<group>"; };
+		549DB6611F205D3F005A1574 /* PurchaseDetailTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PurchaseDetailTableViewCell.h; sourceTree = "<group>"; };
+		549DB6621F205D3F005A1574 /* PurchaseDetailTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PurchaseDetailTableViewCell.m; sourceTree = "<group>"; };
+		549DB6641F205D65005A1574 /* MarketPostCollectionViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MarketPostCollectionViewCell.h; sourceTree = "<group>"; };
+		549DB6651F205D65005A1574 /* MarketPostCollectionViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MarketPostCollectionViewCell.m; sourceTree = "<group>"; };
+		549DB6671F205DFB005A1574 /* DiscussionImageTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DiscussionImageTableViewCell.h; sourceTree = "<group>"; };
+		549DB6681F205DFB005A1574 /* DiscussionImageTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DiscussionImageTableViewCell.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -183,10 +237,14 @@
 		549DB5B31F203B7A005A1574 /* Cell */ = {
 			isa = PBXGroup;
 			children = (
+				549DB62D1F20526F005A1574 /* Home */,
+				549DB62C1F205228005A1574 /* Support */,
 				549DB5D71F2040DA005A1574 /* User */,
 				549DB5D61F2040CF005A1574 /* MarketPlace */,
 				549DB5D51F2040C5005A1574 /* Blog */,
 				549DB5D41F2040B7005A1574 /* Discussion */,
+				549DB6521F205BE8005A1574 /* SinglePostRelatedTableViewCell.h */,
+				549DB6531F205BE8005A1574 /* SinglePostRelatedTableViewCell.m */,
 			);
 			path = Cell;
 			sourceTree = "<group>";
@@ -242,6 +300,8 @@
 				549DB5DD1F204145005A1574 /* RegisterViewController.m */,
 				549DB5E41F2041CD005A1574 /* LostPasswordViewController.h */,
 				549DB5E51F2041CD005A1574 /* LostPasswordViewController.m */,
+				549DB64F1F205A94005A1574 /* ProfileRestaurantUserViewController.h */,
+				549DB6501F205A94005A1574 /* ProfileRestaurantUserViewController.m */,
 			);
 			path = UserViewController;
 			sourceTree = "<group>";
@@ -288,6 +348,10 @@
 		549DB5D41F2040B7005A1574 /* Discussion */ = {
 			isa = PBXGroup;
 			children = (
+				549DB61D1F204E86005A1574 /* DiscussionCollectionViewCell.h */,
+				549DB61E1F204E86005A1574 /* DiscussionCollectionViewCell.m */,
+				549DB6671F205DFB005A1574 /* DiscussionImageTableViewCell.h */,
+				549DB6681F205DFB005A1574 /* DiscussionImageTableViewCell.m */,
 			);
 			path = Discussion;
 			sourceTree = "<group>";
@@ -295,6 +359,8 @@
 		549DB5D51F2040C5005A1574 /* Blog */ = {
 			isa = PBXGroup;
 			children = (
+				549DB6231F20504F005A1574 /* BlogCollectionViewCell.h */,
+				549DB6241F20504F005A1574 /* BlogCollectionViewCell.m */,
 			);
 			path = Blog;
 			sourceTree = "<group>";
@@ -302,6 +368,18 @@
 		549DB5D61F2040CF005A1574 /* MarketPlace */ = {
 			isa = PBXGroup;
 			children = (
+				549DB6551F205C86005A1574 /* ProductTableViewCell.h */,
+				549DB6561F205C86005A1574 /* ProductTableViewCell.m */,
+				549DB6581F205CA7005A1574 /* InformationTableViewCell.h */,
+				549DB6591F205CA7005A1574 /* InformationTableViewCell.m */,
+				549DB65B1F205CBF005A1574 /* OderCheckTableViewCell.h */,
+				549DB65C1F205CBF005A1574 /* OderCheckTableViewCell.m */,
+				549DB65E1F205D2E005A1574 /* CartTableViewCell.h */,
+				549DB65F1F205D2E005A1574 /* CartTableViewCell.m */,
+				549DB6611F205D3F005A1574 /* PurchaseDetailTableViewCell.h */,
+				549DB6621F205D3F005A1574 /* PurchaseDetailTableViewCell.m */,
+				549DB6641F205D65005A1574 /* MarketPostCollectionViewCell.h */,
+				549DB6651F205D65005A1574 /* MarketPostCollectionViewCell.m */,
 			);
 			path = MarketPlace;
 			sourceTree = "<group>";
@@ -309,6 +387,8 @@
 		549DB5D71F2040DA005A1574 /* User */ = {
 			isa = PBXGroup;
 			children = (
+				549DB64C1F205A54005A1574 /* TimeOpenProfileTableViewCell.h */,
+				549DB64D1F205A54005A1574 /* TimeOpenProfileTableViewCell.m */,
 			);
 			path = User;
 			sourceTree = "<group>";
@@ -333,6 +413,32 @@
 				549DB61B1F204709005A1574 /* RightSlideViewController.m */,
 			);
 			path = SupportViewController;
+			sourceTree = "<group>";
+		};
+		549DB62C1F205228005A1574 /* Support */ = {
+			isa = PBXGroup;
+			children = (
+				549DB6401F205585005A1574 /* CommentTableViewCell.h */,
+				549DB6411F205585005A1574 /* CommentTableViewCell.m */,
+				549DB6461F2055B3005A1574 /* TagsCollectionViewCell.h */,
+				549DB6471F2055B3005A1574 /* TagsCollectionViewCell.m */,
+			);
+			path = Support;
+			sourceTree = "<group>";
+		};
+		549DB62D1F20526F005A1574 /* Home */ = {
+			isa = PBXGroup;
+			children = (
+				549DB6341F205314005A1574 /* NewFeedMarketPlaceCollectionViewCell.h */,
+				549DB6351F205314005A1574 /* NewFeedMarketPlaceCollectionViewCell.m */,
+				549DB6371F205349005A1574 /* NewFeedBlogAndDiscussionPostCollectionViewCell.h */,
+				549DB6381F205349005A1574 /* NewFeedBlogAndDiscussionPostCollectionViewCell.m */,
+				549DB63A1F205511005A1574 /* LandingPagePostCollectionViewCell.h */,
+				549DB63B1F205511005A1574 /* LandingPagePostCollectionViewCell.m */,
+				549DB63D1F205560005A1574 /* LandingPageTableViewCell.h */,
+				549DB63E1F205560005A1574 /* LandingPageTableViewCell.m */,
+			);
+			path = Home;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -406,28 +512,46 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				549DB61F1F204E86005A1574 /* DiscussionCollectionViewCell.m in Sources */,
+				549DB6391F205349005A1574 /* NewFeedBlogAndDiscussionPostCollectionViewCell.m in Sources */,
 				549DB5F51F20439A005A1574 /* SingleMarketPlacePostViewController.m in Sources */,
+				549DB6421F205585005A1574 /* CommentTableViewCell.m in Sources */,
 				549DB5DF1F204145005A1574 /* ProfileUserViewController.m in Sources */,
 				549DB5BA1F203CED005A1574 /* DataForViewController.m in Sources */,
 				549DB5FE1F2043D4005A1574 /* PurchaseConfirmViewController.m in Sources */,
 				549DB6191F2046F8005A1574 /* CommentViewController.m in Sources */,
+				549DB6631F205D3F005A1574 /* PurchaseDetailTableViewCell.m in Sources */,
 				549DB59F1F203AD7005A1574 /* AppDelegate.m in Sources */,
+				549DB63C1F205511005A1574 /* LandingPagePostCollectionViewCell.m in Sources */,
 				549DB5EC1F20435B005A1574 /* AllBlogPostViewController.m in Sources */,
 				549DB5E61F2041CD005A1574 /* LostPasswordViewController.m in Sources */,
+				549DB6511F205A94005A1574 /* ProfileRestaurantUserViewController.m in Sources */,
 				549DB6121F204686005A1574 /* LandingPageViewController.m in Sources */,
+				549DB64E1F205A54005A1574 /* TimeOpenProfileTableViewCell.m in Sources */,
 				549DB5BD1F203D37005A1574 /* ConstantSystem.m in Sources */,
 				549DB5F21F204381005A1574 /* AllMarketPlacePostViewController.m in Sources */,
 				549DB6151F204690005A1574 /* NewFeedViewController.m in Sources */,
+				549DB65D1F205CBF005A1574 /* OderCheckTableViewCell.m in Sources */,
+				549DB6361F205314005A1574 /* NewFeedMarketPlaceCollectionViewCell.m in Sources */,
 				549DB5C61F203ED3005A1574 /* ParserService.m in Sources */,
 				549DB61C1F204709005A1574 /* RightSlideViewController.m in Sources */,
 				549DB59C1F203AD7005A1574 /* main.m in Sources */,
+				549DB6541F205BE8005A1574 /* SinglePostRelatedTableViewCell.m in Sources */,
 				549DB5E31F204192005A1574 /* MasterViewController.m in Sources */,
+				549DB6601F205D2E005A1574 /* CartTableViewCell.m in Sources */,
 				549DB5F81F2043A8005A1574 /* CheckoutViewController.m in Sources */,
+				549DB6691F205DFB005A1574 /* DiscussionImageTableViewCell.m in Sources */,
+				549DB65A1F205CA7005A1574 /* InformationTableViewCell.m in Sources */,
 				549DB5C31F203E93005A1574 /* NetworkService.m in Sources */,
+				549DB6251F20504F005A1574 /* BlogCollectionViewCell.m in Sources */,
 				549DB6071F2045E6005A1574 /* UserModel.m in Sources */,
 				549DB5E01F204145005A1574 /* RegisterViewController.m in Sources */,
+				549DB6571F205C86005A1574 /* ProductTableViewCell.m in Sources */,
+				549DB6661F205D65005A1574 /* MarketPostCollectionViewCell.m in Sources */,
+				549DB63F1F205560005A1574 /* LandingPageTableViewCell.m in Sources */,
 				549DB60A1F2045F1005A1574 /* PostModel.m in Sources */,
 				549DB5C01F203D41005A1574 /* Helper.m in Sources */,
+				549DB6481F2055B3005A1574 /* TagsCollectionViewCell.m in Sources */,
 				549DB5EF1F20436D005A1574 /* SingleBlogPostViewController.m in Sources */,
 				549DB6041F20456D005A1574 /* SingleDiscussionPostViewController.m in Sources */,
 				549DB5FB1F2043B2005A1574 /* CartViewController.m in Sources */,
