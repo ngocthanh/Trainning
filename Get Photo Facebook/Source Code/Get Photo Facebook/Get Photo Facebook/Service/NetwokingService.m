@@ -29,14 +29,6 @@ static NetwokingService *sharedInstance;
 					success(data);
 
 				}while (data == nil);
-					
-				
-//				if (data) {
-//					success(data);
-//
-//				}else{
-//                    failure(error);
-//                }
 			
             }];
             [task resume];
