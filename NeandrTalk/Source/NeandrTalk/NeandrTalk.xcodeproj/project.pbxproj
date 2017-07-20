@@ -1,0 +1,581 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		549DB59C1F203AD7005A1574 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 549DB59B1F203AD7005A1574 /* main.m */; };
+		549DB59F1F203AD7005A1574 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 549DB59E1F203AD7005A1574 /* AppDelegate.m */; };
+		549DB5A71F203AD8005A1574 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 549DB5A61F203AD8005A1574 /* Assets.xcassets */; };
+		549DB5BA1F203CED005A1574 /* DataForViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 549DB5B91F203CED005A1574 /* DataForViewController.m */; };
+		549DB5BD1F203D37005A1574 /* ConstantSystem.m in Sources */ = {isa = PBXBuildFile; fileRef = 549DB5BC1F203D37005A1574 /* ConstantSystem.m */; };
+		549DB5C01F203D41005A1574 /* Helper.m in Sources */ = {isa = PBXBuildFile; fileRef = 549DB5BF1F203D41005A1574 /* Helper.m */; };
+		549DB5C31F203E93005A1574 /* NetworkService.m in Sources */ = {isa = PBXBuildFile; fileRef = 549DB5C21F203E93005A1574 /* NetworkService.m */; };
+		549DB5C61F203ED3005A1574 /* ParserService.m in Sources */ = {isa = PBXBuildFile; fileRef = 549DB5C51F203ED3005A1574 /* ParserService.m */; };
+		549DB5DE1F204145005A1574 /* LoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 549DB5D91F204145005A1574 /* LoginViewController.m */; };
+		549DB5DF1F204145005A1574 /* ProfileUserViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 549DB5DB1F204145005A1574 /* ProfileUserViewController.m */; };
+		549DB5E01F204145005A1574 /* RegisterViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 549DB5DD1F204145005A1574 /* RegisterViewController.m */; };
+		549DB5E31F204192005A1574 /* MasterViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 549DB5E21F204192005A1574 /* MasterViewController.m */; };
+		549DB5E61F2041CD005A1574 /* LostPasswordViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 549DB5E51F2041CD005A1574 /* LostPasswordViewController.m */; };
+		549DB5EC1F20435B005A1574 /* AllBlogPostViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 549DB5EB1F20435B005A1574 /* AllBlogPostViewController.m */; };
+		549DB5EF1F20436D005A1574 /* SingleBlogPostViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 549DB5EE1F20436D005A1574 /* SingleBlogPostViewController.m */; };
+		549DB5F21F204381005A1574 /* AllMarketPlacePostViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 549DB5F11F204381005A1574 /* AllMarketPlacePostViewController.m */; };
+		549DB5F51F20439A005A1574 /* SingleMarketPlacePostViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 549DB5F41F20439A005A1574 /* SingleMarketPlacePostViewController.m */; };
+		549DB5F81F2043A8005A1574 /* CheckoutViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 549DB5F71F2043A8005A1574 /* CheckoutViewController.m */; };
+		549DB5FB1F2043B2005A1574 /* CartViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 549DB5FA1F2043B2005A1574 /* CartViewController.m */; };
+		549DB5FE1F2043D4005A1574 /* PurchaseConfirmViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 549DB5FD1F2043D4005A1574 /* PurchaseConfirmViewController.m */; };
+		549DB6011F20455A005A1574 /* AllDiscussionPostViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 549DB6001F20455A005A1574 /* AllDiscussionPostViewController.m */; };
+		549DB6041F20456D005A1574 /* SingleDiscussionPostViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 549DB6031F20456D005A1574 /* SingleDiscussionPostViewController.m */; };
+		549DB6071F2045E6005A1574 /* UserModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 549DB6061F2045E6005A1574 /* UserModel.m */; };
+		549DB60A1F2045F1005A1574 /* PostModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 549DB6091F2045F1005A1574 /* PostModel.m */; };
+		549DB60D1F204639005A1574 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 549DB60B1F204639005A1574 /* LaunchScreen.storyboard */; };
+		549DB60E1F204639005A1574 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 549DB60C1F204639005A1574 /* Main.storyboard */; };
+		549DB6121F204686005A1574 /* LandingPageViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 549DB6111F204686005A1574 /* LandingPageViewController.m */; };
+		549DB6151F204690005A1574 /* NewFeedViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 549DB6141F204690005A1574 /* NewFeedViewController.m */; };
+		549DB6191F2046F8005A1574 /* CommentViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 549DB6181F2046F8005A1574 /* CommentViewController.m */; };
+		549DB61C1F204709005A1574 /* RightSlideViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 549DB61B1F204709005A1574 /* RightSlideViewController.m */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		549DB5971F203AD7005A1574 /* NeandrTalk.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = NeandrTalk.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		549DB59B1F203AD7005A1574 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		549DB59D1F203AD7005A1574 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		549DB59E1F203AD7005A1574 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		549DB5A61F203AD8005A1574 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		549DB5AB1F203AD8005A1574 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		549DB5B81F203CED005A1574 /* DataForViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DataForViewController.h; sourceTree = "<group>"; };
+		549DB5B91F203CED005A1574 /* DataForViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DataForViewController.m; sourceTree = "<group>"; };
+		549DB5BB1F203D37005A1574 /* ConstantSystem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ConstantSystem.h; sourceTree = "<group>"; };
+		549DB5BC1F203D37005A1574 /* ConstantSystem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ConstantSystem.m; sourceTree = "<group>"; };
+		549DB5BE1F203D41005A1574 /* Helper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Helper.h; sourceTree = "<group>"; };
+		549DB5BF1F203D41005A1574 /* Helper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Helper.m; sourceTree = "<group>"; };
+		549DB5C11F203E93005A1574 /* NetworkService.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NetworkService.h; sourceTree = "<group>"; };
+		549DB5C21F203E93005A1574 /* NetworkService.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NetworkService.m; sourceTree = "<group>"; };
+		549DB5C41F203ED3005A1574 /* ParserService.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ParserService.h; sourceTree = "<group>"; };
+		549DB5C51F203ED3005A1574 /* ParserService.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ParserService.m; sourceTree = "<group>"; };
+		549DB5D81F204145005A1574 /* LoginViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LoginViewController.h; sourceTree = "<group>"; };
+		549DB5D91F204145005A1574 /* LoginViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LoginViewController.m; sourceTree = "<group>"; };
+		549DB5DA1F204145005A1574 /* ProfileUserViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ProfileUserViewController.h; sourceTree = "<group>"; };
+		549DB5DB1F204145005A1574 /* ProfileUserViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ProfileUserViewController.m; sourceTree = "<group>"; };
+		549DB5DC1F204145005A1574 /* RegisterViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RegisterViewController.h; sourceTree = "<group>"; };
+		549DB5DD1F204145005A1574 /* RegisterViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RegisterViewController.m; sourceTree = "<group>"; };
+		549DB5E11F204192005A1574 /* MasterViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MasterViewController.h; sourceTree = "<group>"; };
+		549DB5E21F204192005A1574 /* MasterViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MasterViewController.m; sourceTree = "<group>"; };
+		549DB5E41F2041CD005A1574 /* LostPasswordViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LostPasswordViewController.h; sourceTree = "<group>"; };
+		549DB5E51F2041CD005A1574 /* LostPasswordViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LostPasswordViewController.m; sourceTree = "<group>"; };
+		549DB5EA1F20435B005A1574 /* AllBlogPostViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AllBlogPostViewController.h; sourceTree = "<group>"; };
+		549DB5EB1F20435B005A1574 /* AllBlogPostViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AllBlogPostViewController.m; sourceTree = "<group>"; };
+		549DB5ED1F20436D005A1574 /* SingleBlogPostViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SingleBlogPostViewController.h; sourceTree = "<group>"; };
+		549DB5EE1F20436D005A1574 /* SingleBlogPostViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SingleBlogPostViewController.m; sourceTree = "<group>"; };
+		549DB5F01F204381005A1574 /* AllMarketPlacePostViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AllMarketPlacePostViewController.h; sourceTree = "<group>"; };
+		549DB5F11F204381005A1574 /* AllMarketPlacePostViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AllMarketPlacePostViewController.m; sourceTree = "<group>"; };
+		549DB5F31F20439A005A1574 /* SingleMarketPlacePostViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SingleMarketPlacePostViewController.h; sourceTree = "<group>"; };
+		549DB5F41F20439A005A1574 /* SingleMarketPlacePostViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SingleMarketPlacePostViewController.m; sourceTree = "<group>"; };
+		549DB5F61F2043A8005A1574 /* CheckoutViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CheckoutViewController.h; sourceTree = "<group>"; };
+		549DB5F71F2043A8005A1574 /* CheckoutViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CheckoutViewController.m; sourceTree = "<group>"; };
+		549DB5F91F2043B2005A1574 /* CartViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CartViewController.h; sourceTree = "<group>"; };
+		549DB5FA1F2043B2005A1574 /* CartViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CartViewController.m; sourceTree = "<group>"; };
+		549DB5FC1F2043D4005A1574 /* PurchaseConfirmViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PurchaseConfirmViewController.h; sourceTree = "<group>"; };
+		549DB5FD1F2043D4005A1574 /* PurchaseConfirmViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PurchaseConfirmViewController.m; sourceTree = "<group>"; };
+		549DB5FF1F20455A005A1574 /* AllDiscussionPostViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AllDiscussionPostViewController.h; sourceTree = "<group>"; };
+		549DB6001F20455A005A1574 /* AllDiscussionPostViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AllDiscussionPostViewController.m; sourceTree = "<group>"; };
+		549DB6021F20456D005A1574 /* SingleDiscussionPostViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SingleDiscussionPostViewController.h; sourceTree = "<group>"; };
+		549DB6031F20456D005A1574 /* SingleDiscussionPostViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SingleDiscussionPostViewController.m; sourceTree = "<group>"; };
+		549DB6051F2045E6005A1574 /* UserModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UserModel.h; sourceTree = "<group>"; };
+		549DB6061F2045E6005A1574 /* UserModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UserModel.m; sourceTree = "<group>"; };
+		549DB6081F2045F1005A1574 /* PostModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PostModel.h; sourceTree = "<group>"; };
+		549DB6091F2045F1005A1574 /* PostModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PostModel.m; sourceTree = "<group>"; };
+		549DB60B1F204639005A1574 /* LaunchScreen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = LaunchScreen.storyboard; sourceTree = "<group>"; };
+		549DB60C1F204639005A1574 /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
+		549DB6101F204686005A1574 /* LandingPageViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LandingPageViewController.h; sourceTree = "<group>"; };
+		549DB6111F204686005A1574 /* LandingPageViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LandingPageViewController.m; sourceTree = "<group>"; };
+		549DB6131F204690005A1574 /* NewFeedViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NewFeedViewController.h; sourceTree = "<group>"; };
+		549DB6141F204690005A1574 /* NewFeedViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NewFeedViewController.m; sourceTree = "<group>"; };
+		549DB6171F2046F8005A1574 /* CommentViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CommentViewController.h; sourceTree = "<group>"; };
+		549DB6181F2046F8005A1574 /* CommentViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CommentViewController.m; sourceTree = "<group>"; };
+		549DB61A1F204709005A1574 /* RightSlideViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RightSlideViewController.h; sourceTree = "<group>"; };
+		549DB61B1F204709005A1574 /* RightSlideViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RightSlideViewController.m; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		549DB5941F203AD7005A1574 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		549DB58E1F203AD6005A1574 = {
+			isa = PBXGroup;
+			children = (
+				549DB5991F203AD7005A1574 /* NeandrTalk */,
+				549DB5981F203AD7005A1574 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		549DB5981F203AD7005A1574 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				549DB5971F203AD7005A1574 /* NeandrTalk.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		549DB5991F203AD7005A1574 /* NeandrTalk */ = {
+			isa = PBXGroup;
+			children = (
+				549DB5B71F203BC5005A1574 /* View */,
+				549DB5B61F203B9F005A1574 /* Data */,
+				549DB5B51F203B95005A1574 /* Helper */,
+				549DB5B41F203B8E005A1574 /* Service */,
+				549DB5B31F203B7A005A1574 /* Cell */,
+				549DB5B21F203B5A005A1574 /* Model */,
+				549DB5B11F203B45005A1574 /* ViewController */,
+				549DB59D1F203AD7005A1574 /* AppDelegate.h */,
+				549DB59E1F203AD7005A1574 /* AppDelegate.m */,
+				549DB5A61F203AD8005A1574 /* Assets.xcassets */,
+				549DB5AB1F203AD8005A1574 /* Info.plist */,
+				549DB59A1F203AD7005A1574 /* Supporting Files */,
+			);
+			path = NeandrTalk;
+			sourceTree = "<group>";
+		};
+		549DB59A1F203AD7005A1574 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				549DB59B1F203AD7005A1574 /* main.m */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		549DB5B11F203B45005A1574 /* ViewController */ = {
+			isa = PBXGroup;
+			children = (
+				549DB6161F2046A5005A1574 /* SupportViewController */,
+				549DB60F1F204657005A1574 /* HomeViewController */,
+				549DB5D31F20403A005A1574 /* BlogViewController */,
+				549DB5D21F20402E005A1574 /* MarketPlaceViewController */,
+				549DB5D11F204013005A1574 /* DiscussionViewController */,
+				549DB5D01F203FFF005A1574 /* UserViewController */,
+				549DB5E11F204192005A1574 /* MasterViewController.h */,
+				549DB5E21F204192005A1574 /* MasterViewController.m */,
+			);
+			path = ViewController;
+			sourceTree = "<group>";
+		};
+		549DB5B21F203B5A005A1574 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				549DB6051F2045E6005A1574 /* UserModel.h */,
+				549DB6061F2045E6005A1574 /* UserModel.m */,
+				549DB6081F2045F1005A1574 /* PostModel.h */,
+				549DB6091F2045F1005A1574 /* PostModel.m */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		549DB5B31F203B7A005A1574 /* Cell */ = {
+			isa = PBXGroup;
+			children = (
+				549DB5D71F2040DA005A1574 /* User */,
+				549DB5D61F2040CF005A1574 /* MarketPlace */,
+				549DB5D51F2040C5005A1574 /* Blog */,
+				549DB5D41F2040B7005A1574 /* Discussion */,
+			);
+			path = Cell;
+			sourceTree = "<group>";
+		};
+		549DB5B41F203B8E005A1574 /* Service */ = {
+			isa = PBXGroup;
+			children = (
+				549DB5C11F203E93005A1574 /* NetworkService.h */,
+				549DB5C21F203E93005A1574 /* NetworkService.m */,
+				549DB5C41F203ED3005A1574 /* ParserService.h */,
+				549DB5C51F203ED3005A1574 /* ParserService.m */,
+			);
+			path = Service;
+			sourceTree = "<group>";
+		};
+		549DB5B51F203B95005A1574 /* Helper */ = {
+			isa = PBXGroup;
+			children = (
+				549DB5BB1F203D37005A1574 /* ConstantSystem.h */,
+				549DB5BC1F203D37005A1574 /* ConstantSystem.m */,
+				549DB5BE1F203D41005A1574 /* Helper.h */,
+				549DB5BF1F203D41005A1574 /* Helper.m */,
+			);
+			path = Helper;
+			sourceTree = "<group>";
+		};
+		549DB5B61F203B9F005A1574 /* Data */ = {
+			isa = PBXGroup;
+			children = (
+				549DB5B81F203CED005A1574 /* DataForViewController.h */,
+				549DB5B91F203CED005A1574 /* DataForViewController.m */,
+			);
+			path = Data;
+			sourceTree = "<group>";
+		};
+		549DB5B71F203BC5005A1574 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				549DB60B1F204639005A1574 /* LaunchScreen.storyboard */,
+				549DB60C1F204639005A1574 /* Main.storyboard */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		549DB5D01F203FFF005A1574 /* UserViewController */ = {
+			isa = PBXGroup;
+			children = (
+				549DB5D81F204145005A1574 /* LoginViewController.h */,
+				549DB5D91F204145005A1574 /* LoginViewController.m */,
+				549DB5DA1F204145005A1574 /* ProfileUserViewController.h */,
+				549DB5DB1F204145005A1574 /* ProfileUserViewController.m */,
+				549DB5DC1F204145005A1574 /* RegisterViewController.h */,
+				549DB5DD1F204145005A1574 /* RegisterViewController.m */,
+				549DB5E41F2041CD005A1574 /* LostPasswordViewController.h */,
+				549DB5E51F2041CD005A1574 /* LostPasswordViewController.m */,
+			);
+			path = UserViewController;
+			sourceTree = "<group>";
+		};
+		549DB5D11F204013005A1574 /* DiscussionViewController */ = {
+			isa = PBXGroup;
+			children = (
+				549DB5FF1F20455A005A1574 /* AllDiscussionPostViewController.h */,
+				549DB6001F20455A005A1574 /* AllDiscussionPostViewController.m */,
+				549DB6021F20456D005A1574 /* SingleDiscussionPostViewController.h */,
+				549DB6031F20456D005A1574 /* SingleDiscussionPostViewController.m */,
+			);
+			path = DiscussionViewController;
+			sourceTree = "<group>";
+		};
+		549DB5D21F20402E005A1574 /* MarketPlaceViewController */ = {
+			isa = PBXGroup;
+			children = (
+				549DB5F01F204381005A1574 /* AllMarketPlacePostViewController.h */,
+				549DB5F11F204381005A1574 /* AllMarketPlacePostViewController.m */,
+				549DB5F31F20439A005A1574 /* SingleMarketPlacePostViewController.h */,
+				549DB5F41F20439A005A1574 /* SingleMarketPlacePostViewController.m */,
+				549DB5F61F2043A8005A1574 /* CheckoutViewController.h */,
+				549DB5F71F2043A8005A1574 /* CheckoutViewController.m */,
+				549DB5F91F2043B2005A1574 /* CartViewController.h */,
+				549DB5FA1F2043B2005A1574 /* CartViewController.m */,
+				549DB5FC1F2043D4005A1574 /* PurchaseConfirmViewController.h */,
+				549DB5FD1F2043D4005A1574 /* PurchaseConfirmViewController.m */,
+			);
+			path = MarketPlaceViewController;
+			sourceTree = "<group>";
+		};
+		549DB5D31F20403A005A1574 /* BlogViewController */ = {
+			isa = PBXGroup;
+			children = (
+				549DB5EA1F20435B005A1574 /* AllBlogPostViewController.h */,
+				549DB5EB1F20435B005A1574 /* AllBlogPostViewController.m */,
+				549DB5ED1F20436D005A1574 /* SingleBlogPostViewController.h */,
+				549DB5EE1F20436D005A1574 /* SingleBlogPostViewController.m */,
+			);
+			path = BlogViewController;
+			sourceTree = "<group>";
+		};
+		549DB5D41F2040B7005A1574 /* Discussion */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Discussion;
+			sourceTree = "<group>";
+		};
+		549DB5D51F2040C5005A1574 /* Blog */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Blog;
+			sourceTree = "<group>";
+		};
+		549DB5D61F2040CF005A1574 /* MarketPlace */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = MarketPlace;
+			sourceTree = "<group>";
+		};
+		549DB5D71F2040DA005A1574 /* User */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = User;
+			sourceTree = "<group>";
+		};
+		549DB60F1F204657005A1574 /* HomeViewController */ = {
+			isa = PBXGroup;
+			children = (
+				549DB6101F204686005A1574 /* LandingPageViewController.h */,
+				549DB6111F204686005A1574 /* LandingPageViewController.m */,
+				549DB6131F204690005A1574 /* NewFeedViewController.h */,
+				549DB6141F204690005A1574 /* NewFeedViewController.m */,
+			);
+			path = HomeViewController;
+			sourceTree = "<group>";
+		};
+		549DB6161F2046A5005A1574 /* SupportViewController */ = {
+			isa = PBXGroup;
+			children = (
+				549DB6171F2046F8005A1574 /* CommentViewController.h */,
+				549DB6181F2046F8005A1574 /* CommentViewController.m */,
+				549DB61A1F204709005A1574 /* RightSlideViewController.h */,
+				549DB61B1F204709005A1574 /* RightSlideViewController.m */,
+			);
+			path = SupportViewController;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		549DB5961F203AD7005A1574 /* NeandrTalk */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 549DB5AE1F203AD8005A1574 /* Build configuration list for PBXNativeTarget "NeandrTalk" */;
+			buildPhases = (
+				549DB5931F203AD7005A1574 /* Sources */,
+				549DB5941F203AD7005A1574 /* Frameworks */,
+				549DB5951F203AD7005A1574 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = NeandrTalk;
+			productName = NeandrTalk;
+			productReference = 549DB5971F203AD7005A1574 /* NeandrTalk.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		549DB58F1F203AD6005A1574 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0830;
+				ORGANIZATIONNAME = KterKC;
+				TargetAttributes = {
+					549DB5961F203AD7005A1574 = {
+						CreatedOnToolsVersion = 8.3.3;
+						ProvisioningStyle = Automatic;
+					};
+				};
+			};
+			buildConfigurationList = 549DB5921F203AD7005A1574 /* Build configuration list for PBXProject "NeandrTalk" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 549DB58E1F203AD6005A1574;
+			productRefGroup = 549DB5981F203AD7005A1574 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				549DB5961F203AD7005A1574 /* NeandrTalk */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		549DB5951F203AD7005A1574 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				549DB60E1F204639005A1574 /* Main.storyboard in Resources */,
+				549DB5A71F203AD8005A1574 /* Assets.xcassets in Resources */,
+				549DB60D1F204639005A1574 /* LaunchScreen.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		549DB5931F203AD7005A1574 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				549DB5F51F20439A005A1574 /* SingleMarketPlacePostViewController.m in Sources */,
+				549DB5DF1F204145005A1574 /* ProfileUserViewController.m in Sources */,
+				549DB5BA1F203CED005A1574 /* DataForViewController.m in Sources */,
+				549DB5FE1F2043D4005A1574 /* PurchaseConfirmViewController.m in Sources */,
+				549DB6191F2046F8005A1574 /* CommentViewController.m in Sources */,
+				549DB59F1F203AD7005A1574 /* AppDelegate.m in Sources */,
+				549DB5EC1F20435B005A1574 /* AllBlogPostViewController.m in Sources */,
+				549DB5E61F2041CD005A1574 /* LostPasswordViewController.m in Sources */,
+				549DB6121F204686005A1574 /* LandingPageViewController.m in Sources */,
+				549DB5BD1F203D37005A1574 /* ConstantSystem.m in Sources */,
+				549DB5F21F204381005A1574 /* AllMarketPlacePostViewController.m in Sources */,
+				549DB6151F204690005A1574 /* NewFeedViewController.m in Sources */,
+				549DB5C61F203ED3005A1574 /* ParserService.m in Sources */,
+				549DB61C1F204709005A1574 /* RightSlideViewController.m in Sources */,
+				549DB59C1F203AD7005A1574 /* main.m in Sources */,
+				549DB5E31F204192005A1574 /* MasterViewController.m in Sources */,
+				549DB5F81F2043A8005A1574 /* CheckoutViewController.m in Sources */,
+				549DB5C31F203E93005A1574 /* NetworkService.m in Sources */,
+				549DB6071F2045E6005A1574 /* UserModel.m in Sources */,
+				549DB5E01F204145005A1574 /* RegisterViewController.m in Sources */,
+				549DB60A1F2045F1005A1574 /* PostModel.m in Sources */,
+				549DB5C01F203D41005A1574 /* Helper.m in Sources */,
+				549DB5EF1F20436D005A1574 /* SingleBlogPostViewController.m in Sources */,
+				549DB6041F20456D005A1574 /* SingleDiscussionPostViewController.m in Sources */,
+				549DB5FB1F2043B2005A1574 /* CartViewController.m in Sources */,
+				549DB6011F20455A005A1574 /* AllDiscussionPostViewController.m in Sources */,
+				549DB5DE1F204145005A1574 /* LoginViewController.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin XCBuildConfiguration section */
+		549DB5AC1F203AD8005A1574 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		549DB5AD1F203AD8005A1574 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		549DB5AF1F203AD8005A1574 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = NeandrTalk/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = Kter.KC.NeandrTalk;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		549DB5B01F203AD8005A1574 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = NeandrTalk/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = Kter.KC.NeandrTalk;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		549DB5921F203AD7005A1574 /* Build configuration list for PBXProject "NeandrTalk" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				549DB5AC1F203AD8005A1574 /* Debug */,
+				549DB5AD1F203AD8005A1574 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		549DB5AE1F203AD8005A1574 /* Build configuration list for PBXNativeTarget "NeandrTalk" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				549DB5AF1F203AD8005A1574 /* Debug */,
+				549DB5B01F203AD8005A1574 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 549DB58F1F203AD6005A1574 /* Project object */;
+}
