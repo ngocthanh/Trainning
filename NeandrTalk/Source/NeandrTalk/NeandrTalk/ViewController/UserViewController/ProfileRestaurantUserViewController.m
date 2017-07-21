@@ -10,6 +10,8 @@
 #import "ProfileRestaurantUserViewController.h"
 
 @interface ProfileRestaurantUserViewController ()
+@property (weak, nonatomic) IBOutlet UIWebView *videoAbout;
+@property (weak, nonatomic) IBOutlet UIImageView *avatarUserRestaurant;
 
 @end
 
@@ -17,12 +19,15 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    // Do any additional setup after loading the view.
+    [_videoAbout loadRequest:[[NSURLRequest alloc] initWithURL:[[NSURL alloc] initWithString:@"https://www.youtube.com/embed/yMuBSxSIS04"]]];
+    _avatarUserRestaurant.layer.borderColor = [UIColor whiteColor].CGColor;
+    _avatarUserRestaurant.layer.borderWidth = 4;
+    _avatarUserRestaurant.layer.cornerRadius = _avatarUserRestaurant.frame.size.width/2;
+    _avatarUserRestaurant.clipsToBounds = YES;
 }
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
 }
 
 

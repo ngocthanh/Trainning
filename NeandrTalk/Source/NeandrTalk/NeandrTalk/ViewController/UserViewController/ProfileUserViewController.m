@@ -9,6 +9,8 @@
 #import "ProfileUserViewController.h"
 
 @interface ProfileUserViewController ()
+@property (weak, nonatomic) IBOutlet UIWebView *videoAbout;
+@property (weak, nonatomic) IBOutlet UIImageView *avaterUser;
 
 @end
 
@@ -16,7 +18,11 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    // Do any additional setup after loading the view.
+    [_videoAbout loadRequest:[[NSURLRequest alloc] initWithURL:[[NSURL alloc] initWithString:@"https://www.youtube.com/embed/yMuBSxSIS04"]]];
+    _avaterUser.layer.borderColor = [UIColor whiteColor].CGColor;
+    _avaterUser.layer.borderWidth = 4;
+    _avaterUser.layer.cornerRadius = _avaterUser.frame.size.width/2;
+    _avaterUser.clipsToBounds = YES;
 }
 
 - (void)didReceiveMemoryWarning {
