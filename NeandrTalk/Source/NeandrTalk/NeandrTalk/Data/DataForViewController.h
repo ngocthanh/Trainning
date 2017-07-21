@@ -12,4 +12,6 @@
 @interface DataForViewController : NSObject
 @property (strong ,nonatomic) UserModel *user;
 @property (strong, nonatomic) PostModel *post;
+
+-(NSMutableArray *) getUserList;
 @end

@@ -11,8 +11,10 @@
 @interface PostModel : NSObject
 @property (strong,nonatomic) NSString *postID;
 @property (strong,nonatomic) NSString *postIDUserOwner;
+@property (strong,nonatomic) NSString *postType;
 @property (strong,nonatomic) NSString *title;
 @property (strong,nonatomic) NSString *descriptionPost;
+@property (strong,nonatomic) NSString *marketType;
 @property (strong,nonatomic) NSArray *arrayImages;
 @property (strong,nonatomic) NSArray *arrayTags;
 @property (strong,nonatomic) NSArray *arrayComments;
@@ -22,6 +24,6 @@
 @property  NSInteger price;
 @property  NSInteger stars;
 @property  BOOL favorite;
-@property  BOOL folow;
+@property  BOOL follow;
 @property  BOOL report;
 @end

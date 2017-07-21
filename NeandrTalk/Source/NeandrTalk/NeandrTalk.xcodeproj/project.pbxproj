@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		39D616501F20B2AD003BFEAD /* user.plist in Resources */ = {isa = PBXBuildFile; fileRef = 39D6164F1F20B2AD003BFEAD /* user.plist */; };
+		39D616521F20BBC1003BFEAD /* post.plist in Resources */ = {isa = PBXBuildFile; fileRef = 39D616511F20BBC1003BFEAD /* post.plist */; };
 		549DB59C1F203AD7005A1574 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 549DB59B1F203AD7005A1574 /* main.m */; };
 		549DB59F1F203AD7005A1574 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 549DB59E1F203AD7005A1574 /* AppDelegate.m */; };
 		549DB5A71F203AD8005A1574 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 549DB5A61F203AD8005A1574 /* Assets.xcassets */; };
@@ -58,6 +60,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		39D6164F1F20B2AD003BFEAD /* user.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = user.plist; sourceTree = "<group>"; };
+		39D616511F20BBC1003BFEAD /* post.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = post.plist; sourceTree = "<group>"; };
 		549DB5971F203AD7005A1574 /* NeandrTalk.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = NeandrTalk.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		549DB59B1F203AD7005A1574 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		549DB59D1F203AD7005A1574 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -276,6 +280,8 @@
 			children = (
 				549DB5B81F203CED005A1574 /* DataForViewController.h */,
 				549DB5B91F203CED005A1574 /* DataForViewController.m */,
+				39D616511F20BBC1003BFEAD /* post.plist */,
+				39D6164F1F20B2AD003BFEAD /* user.plist */,
 			);
 			path = Data;
 			sourceTree = "<group>";
@@ -500,7 +506,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				549DB60E1F204639005A1574 /* Main.storyboard in Resources */,
+				39D616521F20BBC1003BFEAD /* post.plist in Resources */,
 				549DB5A71F203AD8005A1574 /* Assets.xcassets in Resources */,
+				39D616501F20B2AD003BFEAD /* user.plist in Resources */,
 				549DB60D1F204639005A1574 /* LaunchScreen.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -698,6 +706,7 @@
 				549DB5B01F203AD8005A1574 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

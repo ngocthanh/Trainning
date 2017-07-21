@@ -1,0 +1,108 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<array>
+	<dict>
+		<key>userID</key>
+		<string>1</string>
+		<key>name</key>
+		<string>admin</string>
+		<key>email</key>
+		<string>admin@mail.com</string>
+		<key>password</key>
+		<string>123</string>
+		<key>zipcode</key>
+		<string>abc</string>
+		<key>cusinetype</key>
+		<string></string>
+		<key>userDescription</key>
+		<string>this is account test. he is a admin</string>
+		<key>userType</key>
+		<string>admin</string>
+		<key>phone</key>
+		<string>01234423</string>
+		<key>address</key>
+		<string>123 wall st. new york</string>
+		<key>avatarData</key>
+		<string></string>
+		<key>arraryDaysOpen</key>
+		<string></string>
+		<key>arrayCategoriesAndTags</key>
+		<string></string>
+	</dict>
+	<dict>
+		<key>userID</key>
+		<string>2</string>
+		<key>name</key>
+		<string>Tim cock</string>
+		<key>email</key>
+		<string>timcock@mail.com</string>
+		<key>password</key>
+		<string>123</string>
+		<key>zipcode</key>
+		<string>abcd</string>
+		<key>website</key>
+		<string></string>
+		<key>cusinetype</key>
+		<string></string>
+		<key>userDescription</key>
+		<string>this is account test. he is a personal account</string>
+		<key>userType</key>
+		<string>personal</string>
+		<key>phone</key>
+		<string>31231312</string>
+		<key>address</key>
+		<string>12 famous avenue</string>
+		<key>avatarData</key>
+		<string></string>
+		<key>arraryDaysOpen</key>
+		<string></string>
+		<key>arrayCategoriesAndTags</key>
+		<string></string>
+	</dict>
+	<dict>
+		<key>userID</key>
+		<string>3</string>
+		<key>name</key>
+		<string>restaurant</string>
+		<key>email</key>
+		<string>restaurant@mail.com</string>
+		<key>password</key>
+		<string>123</string>
+		<key>zipcode</key>
+		<string>eas</string>
+		<key>website</key>
+		<string>foody.com.vn</string>
+		<key>cusinetype</key>
+		<string>anything</string>
+		<key>userDescription</key>
+		<string>this is account test. he is a restaurant</string>
+		<key>userType</key>
+		<string>restaurant</string>
+		<key>phone</key>
+		<string>113114115</string>
+		<key>address</key>
+		<string>93 hollywood st</string>
+		<key>avatarData</key>
+		<string></string>
+		<key>arraryDaysOpen</key>
+		<array>
+			<string>Monday         : 7h - 20h</string>
+			<string>Tuesday        : 7h - 23h</string>
+			<string>Wednesday   : 7h - 21h</string>
+			<string>Thursday       : 8h - 12h30</string>
+			<string>Friday            : 13h - 19h</string>
+			<string>Saturday        : 12h - 23h</string>
+			<string>Sunday          : Close</string>
+		</array>
+		<key>arrayCategoriesAndTags</key>
+		<array>
+			<string>seafood</string>
+			<string>suop</string>
+			<string>pho</string>
+		</array>
+		<key>New item</key>
+		<string></string>
+	</dict>
+</array>
+</plist>
