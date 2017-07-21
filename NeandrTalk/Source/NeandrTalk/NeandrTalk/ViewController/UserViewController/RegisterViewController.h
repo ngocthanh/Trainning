@@ -9,5 +9,6 @@
 #import "MasterViewController.h"
 
 @interface RegisterViewController : UIViewController
+@property (weak, nonatomic) IBOutlet UITextField *tfEmail;
 
 @end

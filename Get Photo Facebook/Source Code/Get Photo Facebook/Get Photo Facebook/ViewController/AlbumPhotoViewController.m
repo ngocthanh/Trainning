@@ -36,6 +36,8 @@
     [super viewDidLoad];
     [self classesInit];
     [self getIdAndLinkOfPhoto];
+    _photoAlbum.backgroundColor = nil;
+    _photoAlbum.backgroundView.backgroundColor = nil;
 }
 -(void)classesInit{
     _arrayPhotos=[[NSMutableArray alloc] init];
