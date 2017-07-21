@@ -9,5 +9,7 @@
 #import "MasterViewController.h"
 
 @interface LoginViewController : UIViewController
-
+- (IBAction)login:(id)sender;
+@property (weak, nonatomic) IBOutlet UITextField *txtUserName;
+@property (weak, nonatomic) IBOutlet UITextField *txtPassword;
 @end

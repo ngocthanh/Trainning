@@ -13,5 +13,5 @@
 @property (strong ,nonatomic) UserModel *user;
 @property (strong, nonatomic) PostModel *post;
 
--(NSMutableArray *) getUserList;
+-(NSMutableArray *) getUserList :(NSString *)listName;
 @end

@@ -4,7 +4,7 @@
 <array>
 	<dict>
 		<key>userID</key>
-		<string>1</string>
+		<integer>1</integer>
 		<key>name</key>
 		<string>admin</string>
 		<key>email</key>
@@ -32,7 +32,7 @@
 	</dict>
 	<dict>
 		<key>userID</key>
-		<string>2</string>
+		<integer>2</integer>
 		<key>name</key>
 		<string>Tim cock</string>
 		<key>email</key>
@@ -62,7 +62,7 @@
 	</dict>
 	<dict>
 		<key>userID</key>
-		<string>3</string>
+		<integer>3</integer>
 		<key>name</key>
 		<string>restaurant</string>
 		<key>email</key>

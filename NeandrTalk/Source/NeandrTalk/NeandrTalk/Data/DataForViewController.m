@@ -9,11 +9,9 @@
 #import "DataForViewController.h"
 
 @implementation DataForViewController
--(NSMutableArray *)getUserList{
-    NSString *path=[[NSBundle mainBundle] pathForResource:@"user" ofType:@"plist"];
+-(NSMutableArray *)getUserList:(NSString *)listName{
+    NSString *path=[[NSBundle mainBundle] pathForResource:listName ofType:@"plist"];
     NSMutableArray * userArray=[[NSMutableArray alloc] initWithContentsOfFile:path];
-    
-    NSLog(@"%@",userArray);
     return userArray;
 }
 @end
