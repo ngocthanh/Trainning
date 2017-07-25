@@ -3,6 +3,42 @@
 <plist version="1.0">
 <array>
 	<dict>
+		<key>avatarName</key>
+		<string>us359</string>
+		<key>active</key>
+		<true/>
+	</dict>
+	<dict>
+		<key>avatarName</key>
+		<string>us368</string>
+		<key>active</key>
+		<false/>
+	</dict>
+	<dict>
+		<key>avatarName</key>
+		<string>us377</string>
+		<key>active</key>
+		<true/>
+	</dict>
+	<dict>
+		<key>avatarName</key>
+		<string>us386</string>
+		<key>active</key>
+		<false/>
+	</dict>
+	<dict>
+		<key>avatarName</key>
+		<string>us395</string>
+		<key>active</key>
+		<true/>
+	</dict>
+	<dict>
+		<key>avatarName</key>
+		<string>us404</string>
+		<key>active</key>
+		<false/>
+	</dict>
+	<dict>
 		<key>userID</key>
 		<integer>1</integer>
 		<key>name</key>

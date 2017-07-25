@@ -7,7 +7,12 @@
 //
 
 #import <UIKit/UIKit.h>
-
+#import "PostModel.h"
 @interface LandingPagePostCollectionViewCell : UICollectionViewCell
-
+@property (weak, nonatomic) IBOutlet UIImageView *img;
+@property (weak, nonatomic) IBOutlet UILabel *titlePost;
+@property (weak, nonatomic) IBOutlet UILabel *descriptionPost;
+@property (weak, nonatomic) IBOutlet UITableView *tableTags;
+@property (weak, nonatomic) IBOutlet UIView *viewColorTag;
+-(void)getData:(PostModel *)post;
 @end

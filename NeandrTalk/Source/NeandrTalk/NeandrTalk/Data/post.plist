@@ -3,6 +3,8 @@
 <plist version="1.0">
 <array>
 	<dict>
+		<key>primaryImage</key>
+		<string>yoga1</string>
 		<key>postID</key>
 		<string>1</string>
 		<key>postIDUserOwner</key>
@@ -45,6 +47,8 @@
 		<true/>
 	</dict>
 	<dict>
+		<key>primaryImage</key>
+		<string>Doughnuts</string>
 		<key>postID</key>
 		<string>2</string>
 		<key>postIDUserOwner</key>
@@ -87,6 +91,8 @@
 		<true/>
 	</dict>
 	<dict>
+		<key>primaryImage</key>
+		<string>FarmersMarketBanner</string>
 		<key>postID</key>
 		<string>3</string>
 		<key>postIDUserOwner</key>
@@ -129,6 +135,8 @@
 		<true/>
 	</dict>
 	<dict>
+		<key>primaryImage</key>
+		<string>food-1</string>
 		<key>postID</key>
 		<string>4</string>
 		<key>postIDUserOwner</key>
@@ -171,6 +179,8 @@
 		<true/>
 	</dict>
 	<dict>
+		<key>primaryImage</key>
+		<string>yoga2</string>
 		<key>postID</key>
 		<string>5</string>
 		<key>postIDUserOwner</key>
@@ -213,12 +223,14 @@
 		<false/>
 	</dict>
 	<dict>
+		<key>primaryImage</key>
+		<string>getFood</string>
 		<key>postID</key>
 		<string>6</string>
 		<key>postIDUserOwner</key>
 		<string>2</string>
 		<key>postType</key>
-		<string>Discussion</string>
+		<string>blogPost</string>
 		<key>title</key>
 		<string>how to make good meal</string>
 		<key>descriptionPost</key>
@@ -257,12 +269,14 @@
 		<true/>
 	</dict>
 	<dict>
+		<key>primaryImage</key>
+		<string>disneyrestaurants</string>
 		<key>postID</key>
 		<string>7</string>
 		<key>postIDUserOwner</key>
 		<string>2</string>
 		<key>postType</key>
-		<string>Discussion</string>
+		<string>blogPost</string>
 		<key>title</key>
 		<string>how to make good meal</string>
 		<key>descriptionPost</key>
@@ -301,12 +315,14 @@
 		<false/>
 	</dict>
 	<dict>
+		<key>primaryImage</key>
+		<string>img-6</string>
 		<key>postID</key>
 		<string>8</string>
 		<key>postIDUserOwner</key>
 		<string>3</string>
 		<key>postType</key>
-		<string>Discussion</string>
+		<string>blogPost</string>
 		<key>title</key>
 		<string>My restaurant</string>
 		<key>descriptionPost</key>
@@ -346,6 +362,8 @@
 		<true/>
 	</dict>
 	<dict>
+		<key>primaryImage</key>
+		<string>carne-y-vino-restaurant</string>
 		<key>postID</key>
 		<string>9</string>
 		<key>postIDUserOwner</key>
@@ -390,12 +408,14 @@
 		<true/>
 	</dict>
 	<dict>
+		<key>primaryImage</key>
+		<string>food</string>
 		<key>postID</key>
 		<string>10</string>
 		<key>postIDUserOwner</key>
 		<string>3</string>
 		<key>postType</key>
-		<string>marketplace</string>
+		<string>Discussion</string>
 		<key>title</key>
 		<string>We have good sea food</string>
 		<key>descriptionPost</key>
@@ -436,6 +456,8 @@
 		<true/>
 	</dict>
 	<dict>
+		<key>primaryImage</key>
+		<string>syrianrestaurant</string>
 		<key>postID</key>
 		<string>11</string>
 		<key>postIDUserOwner</key>
@@ -480,12 +502,14 @@
 		<true/>
 	</dict>
 	<dict>
+		<key>primaryImage</key>
+		<string>restaurantzen</string>
 		<key>postID</key>
 		<string>10</string>
 		<key>postIDUserOwner</key>
 		<string>3</string>
 		<key>postType</key>
-		<string>marketplace</string>
+		<string>Discussion</string>
 		<key>title</key>
 		<string>We have good sea food</string>
 		<key>descriptionPost</key>
@@ -528,12 +552,14 @@
 		<true/>
 	</dict>
 	<dict>
+		<key>primaryImage</key>
+		<string>restaurant</string>
 		<key>postID</key>
 		<string>13</string>
 		<key>postIDUserOwner</key>
 		<string>3</string>
 		<key>postType</key>
-		<string>marketplace</string>
+		<string>Discussion</string>
 		<key>title</key>
 		<string>KFC</string>
 		<key>descriptionPost</key>
@@ -576,12 +602,14 @@
 		<true/>
 	</dict>
 	<dict>
+		<key>primaryImage</key>
+		<string>grandrestaurant</string>
 		<key>postID</key>
 		<string>14</string>
 		<key>postIDUserOwner</key>
 		<string>2</string>
 		<key>postType</key>
-		<string>marketplace</string>
+		<string>Discussion</string>
 		<key>title</key>
 		<string>Lotte</string>
 		<key>descriptionPost</key>
@@ -624,8 +652,260 @@
 		<false/>
 	</dict>
 	<dict>
+		<key>primaryImage</key>
+		<string>market2</string>
 		<key>postID</key>
 		<string>15</string>
+		<key>postIDUserOwner</key>
+		<string>3</string>
+		<key>postType</key>
+		<string>marketplace</string>
+		<key>title</key>
+		<string>pork</string>
+		<key>descriptionPost</key>
+		<string>wanna get pork</string>
+		<key>marketType</key>
+		<string>buying</string>
+		<key>arrayImages</key>
+		<array>
+			<string>image19</string>
+			<string>image7</string>
+			<string>image91</string>
+		</array>
+		<key>arrayTags</key>
+		<array>
+			<string>seafood</string>
+			<string>cooking</string>
+			<string>personal</string>
+		</array>
+		<key>arrayComments</key>
+		<array>
+			<string>i like this too much</string>
+			<string>grat very good</string>
+			<string>wow</string>
+		</array>
+		<key>likes</key>
+		<integer>5</integer>
+		<key>votes</key>
+		<integer>7</integer>
+		<key>views</key>
+		<integer>3</integer>
+		<key>stars</key>
+		<integer>1</integer>
+		<key>price</key>
+		<string>933</string>
+		<key>favorite</key>
+		<false/>
+		<key>follow</key>
+		<false/>
+		<key>report</key>
+		<false/>
+	</dict>
+	<dict>
+		<key>primaryImage</key>
+		<string>market3</string>
+		<key>postID</key>
+		<string>16</string>
+		<key>postIDUserOwner</key>
+		<string>3</string>
+		<key>postType</key>
+		<string>marketplace</string>
+		<key>title</key>
+		<string>pork</string>
+		<key>descriptionPost</key>
+		<string>wanna get pork</string>
+		<key>marketType</key>
+		<string>buying</string>
+		<key>arrayImages</key>
+		<array>
+			<string>image19</string>
+			<string>image7</string>
+			<string>image91</string>
+		</array>
+		<key>arrayTags</key>
+		<array>
+			<string>seafood</string>
+			<string>cooking</string>
+			<string>personal</string>
+		</array>
+		<key>arrayComments</key>
+		<array>
+			<string>i like this too much</string>
+			<string>grat very good</string>
+			<string>wow</string>
+		</array>
+		<key>likes</key>
+		<integer>5</integer>
+		<key>votes</key>
+		<integer>7</integer>
+		<key>views</key>
+		<integer>3</integer>
+		<key>stars</key>
+		<integer>1</integer>
+		<key>price</key>
+		<string>933</string>
+		<key>favorite</key>
+		<false/>
+		<key>follow</key>
+		<false/>
+		<key>report</key>
+		<false/>
+	</dict>
+	<dict>
+		<key>primaryImage</key>
+		<string>markets</string>
+		<key>postID</key>
+		<string>17</string>
+		<key>postIDUserOwner</key>
+		<string>3</string>
+		<key>postType</key>
+		<string>marketplace</string>
+		<key>title</key>
+		<string>pork</string>
+		<key>descriptionPost</key>
+		<string>wanna get pork</string>
+		<key>marketType</key>
+		<string>buying</string>
+		<key>arrayImages</key>
+		<array>
+			<string>image19</string>
+			<string>image7</string>
+			<string>image91</string>
+		</array>
+		<key>arrayTags</key>
+		<array>
+			<string>seafood</string>
+			<string>cooking</string>
+			<string>personal</string>
+		</array>
+		<key>arrayComments</key>
+		<array>
+			<string>i like this too much</string>
+			<string>grat very good</string>
+			<string>wow</string>
+		</array>
+		<key>likes</key>
+		<integer>5</integer>
+		<key>votes</key>
+		<integer>7</integer>
+		<key>views</key>
+		<integer>3</integer>
+		<key>stars</key>
+		<integer>1</integer>
+		<key>price</key>
+		<string>933</string>
+		<key>favorite</key>
+		<false/>
+		<key>follow</key>
+		<false/>
+		<key>report</key>
+		<false/>
+	</dict>
+	<dict>
+		<key>primaryImage</key>
+		<string>FarmersMarketBanner</string>
+		<key>postID</key>
+		<string>18</string>
+		<key>postIDUserOwner</key>
+		<string>3</string>
+		<key>postType</key>
+		<string>marketplace</string>
+		<key>title</key>
+		<string>pork</string>
+		<key>descriptionPost</key>
+		<string>wanna get pork</string>
+		<key>marketType</key>
+		<string>buying</string>
+		<key>arrayImages</key>
+		<array>
+			<string>image19</string>
+			<string>image7</string>
+			<string>image91</string>
+		</array>
+		<key>arrayTags</key>
+		<array>
+			<string>seafood</string>
+			<string>cooking</string>
+			<string>personal</string>
+		</array>
+		<key>arrayComments</key>
+		<array>
+			<string>i like this too much</string>
+			<string>grat very good</string>
+			<string>wow</string>
+		</array>
+		<key>likes</key>
+		<integer>5</integer>
+		<key>votes</key>
+		<integer>7</integer>
+		<key>views</key>
+		<integer>3</integer>
+		<key>stars</key>
+		<integer>1</integer>
+		<key>price</key>
+		<string>933</string>
+		<key>favorite</key>
+		<false/>
+		<key>follow</key>
+		<false/>
+		<key>report</key>
+		<false/>
+	</dict>
+	<dict>
+		<key>primaryImage</key>
+		<string>Farmers_1</string>
+		<key>postID</key>
+		<string>19</string>
+		<key>postIDUserOwner</key>
+		<string>3</string>
+		<key>postType</key>
+		<string>marketplace</string>
+		<key>title</key>
+		<string>pork</string>
+		<key>descriptionPost</key>
+		<string>wanna get pork</string>
+		<key>marketType</key>
+		<string>buying</string>
+		<key>arrayImages</key>
+		<array>
+			<string>image19</string>
+			<string>image7</string>
+			<string>image91</string>
+		</array>
+		<key>arrayTags</key>
+		<array>
+			<string>seafood</string>
+			<string>cooking</string>
+			<string>personal</string>
+		</array>
+		<key>arrayComments</key>
+		<array>
+			<string>i like this too much</string>
+			<string>grat very good</string>
+			<string>wow</string>
+		</array>
+		<key>likes</key>
+		<integer>5</integer>
+		<key>votes</key>
+		<integer>7</integer>
+		<key>views</key>
+		<integer>3</integer>
+		<key>stars</key>
+		<integer>1</integer>
+		<key>price</key>
+		<string>933</string>
+		<key>favorite</key>
+		<false/>
+		<key>follow</key>
+		<false/>
+		<key>report</key>
+		<false/>
+	</dict>
+	<dict>
+		<key>primaryImage</key>
+		<string>FarmersMarketBanner</string>
+		<key>postID</key>
+		<string>20</string>
 		<key>postIDUserOwner</key>
 		<string>3</string>
 		<key>postType</key>

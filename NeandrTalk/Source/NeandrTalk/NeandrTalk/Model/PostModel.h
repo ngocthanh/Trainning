@@ -9,6 +9,7 @@
 #import <Foundation/Foundation.h>
 
 @interface PostModel : NSObject
+@property (strong,nonatomic) NSString *primaryImage;
 @property (strong,nonatomic) NSString *postID;
 @property (strong,nonatomic) NSString *postIDUserOwner;
 @property (strong,nonatomic) NSString *postType;

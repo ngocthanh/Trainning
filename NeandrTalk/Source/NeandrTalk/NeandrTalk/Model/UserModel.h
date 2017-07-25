@@ -20,8 +20,9 @@
 @property (strong,nonatomic) NSString *userType;
 @property (strong,nonatomic) NSString *phone;
 @property (strong,nonatomic) NSString *address;
+@property (strong,nonatomic) NSString *demoAvatar;
 @property (strong,nonatomic) NSData   *avatarData;
 @property (strong,nonatomic) NSArray  *arrayDaysOpen;
 @property (strong,nonatomic) NSArray  *arrayCategoriesAndTags;
-
+@property BOOL                       active;
 @end

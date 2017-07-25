@@ -1,14 +1,15 @@
+
 //
-//  LandingPageTableViewCell.m
+//  LadingHomeImageTableViewCell.m
 //  NeandrTalk
 //
-//  Created by KterKC on 7/20/17.
+//  Created by KterKC on 7/23/17.
 //  Copyright © 2017 KterKC. All rights reserved.
 //
 
-#import "LandingPageTableViewCell.h"
+#import "LadingHomeImageTableViewCell.h"
 
-@implementation LandingPageTableViewCell
+@implementation LadingHomeImageTableViewCell
 
 - (void)awakeFromNib {
     [super awakeFromNib];

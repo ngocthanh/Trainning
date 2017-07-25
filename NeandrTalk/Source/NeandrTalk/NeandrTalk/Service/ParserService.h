@@ -9,5 +9,5 @@
 #import "ConstantSystem.h"
 
 @interface ParserService : ConstantSystem
-
+-(NSMutableArray *)getList:(NSString *)listName;
 @end

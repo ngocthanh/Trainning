@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<array>
+	<dict>
+		<key>titleRelated</key>
+		<string>Neandr POS</string>
+		<key>backgroundImage</key>
+		<string>cooperate</string>
+		<key>leftImage</key>
+		<string>u426</string>
+		<key>centerImage</key>
+		<string></string>
+		<key>logoImage</key>
+		<string>u422</string>
+		<key>titleLabel</key>
+		<string></string>
+		<key>descriptionLabel</key>
+		<string></string>
+	</dict>
+	<dict>
+		<key>titleRelated</key>
+		<string>Neandr Consumer</string>
+		<key>backgroundImage</key>
+		<string>talk</string>
+		<key>leftImage</key>
+		<string>u443</string>
+		<key>centerImage</key>
+		<string></string>
+		<key>logoImage</key>
+		<string>u439</string>
+		<key>titleLabel</key>
+		<string></string>
+		<key>descriptionLabel</key>
+		<string></string>
+	</dict>
+	<dict>
+		<key>titleRelated</key>
+		<string>Messaging</string>
+		<key>backgroundImage</key>
+		<string>keyboard</string>
+		<key>leftImage</key>
+		<string>main-section-01-android</string>
+		<key>centerImage</key>
+		<string>livechat-macosx-application</string>
+		<key>logoImage</key>
+		<string></string>
+		<key>titleLabel</key>
+		<string></string>
+		<key>descriptionLabel</key>
+		<string></string>
+	</dict>
+</array>
+</plist>

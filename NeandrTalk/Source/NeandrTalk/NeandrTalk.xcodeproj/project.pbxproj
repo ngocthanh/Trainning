@@ -9,6 +9,13 @@
 /* Begin PBXBuildFile section */
 		39D616501F20B2AD003BFEAD /* user.plist in Resources */ = {isa = PBXBuildFile; fileRef = 39D6164F1F20B2AD003BFEAD /* user.plist */; };
 		39D616521F20BBC1003BFEAD /* post.plist in Resources */ = {isa = PBXBuildFile; fileRef = 39D616511F20BBC1003BFEAD /* post.plist */; };
+		54372CB11F24B02F00571173 /* LadingHomeImageTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 54372CB01F24B02F00571173 /* LadingHomeImageTableViewCell.m */; };
+		54372CB41F24B16F00571173 /* LandingTypePostTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 54372CB31F24B16F00571173 /* LandingTypePostTableViewCell.m */; };
+		54372CB71F24B1D200571173 /* LandingCommunityTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 54372CB61F24B1D200571173 /* LandingCommunityTableViewCell.m */; };
+		54372CBA1F24B20C00571173 /* LandingNeandrTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 54372CB91F24B20C00571173 /* LandingNeandrTableViewCell.m */; };
+		54372CBD1F24B71900571173 /* LandingMemberCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 54372CBC1F24B71900571173 /* LandingMemberCollectionViewCell.m */; };
+		549A85A21F25DD4800492714 /* NeandrModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 549A85A11F25DD4800492714 /* NeandrModel.m */; };
+		549A85A41F25DEAB00492714 /* neandr.plist in Resources */ = {isa = PBXBuildFile; fileRef = 549A85A31F25DEAB00492714 /* neandr.plist */; };
 		549DB59C1F203AD7005A1574 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 549DB59B1F203AD7005A1574 /* main.m */; };
 		549DB59F1F203AD7005A1574 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 549DB59E1F203AD7005A1574 /* AppDelegate.m */; };
 		549DB5A71F203AD8005A1574 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 549DB5A61F203AD8005A1574 /* Assets.xcassets */; };
@@ -44,7 +51,6 @@
 		549DB6361F205314005A1574 /* NewFeedMarketPlaceCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 549DB6351F205314005A1574 /* NewFeedMarketPlaceCollectionViewCell.m */; };
 		549DB6391F205349005A1574 /* NewFeedBlogAndDiscussionPostCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 549DB6381F205349005A1574 /* NewFeedBlogAndDiscussionPostCollectionViewCell.m */; };
 		549DB63C1F205511005A1574 /* LandingPagePostCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 549DB63B1F205511005A1574 /* LandingPagePostCollectionViewCell.m */; };
-		549DB63F1F205560005A1574 /* LandingPageTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 549DB63E1F205560005A1574 /* LandingPageTableViewCell.m */; };
 		549DB6421F205585005A1574 /* CommentTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 549DB6411F205585005A1574 /* CommentTableViewCell.m */; };
 		549DB6481F2055B3005A1574 /* TagsCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 549DB6471F2055B3005A1574 /* TagsCollectionViewCell.m */; };
 		549DB64E1F205A54005A1574 /* TimeOpenProfileTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 549DB64D1F205A54005A1574 /* TimeOpenProfileTableViewCell.m */; };
@@ -62,6 +68,19 @@
 /* Begin PBXFileReference section */
 		39D6164F1F20B2AD003BFEAD /* user.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = user.plist; sourceTree = "<group>"; };
 		39D616511F20BBC1003BFEAD /* post.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = post.plist; sourceTree = "<group>"; };
+		54372CAF1F24B02F00571173 /* LadingHomeImageTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LadingHomeImageTableViewCell.h; sourceTree = "<group>"; };
+		54372CB01F24B02F00571173 /* LadingHomeImageTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LadingHomeImageTableViewCell.m; sourceTree = "<group>"; };
+		54372CB21F24B16F00571173 /* LandingTypePostTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LandingTypePostTableViewCell.h; sourceTree = "<group>"; };
+		54372CB31F24B16F00571173 /* LandingTypePostTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LandingTypePostTableViewCell.m; sourceTree = "<group>"; };
+		54372CB51F24B1D200571173 /* LandingCommunityTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LandingCommunityTableViewCell.h; sourceTree = "<group>"; };
+		54372CB61F24B1D200571173 /* LandingCommunityTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LandingCommunityTableViewCell.m; sourceTree = "<group>"; };
+		54372CB81F24B20C00571173 /* LandingNeandrTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LandingNeandrTableViewCell.h; sourceTree = "<group>"; };
+		54372CB91F24B20C00571173 /* LandingNeandrTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LandingNeandrTableViewCell.m; sourceTree = "<group>"; };
+		54372CBB1F24B71900571173 /* LandingMemberCollectionViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LandingMemberCollectionViewCell.h; sourceTree = "<group>"; };
+		54372CBC1F24B71900571173 /* LandingMemberCollectionViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LandingMemberCollectionViewCell.m; sourceTree = "<group>"; };
+		549A85A01F25DD4800492714 /* NeandrModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NeandrModel.h; sourceTree = "<group>"; };
+		549A85A11F25DD4800492714 /* NeandrModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NeandrModel.m; sourceTree = "<group>"; };
+		549A85A31F25DEAB00492714 /* neandr.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = neandr.plist; sourceTree = "<group>"; };
 		549DB5971F203AD7005A1574 /* NeandrTalk.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = NeandrTalk.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		549DB59B1F203AD7005A1574 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		549DB59D1F203AD7005A1574 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -130,8 +149,6 @@
 		549DB6381F205349005A1574 /* NewFeedBlogAndDiscussionPostCollectionViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NewFeedBlogAndDiscussionPostCollectionViewCell.m; sourceTree = "<group>"; };
 		549DB63A1F205511005A1574 /* LandingPagePostCollectionViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LandingPagePostCollectionViewCell.h; sourceTree = "<group>"; };
 		549DB63B1F205511005A1574 /* LandingPagePostCollectionViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LandingPagePostCollectionViewCell.m; sourceTree = "<group>"; };
-		549DB63D1F205560005A1574 /* LandingPageTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LandingPageTableViewCell.h; sourceTree = "<group>"; };
-		549DB63E1F205560005A1574 /* LandingPageTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LandingPageTableViewCell.m; sourceTree = "<group>"; };
 		549DB6401F205585005A1574 /* CommentTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CommentTableViewCell.h; sourceTree = "<group>"; };
 		549DB6411F205585005A1574 /* CommentTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CommentTableViewCell.m; sourceTree = "<group>"; };
 		549DB6461F2055B3005A1574 /* TagsCollectionViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TagsCollectionViewCell.h; sourceTree = "<group>"; };
@@ -234,6 +251,8 @@
 				549DB6061F2045E6005A1574 /* UserModel.m */,
 				549DB6081F2045F1005A1574 /* PostModel.h */,
 				549DB6091F2045F1005A1574 /* PostModel.m */,
+				549A85A01F25DD4800492714 /* NeandrModel.h */,
+				549A85A11F25DD4800492714 /* NeandrModel.m */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -282,6 +301,7 @@
 				549DB5B91F203CED005A1574 /* DataForViewController.m */,
 				39D616511F20BBC1003BFEAD /* post.plist */,
 				39D6164F1F20B2AD003BFEAD /* user.plist */,
+				549A85A31F25DEAB00492714 /* neandr.plist */,
 			);
 			path = Data;
 			sourceTree = "<group>";
@@ -441,8 +461,16 @@
 				549DB6381F205349005A1574 /* NewFeedBlogAndDiscussionPostCollectionViewCell.m */,
 				549DB63A1F205511005A1574 /* LandingPagePostCollectionViewCell.h */,
 				549DB63B1F205511005A1574 /* LandingPagePostCollectionViewCell.m */,
-				549DB63D1F205560005A1574 /* LandingPageTableViewCell.h */,
-				549DB63E1F205560005A1574 /* LandingPageTableViewCell.m */,
+				54372CAF1F24B02F00571173 /* LadingHomeImageTableViewCell.h */,
+				54372CB01F24B02F00571173 /* LadingHomeImageTableViewCell.m */,
+				54372CB21F24B16F00571173 /* LandingTypePostTableViewCell.h */,
+				54372CB31F24B16F00571173 /* LandingTypePostTableViewCell.m */,
+				54372CB51F24B1D200571173 /* LandingCommunityTableViewCell.h */,
+				54372CB61F24B1D200571173 /* LandingCommunityTableViewCell.m */,
+				54372CB81F24B20C00571173 /* LandingNeandrTableViewCell.h */,
+				54372CB91F24B20C00571173 /* LandingNeandrTableViewCell.m */,
+				54372CBB1F24B71900571173 /* LandingMemberCollectionViewCell.h */,
+				54372CBC1F24B71900571173 /* LandingMemberCollectionViewCell.m */,
 			);
 			path = Home;
 			sourceTree = "<group>";
@@ -509,6 +537,7 @@
 				39D616521F20BBC1003BFEAD /* post.plist in Resources */,
 				549DB5A71F203AD8005A1574 /* Assets.xcassets in Resources */,
 				39D616501F20B2AD003BFEAD /* user.plist in Resources */,
+				549A85A41F25DEAB00492714 /* neandr.plist in Resources */,
 				549DB60D1F204639005A1574 /* LaunchScreen.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -526,6 +555,7 @@
 				549DB6421F205585005A1574 /* CommentTableViewCell.m in Sources */,
 				549DB5DF1F204145005A1574 /* ProfileUserViewController.m in Sources */,
 				549DB5BA1F203CED005A1574 /* DataForViewController.m in Sources */,
+				54372CB71F24B1D200571173 /* LandingCommunityTableViewCell.m in Sources */,
 				549DB5FE1F2043D4005A1574 /* PurchaseConfirmViewController.m in Sources */,
 				549DB6191F2046F8005A1574 /* CommentViewController.m in Sources */,
 				549DB6631F205D3F005A1574 /* PurchaseDetailTableViewCell.m in Sources */,
@@ -541,6 +571,7 @@
 				549DB6151F204690005A1574 /* NewFeedViewController.m in Sources */,
 				549DB65D1F205CBF005A1574 /* OderCheckTableViewCell.m in Sources */,
 				549DB6361F205314005A1574 /* NewFeedMarketPlaceCollectionViewCell.m in Sources */,
+				54372CBD1F24B71900571173 /* LandingMemberCollectionViewCell.m in Sources */,
 				549DB5C61F203ED3005A1574 /* ParserService.m in Sources */,
 				549DB61C1F204709005A1574 /* RightSlideViewController.m in Sources */,
 				549DB59C1F203AD7005A1574 /* main.m in Sources */,
@@ -549,6 +580,8 @@
 				549DB6601F205D2E005A1574 /* CartTableViewCell.m in Sources */,
 				549DB5F81F2043A8005A1574 /* CheckoutViewController.m in Sources */,
 				549DB6691F205DFB005A1574 /* DiscussionImageTableViewCell.m in Sources */,
+				54372CB41F24B16F00571173 /* LandingTypePostTableViewCell.m in Sources */,
+				54372CBA1F24B20C00571173 /* LandingNeandrTableViewCell.m in Sources */,
 				549DB65A1F205CA7005A1574 /* InformationTableViewCell.m in Sources */,
 				549DB5C31F203E93005A1574 /* NetworkService.m in Sources */,
 				549DB6251F20504F005A1574 /* BlogCollectionViewCell.m in Sources */,
@@ -556,15 +589,16 @@
 				549DB5E01F204145005A1574 /* RegisterViewController.m in Sources */,
 				549DB6571F205C86005A1574 /* ProductTableViewCell.m in Sources */,
 				549DB6661F205D65005A1574 /* MarketPostCollectionViewCell.m in Sources */,
-				549DB63F1F205560005A1574 /* LandingPageTableViewCell.m in Sources */,
 				549DB60A1F2045F1005A1574 /* PostModel.m in Sources */,
 				549DB5C01F203D41005A1574 /* Helper.m in Sources */,
 				549DB6481F2055B3005A1574 /* TagsCollectionViewCell.m in Sources */,
 				549DB5EF1F20436D005A1574 /* SingleBlogPostViewController.m in Sources */,
 				549DB6041F20456D005A1574 /* SingleDiscussionPostViewController.m in Sources */,
+				549A85A21F25DD4800492714 /* NeandrModel.m in Sources */,
 				549DB5FB1F2043B2005A1574 /* CartViewController.m in Sources */,
 				549DB6011F20455A005A1574 /* AllDiscussionPostViewController.m in Sources */,
 				549DB5DE1F204145005A1574 /* LoginViewController.m in Sources */,
+				54372CB11F24B02F00571173 /* LadingHomeImageTableViewCell.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
