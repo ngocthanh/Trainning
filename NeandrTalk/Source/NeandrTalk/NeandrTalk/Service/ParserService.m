@@ -58,8 +58,7 @@
         post.follow = [poster valueForKey:@"follow"];
         post.report = [poster valueForKey:@"report"];
         post.stars = [poster valueForKey:@"stars"];
-        
-        
+        post.featured=[poster valueForKey:@"featured"];
         [array addObject:post];
         
     }

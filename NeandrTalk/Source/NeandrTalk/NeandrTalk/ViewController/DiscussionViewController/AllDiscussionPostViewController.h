@@ -9,5 +9,8 @@
 #import "MasterViewController.h"
 
 @interface AllDiscussionPostViewController : MasterViewController
+@property (strong,nonatomic) NSArray *allPostArray;
+@property (strong,nonatomic) NSMutableArray *featuredPostArray;
+@property (strong,nonatomic) NSArray *discussionPostArray;
 
 @end

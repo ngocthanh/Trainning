@@ -27,4 +27,5 @@
 @property  BOOL favorite;
 @property  BOOL follow;
 @property  BOOL report;
+@property  (strong,nonatomic) NSString *featured;
 @end
