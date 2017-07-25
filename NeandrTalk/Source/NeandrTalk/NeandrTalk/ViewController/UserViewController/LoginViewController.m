@@ -48,6 +48,7 @@
 
 }
 -(BOOL)shouldPerformSegueWithIdentifier:(NSString *)identifier sender:(id)sender{
+
     if ([identifier isEqualToString:@"loginWithNeandrTalk"]) {
         NSInteger success = 0;
         @try {
@@ -87,7 +88,6 @@
     }
     else
         return YES;
-    
 }
 - (void) alertStatus:(NSString *)msg :(NSString *)title :(int) tag{
     UIAlertView *alertView = [[UIAlertView alloc] initWithTitle:title
