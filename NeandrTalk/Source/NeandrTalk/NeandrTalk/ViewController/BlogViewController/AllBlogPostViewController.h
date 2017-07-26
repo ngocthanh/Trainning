@@ -9,5 +9,8 @@
 #import "MasterViewController.h"
 
 @interface AllBlogPostViewController : MasterViewController
+@property (strong,nonatomic) NSArray *allPostArray;
+@property (strong,nonatomic) NSMutableArray *featuredBlogPostArray;
+@property (strong,nonatomic) NSArray *blogPostArray;
 
 @end

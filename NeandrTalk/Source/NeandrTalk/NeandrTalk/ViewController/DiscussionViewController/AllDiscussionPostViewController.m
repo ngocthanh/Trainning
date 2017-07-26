@@ -10,8 +10,7 @@
 #import "ParserService.h"
 #import "DiscussionHomeTableViewCell.h"
 #import "DiscussionPostTableViewCell.h"
-#import "DiscussionPostCollectionViewCell.h"
-#import "DiscussionFeaturedPostCollectionViewCell.h"
+
 
 
 #define idHomeCell @"homeTableViewCell"
