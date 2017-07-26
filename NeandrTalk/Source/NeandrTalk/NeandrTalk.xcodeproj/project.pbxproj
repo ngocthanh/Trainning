@@ -11,6 +11,10 @@
 		39C0F3CE1F275CCD008E0E61 /* BlogHomeTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 39C0F3CD1F275CCD008E0E61 /* BlogHomeTableViewCell.m */; };
 		39C0F3D41F275D21008E0E61 /* BlogFeaturedPostCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 39C0F3D31F275D21008E0E61 /* BlogFeaturedPostCollectionViewCell.m */; };
 		39C0F3D71F275D42008E0E61 /* BlogPostCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 39C0F3D61F275D42008E0E61 /* BlogPostCollectionViewCell.m */; };
+		39C0F3DA1F28501E008E0E61 /* MarketPlaceHomeTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 39C0F3D91F28501E008E0E61 /* MarketPlaceHomeTableViewCell.m */; };
+		39C0F3DD1F285035008E0E61 /* MarketPlacePostTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 39C0F3DC1F285035008E0E61 /* MarketPlacePostTableViewCell.m */; };
+		39C0F3E01F28505C008E0E61 /* MarketPlaceFeaturedPostCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 39C0F3DF1F28505C008E0E61 /* MarketPlaceFeaturedPostCollectionViewCell.m */; };
+		39C0F3E31F285085008E0E61 /* MarketPlacePostCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 39C0F3E21F285085008E0E61 /* MarketPlacePostCollectionViewCell.m */; };
 		39CA23471F26E76800029A47 /* DiscussionHomeTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 39CA23461F26E76800029A47 /* DiscussionHomeTableViewCell.m */; };
 		39CA234A1F26E8AC00029A47 /* DiscussionPostTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 39CA23491F26E8AC00029A47 /* DiscussionPostTableViewCell.m */; };
 		39CA234D1F26E8D100029A47 /* DiscussionFeaturedPostCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 39CA234C1F26E8D100029A47 /* DiscussionFeaturedPostCollectionViewCell.m */; };
@@ -81,6 +85,14 @@
 		39C0F3D31F275D21008E0E61 /* BlogFeaturedPostCollectionViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BlogFeaturedPostCollectionViewCell.m; sourceTree = "<group>"; };
 		39C0F3D51F275D42008E0E61 /* BlogPostCollectionViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BlogPostCollectionViewCell.h; sourceTree = "<group>"; };
 		39C0F3D61F275D42008E0E61 /* BlogPostCollectionViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BlogPostCollectionViewCell.m; sourceTree = "<group>"; };
+		39C0F3D81F28501E008E0E61 /* MarketPlaceHomeTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MarketPlaceHomeTableViewCell.h; sourceTree = "<group>"; };
+		39C0F3D91F28501E008E0E61 /* MarketPlaceHomeTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MarketPlaceHomeTableViewCell.m; sourceTree = "<group>"; };
+		39C0F3DB1F285035008E0E61 /* MarketPlacePostTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MarketPlacePostTableViewCell.h; sourceTree = "<group>"; };
+		39C0F3DC1F285035008E0E61 /* MarketPlacePostTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MarketPlacePostTableViewCell.m; sourceTree = "<group>"; };
+		39C0F3DE1F28505C008E0E61 /* MarketPlaceFeaturedPostCollectionViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MarketPlaceFeaturedPostCollectionViewCell.h; sourceTree = "<group>"; };
+		39C0F3DF1F28505C008E0E61 /* MarketPlaceFeaturedPostCollectionViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MarketPlaceFeaturedPostCollectionViewCell.m; sourceTree = "<group>"; };
+		39C0F3E11F285085008E0E61 /* MarketPlacePostCollectionViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MarketPlacePostCollectionViewCell.h; sourceTree = "<group>"; };
+		39C0F3E21F285085008E0E61 /* MarketPlacePostCollectionViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MarketPlacePostCollectionViewCell.m; sourceTree = "<group>"; };
 		39CA23451F26E76800029A47 /* DiscussionHomeTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DiscussionHomeTableViewCell.h; sourceTree = "<group>"; };
 		39CA23461F26E76800029A47 /* DiscussionHomeTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DiscussionHomeTableViewCell.m; sourceTree = "<group>"; };
 		39CA23481F26E8AC00029A47 /* DiscussionPostTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DiscussionPostTableViewCell.h; sourceTree = "<group>"; };
@@ -439,6 +451,14 @@
 				549DB6621F205D3F005A1574 /* PurchaseDetailTableViewCell.m */,
 				549DB6641F205D65005A1574 /* MarketPostCollectionViewCell.h */,
 				549DB6651F205D65005A1574 /* MarketPostCollectionViewCell.m */,
+				39C0F3D81F28501E008E0E61 /* MarketPlaceHomeTableViewCell.h */,
+				39C0F3D91F28501E008E0E61 /* MarketPlaceHomeTableViewCell.m */,
+				39C0F3DB1F285035008E0E61 /* MarketPlacePostTableViewCell.h */,
+				39C0F3DC1F285035008E0E61 /* MarketPlacePostTableViewCell.m */,
+				39C0F3DE1F28505C008E0E61 /* MarketPlaceFeaturedPostCollectionViewCell.h */,
+				39C0F3DF1F28505C008E0E61 /* MarketPlaceFeaturedPostCollectionViewCell.m */,
+				39C0F3E11F285085008E0E61 /* MarketPlacePostCollectionViewCell.h */,
+				39C0F3E21F285085008E0E61 /* MarketPlacePostCollectionViewCell.m */,
 			);
 			path = MarketPlace;
 			sourceTree = "<group>";
@@ -586,7 +606,9 @@
 			files = (
 				549DB6391F205349005A1574 /* NewFeedBlogAndDiscussionPostCollectionViewCell.m in Sources */,
 				549DB5F51F20439A005A1574 /* SingleMarketPlacePostViewController.m in Sources */,
+				39C0F3DA1F28501E008E0E61 /* MarketPlaceHomeTableViewCell.m in Sources */,
 				549DB6421F205585005A1574 /* CommentTableViewCell.m in Sources */,
+				39C0F3E01F28505C008E0E61 /* MarketPlaceFeaturedPostCollectionViewCell.m in Sources */,
 				549DB5DF1F204145005A1574 /* ProfileUserViewController.m in Sources */,
 				549DB5BA1F203CED005A1574 /* DataForViewController.m in Sources */,
 				54372CB71F24B1D200571173 /* LandingCommunityTableViewCell.m in Sources */,
@@ -619,6 +641,8 @@
 				549DB65A1F205CA7005A1574 /* InformationTableViewCell.m in Sources */,
 				549DB5C31F203E93005A1574 /* NetworkService.m in Sources */,
 				549DB6071F2045E6005A1574 /* UserModel.m in Sources */,
+				39C0F3E31F285085008E0E61 /* MarketPlacePostCollectionViewCell.m in Sources */,
+				39C0F3DD1F285035008E0E61 /* MarketPlacePostTableViewCell.m in Sources */,
 				549C36481F26D9B000D697BB /* TagsPostTableViewCell.m in Sources */,
 				549DB5E01F204145005A1574 /* RegisterViewController.m in Sources */,
 				39CA234D1F26E8D100029A47 /* DiscussionFeaturedPostCollectionViewCell.m in Sources */,
