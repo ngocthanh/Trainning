@@ -8,6 +8,8 @@
 
 #import <UIKit/UIKit.h>
 
-@interface MarketPlacePostTableViewCell : UITableViewCell
-
+@interface MarketPlacePostTableViewCell : UITableViewCell<UICollectionViewDataSource,UICollectionViewDelegate,UICollectionViewDelegateFlowLayout>
+@property (weak, nonatomic) IBOutlet UICollectionView *marketPlacePostCollectionView;
+@property (strong,nonatomic) NSArray *allPostArray;
+@property (strong,nonatomic) NSArray *marketPlacePostArray;
 @end

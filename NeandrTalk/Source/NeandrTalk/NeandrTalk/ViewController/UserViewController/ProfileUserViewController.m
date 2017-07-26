@@ -18,7 +18,7 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    [_videoAbout loadRequest:[[NSURLRequest alloc] initWithURL:[[NSURL alloc] initWithString:@"https://www.youtube.com/embed/yMuBSxSIS04"]]];
+    [_videoAbout loadRequest:[[NSURLRequest alloc] initWithURL:[[NSURL alloc] initWithString:@"https://www.youtube.com/watch?v=MHG3n_-Y33A"]]];
     _avaterUser.layer.borderColor = [UIColor whiteColor].CGColor;
     _avaterUser.layer.borderWidth = 4;
     _avaterUser.layer.cornerRadius = _avaterUser.frame.size.width/2;

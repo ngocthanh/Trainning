@@ -22,7 +22,7 @@
 @property  NSInteger likes;
 @property  NSInteger votes;
 @property  NSInteger views;
-@property  NSInteger price;
+@property  (strong,nonatomic) NSString *price;
 @property  NSInteger stars;
 @property  BOOL favorite;
 @property  BOOL follow;

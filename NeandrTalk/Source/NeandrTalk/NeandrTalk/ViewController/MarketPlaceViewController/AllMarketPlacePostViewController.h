@@ -9,5 +9,7 @@
 #import "MasterViewController.h"
 
 @interface AllMarketPlacePostViewController : MasterViewController
-
+@property (strong,nonatomic) NSArray *allPostArray;
+@property (strong,nonatomic) NSMutableArray *featuredMarketPostArray;
+@property (strong,nonatomic) NSArray *marketPostArray;
 @end

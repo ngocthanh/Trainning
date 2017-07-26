@@ -9,5 +9,13 @@
 #import "MarketPlacePostCollectionViewCell.h"
 
 @implementation MarketPlacePostCollectionViewCell
-
+-(void)getData:(PostModel *)post{
+    self.marketPostImage.image = [UIImage imageNamed:post.primaryImage];
+    self.marketPostTitle.text = post.title;
+    self.marketPostType.text=[NSString stringWithFormat:@" %@ ",post.marketType];
+    self.marketPostPrice.text=[NSString stringWithFormat:@"Price: $%@",post.price];
+    if (post.descriptionPost!=nil) {
+        self.marketPostDescription.text=post.descriptionPost;
+    }
+}
 @end

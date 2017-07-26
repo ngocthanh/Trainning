@@ -59,6 +59,8 @@
         post.report = [poster valueForKey:@"report"];
         post.stars = [poster valueForKey:@"stars"];
         post.featured=[poster valueForKey:@"featured"];
+        post.price=[poster valueForKey:@"price"];
+        post.marketType=[poster valueForKey:@"marketType"];
         [array addObject:post];
         
     }
