@@ -566,9 +566,9 @@
                                                         </label>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="natural" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wpr-3A-LCc">
                                                             <rect key="frame" x="7" y="41" width="277.5" height="179.5"/>
-                                                            <mutableString key="text">Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Phasellus hendrerit. Pellentesque aliquet nibh nec urna. In nisi neque, aliquet vel, dapibus id, mattis vel, nisi. Sed pretium, ligula sollicitudin laoreet viverra, tortor libero sodales leo, eget blandit nunc tortor eu nibh. Nullam mollis. Ut justo. Suspendisse potenti.
+                                                            <string key="text">Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Phasellus hendrerit. Pellentesque aliquet nibh nec urna. In nisi neque, aliquet vel, dapibus id, mattis vel, nisi. Sed pretium, ligula sollicitudin laoreet viverra, tortor libero sodales leo, eget blandit nunc tortor eu nibh. Nullam mollis. Ut justo. Suspendisse potenti.
 
-Sed egestas, ante et vulputate volutpat, eros pede semper est, vitae luctus metus libero eu augue. Morbi purus libero, faucibus adipiscing, commodo quis, gravida id, est. Sed lectus. Praesent elementum hendrerit tortor. Sed semper lorem at felis. Vestibulum volutpat, lacus a ultrices sagittis, mi neque euismod dui, eu pulvinar nunc sapien ornare nisl. Phasellus pede arcu, dapibus eu, fermentum et, dapibus sed, urna.</mutableString>
+Sed egestas, ante et vulputate volutpat, eros pede semper est, vitae luctus metus libero eu augue. Morbi purus libero, faucibus adipiscing, commodo quis, gravida id, est. Sed lectus. Praesent elementum hendrerit tortor. Sed semper lorem at felis. Vestibulum volutpat, lacus a ultrices sagittis, mi neque euismod dui, eu pulvinar nunc sapien ornare nisl. Phasellus pede arcu, dapibus eu, fermentum et, dapibus sed, urna.</string>
                                                             <fontDescription key="fontDescription" type="system" pointSize="10"/>
                                                             <nil key="textColor"/>
                                                             <nil key="highlightedColor"/>
@@ -633,7 +633,9 @@ Sed egestas, ante et vulputate volutpat, eros pede semper est, vitae luctus metu
                             <constraint firstItem="XsJ-rv-AZf" firstAttribute="height" secondItem="NVE-Up-WFX" secondAttribute="height" id="yNE-BH-jC2"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" id="khl-Pd-bQF"/>
+                    <navigationItem key="navigationItem" id="khl-Pd-bQF">
+                        <barButtonItem key="backBarButtonItem" title="Back" id="qAE-HY-cco"/>
+                    </navigationItem>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="bRh-sp-wsU" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -657,6 +659,34 @@ Sed egestas, ante et vulputate volutpat, eros pede semper est, vitae luctus metu
                 <placeholder placeholderIdentifier="IBFirstResponder" id="NAC-bY-DGl" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="4158" y="1973"/>
+        </scene>
+        <!--Table View Controller-->
+        <scene sceneID="MqA-66-RZG">
+            <objects>
+                <tableViewController id="E21-3m-gfB" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="fSu-zr-E5H">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <prototypes>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="al7-ad-efJ">
+                                <rect key="frame" x="0.0" y="28" width="375" height="44"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="al7-ad-efJ" id="dy1-M4-g1N">
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                </tableViewCellContentView>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="E21-3m-gfB" id="UNf-dd-GN9"/>
+                            <outlet property="delegate" destination="E21-3m-gfB" id="H1E-49-UPE"/>
+                        </connections>
+                    </tableView>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="ewM-Bw-yGi" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="5034" y="1731"/>
         </scene>
         <!--Discussion-->
         <scene sceneID="3Vq-Nx-iJr">
@@ -1162,7 +1192,6 @@ Sed egestas, ante et vulputate volutpat, eros pede semper est, vitae luctus metu
         <!--All Discussion Post View Controller-->
         <scene sceneID="YnR-kG-w3G">
             <objects>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="MHc-pz-zWv" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <viewController id="Uzr-Hh-gJK" customClass="AllDiscussionPostViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="12f-rV-fBZ"/>
@@ -1532,6 +1561,7 @@ Sed egestas, ante et vulputate volutpat, eros pede semper est, vitae luctus metu
                         <outlet property="tableDiscussion" destination="oaE-Vo-NPh" id="WjI-dZ-ZFA"/>
                     </connections>
                 </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="MHc-pz-zWv" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="3285.5999999999999" y="1609.745127436282"/>
         </scene>
@@ -1669,10 +1699,38 @@ Sed egestas, ante et vulputate volutpat, eros pede semper est, vitae luctus metu
                                                                         <nil key="textColor"/>
                                                                         <nil key="highlightedColor"/>
                                                                     </label>
-                                                                    <tableView hidden="YES" clipsSubviews="YES" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" alwaysBounceVertical="YES" keyboardDismissMode="onDrag" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="5lI-gT-D56">
+                                                                    <tableView clipsSubviews="YES" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" alwaysBounceVertical="YES" keyboardDismissMode="onDrag" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="5lI-gT-D56">
                                                                         <rect key="frame" x="140.5" y="13" width="50.5" height="105.5"/>
                                                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                                                         <color key="tintColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                                                        <prototypes>
+                                                                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="tagCell" id="Kra-sM-Wmu" customClass="TagsPostTableViewCell">
+                                                                                <rect key="frame" x="0.0" y="28" width="50.5" height="44"/>
+                                                                                <autoresizingMask key="autoresizingMask"/>
+                                                                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="Kra-sM-Wmu" id="RkN-MJ-QHP">
+                                                                                    <rect key="frame" x="0.0" y="0.0" width="50.5" height="43.5"/>
+                                                                                    <autoresizingMask key="autoresizingMask"/>
+                                                                                    <subviews>
+                                                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="szV-Sn-IEL">
+                                                                                            <rect key="frame" x="0.0" y="0.0" width="50.5" height="43.5"/>
+                                                                                            <color key="backgroundColor" red="0.96078431610000004" green="0.70588237050000002" blue="0.20000000300000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                                                            <fontDescription key="fontDescription" type="system" pointSize="9"/>
+                                                                                            <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                                                            <nil key="highlightedColor"/>
+                                                                                        </label>
+                                                                                    </subviews>
+                                                                                    <constraints>
+                                                                                        <constraint firstItem="szV-Sn-IEL" firstAttribute="width" secondItem="RkN-MJ-QHP" secondAttribute="width" id="Vdy-QJ-odr"/>
+                                                                                        <constraint firstItem="szV-Sn-IEL" firstAttribute="centerX" secondItem="RkN-MJ-QHP" secondAttribute="centerX" id="k6h-My-Kl6"/>
+                                                                                        <constraint firstItem="szV-Sn-IEL" firstAttribute="height" secondItem="RkN-MJ-QHP" secondAttribute="height" id="loH-xe-Cfd"/>
+                                                                                        <constraint firstItem="szV-Sn-IEL" firstAttribute="centerY" secondItem="RkN-MJ-QHP" secondAttribute="centerY" id="tNz-AC-P1O"/>
+                                                                                    </constraints>
+                                                                                </tableViewCellContentView>
+                                                                                <connections>
+                                                                                    <outlet property="tagsLabel" destination="szV-Sn-IEL" id="4g4-2m-LGv"/>
+                                                                                </connections>
+                                                                            </tableViewCell>
+                                                                        </prototypes>
                                                                     </tableView>
                                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="6Dj-aY-fla">
                                                                         <rect key="frame" x="0.0" y="125" width="203" height="6.5"/>
@@ -2198,7 +2256,6 @@ Sed egestas, ante et vulputate volutpat, eros pede semper est, vitae luctus metu
         <!--All Blog Post View Controller-->
         <scene sceneID="Wmi-X0-SZn">
             <objects>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="c2m-18-bd8" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <viewController id="rgh-nr-xfM" customClass="AllBlogPostViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="nsF-a7-v2G"/>
@@ -2571,6 +2628,7 @@ Sed egestas, ante et vulputate volutpat, eros pede semper est, vitae luctus metu
                         <outlet property="tableBlogPost" destination="pUn-ko-7W8" id="dhR-gW-FYb"/>
                     </connections>
                 </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="c2m-18-bd8" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="3286" y="2946"/>
         </scene>
@@ -2592,6 +2650,6 @@ Sed egestas, ante et vulputate volutpat, eros pede semper est, vitae luctus metu
     <inferredMetricsTieBreakers>
         <segue reference="01x-S2-BTQ"/>
         <segue reference="rX3-CB-Y9o"/>
-        <segue reference="mEr-sa-lbx"/>
+        <segue reference="3R9-Ms-bhF"/>
     </inferredMetricsTieBreakers>
 </document>

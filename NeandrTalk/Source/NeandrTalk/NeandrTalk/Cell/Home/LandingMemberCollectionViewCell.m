@@ -17,7 +17,7 @@
 }
 -(void)getDataUser:(UserModel *)user{
     self.avatarMember.image = [UIImage imageNamed:user.demoAvatar];
-    if (user.active ==  YES) {
+    if (user.active ==  1) {
         self.logoActiveMember.image = [UIImage imageNamed:@"active"];
     }
 }

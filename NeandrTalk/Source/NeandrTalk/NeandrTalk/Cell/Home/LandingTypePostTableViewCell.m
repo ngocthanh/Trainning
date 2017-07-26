@@ -37,11 +37,11 @@
     [cell getData:_dataPosts[indexPath.row]];
     return cell;
 }
-//-(CGSize)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout *)collectionViewLayout sizeForItemAtIndexPath:(NSIndexPath *)indexPath{
-//    float height = self.contentView.frame.size.height/2;
-//    float width = self.contentView.frame.size.width/4;
-//    return CGSizeMake(width, height);
-//}
+-(CGSize)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout *)collectionViewLayout sizeForItemAtIndexPath:(NSIndexPath *)indexPath{
+    float height = self.contentView.frame.size.height/2;
+    float width = self.contentView.frame.size.width/2;
+    return CGSizeMake(width, height);
+}
 //-(UIEdgeInsets)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout *)collectionViewLayout insetForSectionAtIndex:(NSInteger)section{
 //    return UIEdgeInsetsMake(0, marginBetweenTwoItem, marginBetweenTwoItem, marginBetweenTwoItem);
 //}

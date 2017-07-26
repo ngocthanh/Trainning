@@ -9,5 +9,7 @@
 #import "MasterViewController.h"
 
 @interface SingleMarketPlacePostViewController : MasterViewController
+@property (weak, nonatomic) IBOutlet UICollectionView *collectionRelated;
+@property (weak, nonatomic) IBOutlet UIButton *btnComment;
 
 @end

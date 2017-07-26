@@ -24,5 +24,5 @@
 @property (strong,nonatomic) NSData   *avatarData;
 @property (strong,nonatomic) NSArray  *arrayDaysOpen;
 @property (strong,nonatomic) NSArray  *arrayCategoriesAndTags;
-@property BOOL                       active;
+@property  NSInteger       active;
 @end

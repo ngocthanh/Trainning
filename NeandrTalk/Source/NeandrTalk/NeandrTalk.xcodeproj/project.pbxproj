@@ -23,8 +23,10 @@
 		54372CB71F24B1D200571173 /* LandingCommunityTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 54372CB61F24B1D200571173 /* LandingCommunityTableViewCell.m */; };
 		54372CBA1F24B20C00571173 /* LandingNeandrTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 54372CB91F24B20C00571173 /* LandingNeandrTableViewCell.m */; };
 		54372CBD1F24B71900571173 /* LandingMemberCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 54372CBC1F24B71900571173 /* LandingMemberCollectionViewCell.m */; };
+		544A089C1F2840CE007E5256 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 544A089B1F2840CE007E5256 /* Main.storyboard */; };
 		549A85A21F25DD4800492714 /* NeandrModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 549A85A11F25DD4800492714 /* NeandrModel.m */; };
 		549A85A41F25DEAB00492714 /* neandr.plist in Resources */ = {isa = PBXBuildFile; fileRef = 549A85A31F25DEAB00492714 /* neandr.plist */; };
+		549C36481F26D9B000D697BB /* TagsPostTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 549C36471F26D9B000D697BB /* TagsPostTableViewCell.m */; };
 		549DB59C1F203AD7005A1574 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 549DB59B1F203AD7005A1574 /* main.m */; };
 		549DB59F1F203AD7005A1574 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 549DB59E1F203AD7005A1574 /* AppDelegate.m */; };
 		549DB5A71F203AD8005A1574 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 549DB5A61F203AD8005A1574 /* Assets.xcassets */; };
@@ -50,7 +52,6 @@
 		549DB6071F2045E6005A1574 /* UserModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 549DB6061F2045E6005A1574 /* UserModel.m */; };
 		549DB60A1F2045F1005A1574 /* PostModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 549DB6091F2045F1005A1574 /* PostModel.m */; };
 		549DB60D1F204639005A1574 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 549DB60B1F204639005A1574 /* LaunchScreen.storyboard */; };
-		549DB60E1F204639005A1574 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 549DB60C1F204639005A1574 /* Main.storyboard */; };
 		549DB6121F204686005A1574 /* LandingPageViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 549DB6111F204686005A1574 /* LandingPageViewController.m */; };
 		549DB6151F204690005A1574 /* NewFeedViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 549DB6141F204690005A1574 /* NewFeedViewController.m */; };
 		549DB6191F2046F8005A1574 /* CommentViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 549DB6181F2046F8005A1574 /* CommentViewController.m */; };
@@ -102,9 +103,12 @@
 		54372CB91F24B20C00571173 /* LandingNeandrTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LandingNeandrTableViewCell.m; sourceTree = "<group>"; };
 		54372CBB1F24B71900571173 /* LandingMemberCollectionViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LandingMemberCollectionViewCell.h; sourceTree = "<group>"; };
 		54372CBC1F24B71900571173 /* LandingMemberCollectionViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LandingMemberCollectionViewCell.m; sourceTree = "<group>"; };
+		544A089B1F2840CE007E5256 /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
 		549A85A01F25DD4800492714 /* NeandrModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NeandrModel.h; sourceTree = "<group>"; };
 		549A85A11F25DD4800492714 /* NeandrModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NeandrModel.m; sourceTree = "<group>"; };
 		549A85A31F25DEAB00492714 /* neandr.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = neandr.plist; sourceTree = "<group>"; };
+		549C36461F26D9B000D697BB /* TagsPostTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TagsPostTableViewCell.h; sourceTree = "<group>"; };
+		549C36471F26D9B000D697BB /* TagsPostTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TagsPostTableViewCell.m; sourceTree = "<group>"; };
 		549DB5971F203AD7005A1574 /* NeandrTalk.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = NeandrTalk.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		549DB59B1F203AD7005A1574 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		549DB59D1F203AD7005A1574 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -154,7 +158,6 @@
 		549DB6081F2045F1005A1574 /* PostModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PostModel.h; sourceTree = "<group>"; };
 		549DB6091F2045F1005A1574 /* PostModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PostModel.m; sourceTree = "<group>"; };
 		549DB60B1F204639005A1574 /* LaunchScreen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = LaunchScreen.storyboard; sourceTree = "<group>"; };
-		549DB60C1F204639005A1574 /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
 		549DB6101F204686005A1574 /* LandingPageViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LandingPageViewController.h; sourceTree = "<group>"; };
 		549DB6111F204686005A1574 /* LandingPageViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LandingPageViewController.m; sourceTree = "<group>"; };
 		549DB6131F204690005A1574 /* NewFeedViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NewFeedViewController.h; sourceTree = "<group>"; };
@@ -328,7 +331,7 @@
 			isa = PBXGroup;
 			children = (
 				549DB60B1F204639005A1574 /* LaunchScreen.storyboard */,
-				549DB60C1F204639005A1574 /* Main.storyboard */,
+				544A089B1F2840CE007E5256 /* Main.storyboard */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -501,6 +504,8 @@
 				54372CB91F24B20C00571173 /* LandingNeandrTableViewCell.m */,
 				54372CBB1F24B71900571173 /* LandingMemberCollectionViewCell.h */,
 				54372CBC1F24B71900571173 /* LandingMemberCollectionViewCell.m */,
+				549C36461F26D9B000D697BB /* TagsPostTableViewCell.h */,
+				549C36471F26D9B000D697BB /* TagsPostTableViewCell.m */,
 			);
 			path = Home;
 			sourceTree = "<group>";
@@ -563,10 +568,10 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				549DB60E1F204639005A1574 /* Main.storyboard in Resources */,
 				39D616521F20BBC1003BFEAD /* post.plist in Resources */,
 				549DB5A71F203AD8005A1574 /* Assets.xcassets in Resources */,
 				39D616501F20B2AD003BFEAD /* user.plist in Resources */,
+				544A089C1F2840CE007E5256 /* Main.storyboard in Resources */,
 				549A85A41F25DEAB00492714 /* neandr.plist in Resources */,
 				549DB60D1F204639005A1574 /* LaunchScreen.storyboard in Resources */,
 			);
@@ -614,6 +619,7 @@
 				549DB65A1F205CA7005A1574 /* InformationTableViewCell.m in Sources */,
 				549DB5C31F203E93005A1574 /* NetworkService.m in Sources */,
 				549DB6071F2045E6005A1574 /* UserModel.m in Sources */,
+				549C36481F26D9B000D697BB /* TagsPostTableViewCell.m in Sources */,
 				549DB5E01F204145005A1574 /* RegisterViewController.m in Sources */,
 				39CA234D1F26E8D100029A47 /* DiscussionFeaturedPostCollectionViewCell.m in Sources */,
 				549DB6571F205C86005A1574 /* ProductTableViewCell.m in Sources */,

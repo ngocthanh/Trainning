@@ -6,37 +6,37 @@
 		<key>avatarName</key>
 		<string>us359</string>
 		<key>active</key>
-		<true/>
+		<integer>1</integer>
 	</dict>
 	<dict>
 		<key>avatarName</key>
 		<string>us368</string>
 		<key>active</key>
-		<false/>
+		<integer>0</integer>
 	</dict>
 	<dict>
 		<key>avatarName</key>
 		<string>us377</string>
 		<key>active</key>
-		<true/>
+		<integer>1</integer>
 	</dict>
 	<dict>
 		<key>avatarName</key>
 		<string>us386</string>
 		<key>active</key>
-		<false/>
+		<integer>0</integer>
 	</dict>
 	<dict>
 		<key>avatarName</key>
 		<string>us395</string>
 		<key>active</key>
-		<true/>
+		<integer>1</integer>
 	</dict>
 	<dict>
 		<key>avatarName</key>
 		<string>us404</string>
 		<key>active</key>
-		<false/>
+		<integer>0</integer>
 	</dict>
 	<dict>
 		<key>userID</key>
