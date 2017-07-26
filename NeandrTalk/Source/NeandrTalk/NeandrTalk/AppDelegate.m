@@ -7,7 +7,7 @@
 //
 
 #import "AppDelegate.h"
-
+#import "SingleMarketPlacePostViewController.h"
 @interface AppDelegate ()
 
 @end
@@ -16,7 +16,9 @@
 
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
-    // Override point for customization after application launch.
+    UIStoryboard *storyBoard =[UIStoryboard storyboardWithName:@"Main" bundle:[NSBundle mainBundle]];
+    SingleMarketPlacePostViewController *loginVC = [storyBoard instantiateViewControllerWithIdentifier:@"loginVC"];
+    self.window.rootViewController =loginVC;
     return YES;
 }
 

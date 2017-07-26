@@ -15,6 +15,7 @@
 		39C0F3DD1F285035008E0E61 /* MarketPlacePostTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 39C0F3DC1F285035008E0E61 /* MarketPlacePostTableViewCell.m */; };
 		39C0F3E01F28505C008E0E61 /* MarketPlaceFeaturedPostCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 39C0F3DF1F28505C008E0E61 /* MarketPlaceFeaturedPostCollectionViewCell.m */; };
 		39C0F3E31F285085008E0E61 /* MarketPlacePostCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 39C0F3E21F285085008E0E61 /* MarketPlacePostCollectionViewCell.m */; };
+		39C0F3E61F288D5E008E0E61 /* SinglePostImageTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 39C0F3E51F288D5E008E0E61 /* SinglePostImageTableViewCell.m */; };
 		39CA23471F26E76800029A47 /* DiscussionHomeTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 39CA23461F26E76800029A47 /* DiscussionHomeTableViewCell.m */; };
 		39CA234A1F26E8AC00029A47 /* DiscussionPostTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 39CA23491F26E8AC00029A47 /* DiscussionPostTableViewCell.m */; };
 		39CA234D1F26E8D100029A47 /* DiscussionFeaturedPostCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 39CA234C1F26E8D100029A47 /* DiscussionFeaturedPostCollectionViewCell.m */; };
@@ -93,6 +94,8 @@
 		39C0F3DF1F28505C008E0E61 /* MarketPlaceFeaturedPostCollectionViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MarketPlaceFeaturedPostCollectionViewCell.m; sourceTree = "<group>"; };
 		39C0F3E11F285085008E0E61 /* MarketPlacePostCollectionViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MarketPlacePostCollectionViewCell.h; sourceTree = "<group>"; };
 		39C0F3E21F285085008E0E61 /* MarketPlacePostCollectionViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MarketPlacePostCollectionViewCell.m; sourceTree = "<group>"; };
+		39C0F3E41F288D5E008E0E61 /* SinglePostImageTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SinglePostImageTableViewCell.h; sourceTree = "<group>"; };
+		39C0F3E51F288D5E008E0E61 /* SinglePostImageTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SinglePostImageTableViewCell.m; sourceTree = "<group>"; };
 		39CA23451F26E76800029A47 /* DiscussionHomeTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DiscussionHomeTableViewCell.h; sourceTree = "<group>"; };
 		39CA23461F26E76800029A47 /* DiscussionHomeTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DiscussionHomeTableViewCell.m; sourceTree = "<group>"; };
 		39CA23481F26E8AC00029A47 /* DiscussionPostTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DiscussionPostTableViewCell.h; sourceTree = "<group>"; };
@@ -459,6 +462,8 @@
 				39C0F3DF1F28505C008E0E61 /* MarketPlaceFeaturedPostCollectionViewCell.m */,
 				39C0F3E11F285085008E0E61 /* MarketPlacePostCollectionViewCell.h */,
 				39C0F3E21F285085008E0E61 /* MarketPlacePostCollectionViewCell.m */,
+				39C0F3E41F288D5E008E0E61 /* SinglePostImageTableViewCell.h */,
+				39C0F3E51F288D5E008E0E61 /* SinglePostImageTableViewCell.m */,
 			);
 			path = MarketPlace;
 			sourceTree = "<group>";
@@ -663,6 +668,7 @@
 				549DB5FB1F2043B2005A1574 /* CartViewController.m in Sources */,
 				549DB6011F20455A005A1574 /* AllDiscussionPostViewController.m in Sources */,
 				549DB5DE1F204145005A1574 /* LoginViewController.m in Sources */,
+				39C0F3E61F288D5E008E0E61 /* SinglePostImageTableViewCell.m in Sources */,
 				39C0F3CE1F275CCD008E0E61 /* BlogHomeTableViewCell.m in Sources */,
 				54372CB11F24B02F00571173 /* LadingHomeImageTableViewCell.m in Sources */,
 			);
