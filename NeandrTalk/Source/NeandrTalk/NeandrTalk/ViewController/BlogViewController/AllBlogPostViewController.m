@@ -26,7 +26,7 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     _post=[[PostModel alloc] init];
-    [self parserPost];
+//    [self parserPost];
 }
 -(NSInteger)numberOfSectionsInTableView:(UITableView *)tableView{
     return 1;
@@ -69,17 +69,17 @@
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
 }
--(void) parserPost{
-    ParserService *parser=[[ParserService alloc] init];
-    _allPostArray =[[NSArray alloc]initWithArray:[parser getList:postListName]];
-    _blogPostArray=[_allPostArray subarrayWithRange:NSMakeRange(8, 6)];
-    _featuredBlogPostArray=[[NSMutableArray alloc] init];
-    for (_post in _blogPostArray) {
-        if ([_post.featured isEqualToString:@"1"]) {
-            [_featuredBlogPostArray addObject:_post];
-        }
-    }
-}
+//-(void) parserPost{
+//    ParserService *parser=[[ParserService alloc] init];
+//    _allPostArray =[[NSArray alloc]initWithArray:[parser getList:postListName]];
+//    _blogPostArray=[_allPostArray subarrayWithRange:NSMakeRange(8, 6)];
+//    _featuredBlogPostArray=[[NSMutableArray alloc] init];
+//    for (_post in _blogPostArray) {
+//        if ([_post.featured isEqualToString:@"1"]) {
+//            [_featuredBlogPostArray addObject:_post];
+//        }
+//    }
+//}
 
 
 @end

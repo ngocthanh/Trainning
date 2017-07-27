@@ -9,5 +9,6 @@
 #import "MasterViewController.h"
 
 @interface NewFeedViewController : MasterViewController
+@property (strong,nonatomic) NSArray *allPostArray;
 
 @end

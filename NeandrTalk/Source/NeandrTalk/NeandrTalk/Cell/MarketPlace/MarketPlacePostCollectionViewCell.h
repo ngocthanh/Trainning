@@ -9,11 +9,18 @@
 #import <UIKit/UIKit.h>
 #import "PostModel.h"
 @interface MarketPlacePostCollectionViewCell : UICollectionViewCell
+
 @property (weak, nonatomic) IBOutlet UIImageView *marketPostImage;
 @property (weak, nonatomic) IBOutlet UITableView *tableTags;
 @property (weak, nonatomic) IBOutlet UILabel *marketPostTitle;
 @property (weak, nonatomic) IBOutlet UILabel *marketPostDescription;
 @property (weak, nonatomic) IBOutlet UILabel *marketPostPrice;
 @property (weak, nonatomic) IBOutlet UILabel *marketPostType;
+@property (weak, nonatomic) IBOutlet UILabel *marketPlaceTagsList;
+
+@property (weak, nonatomic) IBOutlet UITextView *tvDescription;
+@property (weak, nonatomic) IBOutlet UILabel *numberOfItem;
+
+@property (weak, nonatomic) IBOutlet UILabel *numberOfComment;
 -(void)getData:(PostModel *)post;
 @end

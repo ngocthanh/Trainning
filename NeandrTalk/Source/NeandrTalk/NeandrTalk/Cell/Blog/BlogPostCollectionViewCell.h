@@ -13,5 +13,10 @@
 @property (weak, nonatomic) IBOutlet UILabel *descriptionBlogPost;
 @property (weak, nonatomic) IBOutlet UILabel *titleBlogPost;
 @property (weak, nonatomic) IBOutlet UITableView *arrayTags;
+
+@property (weak, nonatomic) IBOutlet UILabel *alltags;
+@property (weak, nonatomic) IBOutlet UITextView *tvDesciption;
+@property (weak, nonatomic) IBOutlet UILabel *numberOfComment;
+
 -(void)getData:(PostModel *)post;
 @end

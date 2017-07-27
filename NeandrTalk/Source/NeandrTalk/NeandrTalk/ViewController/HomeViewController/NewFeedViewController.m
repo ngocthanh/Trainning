@@ -7,8 +7,15 @@
 //
 
 #import "NewFeedViewController.h"
+#import "NewFeedsHomeTableViewCell.h"
+
+#define idHomeCell @"homeTableViewCell"
+#define idPostCell @"postTableViewCell"
+#define idOrderByCell @"oderByCell"
+
 
 @interface NewFeedViewController ()
+@property (weak, nonatomic) IBOutlet UITableView *tableNewFeeds;
 
 @end
 
@@ -16,14 +23,53 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    // Do any additional setup after loading the view.
+    
 }
+
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
+
 }
 
+-(NSInteger)numberOfSectionsInTableView:(UITableView *)tableView{
+    return 1;
+    
+}
+-(NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
+    return 3;
 
+}
+-(UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
+    if (indexPath.row==0) {
+        NewFeedsHomeTableViewCell *cell=[_tableNewFeeds dequeueReusableCellWithIdentifier:idHomeCell forIndexPath:indexPath];
+        
+        return  cell;
+    }
+    else if (indexPath.row==2){
+        NewFeedsHomeTableViewCell *cell=[_tableNewFeeds dequeueReusableCellWithIdentifier:idPostCell forIndexPath:indexPath];
+        return cell;
+    }
+    else
+    {
+        NewFeedsHomeTableViewCell *cell=[_tableNewFeeds dequeueReusableCellWithIdentifier:idOrderByCell forIndexPath:indexPath];
+        return cell;
+        
+    }
+    return nil;
+}
+-(CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath{
+    if (indexPath.row==0) {
+        return _tableNewFeeds.frame.size.height/2.5;
+    }
+    else if (indexPath.row==2)
+    {
+        return _tableNewFeeds.frame.size.height/1.4;
+    }
+    else
+    {
+        return 45;
+    }
+}
 
 @end
