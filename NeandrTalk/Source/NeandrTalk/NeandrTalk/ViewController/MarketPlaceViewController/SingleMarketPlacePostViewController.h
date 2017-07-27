@@ -17,5 +17,7 @@
 @property (strong, nonatomic) NSArray *arrayImage;
 @property (strong, nonatomic) NSArray *arrayTags;
 @property (strong, nonatomic) NSArray *arrayPostRelated;
+@property (weak, nonatomic) IBOutlet UISegmentedControl *descriptionSegment;
+@property (weak, nonatomic) IBOutlet UITextView *descriptionTextView;
 
 @end

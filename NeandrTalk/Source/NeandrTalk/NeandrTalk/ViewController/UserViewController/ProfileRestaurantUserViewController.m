@@ -19,7 +19,7 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    [_videoAbout loadRequest:[[NSURLRequest alloc] initWithURL:[[NSURL alloc] initWithString:@"https://www.youtube.com/embed/yMuBSxSIS04"]]];
+    [_videoAbout loadRequest:[[NSURLRequest alloc] initWithURL:[[NSURL alloc] initWithString:@"https://www.youtube.com/embed/MHG3n_-Y33A"]]];
     _avatarUserRestaurant.layer.borderColor = [UIColor whiteColor].CGColor;
     _avatarUserRestaurant.layer.borderWidth = 4;
     _avatarUserRestaurant.layer.cornerRadius = _avatarUserRestaurant.frame.size.width/2;

@@ -22,6 +22,7 @@
 }
 - (void) initWithClass{
     _allUserType=[[NSArray alloc] init];
+    [self.navigationController setNavigationBarHidden:false];
 }
 -(void)getAllUserType{
     _allUserType=@[@"Admin",@"Personal",@"Restaurant"];

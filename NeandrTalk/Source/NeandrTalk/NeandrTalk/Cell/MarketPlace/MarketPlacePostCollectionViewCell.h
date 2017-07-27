@@ -8,8 +8,8 @@
 
 #import <UIKit/UIKit.h>
 #import "PostModel.h"
-@interface MarketPlacePostCollectionViewCell : UICollectionViewCell
 
+@interface MarketPlacePostCollectionViewCell : UICollectionViewCell <UITableViewDelegate ,UITableViewDataSource>
 @property (weak, nonatomic) IBOutlet UIImageView *marketPostImage;
 @property (weak, nonatomic) IBOutlet UITableView *tableTags;
 @property (weak, nonatomic) IBOutlet UILabel *marketPostTitle;
@@ -22,5 +22,7 @@
 @property (weak, nonatomic) IBOutlet UILabel *numberOfItem;
 
 @property (weak, nonatomic) IBOutlet UILabel *numberOfComment;
+@property (strong, nonatomic) NSArray *arrayTag;
+@property CGFloat height;
 -(void)getData:(PostModel *)post;
 @end

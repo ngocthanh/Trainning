@@ -45,7 +45,7 @@
     }
     else if (indexPath.row==2)
     {
-        return _tableMarketPost.frame.size.height/1.3;
+        return _tableMarketPost.frame.size.height/1.4;
     }
     else
     {
