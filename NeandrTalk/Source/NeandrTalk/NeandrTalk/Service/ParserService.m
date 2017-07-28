@@ -11,14 +11,12 @@
 #import "PostModel.h"
 #import "UserModel.h"
 @implementation ParserService
--(NSArray *)getList:(NSString *)listName{
+-(NSMutableArray *)getList:(NSString *)listName{
     NSMutableArray *dicUser = [[NSMutableArray alloc]initWithContentsOfFile:[[NSBundle mainBundle] pathForResource:listName ofType:@"plist"]];
     if ([listName  isEqual: @"neandr"]) {
         return [self parseNeandrModel:dicUser];
-    } else if( [listName isEqual:@"post"]) {
+    } else {
         return [self parsePostModel:dicUser];
-    }else{
-        return [self parseUser:dicUser];
     }
     
 }
@@ -64,16 +62,6 @@
         post.price=[poster valueForKey:@"price"];
         post.marketType=[poster valueForKey:@"marketType"];
         [array addObject:post];
-        
-    }
-    return array;
-}
--(NSArray *)parseUser:(NSArray *)arrayData{
-    NSMutableArray *array = [[NSMutableArray alloc] init];
-    for (NSDictionary *data in arrayData) {
-        UserModel *user =[[UserModel alloc] init];
-        user.arrayDaysOpen = [data valueForKey:@"arrayDaysOpen"];
-        [array addObject:user];
         
     }
     return array;

@@ -9,6 +9,5 @@
 #import <UIKit/UIKit.h>
 
 @interface TimeOpenProfileTableViewCell : UITableViewCell
-@property (weak, nonatomic) IBOutlet UILabel *daylbl;
--(void)getDataUser:(NSString *)day;
+
 @end

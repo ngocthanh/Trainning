@@ -43,7 +43,6 @@
     _arrayNamePost = [[NSArray alloc]initWithObjects:@"Discussion",@"Blog Post", @"Market Place", nil];
     [self parse];
     _arrayUserMember = [[NSArray alloc] initWithArray:[self parseUser]];
-
     
 }
 
@@ -70,7 +69,7 @@
         return  cell;
     }else if(row > 0 & row < 4){
         LandingTypePostTableViewCell *cell = [_tableLandingPage dequeueReusableCellWithIdentifier:idPostCell forIndexPath:indexPath];
-        [cell getDataWithTitleTypePost:_arrayNamePost[indexPath.row - 1] Posts:_arrayAllPost1[indexPath.row - 1] View:self];
+        [cell getDataWithTitleTypePost:_arrayNamePost[indexPath.row - 1] Posts:_arrayAllPost1[indexPath.row - 1]];
         return cell;
     }else if (row == 4){
         LandingCommunityTableViewCell *cell = [_tableLandingPage dequeueReusableCellWithIdentifier:idComunityCell forIndexPath:indexPath];

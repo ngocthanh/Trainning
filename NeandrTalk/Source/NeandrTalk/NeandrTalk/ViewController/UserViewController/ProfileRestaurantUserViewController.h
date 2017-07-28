@@ -9,6 +9,5 @@
 #import "MasterViewController.h"
 
 @interface ProfileRestaurantUserViewController : MasterViewController
-@property (weak, nonatomic) IBOutlet UITableView *tableDaysOpen;
-@property (strong, nonatomic) NSArray *arrayDaysOpen;
+
 @end

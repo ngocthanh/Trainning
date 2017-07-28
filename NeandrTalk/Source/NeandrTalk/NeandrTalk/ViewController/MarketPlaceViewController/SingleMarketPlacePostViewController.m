@@ -26,8 +26,6 @@
     _arrayTags =[[NSArray alloc] initWithObjects:@"Equipment",@"Supplies",@"Other", nil];
     _arrayImage = [[NSArray alloc] initWithObjects:@"market3",@"markets",@"Farmers_1",@"FarmersMarketBanner",@"food", nil];
     [self parser];
-    [self.navigationController setNavigationBarHidden:false];
-
 }
 
 - (void)didReceiveMemoryWarning {

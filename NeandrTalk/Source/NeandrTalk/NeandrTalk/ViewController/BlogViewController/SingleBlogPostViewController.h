@@ -9,7 +9,5 @@
 #import "MasterViewController.h"
 
 @interface SingleBlogPostViewController : MasterViewController
-@property (strong, nonatomic) NSArray *arrayImage;
-@property (strong, nonatomic) NSArray *arrayPostRelated;
-@property (weak, nonatomic) IBOutlet UICollectionView *collectionRelated;
+
 @end

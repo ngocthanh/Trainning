@@ -8,10 +8,6 @@
 
 #import "LandingTypePostTableViewCell.h"
 #import "LandingPagePostCollectionViewCell.h"
-#import "SingleDiscussionPostViewController.h"
-#import "SingleBlogPostViewController.h"
-#import "SingleMarketPlacePostViewController.h"
-
 #define marginBetweenTwoItem 5
 
 @implementation LandingTypePostTableViewCell
@@ -26,10 +22,9 @@
     [super setSelected:selected animated:animated];
 
 }
--(void)getDataWithTitleTypePost:(NSString*)titleType Posts:(NSArray*)posts View:(LandingPageViewController*) vc{
+-(void)getDataWithTitleTypePost:(NSString*)titleType Posts:(NSArray*)posts{
     _titleTypePost.text = titleType;
     _dataPosts = [[NSArray alloc] initWithArray:posts];
-    _home = vc;
 }
 -(NSInteger)numberOfSectionsInCollectionView:(UICollectionView *)collectionView{
     return 1;
@@ -46,23 +41,6 @@
     float height = self.contentView.frame.size.height/2;
     float width = self.contentView.frame.size.width/2;
     return CGSizeMake(width, height);
-}
--(void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath{
-    UIStoryboard *storyBoard =[UIStoryboard storyboardWithName:@"Main" bundle:[NSBundle mainBundle]];
-    
-    if ([_titleTypePost.text  isEqual: @"Discussion"]) {
-          SingleDiscussionPostViewController *discussionVC = [storyBoard instantiateViewControllerWithIdentifier:@"loginVC"];
-        [_home.navigationController pushViewController:discussionVC animated:true];
-        
-    }else if ([_titleTypePost.text  isEqual: @"Market Place"]){
-        SingleMarketPlacePostViewController *marketPlaceVC = [storyBoard instantiateViewControllerWithIdentifier:@"marketVC"];
-        [_home.navigationController pushViewController:marketPlaceVC animated:true];
-
-    }else{
-        SingleBlogPostViewController *blogVC = [storyBoard instantiateViewControllerWithIdentifier:@"blogVC"];
-        [_home.navigationController pushViewController:blogVC animated:true];
-
-    }
 }
 //-(UIEdgeInsets)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout *)collectionViewLayout insetForSectionAtIndex:(NSInteger)section{
 //    return UIEdgeInsetsMake(0, marginBetweenTwoItem, marginBetweenTwoItem, marginBetweenTwoItem);
