@@ -44,7 +44,7 @@
 }
 -(CGSize)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout *)collectionViewLayout sizeForItemAtIndexPath:(NSIndexPath *)indexPath{
     float height = self.contentView.frame.size.height/3;
-    float width = self.contentView.frame.size.width;
+    float width = self.contentView.frame.size.width *0.9;
     return CGSizeMake(width, height);
 }
 -(UIEdgeInsets)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout *)collectionViewLayout insetForSectionAtIndex:(NSInteger)section{
