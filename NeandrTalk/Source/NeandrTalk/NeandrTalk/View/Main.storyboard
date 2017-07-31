@@ -3966,7 +3966,7 @@
                                 </state>
                             </button>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="4RG-2h-yU4">
-                                <rect key="frame" x="47.5" y="403.5" width="281" height="1"/>
+                                <rect key="frame" x="47.5" y="398.5" width="281" height="1"/>
                                 <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="0.5" id="7n3-Tb-Tqy"/>
@@ -3976,7 +3976,7 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="gEY-Qf-2eI" firstAttribute="width" secondItem="lGQ-xj-APM" secondAttribute="width" id="0yk-JW-YvT"/>
-                            <constraint firstItem="4RG-2h-yU4" firstAttribute="top" secondItem="gEY-Qf-2eI" secondAttribute="bottom" constant="5" id="3FF-iq-Kvz"/>
+                            <constraint firstItem="4RG-2h-yU4" firstAttribute="top" secondItem="gEY-Qf-2eI" secondAttribute="bottom" id="3FF-iq-Kvz"/>
                             <constraint firstItem="cMQ-eT-zB2" firstAttribute="height" secondItem="gEY-Qf-2eI" secondAttribute="height" multiplier="1.2" id="9bf-ow-dZi"/>
                             <constraint firstItem="n7y-55-A39" firstAttribute="height" secondItem="Ktr-BF-X5n" secondAttribute="height" multiplier="1/6" id="Ayr-LW-XEh"/>
                             <constraint firstItem="n7y-55-A39" firstAttribute="centerX" secondItem="Ktr-BF-X5n" secondAttribute="centerX" id="DLz-TE-1Ho"/>
