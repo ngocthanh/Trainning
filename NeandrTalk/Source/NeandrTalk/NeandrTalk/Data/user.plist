@@ -121,7 +121,7 @@
 		<string>93 hollywood st</string>
 		<key>avatarData</key>
 		<string></string>
-		<key>arraryDaysOpen</key>
+		<key>arrayDaysOpen</key>
 		<array>
 			<string>Monday         : 7h - 20h</string>
 			<string>Tuesday        : 7h - 23h</string>

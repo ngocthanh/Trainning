@@ -17,9 +17,9 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
 
-    UIStoryboard *storyBoard =[UIStoryboard storyboardWithName:@"Main" bundle:[NSBundle mainBundle]];
-    SingleDiscussionPostViewController *loginVC = [storyBoard instantiateViewControllerWithIdentifier:@"loginVC"];
-    self.window.rootViewController =loginVC;
+//    UIStoryboard *storyBoard =[UIStoryboard storyboardWithName:@"Main" bundle:[NSBundle mainBundle]];
+//    SingleDiscussionPostViewController *loginVC = [storyBoard instantiateViewControllerWithIdentifier:@"loginVC"];
+//    self.window.rootViewController =loginVC;
     return YES;
 }
 

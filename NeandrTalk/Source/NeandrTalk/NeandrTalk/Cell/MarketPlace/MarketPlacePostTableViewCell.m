@@ -42,7 +42,7 @@
 }
 -(CGSize)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout *)collectionViewLayout sizeForItemAtIndexPath:(NSIndexPath *)indexPath{
     float height = self.contentView.frame.size.height/2.5;
-    float width = self.contentView.frame.size.width;
+    float width = self.contentView.frame.size.width *0.9 ;
     return CGSizeMake(width, height);
 }
 - (void)setSelected:(BOOL)selected animated:(BOOL)animated {

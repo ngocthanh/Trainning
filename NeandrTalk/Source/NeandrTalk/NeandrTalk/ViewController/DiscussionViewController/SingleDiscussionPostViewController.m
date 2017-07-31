@@ -22,6 +22,8 @@
     [super viewDidLoad];
     _arrayImage = [[NSArray alloc] initWithObjects:@"market3",@"markets",@"Farmers_1",@"FarmersMarketBanner",@"food", nil];
     [self parser];
+    [self.navigationController setNavigationBarHidden:false];
+
 
 }
 

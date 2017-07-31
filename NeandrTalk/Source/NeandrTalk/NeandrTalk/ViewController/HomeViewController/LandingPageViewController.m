@@ -40,9 +40,11 @@
     [super viewDidLoad];
     _user = [[UserModel alloc] init];
     _post = [[PostModel alloc] init];
+    [self.navigationController setNavigationBarHidden:NO];
     _arrayNamePost = [[NSArray alloc]initWithObjects:@"Discussion",@"Blog Post", @"Market Place", nil];
     [self parse];
     _arrayUserMember = [[NSArray alloc] initWithArray:[self parseUser]];
+
     
 }
 
@@ -56,7 +58,9 @@
     return numberTableRowInSection;
 }
 -(CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath{
-    if (indexPath.row == 0 || indexPath.row == 4) {
+    if (indexPath.row == 0  ) {
+        return _tableLandingPage.frame.size.height/4;
+    }else if(indexPath.row == 4){
         return _tableLandingPage.frame.size.height/3;
     }
     return _tableLandingPage.frame.size.height/2;
@@ -69,15 +73,23 @@
         return  cell;
     }else if(row > 0 & row < 4){
         LandingTypePostTableViewCell *cell = [_tableLandingPage dequeueReusableCellWithIdentifier:idPostCell forIndexPath:indexPath];
-        [cell getDataWithTitleTypePost:_arrayNamePost[indexPath.row - 1] Posts:_arrayAllPost1[indexPath.row - 1]];
+        [cell getDataWithTitleTypePost:_arrayNamePost[indexPath.row - 1] Posts:_arrayAllPost1[indexPath.row - 1] View:self];
+        if (row%2 == 0) {
+            cell.contentView.backgroundColor = [UIColor grayColor];
+        }
+
         return cell;
     }else if (row == 4){
         LandingCommunityTableViewCell *cell = [_tableLandingPage dequeueReusableCellWithIdentifier:idComunityCell forIndexPath:indexPath];
         [cell getData:_arrayUserMember];
+
         return cell;
     }else if(row > 4){
         LandingNeandrTableViewCell *cell = [_tableLandingPage dequeueReusableCellWithIdentifier:idNeandrCell forIndexPath:indexPath];
         [cell getData:_arrayNeandr[row - 5]];
+        if (row%2 != 0) {
+            cell.contentView.backgroundColor = [UIColor grayColor];
+        }
         return cell;
     }
     return nil;

@@ -19,6 +19,8 @@
 - (void)awakeFromNib {
     [super awakeFromNib];
     [self parserPost];
+    [self randomNumber];
+    
 }
 -(void) parserPost{
     ParserService *parser=[[ParserService alloc] init];
@@ -33,22 +35,21 @@
 }
 -(UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath{
     
-    int i = arc4random() %20;
-    if ([[[_allPostArray objectAtIndex:i] valueForKey:@"postType"] isEqualToString:@"blogPost"]) {
+    if ([[[_allPostArray objectAtIndex:[_random[indexPath.row] integerValue]] valueForKey:@"postType"] isEqualToString:@"blogPost"]) {
         BlogPostCollectionViewCell *cell=[_newfeedCollectionView dequeueReusableCellWithReuseIdentifier:@"blogPostCollectionViewCell" forIndexPath:indexPath];
-        [cell getData:[_allPostArray objectAtIndex:i]];
+        [cell getData:[_allPostArray objectAtIndex:[_random[indexPath.row] integerValue]]];
         
         return cell;
     }
-    else if ([[[_allPostArray objectAtIndex:i]valueForKey:@"postType"]isEqualToString:@"Discussion"]){
+    else if ([[[_allPostArray objectAtIndex:[_random[indexPath.row] integerValue]]valueForKey:@"postType"]isEqualToString:@"Discussion"]){
         DiscussionPostCollectionViewCell *cell=[_newfeedCollectionView dequeueReusableCellWithReuseIdentifier:@"discussionPostCollectionViewCell" forIndexPath:indexPath];
-        [cell getData:[_allPostArray objectAtIndex:i]];
+        [cell getData:[_allPostArray objectAtIndex:[_random[indexPath.row] integerValue]]];
         return cell;
     }
     else
     {
         MarketPlacePostCollectionViewCell *cell=[_newfeedCollectionView dequeueReusableCellWithReuseIdentifier:@"marketPlacePostCollectionViewCell" forIndexPath:indexPath];
-        [cell getData:[_allPostArray objectAtIndex:i]];
+        [cell getData:[_allPostArray objectAtIndex:[_random[indexPath.row] integerValue]]];
         return  cell;
     }
 }
@@ -57,7 +58,7 @@
 }
 -(CGSize)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout *)collectionViewLayout sizeForItemAtIndexPath:(NSIndexPath *)indexPath{
     float height = self.contentView.frame.size.height/2;
-    float width = self.contentView.frame.size.width;
+    float width = self.contentView.frame.size.width *0.9;
     return CGSizeMake(width, height);
 }
 
@@ -69,5 +70,23 @@
 
     // Configure the view for the selected state
 }
-
+-(void)randomNumber{
+    _random = [[NSMutableArray alloc] init];
+    do {
+        int i = arc4random() % 20;
+        BOOL duplicate = NO;
+        for (NSString * j in _random ) {
+            if ([j intValue] == i) {
+                duplicate = YES;
+                break;
+            }
+        }
+        if (duplicate == NO) {
+            [_random addObject:[[NSString alloc] initWithFormat:@"%d",i]];
+            NSLog(@"%@",_random);
+        }
+    }while ([_random count] < 20);
+        
+    
+}
 @end
