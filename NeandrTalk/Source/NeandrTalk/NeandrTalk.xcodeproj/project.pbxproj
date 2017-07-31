@@ -18,6 +18,7 @@
 		39C0F3E61F288D5E008E0E61 /* SinglePostImageTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 39C0F3E51F288D5E008E0E61 /* SinglePostImageTableViewCell.m */; };
 		39C0F3E91F299188008E0E61 /* NewFeedsHomeTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 39C0F3E81F299188008E0E61 /* NewFeedsHomeTableViewCell.m */; };
 		39C0F3EC1F299196008E0E61 /* NewFeedsPostTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 39C0F3EB1F299196008E0E61 /* NewFeedsPostTableViewCell.m */; };
+		39C0F3EF1F2EF066008E0E61 /* ResetPasswordViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 39C0F3EE1F2EF065008E0E61 /* ResetPasswordViewController.m */; };
 		39CA23471F26E76800029A47 /* DiscussionHomeTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 39CA23461F26E76800029A47 /* DiscussionHomeTableViewCell.m */; };
 		39CA234A1F26E8AC00029A47 /* DiscussionPostTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 39CA23491F26E8AC00029A47 /* DiscussionPostTableViewCell.m */; };
 		39CA234D1F26E8D100029A47 /* DiscussionFeaturedPostCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 39CA234C1F26E8D100029A47 /* DiscussionFeaturedPostCollectionViewCell.m */; };
@@ -100,6 +101,8 @@
 		39C0F3E81F299188008E0E61 /* NewFeedsHomeTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NewFeedsHomeTableViewCell.m; sourceTree = "<group>"; };
 		39C0F3EA1F299196008E0E61 /* NewFeedsPostTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NewFeedsPostTableViewCell.h; sourceTree = "<group>"; };
 		39C0F3EB1F299196008E0E61 /* NewFeedsPostTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NewFeedsPostTableViewCell.m; sourceTree = "<group>"; };
+		39C0F3ED1F2EF065008E0E61 /* ResetPasswordViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ResetPasswordViewController.h; sourceTree = "<group>"; };
+		39C0F3EE1F2EF065008E0E61 /* ResetPasswordViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ResetPasswordViewController.m; sourceTree = "<group>"; };
 		39CA23451F26E76800029A47 /* DiscussionHomeTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DiscussionHomeTableViewCell.h; sourceTree = "<group>"; };
 		39CA23461F26E76800029A47 /* DiscussionHomeTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DiscussionHomeTableViewCell.m; sourceTree = "<group>"; };
 		39CA23481F26E8AC00029A47 /* DiscussionPostTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DiscussionPostTableViewCell.h; sourceTree = "<group>"; };
@@ -364,6 +367,8 @@
 				549DB5E51F2041CD005A1574 /* LostPasswordViewController.m */,
 				549DB64F1F205A94005A1574 /* ProfileRestaurantUserViewController.h */,
 				549DB6501F205A94005A1574 /* ProfileRestaurantUserViewController.m */,
+				39C0F3ED1F2EF065008E0E61 /* ResetPasswordViewController.h */,
+				39C0F3EE1F2EF065008E0E61 /* ResetPasswordViewController.m */,
 			);
 			path = UserViewController;
 			sourceTree = "<group>";
@@ -566,6 +571,7 @@
 				TargetAttributes = {
 					549DB5961F203AD7005A1574 = {
 						CreatedOnToolsVersion = 8.3.3;
+						DevelopmentTeam = 95M4MX3ZDZ;
 						ProvisioningStyle = Automatic;
 					};
 				};
@@ -616,6 +622,7 @@
 				549DB5DF1F204145005A1574 /* ProfileUserViewController.m in Sources */,
 				549DB5BA1F203CED005A1574 /* DataForViewController.m in Sources */,
 				54372CB71F24B1D200571173 /* LandingCommunityTableViewCell.m in Sources */,
+				39C0F3EF1F2EF066008E0E61 /* ResetPasswordViewController.m in Sources */,
 				549DB5FE1F2043D4005A1574 /* PurchaseConfirmViewController.m in Sources */,
 				549DB6191F2046F8005A1574 /* CommentViewController.m in Sources */,
 				549DB6631F205D3F005A1574 /* PurchaseDetailTableViewCell.m in Sources */,
@@ -773,6 +780,8 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				DEVELOPMENT_TEAM = 95M4MX3ZDZ;
 				INFOPLIST_FILE = NeandrTalk/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
@@ -785,6 +794,8 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				DEVELOPMENT_TEAM = 95M4MX3ZDZ;
 				INFOPLIST_FILE = NeandrTalk/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
