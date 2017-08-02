@@ -11,7 +11,9 @@
 #import "BlogPostCollectionViewCell.h"
 #import "DiscussionPostCollectionViewCell.h"
 #import "ParserService.h"
-
+#import "SingleDiscussionPostViewController.h"
+#import "SingleBlogPostViewController.h"
+#import "SingleMarketPlacePostViewController.h"
 #define postListName @"post"
 #define marginBetweenTwoItem 2
 @implementation NewFeedsPostTableViewCell
@@ -25,6 +27,9 @@
 -(void) parserPost{
     ParserService *parser=[[ParserService alloc] init];
     _allPostArray =[[NSArray alloc]initWithArray:[parser getList:postListName]];
+}
+-(void)getData:(NewFeedViewController*)vc{
+    _newsFeed=vc;
 }
 -(NSInteger)numberOfSectionsInCollectionView:(UICollectionView *)collectionView{
     return 1;
@@ -61,7 +66,23 @@
     float width = self.contentView.frame.size.width *0.9;
     return CGSizeMake(width, height);
 }
+-(void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath{
+    UIStoryboard *storyBoard =[UIStoryboard storyboardWithName:@"Main" bundle:[NSBundle mainBundle]];
+    if ([[[_allPostArray objectAtIndex:[_random[indexPath.row] integerValue]] valueForKey:@"postType"] isEqualToString:@"Discussion"]) {
+        SingleDiscussionPostViewController *discussionVC = [storyBoard instantiateViewControllerWithIdentifier:@"loginVC"];
+        [_newsFeed.navigationController pushViewController:discussionVC animated:true];
+        
+    }else if ([[[_allPostArray objectAtIndex:[_random[indexPath.row] integerValue]]valueForKey:@"postType"]isEqualToString:@"blogPost"]){
+        SingleBlogPostViewController *blogVC = [storyBoard instantiateViewControllerWithIdentifier:@"blogVC"];
+        [_newsFeed.navigationController pushViewController:blogVC animated:true];
+        
+    }else{
+        SingleMarketPlacePostViewController *marketPlaceVC = [storyBoard instantiateViewControllerWithIdentifier:@"marketVC"];
+        [_newsFeed.navigationController pushViewController:marketPlaceVC animated:true];
 
+        
+    }
+}
 
 
 

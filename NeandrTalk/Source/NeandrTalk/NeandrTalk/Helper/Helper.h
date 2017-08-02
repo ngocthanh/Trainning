@@ -9,6 +9,6 @@
 #import "ConstantSystem.h"
 #import <UIKit/UIKit.h>
 @interface Helper : UIViewController
--(void)createAlertWithStringTitle:(NSString *)titleAlert contentAlert:(NSString *)contentAlert;
--(void)createAlert2ButtonWithTitle:(NSString *)titleAlert contentAlert:(NSString *)contentAlert;
+-(void)createAlertWithStringTitle:(NSString *)titleAlert contentAlert:(NSString *)contentAlert Handler:(void (^)(UIAlertAction *action))handler ViewController:(UIViewController *)vc;
+-(void)createAlert2ButtonWithTitle:(NSString *)titleAlert contentAlert:(NSString *)contentAlert Handler:(void (^)(UIAlertAction *action))handler ViewController:(UIViewController *)vc;
 @end

@@ -9,10 +9,13 @@
 #import "LoginViewController.h"
 #import "DataForViewController.h"
 #import "UserModel.h"
+#import "Helper.h"
 @interface LoginViewController ()
 @property (strong,nonatomic) UserModel* userInformation;
 @property (strong,nonatomic) DataForViewController* data;
+@property (strong,nonatomic) Helper* helper;
 @property (strong,nonatomic) NSMutableArray* userList;
+@property (strong,nonatomic) NSString* btnIdentifier;
 
 @end
 
@@ -36,7 +39,7 @@
     _userInformation=[[UserModel alloc] init];
     _data=[[DataForViewController alloc] init];
     _userList=[[NSMutableArray alloc] init];
-    
+    _helper=[[Helper alloc] init];
 }
 
 - (void)didReceiveMemoryWarning {
@@ -45,18 +48,19 @@
 }
 
 - (IBAction)login:(id)sender {
-
+    _btnIdentifier=@"login";
 }
 -(BOOL)shouldPerformSegueWithIdentifier:(NSString *)identifier sender:(id)sender{
-
-    if ([identifier isEqualToString:@"loginWithNeandrTalk"]) {
+    
+    if ([_btnIdentifier isEqualToString:@"login"]) {
         NSInteger success = 0;
         @try {
             
             if([_txtUserName.text isEqualToString:@""] || [self.txtPassword.text isEqualToString:@""] ) {
                 
-                [self alertStatus:@"Please enter Email and Password" :@"Login Failed!" :0];
-                
+                [_helper createAlertWithStringTitle:@"Login Failed" contentAlert:@"Please enter Email and Password" Handler:^(UIAlertAction *action) {
+                    
+                } ViewController:self];
                 
             } else {
                 for (int i=0; i<[_userList count]; i++) {
@@ -71,31 +75,32 @@
                     NSLog(@"Login SUCCESS");
                     
                 } else {
-                    [self alertStatus:@"Your Email or your Password is not correct" :@"Login Failed" :0];
+                    [_helper createAlertWithStringTitle:@"Login Failed" contentAlert:@"Your Email or your Password is not correct" Handler:^(UIAlertAction *action) {
+                        
+                    } ViewController:self];
                     
                 }
             }
         }
         @catch (NSException * e) {
             NSLog(@"Exception: %@", e);
-            [self alertStatus:@"Login Failed." :@"Error!" :0];
+            [_helper createAlertWithStringTitle:@"Login Failed" contentAlert:@"Error!" Handler:^(UIAlertAction *action) {
+                
+            } ViewController:self];
         }
         if (success==0) {
+            _btnIdentifier=@"";
             return NO;
         }
         else
-            return YES;
+            _btnIdentifier=@"";
+        return YES;
     }
     else
+    {
+        _btnIdentifier=@"";
         return YES;
+    }
 }
-- (void) alertStatus:(NSString *)msg :(NSString *)title :(int) tag{
-    UIAlertView *alertView = [[UIAlertView alloc] initWithTitle:title
-                                                        message:msg
-                                                       delegate:self
-                                              cancelButtonTitle:@"Ok"
-                                              otherButtonTitles:nil, nil];
-    alertView.tag = tag;
-    [alertView show];
-}
+
 @end

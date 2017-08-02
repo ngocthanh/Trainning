@@ -7,9 +7,12 @@
 //
 
 #import <UIKit/UIKit.h>
-
+#import "NewFeedViewController.h"
 @interface NewFeedsPostTableViewCell : UITableViewCell<UICollectionViewDelegate,UICollectionViewDataSource,UICollectionViewDelegateFlowLayout>
 @property (weak, nonatomic) IBOutlet UICollectionView *newfeedCollectionView;
 @property (strong,nonatomic) NSArray *allPostArray;
 @property (strong,nonatomic) NSMutableArray *random;
+@property (strong,nonatomic) NewFeedViewController * newsFeed;
+-(void)getData:(NewFeedViewController*)vc;
+
 @end

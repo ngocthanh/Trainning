@@ -9,6 +9,7 @@
 #import <UIKit/UIKit.h>
 #import "UserModel.h"
 #import "PostModel.h"
+#import "Helper.h"
 @interface MasterViewController : UIViewController <UICollectionViewDelegate, UICollectionViewDataSource ,UITableViewDataSource,UITableViewDelegate>
 
 @end

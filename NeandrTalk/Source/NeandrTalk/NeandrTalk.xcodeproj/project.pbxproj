@@ -357,14 +357,14 @@
 		549DB5D01F203FFF005A1574 /* UserViewController */ = {
 			isa = PBXGroup;
 			children = (
+				549DB5E51F2041CD005A1574 /* LostPasswordViewController.m */,
+				549DB5E41F2041CD005A1574 /* LostPasswordViewController.h */,
 				549DB5D81F204145005A1574 /* LoginViewController.h */,
 				549DB5D91F204145005A1574 /* LoginViewController.m */,
 				549DB5DA1F204145005A1574 /* ProfileUserViewController.h */,
 				549DB5DB1F204145005A1574 /* ProfileUserViewController.m */,
 				549DB5DC1F204145005A1574 /* RegisterViewController.h */,
 				549DB5DD1F204145005A1574 /* RegisterViewController.m */,
-				549DB5E41F2041CD005A1574 /* LostPasswordViewController.h */,
-				549DB5E51F2041CD005A1574 /* LostPasswordViewController.m */,
 				549DB64F1F205A94005A1574 /* ProfileRestaurantUserViewController.h */,
 				549DB6501F205A94005A1574 /* ProfileRestaurantUserViewController.m */,
 				39C0F3ED1F2EF065008E0E61 /* ResetPasswordViewController.h */,

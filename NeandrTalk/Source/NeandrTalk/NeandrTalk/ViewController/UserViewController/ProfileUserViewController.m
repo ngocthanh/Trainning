@@ -29,6 +29,14 @@
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
 }
+- (IBAction)abtnLogOut:(id)sender {
+    [[[Helper alloc]init] createAlert2ButtonWithTitle:@"Confirm" contentAlert:@"Are you sure you want to logout!" Handler:^(UIAlertAction *action) {
+            UIStoryboard *storyBoard =[UIStoryboard storyboardWithName:@"Main" bundle:[NSBundle mainBundle]];
+            UINavigationController *loginVC = [storyBoard instantiateViewControllerWithIdentifier:@"loginNavicontroller"];
+        [self presentViewController:loginVC animated:YES completion:NULL];
+    } ViewController:self];
+
+}
 
 
 

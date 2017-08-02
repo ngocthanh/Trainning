@@ -8,7 +8,7 @@
 
 #import "NewFeedViewController.h"
 #import "NewFeedsHomeTableViewCell.h"
-
+#import "NewFeedsPostTableViewCell.h"
 #define idHomeCell @"homeTableViewCell"
 #define idPostCell @"postTableViewCell"
 #define idOrderByCell @"oderByCell"
@@ -47,7 +47,8 @@
         return  cell;
     }
     else if (indexPath.row==2){
-        NewFeedsHomeTableViewCell *cell=[_tableNewFeeds dequeueReusableCellWithIdentifier:idPostCell forIndexPath:indexPath];
+        NewFeedsPostTableViewCell *cell=[_tableNewFeeds dequeueReusableCellWithIdentifier:idPostCell forIndexPath:indexPath];
+        [cell getData:self];
         return cell;
     }
     else
