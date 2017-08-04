@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		39010E261F32B7860039ADAB /* SingleMarketPlaceContentViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 39010E251F32B7860039ADAB /* SingleMarketPlaceContentViewController.m */; };
 		39C0F3CB1F275CAB008E0E61 /* BlogPostTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 39C0F3CA1F275CAB008E0E61 /* BlogPostTableViewCell.m */; };
 		39C0F3CE1F275CCD008E0E61 /* BlogHomeTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 39C0F3CD1F275CCD008E0E61 /* BlogHomeTableViewCell.m */; };
 		39C0F3D41F275D21008E0E61 /* BlogFeaturedPostCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 39C0F3D31F275D21008E0E61 /* BlogFeaturedPostCollectionViewCell.m */; };
@@ -79,6 +80,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		39010E241F32B7860039ADAB /* SingleMarketPlaceContentViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SingleMarketPlaceContentViewController.h; sourceTree = "<group>"; };
+		39010E251F32B7860039ADAB /* SingleMarketPlaceContentViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SingleMarketPlaceContentViewController.m; sourceTree = "<group>"; };
 		39C0F3C91F275CAB008E0E61 /* BlogPostTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BlogPostTableViewCell.h; sourceTree = "<group>"; };
 		39C0F3CA1F275CAB008E0E61 /* BlogPostTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BlogPostTableViewCell.m; sourceTree = "<group>"; };
 		39C0F3CC1F275CCD008E0E61 /* BlogHomeTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BlogHomeTableViewCell.h; sourceTree = "<group>"; };
@@ -469,6 +472,8 @@
 				39C0F3E21F285085008E0E61 /* MarketPlacePostCollectionViewCell.m */,
 				39C0F3E41F288D5E008E0E61 /* SinglePostImageTableViewCell.h */,
 				39C0F3E51F288D5E008E0E61 /* SinglePostImageTableViewCell.m */,
+				39010E241F32B7860039ADAB /* SingleMarketPlaceContentViewController.h */,
+				39010E251F32B7860039ADAB /* SingleMarketPlaceContentViewController.m */,
 			);
 			path = MarketPlace;
 			sourceTree = "<group>";
@@ -623,6 +628,7 @@
 				549DB5BA1F203CED005A1574 /* DataForViewController.m in Sources */,
 				54372CB71F24B1D200571173 /* LandingCommunityTableViewCell.m in Sources */,
 				39C0F3EF1F2EF066008E0E61 /* ResetPasswordViewController.m in Sources */,
+				39010E261F32B7860039ADAB /* SingleMarketPlaceContentViewController.m in Sources */,
 				549DB5FE1F2043D4005A1574 /* PurchaseConfirmViewController.m in Sources */,
 				549DB6191F2046F8005A1574 /* CommentViewController.m in Sources */,
 				549DB6631F205D3F005A1574 /* PurchaseDetailTableViewCell.m in Sources */,

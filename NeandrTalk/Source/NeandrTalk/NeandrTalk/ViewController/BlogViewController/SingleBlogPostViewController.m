@@ -11,9 +11,11 @@
 #import "SinglePostImageTableViewCell.h"
 #import "ParserService.h"
 #import "DiscussionFeaturedPostCollectionViewCell.h"
+#import "PostModel.h"
+
 #define idFeaturedCell @"featuredPostCell"
 @interface SingleBlogPostViewController ()
-
+@property (strong,nonatomic) PostModel *post;
 @end
 
 @implementation SingleBlogPostViewController
@@ -22,22 +24,37 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    _arrayImage = [[NSArray alloc] initWithObjects:@"market3",@"markets",@"Farmers_1",@"FarmersMarketBanner",@"food", nil];
     [self parser];
+    [self setDataForSinglePost];
     [self.navigationController setNavigationBarHidden:false];
     
     
 }
-
+-(void)viewWillAppear:(BOOL)animated{
+    
+}
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
 }
-
+-(void)setDataForSinglePost{
+    if(!_post)
+    {
+        _post=[[PostModel alloc] init];
+        
+    }
+    for (_post in _arrayAllPost) {
+        if ([_post valueForKey:@"postID"]==_postID) {
+            [_blogPostImage setImage:[UIImage imageNamed:_post.primaryImage]];
+            _blogPostTitle.text=_post.title;
+            _blogPostDescription.text=_post.descriptionPost;
+        }
+    }
+}
 -(void)parser{
     ParserService *parser=[[ParserService alloc] init];
-    _arrayPostRelated =[[NSArray alloc]initWithArray:[parser getList:@"post"]];
-    _arrayPostRelated = [_arrayPostRelated subarrayWithRange:NSMakeRange(0, 6)];
+    _arrayAllPost =[[NSArray alloc]initWithArray:[parser getList:@"post"]];
+    _arrayPostRelated = [_arrayAllPost subarrayWithRange:NSMakeRange(0, 6)];
 }
 -(NSInteger)numberOfSectionsInCollectionView:(UICollectionView *)collectionView{
     return 1;

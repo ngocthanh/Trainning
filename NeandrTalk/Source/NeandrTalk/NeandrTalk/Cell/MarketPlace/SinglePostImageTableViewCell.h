@@ -8,7 +8,9 @@
 
 #import <UIKit/UIKit.h>
 
-@interface SinglePostImageTableViewCell : UITableViewCell
+@interface SinglePostImageTableViewCell : UICollectionViewCell
 @property (weak, nonatomic) IBOutlet UIImageView *img;
 -(void)getData:(NSString*)image;
+
+
 @end

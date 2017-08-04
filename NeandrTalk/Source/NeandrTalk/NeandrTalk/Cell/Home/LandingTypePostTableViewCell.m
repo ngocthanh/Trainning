@@ -12,6 +12,7 @@
 #import "SingleBlogPostViewController.h"
 #import "SingleMarketPlacePostViewController.h"
 
+
 #define marginBetweenTwoItem 5
 
 @implementation LandingTypePostTableViewCell
@@ -51,17 +52,20 @@
     UIStoryboard *storyBoard =[UIStoryboard storyboardWithName:@"Main" bundle:[NSBundle mainBundle]];
     
     if ([_titleTypePost.text  isEqual: @"Discussion"]) {
-          SingleDiscussionPostViewController *discussionVC = [storyBoard instantiateViewControllerWithIdentifier:@"loginVC"];
+        SingleDiscussionPostViewController *discussionVC = [storyBoard instantiateViewControllerWithIdentifier:@"loginVC"];
+        discussionVC.postID=[[_dataPosts valueForKey:@"postID"] objectAtIndex:indexPath.row];
         [_home.navigationController pushViewController:discussionVC animated:true];
         
     }else if ([_titleTypePost.text  isEqual: @"Market Place"]){
         SingleMarketPlacePostViewController *marketPlaceVC = [storyBoard instantiateViewControllerWithIdentifier:@"marketVC"];
+        marketPlaceVC.postID=[[_dataPosts valueForKey:@"postID"] objectAtIndex:indexPath.row];
         [_home.navigationController pushViewController:marketPlaceVC animated:true];
-
+        
     }else{
         SingleBlogPostViewController *blogVC = [storyBoard instantiateViewControllerWithIdentifier:@"blogVC"];
+        blogVC.postID=[[_dataPosts valueForKey:@"postID"] objectAtIndex:indexPath.row];
         [_home.navigationController pushViewController:blogVC animated:true];
-
+        
     }
 }
 //-(UIEdgeInsets)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout *)collectionViewLayout insetForSectionAtIndex:(NSInteger)section{

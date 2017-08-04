@@ -24,16 +24,16 @@
         }
         else
         {
-        [tagList appendString:[NSString stringWithFormat:@",%@",tag]];
+            [tagList appendString:[NSString stringWithFormat:@",%@",tag]];
         }
     }
     self.alltags.text=[NSString stringWithFormat:@"[%@]",tagList];
     self.numberOfComment.text=[NSString stringWithFormat:@"%lu COMMENTS", (unsigned long)[post.arrayComments count]];
     self.contentView.layer.borderWidth=1;
     self.contentView.layer.borderColor=[UIColor blackColor].CGColor;
-
+    
     self.arrayTag = post.arrayTags;
-
+    
     [self setStyle];
 }
 -(CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath{

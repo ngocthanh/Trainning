@@ -7,9 +7,9 @@
 //
 
 #import <UIKit/UIKit.h>
-
+#import "AllBlogPostViewController.h"
 @interface BlogPostTableViewCell : UITableViewCell<UICollectionViewDataSource,UICollectionViewDelegate,UICollectionViewDelegateFlowLayout>
-
+@property (strong,nonatomic) AllBlogPostViewController *allBLogPostVC;
 @property (strong,nonatomic) NSArray *allPostArray;
 @property (strong,nonatomic) NSArray *blogPostArray;
 

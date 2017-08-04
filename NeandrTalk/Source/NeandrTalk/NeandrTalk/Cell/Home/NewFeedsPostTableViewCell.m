@@ -68,22 +68,26 @@
 }
 -(void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath{
     UIStoryboard *storyBoard =[UIStoryboard storyboardWithName:@"Main" bundle:[NSBundle mainBundle]];
-    if ([[[_allPostArray objectAtIndex:[_random[indexPath.row] integerValue]] valueForKey:@"postType"] isEqualToString:@"Discussion"]) {
+    NSDictionary *itemAtIndexPath=[_allPostArray objectAtIndex:[_random[indexPath.row] integerValue]];
+    if ([[itemAtIndexPath valueForKey:@"postType"] isEqualToString:@"Discussion"]) {
         SingleDiscussionPostViewController *discussionVC = [storyBoard instantiateViewControllerWithIdentifier:@"loginVC"];
+        
+        discussionVC.postID=[itemAtIndexPath valueForKey:@"postID"];
+ 
         [_newsFeed.navigationController pushViewController:discussionVC animated:true];
         
-    }else if ([[[_allPostArray objectAtIndex:[_random[indexPath.row] integerValue]]valueForKey:@"postType"]isEqualToString:@"blogPost"]){
+    }else if ([[itemAtIndexPath valueForKey:@"postType"]isEqualToString:@"blogPost"]){
         SingleBlogPostViewController *blogVC = [storyBoard instantiateViewControllerWithIdentifier:@"blogVC"];
+        blogVC.postID=[itemAtIndexPath valueForKey:@"postID"];
+        
         [_newsFeed.navigationController pushViewController:blogVC animated:true];
         
     }else{
         SingleMarketPlacePostViewController *marketPlaceVC = [storyBoard instantiateViewControllerWithIdentifier:@"marketVC"];
+        marketPlaceVC.postID=[itemAtIndexPath valueForKey:@"postID"];
         [_newsFeed.navigationController pushViewController:marketPlaceVC animated:true];
-
-        
     }
 }
-
 
 
 - (void)setSelected:(BOOL)selected animated:(BOOL)animated {
@@ -104,7 +108,6 @@
         }
         if (duplicate == NO) {
             [_random addObject:[[NSString alloc] initWithFormat:@"%d",i]];
-            NSLog(@"%@",_random);
         }
     }while ([_random count] < 20);
         

@@ -10,6 +10,7 @@
 #import "ParserService.h"
 #import "PostModel.h"
 #import "DiscussionPostCollectionViewCell.h"
+#import "SingleDiscussionPostViewController.h"
 
 
 #define idPostCell @"discussionPostCollectionViewCell"
@@ -25,7 +26,7 @@
 
 -(void) parserPost{
     ParserService *parser=[[ParserService alloc] init];
-    _allPostArray =[[NSArray alloc]initWithArray:[parser getList:postListName]];
+    _allPostArray =[[NSMutableArray alloc]initWithArray:[parser getList:postListName]];
     _discussionPostArray=[_allPostArray subarrayWithRange:NSMakeRange(8, 6)];
 }
 
@@ -42,6 +43,24 @@
     
     return cell;
 }
+
+-(void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath{
+    UIStoryboard *storyBoard =[UIStoryboard storyboardWithName:@"Main" bundle:[NSBundle mainBundle]];
+    NSDictionary *itemAtIndexPath=[_discussionPostArray objectAtIndex:indexPath.row];
+    SingleDiscussionPostViewController *discussionVC = [storyBoard instantiateViewControllerWithIdentifier:@"loginVC"];
+    discussionVC.postID=[itemAtIndexPath valueForKey:@"postID"];
+    [_discussionPost.navigationController pushViewController:discussionVC animated:true];
+}
+//- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
+//{
+//    if([segue.identifier isEqualToString:@"toSingleDiscussion"])
+//    {
+//        NSMutableString *selectedItem=[[_discussionPostArray valueForKey:@"postID"]objectAtIndex:self.selected];
+//        SingleDiscussionPostViewController *sigleDiscussionPostVC=[segue destinationViewController];
+//        sigleDiscussionPostVC.postID=selectedItem;
+//   
+//    }
+//}
 -(CGSize)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout *)collectionViewLayout sizeForItemAtIndexPath:(NSIndexPath *)indexPath{
     float height = self.contentView.frame.size.height/3;
     float width = self.contentView.frame.size.width *0.9;

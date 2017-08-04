@@ -7,11 +7,12 @@
 //
 
 #import <UIKit/UIKit.h>
-
+#import "AllDiscussionPostViewController.h"
 @interface DiscussionPostTableViewCell : UITableViewCell<UICollectionViewDataSource,UICollectionViewDelegate,UICollectionViewDelegateFlowLayout>
 @property (weak, nonatomic) IBOutlet UICollectionView *discussionPostCollectionView;
 
-
-@property (strong,nonatomic) NSArray *allPostArray;
+@property (strong,nonatomic) AllDiscussionPostViewController *discussionPost;
+@property (strong,nonatomic) NSMutableArray *allPostArray;
 @property (strong,nonatomic) NSArray *discussionPostArray;
+
 @end
