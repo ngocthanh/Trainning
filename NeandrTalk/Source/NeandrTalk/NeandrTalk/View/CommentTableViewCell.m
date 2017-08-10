@@ -2,7 +2,7 @@
 //  CommentTableViewCell.m
 //  NeandrTalk
 //
-//  Created by KterKC on 7/20/17.
+//  Created by dankhanh on 8/9/17.
 //  Copyright © 2017 KterKC. All rights reserved.
 //
 

@@ -10,14 +10,20 @@
 #import "NeandrModel.h"
 #import "PostModel.h"
 #import "UserModel.h"
+#import "CommentModel.h"
 @implementation ParserService
 -(NSArray *)getList:(NSString *)listName{
     NSMutableArray *dicUser = [[NSMutableArray alloc]initWithContentsOfFile:[[NSBundle mainBundle] pathForResource:listName ofType:@"plist"]];
     if ([listName  isEqual: @"neandr"]) {
         return [self parseNeandrModel:dicUser];
-    } else if( [listName isEqual:@"post"]) {
+    }
+    else if( [listName isEqual:@"post"]) {
         return [self parsePostModel:dicUser];
-    }else{
+    }
+    else if ([listName isEqualToString:@"comment"]) {
+        return [self parseComment:dicUser];
+    }
+    else{
         return [self parseUser:dicUser];
     }
     
@@ -75,6 +81,22 @@
         user.arrayDaysOpen = [data valueForKey:@"arrayDaysOpen"];
         [array addObject:user];
         
+    }
+    return array;
+}
+-(NSArray *)parseComment:(NSArray *)arrayData{
+    NSMutableArray *array=[[NSMutableArray alloc] init];
+    {
+        for (NSDictionary *data in arrayData) {
+            CommentModel *comment=[[CommentModel alloc] init];
+            comment.idComment=[data valueForKey:@"idComment"];
+            comment.imageName=[data valueForKey:@"userImage"];
+            comment.userName=[data valueForKey:@"userName"];
+            comment.content=[data valueForKey:@"content"];
+            comment.time=[data valueForKey:@"time"];
+            
+            [array addObject:comment];
+        }
     }
     return array;
 }

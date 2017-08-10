@@ -46,10 +46,13 @@
 
 -(void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath{
     UIStoryboard *storyBoard =[UIStoryboard storyboardWithName:@"Main" bundle:[NSBundle mainBundle]];
+    _discussionPost=[storyBoard instantiateViewControllerWithIdentifier:@"allDiscussionPost"];
     NSDictionary *itemAtIndexPath=[_discussionPostArray objectAtIndex:indexPath.row];
-    SingleDiscussionPostViewController *discussionVC = [storyBoard instantiateViewControllerWithIdentifier:@"loginVC"];
+    SingleDiscussionPostViewController *discussionVC = [storyBoard instantiateViewControllerWithIdentifier:@"discussionVC"];
     discussionVC.postID=[itemAtIndexPath valueForKey:@"postID"];
+    
     [_discussionPost.navigationController pushViewController:discussionVC animated:true];
+    NSLog(@"%@",_discussionPost);
 }
 //- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
 //{

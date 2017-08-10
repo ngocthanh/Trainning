@@ -9,5 +9,9 @@
 #import "MasterViewController.h"
 
 @interface CommentViewController : MasterViewController 
+@property (strong, nonatomic) NSMutableArray *CommentArray;
+@property (weak, nonatomic) IBOutlet UITableView *tbvComment;
+@property (weak, nonatomic) IBOutlet UITextField *txtvComment;
+- (IBAction)postComment:(id)sender;
 
 @end

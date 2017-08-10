@@ -1,0 +1,107 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="12121" systemVersion="16G29" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12089"/>
+        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+        <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="MyCell" rowHeight="406" id="KGk-i7-Jjw" customClass="CommentTableViewCell">
+            <rect key="frame" x="0.0" y="0.0" width="419" height="406"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
+                <rect key="frame" x="0.0" y="0.0" width="419" height="405.5"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="E1R-Mp-KCP">
+                        <rect key="frame" x="13" y="13" width="81" height="81"/>
+                        <constraints>
+                            <constraint firstAttribute="width" secondItem="E1R-Mp-KCP" secondAttribute="height" multiplier="1:1" id="DOi-sh-hu0"/>
+                        </constraints>
+                    </imageView>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Name" textAlignment="natural" lineBreakMode="wordWrap" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="foP-Os-wgq">
+                        <rect key="frame" x="99" y="13" width="45" height="20.5"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                        <color key="textColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Time" textAlignment="natural" lineBreakMode="wordWrap" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fmC-S1-XcF">
+                        <rect key="frame" x="99" y="38.5" width="38" height="20.5"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                        <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="TopLeft" horizontalHuggingPriority="251" verticalHuggingPriority="251" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" preferredMaxLayoutWidth="380.5" translatesAutoresizingMaskIntoConstraints="NO" id="554-st-fP3">
+                        <rect key="frame" x="13" y="94" width="393" height="233.5"/>
+                        <string key="text">Labeldfasldfbksadjfa hfl sah fladhsl fadjks a fkLabeldfasldfbksadjfa hfl sah fladhsl fadjks a fkLabeldfasldfbksadjfa hfl sah fladhsl fadjks a fkLabeldfasldfbksadjfa hfl sah fladhsl fadjks a fkLabeldfasldfbksadjfa hfl sah fladhsl fadjks a fkLabeldfasldfbksadjfa hfl sah fladhsl fadjks a fkLabeldfasldfbksadjfa hfl sah fladhsl fadjks a fkLabeldfasldfbksadjfa hfl sah fladhsl fadjks a fkLabeldfasldfbksadjfa hfl sah fladhsl fadjks a fk</string>
+                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                        <nil key="textColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="MOW-d7-hBY">
+                        <rect key="frame" x="13" y="327.5" width="229" height="81"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="249" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lww-X5-wSN">
+                                <rect key="frame" x="0.0" y="0.0" width="73" height="81"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                                <state key="normal" title="100" image="show-more-button">
+                                    <color key="titleColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                </state>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lca-4L-tuL">
+                                <rect key="frame" x="78" y="0.0" width="73" height="81"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                                <state key="normal" title=" Reply" image="reply-all">
+                                    <color key="titleColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                </state>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="LYr-1P-uze">
+                                <rect key="frame" x="156" y="0.0" width="73" height="81"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                                <state key="normal" title="Report" image="report">
+                                    <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                            </button>
+                        </subviews>
+                    </stackView>
+                </subviews>
+                <constraints>
+                    <constraint firstItem="foP-Os-wgq" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="topMargin" constant="5" id="0iu-qF-h2a"/>
+                    <constraint firstItem="foP-Os-wgq" firstAttribute="leading" secondItem="E1R-Mp-KCP" secondAttribute="trailing" constant="5" id="Hoa-nH-Hf6"/>
+                    <constraint firstItem="E1R-Mp-KCP" firstAttribute="height" secondItem="H2p-sc-9uM" secondAttribute="height" multiplier="1/5" id="Mx1-VJ-GV9"/>
+                    <constraint firstItem="MOW-d7-hBY" firstAttribute="top" secondItem="554-st-fP3" secondAttribute="bottom" id="Pdv-Ve-wTg"/>
+                    <constraint firstItem="fmC-S1-XcF" firstAttribute="top" secondItem="foP-Os-wgq" secondAttribute="bottom" constant="5" id="S0I-bz-fje"/>
+                    <constraint firstItem="E1R-Mp-KCP" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leadingMargin" constant="5" id="Ugu-SI-CTY"/>
+                    <constraint firstItem="MOW-d7-hBY" firstAttribute="leading" secondItem="554-st-fP3" secondAttribute="leading" id="Y3U-Td-CIp"/>
+                    <constraint firstAttribute="trailingMargin" secondItem="554-st-fP3" secondAttribute="trailing" constant="5" id="k2V-tH-Lt7"/>
+                    <constraint firstItem="fmC-S1-XcF" firstAttribute="leading" secondItem="E1R-Mp-KCP" secondAttribute="trailing" constant="5" id="lRC-W6-0H4"/>
+                    <constraint firstItem="554-st-fP3" firstAttribute="top" secondItem="E1R-Mp-KCP" secondAttribute="bottom" id="nEz-OP-bMw"/>
+                    <constraint firstItem="554-st-fP3" firstAttribute="leading" secondItem="E1R-Mp-KCP" secondAttribute="leading" id="qF4-xw-3fq"/>
+                    <constraint firstItem="554-st-fP3" firstAttribute="height" secondItem="H2p-sc-9uM" secondAttribute="height" multiplier="3/5" constant="-10" id="ug3-fR-CCo"/>
+                    <constraint firstItem="E1R-Mp-KCP" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="topMargin" constant="5" id="vVQ-ev-ISm"/>
+                    <constraint firstItem="MOW-d7-hBY" firstAttribute="height" secondItem="H2p-sc-9uM" secondAttribute="height" multiplier="1/5" id="yzw-j6-ltJ"/>
+                </constraints>
+            </tableViewCellContentView>
+            <connections>
+                <outlet property="lblContent" destination="554-st-fP3" id="5d5-4l-RF2"/>
+                <outlet property="lblTime" destination="fmC-S1-XcF" id="5e1-sj-0lh"/>
+                <outlet property="lblUserName" destination="foP-Os-wgq" id="vZN-C2-rac"/>
+                <outlet property="userImage" destination="E1R-Mp-KCP" id="tLU-Ms-EgE"/>
+            </connections>
+            <point key="canvasLocation" x="84.5" y="64"/>
+        </tableViewCell>
+    </objects>
+    <resources>
+        <image name="reply-all" width="32" height="32"/>
+        <image name="report" width="32" height="32"/>
+        <image name="show-more-button" width="32" height="32"/>
+    </resources>
+</document>

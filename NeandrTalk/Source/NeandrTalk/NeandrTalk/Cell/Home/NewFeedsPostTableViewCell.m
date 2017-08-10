@@ -70,11 +70,12 @@
     UIStoryboard *storyBoard =[UIStoryboard storyboardWithName:@"Main" bundle:[NSBundle mainBundle]];
     NSDictionary *itemAtIndexPath=[_allPostArray objectAtIndex:[_random[indexPath.row] integerValue]];
     if ([[itemAtIndexPath valueForKey:@"postType"] isEqualToString:@"Discussion"]) {
-        SingleDiscussionPostViewController *discussionVC = [storyBoard instantiateViewControllerWithIdentifier:@"loginVC"];
+        SingleDiscussionPostViewController *discussionVC = [storyBoard instantiateViewControllerWithIdentifier:@"discussionVC"];
         
         discussionVC.postID=[itemAtIndexPath valueForKey:@"postID"];
  
         [_newsFeed.navigationController pushViewController:discussionVC animated:true];
+        NSLog(@"%@",_newsFeed);
         
     }else if ([[itemAtIndexPath valueForKey:@"postType"]isEqualToString:@"blogPost"]){
         SingleBlogPostViewController *blogVC = [storyBoard instantiateViewControllerWithIdentifier:@"blogVC"];
